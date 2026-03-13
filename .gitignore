@@ -1,0 +1,23 @@
+# Build
+/build
+/entry/build
+/.preview
+/entry/.preview
+
+# DevEco Studio
+/.idea
+*.iml
+local.properties
+
+# Node
+node_modules/
+oh_modules/
+package-lock.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cache
+.cxx/
+.hvigor/

@@ -1,0 +1,10 @@
+{
+  "modelVersion": "5.0.0",
+  "description": "A-Level Math P1 Learning Helper",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@ohos/hypium": "1.0.19",
+    "@ohos/hvigor-ohos-plugin": "4.2.2"
+  }
+}
