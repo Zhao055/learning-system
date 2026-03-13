@@ -1,5 +1,10 @@
 import { MiniMaxService } from '../service/MiniMaxService';
 
+@Builder
+export function SettingsPageBuilder() {
+  SettingsPage()
+}
+
 @Component
 export struct SettingsPage {
   @Consume navPathStack: NavPathStack;

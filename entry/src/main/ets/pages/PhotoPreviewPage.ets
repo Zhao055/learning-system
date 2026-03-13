@@ -2,6 +2,11 @@ import { image } from '@kit.ImageKit';
 import { fileIo } from '@kit.CoreFileKit';
 import { OcrService } from '../service/OcrService';
 
+@Builder
+export function PhotoPreviewPageBuilder() {
+  PhotoPreviewPage()
+}
+
 @Component
 export struct PhotoPreviewPage {
   @Consume navPathStack: NavPathStack;

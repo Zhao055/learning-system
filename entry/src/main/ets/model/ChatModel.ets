@@ -1,6 +1,6 @@
 export interface ChatMessage {
   id: string;
-  role: 'user' | 'assistant' | 'system';
+  role: string;
   content: string;
   timestamp: number;
   isStreaming?: boolean;

@@ -49,9 +49,9 @@ export struct ChatPanel {
         List() {
           ForEach(this.chatMessages, (msg: ChatMessage) => {
             ListItem() {
-              ChatBubble({ message: msg })
+              ChatBubble({ role: msg.role, content: msg.content, isStreaming: msg.isStreaming ?? false })
             }
-          })
+          }, (msg: ChatMessage) => msg.id)
         }
         .layoutWeight(1)
         .scrollBar(BarState.Off)
@@ -65,7 +65,7 @@ export struct ChatPanel {
             .backgroundColor('#F5F5F5')
             .fontSize(14)
             .onChange((value: string) => { this.chatInput = value; })
-            .onSubmit(() => { this.onSend(); })
+            .onSubmit((enterKey: EnterKeyType) => { this.onSend(); })
 
           Button({ type: ButtonType.Circle }) {
             Text('→').fontSize(18).fontColor('#FFFFFF')

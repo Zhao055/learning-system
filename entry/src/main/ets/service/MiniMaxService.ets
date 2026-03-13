@@ -1,5 +1,5 @@
 import { http } from '@kit.NetworkKit';
-import { ChatMessage, MiniMaxRequest, MiniMaxMessage } from '../model/ChatModel';
+import { MiniMaxRequest, MiniMaxMessage, MiniMaxResponse } from '../model/ChatModel';
 import { preferences } from '@kit.ArkData';
 import { util } from '@kit.ArkTS';
 
@@ -47,7 +47,7 @@ export class MiniMaxService {
   async loadApiKey(context: Context): Promise<void> {
     try {
       const store = preferences.getPreferencesSync(context, { name: 'settings' });
-      const key = store.getSync('minimax_api_key', '') as string;
+      const key: string = store.getSync('minimax_api_key', '').toString();
       this.apiKey = key;
     } catch (e) {
       console.error('Failed to load API key: ' + JSON.stringify(e));
@@ -147,13 +147,12 @@ export class MiniMaxService {
           }
 
           try {
-            const parsed = JSON.parse(jsonStr) as Record<string, Object>;
-            const choices = parsed['choices'] as Record<string, Object>[];
-            if (choices && choices.length > 0) {
-              const delta = choices[0]['delta'] as Record<string, string>;
-              if (delta && delta['content']) {
-                fullResponse += delta['content'];
-                onChunk(delta['content']);
+            const parsed: MiniMaxResponse = JSON.parse(jsonStr);
+            if (parsed.choices && parsed.choices.length > 0) {
+              const delta = parsed.choices[0].delta;
+              if (delta && delta.content) {
+                fullResponse += delta.content;
+                onChunk(delta.content);
               }
             }
           } catch (parseErr) {
@@ -172,13 +171,12 @@ export class MiniMaxService {
             const jsonStr = trimmed.substring(6);
             if (jsonStr === '[DONE]') continue;
             try {
-              const parsed = JSON.parse(jsonStr) as Record<string, Object>;
-              const choices = parsed['choices'] as Record<string, Object>[];
-              if (choices && choices.length > 0) {
-                const delta = choices[0]['delta'] as Record<string, string>;
-                if (delta && delta['content']) {
-                  fullResponse += delta['content'];
-                  onChunk(delta['content']);
+              const parsed: MiniMaxResponse = JSON.parse(jsonStr);
+              if (parsed.choices && parsed.choices.length > 0) {
+                const delta = parsed.choices[0].delta;
+                if (delta && delta.content) {
+                  fullResponse += delta.content;
+                  onChunk(delta.content);
                 }
               }
             } catch (parseErr) {
@@ -187,8 +185,8 @@ export class MiniMaxService {
           }
         }
 
-        if (fullResponse.length > 0) {
-          history!.push({ role: 'assistant', content: fullResponse });
+        if (fullResponse.length > 0 && history) {
+          history.push({ role: 'assistant', content: fullResponse });
         }
         onComplete();
         httpRequest.destroy();
@@ -201,7 +199,6 @@ export class MiniMaxService {
           'Authorization': `Bearer ${this.apiKey}`
         },
         extraData: JSON.stringify(requestBody),
-        expectDataType: http.HttpDataType.STRING,
         connectTimeout: 30000,
         readTimeout: 120000
       });

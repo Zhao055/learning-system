@@ -20,7 +20,8 @@ export class QuestionRepository {
       const rawFile = context.resourceManager.getRawFileContentSync('question_bank.json');
       const textDecoder = new util.TextDecoder('utf-8');
       const jsonStr = textDecoder.decodeToString(rawFile);
-      this.questionBank = JSON.parse(jsonStr) as QuestionBank;
+      const parsed: QuestionBank = JSON.parse(jsonStr);
+      this.questionBank = parsed;
     } catch (e) {
       console.error('Failed to load question bank: ' + JSON.stringify(e));
     }

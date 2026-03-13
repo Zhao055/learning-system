@@ -1,15 +1,15 @@
-import { ChatMessage } from '../model/ChatModel';
-
 @Component
 export struct ChatBubble {
-  @Prop message: ChatMessage;
+  @Prop role: string = 'user';
+  @Prop content: string = '';
+  @Prop isStreaming: boolean = false;
 
   build() {
     Column() {
-      if (this.message.role === 'user') {
+      if (this.role === 'user') {
         Row() {
           Blank()
-          Text(this.message.content)
+          Text(this.content)
             .fontSize(14)
             .fontColor('#FFFFFF')
             .lineHeight(22)
@@ -21,7 +21,7 @@ export struct ChatBubble {
         .width('100%')
       } else {
         Row() {
-          Text(this.message.content + (this.message.isStreaming ? '▌' : ''))
+          Text(this.content + (this.isStreaming ? '|' : ''))
             .fontSize(14)
             .fontColor('#333333')
             .lineHeight(22)

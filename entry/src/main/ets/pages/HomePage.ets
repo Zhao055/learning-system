@@ -1,9 +1,14 @@
 import { MiniMaxService } from '../service/MiniMaxService';
 
+@Builder
+export function HomePageBuilder() {
+  HomePage()
+}
+
 @Component
 export struct HomePage {
   @Consume navPathStack: NavPathStack;
-  @State private greeting: string = '';
+  @State greeting: string = '';
 
   aboutToAppear(): void {
     const hour = new Date().getHours();
@@ -41,10 +46,8 @@ export struct HomePage {
           Blank()
 
           Button({ type: ButtonType.Circle }) {
-            Image($r('sys.media.ohos_ic_public_settings'))
-              .width(24)
-              .height(24)
-              .fillColor('#666666')
+            Text('⚙')
+              .fontSize(22)
           }
           .width(44)
           .height(44)

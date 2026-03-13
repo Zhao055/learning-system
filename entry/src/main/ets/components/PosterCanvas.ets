@@ -2,7 +2,16 @@ import { QuizResult } from '../model/ChapterModel';
 
 @Component
 export struct PosterCanvas {
-  @Prop result: QuizResult;
+  @Prop result: QuizResult = {
+    chapterId: '',
+    chapterTitle: '',
+    knowledgePointId: '',
+    knowledgePointTitle: '',
+    totalQuestions: 1,
+    correctCount: 0,
+    answers: [],
+    timestamp: 0
+  };
 
   private getScoreColor(): string {
     const pct = this.result.correctCount / this.result.totalQuestions;

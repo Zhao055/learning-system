@@ -1,5 +1,9 @@
 import { QuizResult } from '../model/ChapterModel';
-import { ShareService } from '../service/ShareService';
+
+@Builder
+export function QuizResultPageBuilder() {
+  QuizResultPage()
+}
 
 @Component
 export struct QuizResultPage {
@@ -8,9 +12,9 @@ export struct QuizResultPage {
   @State showPoster: boolean = false;
 
   aboutToAppear(): void {
-    const params = this.navPathStack.getParamByName('QuizResultPage') as QuizResult[];
+    const params = this.navPathStack.getParamByName('QuizResultPage') as Object[];
     if (params && params.length > 0) {
-      this.result = params[0];
+      this.result = params[0] as QuizResult;
     }
   }
 

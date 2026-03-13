@@ -1,6 +1,5 @@
 @Component
 export struct OptionCard {
-  @Prop label: string = '';
   @Prop text: string = '';
   @Prop index: number = 0;
   @Prop isSelected: boolean = false;

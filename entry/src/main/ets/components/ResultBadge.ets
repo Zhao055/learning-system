@@ -3,12 +3,6 @@ export struct ResultBadge {
   @Prop isCorrect: boolean = false;
   @State animScale: number = 0;
 
-  aboutToAppear(): void {
-    animateTo({ duration: 400, curve: Curve.EaseOut }, () => {
-      this.animScale = 1;
-    });
-  }
-
   build() {
     Column() {
       Text(this.isCorrect ? '✓' : '✗')
@@ -28,5 +22,10 @@ export struct ResultBadge {
     .justifyContent(FlexAlign.Center)
     .scale({ x: this.animScale, y: this.animScale })
     .shadow({ radius: 12, color: this.isCorrect ? 'rgba(76,175,80,0.3)' : 'rgba(244,67,54,0.3)', offsetX: 0, offsetY: 4 })
+    .onAppear(() => {
+      animateTo({ duration: 400, curve: Curve.EaseOut }, () => {
+        this.animScale = 1;
+      });
+    })
   }
 }

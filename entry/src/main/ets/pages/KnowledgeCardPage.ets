@@ -1,6 +1,11 @@
 import { QuestionRepository } from '../data/QuestionRepository';
 import { Chapter, KnowledgePoint } from '../model/ChapterModel';
 
+@Builder
+export function KnowledgeCardPageBuilder() {
+  KnowledgeCardPage()
+}
+
 @Component
 export struct KnowledgeCardPage {
   @Consume navPathStack: NavPathStack;
@@ -105,7 +110,7 @@ export struct KnowledgeCardPage {
                         .borderRadius(20)
                         .height(36)
                         .onClick(() => {
-                          const params: string[] = [this.chapter!.id, kp.id];
+                          const params: string[] = [this.chapter?.id ?? '', kp.id];
                           this.navPathStack.pushPathByName('QuizPage', params);
                         })
                     }
@@ -121,7 +126,7 @@ export struct KnowledgeCardPage {
                 .borderRadius(16)
                 .shadow({ radius: 4, color: 'rgba(0,0,0,0.05)', offsetX: 0, offsetY: 2 })
               }
-            })
+            }, (kp: KnowledgePoint) => kp.id)
           }
           .width('100%')
           .layoutWeight(1)
@@ -154,8 +159,8 @@ export struct KnowledgeCardPage {
             .padding({ right: 20, top: 50 })
 
             // Zoomable image
-            if (this.selectedKP!.image && this.selectedKP!.image.length > 0) {
-              Image($rawfile(`images/${this.selectedKP!.image}`))
+            if ((this.selectedKP?.image?.length ?? 0) > 0) {
+              Image($rawfile(`images/${this.selectedKP?.image ?? ''}`))
                 .width('100%')
                 .layoutWeight(1)
                 .objectFit(ImageFit.Contain)
@@ -175,11 +180,11 @@ export struct KnowledgeCardPage {
 
             // Title overlay
             Column() {
-              Text(`${this.selectedKP!.id} ${this.selectedKP!.title}`)
+              Text(`${this.selectedKP?.id ?? ''} ${this.selectedKP?.title ?? ''}`)
                 .fontSize(18)
                 .fontWeight(FontWeight.Bold)
                 .fontColor('#FFFFFF')
-              Text(this.selectedKP!.titleCn)
+              Text(this.selectedKP?.titleCn ?? '')
                 .fontSize(14)
                 .fontColor('rgba(255,255,255,0.8)')
                 .margin({ top: 4 })

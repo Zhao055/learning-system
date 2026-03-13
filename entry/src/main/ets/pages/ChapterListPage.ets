@@ -1,6 +1,11 @@
 import { QuestionRepository } from '../data/QuestionRepository';
 import { Chapter } from '../model/ChapterModel';
 
+@Builder
+export function ChapterListPageBuilder() {
+  ChapterListPage()
+}
+
 @Component
 export struct ChapterListPage {
   @Consume navPathStack: NavPathStack;
@@ -84,7 +89,7 @@ export struct ChapterListPage {
                 this.navPathStack.pushPathByName('KnowledgeCardPage', chapter.id);
               })
             }
-          })
+          }, (chapter: Chapter) => chapter.id)
         }
         .width('100%')
         .layoutWeight(1)

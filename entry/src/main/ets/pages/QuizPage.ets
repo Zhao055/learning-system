@@ -5,6 +5,11 @@ import { ChatMessage } from '../model/ChatModel';
 import { OptionCard } from '../components/OptionCard';
 import { ResultBadge } from '../components/ResultBadge';
 
+@Builder
+export function QuizPageBuilder() {
+  QuizPage()
+}
+
 @Component
 export struct QuizPage {
   @Consume navPathStack: NavPathStack;
@@ -22,9 +27,9 @@ export struct QuizPage {
   @State isStreaming: boolean = false;
 
   aboutToAppear(): void {
-    const params = this.navPathStack.getParamByName('QuizPage') as string[][];
+    const params = this.navPathStack.getParamByName('QuizPage') as Object[];
     if (params && params.length > 0) {
-      const p = params[0];
+      const p = params[0] as string[];
       this.chapterId = p[0];
       this.kpId = p[1];
       const repo = QuestionRepository.getInstance();
@@ -33,22 +38,24 @@ export struct QuizPage {
     }
   }
 
-  private get currentQuestion(): Question | undefined {
+  private getCurrentQuestion(): Question | undefined {
     return this.questions[this.currentIndex];
   }
 
-  private get isCorrect(): boolean {
-    return this.selectedOption === this.currentQuestion?.correctIndex;
+  private getIsCorrect(): boolean {
+    const q = this.getCurrentQuestion();
+    return q !== undefined && this.selectedOption === q.correctIndex;
   }
 
   private submitAnswer(): void {
-    if (this.selectedOption < 0 || !this.currentQuestion) return;
+    const q = this.getCurrentQuestion();
+    if (this.selectedOption < 0 || !q) return;
     this.showResult = true;
 
     const answer: QuizAnswer = {
-      questionId: this.currentQuestion.id,
+      questionId: q.id,
       selectedIndex: this.selectedOption,
-      isCorrect: this.isCorrect
+      isCorrect: this.getIsCorrect()
     };
     this.answers.push(answer);
   }
@@ -59,7 +66,6 @@ export struct QuizPage {
       this.selectedOption = -1;
       this.showResult = false;
     } else {
-      // All questions done - go to result page
       const chapter = QuestionRepository.getInstance().getChapter(this.chapterId);
       const result: QuizResult = {
         chapterId: this.chapterId,
@@ -76,7 +82,7 @@ export struct QuizPage {
   }
 
   private openAIChat(): void {
-    const q = this.currentQuestion;
+    const q = this.getCurrentQuestion();
     if (!q) return;
     const sessionId = `quiz_${q.id}`;
     const service = MiniMaxService.getInstance();
@@ -84,7 +90,7 @@ export struct QuizPage {
     const correctAnswer = q.options[q.correctIndex];
 
     service.initTutorSession(sessionId, this.knowledgePoint?.title ?? '',
-      q.stem, userAnswer, correctAnswer, q.explanation, this.isCorrect);
+      q.stem, userAnswer, correctAnswer, q.explanation, this.getIsCorrect());
 
     this.chatMessages = [];
     this.isStreaming = true;
@@ -148,7 +154,7 @@ export struct QuizPage {
     this.chatInput = '';
     this.isStreaming = true;
 
-    const q = this.currentQuestion;
+    const q = this.getCurrentQuestion();
     const sessionId = `quiz_${q?.id ?? 'unknown'}`;
     MiniMaxService.getInstance().sendMessageStream(sessionId, message,
       (chunk: string) => {
@@ -215,7 +221,7 @@ export struct QuizPage {
 
           // Progress bar
           Row() {
-            ForEach(this.questions, (_: Question, idx: number) => {
+            ForEach(this.questions, (q: Question, idx: number) => {
               Column()
                 .height(4)
                 .layoutWeight(1)
@@ -223,7 +229,7 @@ export struct QuizPage {
                 .borderRadius(2)
                 .backgroundColor(idx < this.currentIndex ? '#4CAF50' :
                                  idx === this.currentIndex ? '#4E6EF2' : '#E0E0E0')
-            })
+            }, (q: Question) => q.id)
           }
           .width('100%')
           .padding({ left: 20, right: 20, top: 4, bottom: 16 })
@@ -232,7 +238,7 @@ export struct QuizPage {
           Scroll() {
             Column({ space: 16 }) {
               // Question stem
-              Text(this.currentQuestion?.stem ?? '')
+              Text(this.getCurrentQuestion()?.stem ?? '')
                 .fontSize(18)
                 .fontWeight(FontWeight.Medium)
                 .fontColor('#333333')
@@ -244,27 +250,27 @@ export struct QuizPage {
                 .shadow({ radius: 4, color: 'rgba(0,0,0,0.05)', offsetX: 0, offsetY: 2 })
 
               // Options
-              ForEach(this.currentQuestion?.options ?? [], (option: string, idx: number) => {
+              ForEach(this.getCurrentQuestion()?.options ?? [], (option: string, idx: number) => {
                 OptionCard({
                   text: option,
                   index: idx,
                   isSelected: this.selectedOption === idx,
-                  isCorrect: idx === this.currentQuestion?.correctIndex,
+                  isCorrect: idx === this.getCurrentQuestion()?.correctIndex,
                   showResult: this.showResult,
                   onSelect: () => { this.selectedOption = idx; }
                 })
-              })
+              }, (option: string, idx: number) => `opt_${idx}`)
 
               // Result feedback
               if (this.showResult) {
                 Column({ space: 12 }) {
-                  ResultBadge({ isCorrect: this.isCorrect })
+                  ResultBadge({ isCorrect: this.getIsCorrect() })
 
                   // Explanation
                   Column() {
                     Text('Explanation')
                       .fontSize(14).fontWeight(FontWeight.Bold).fontColor('#4E6EF2')
-                    Text(this.currentQuestion?.explanation ?? '')
+                    Text(this.getCurrentQuestion()?.explanation ?? '')
                       .fontSize(14).fontColor('#333333').lineHeight(22).margin({ top: 8 })
                   }
                   .width('100%')
@@ -274,13 +280,13 @@ export struct QuizPage {
 
                   // Action buttons
                   Row({ space: 12 }) {
-                    Button('Ask AI 🤖')
+                    Button('Ask AI')
                       .layoutWeight(1).height(44)
                       .backgroundColor('#FF8E53').fontColor('#FFFFFF')
                       .borderRadius(12).fontSize(15)
                       .onClick(() => { this.openAIChat(); })
 
-                    Button(this.currentIndex < this.questions.length - 1 ? 'Next →' : 'Results →')
+                    Button(this.currentIndex < this.questions.length - 1 ? 'Next' : 'Results')
                       .layoutWeight(1).height(44)
                       .backgroundColor('#4E6EF2').fontColor('#FFFFFF')
                       .borderRadius(12).fontSize(15)
@@ -312,16 +318,13 @@ export struct QuizPage {
         // Chat Panel (half-modal)
         if (this.showChatPanel) {
           Column() {
-            // Dimmed background
             Column()
               .width('100%')
               .layoutWeight(1)
               .backgroundColor('rgba(0,0,0,0.4)')
               .onClick(() => { this.showChatPanel = false; })
 
-            // Chat panel
             Column() {
-              // Handle bar
               Column()
                 .width(40).height(4).borderRadius(2)
                 .backgroundColor('#CCCCCC').margin({ top: 8, bottom: 8 })
@@ -330,14 +333,13 @@ export struct QuizPage {
                 Text('Ask AI Tutor').fontSize(18).fontWeight(FontWeight.Bold)
                 Blank()
                 Button({ type: ButtonType.Circle }) {
-                  Text('✕').fontSize(16).fontColor('#666666')
+                  Text('X').fontSize(16).fontColor('#666666')
                 }
                 .width(32).height(32).backgroundColor('#F0F0F0')
                 .onClick(() => { this.showChatPanel = false; })
               }
               .width('100%').padding({ left: 20, right: 20 })
 
-              // Messages
               List() {
                 ForEach(this.chatMessages, (msg: ChatMessage) => {
                   ListItem() {
@@ -353,7 +355,7 @@ export struct QuizPage {
                         }.width('100%')
                       } else {
                         Row() {
-                          Text(msg.content + (msg.isStreaming ? '▌' : ''))
+                          Text(msg.content + (msg.isStreaming ? '|' : ''))
                             .fontSize(14).fontColor('#333333').lineHeight(22)
                             .padding(12).backgroundColor('#F5F5F5')
                             .borderRadius({ topLeft: 12, topRight: 12, bottomLeft: 4, bottomRight: 12 })
@@ -363,21 +365,20 @@ export struct QuizPage {
                       }
                     }.padding({ left: 16, right: 16, top: 4, bottom: 4 })
                   }
-                })
+                }, (msg: ChatMessage) => msg.id)
               }
               .layoutWeight(1)
               .scrollBar(BarState.Off)
 
-              // Input
               Row() {
                 TextInput({ placeholder: 'Ask a question...', text: this.chatInput })
                   .layoutWeight(1).height(40).borderRadius(20)
                   .backgroundColor('#F5F5F5').fontSize(14)
                   .onChange((value: string) => { this.chatInput = value; })
-                  .onSubmit(() => { this.sendChatMessage(); })
+                  .onSubmit((enterKey: EnterKeyType) => { this.sendChatMessage(); })
 
                 Button({ type: ButtonType.Circle }) {
-                  Text('→').fontSize(18).fontColor('#FFFFFF')
+                  Text('>').fontSize(18).fontColor('#FFFFFF')
                 }
                 .width(40).height(40)
                 .backgroundColor(this.chatInput.trim().length > 0 ? '#4E6EF2' : '#CCCCCC')

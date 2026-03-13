@@ -1,6 +1,11 @@
 import { MiniMaxService } from '../service/MiniMaxService';
 import { ChatMessage } from '../model/ChatModel';
 
+@Builder
+export function SolutionPageBuilder() {
+  SolutionPage()
+}
+
 @Component
 export struct SolutionPage {
   @Consume navPathStack: NavPathStack;
@@ -158,7 +163,7 @@ export struct SolutionPage {
                   }.width('100%')
                 } else {
                   Row() {
-                    Text(msg.content + (msg.isStreaming ? '▌' : ''))
+                    Text(msg.content + (msg.isStreaming ? '|' : ''))
                       .fontSize(15).fontColor('#333333').lineHeight(24)
                       .padding(14).backgroundColor('#FFFFFF')
                       .borderRadius({ topLeft: 16, topRight: 16, bottomLeft: 4, bottomRight: 16 })
@@ -169,7 +174,7 @@ export struct SolutionPage {
                 }
               }.padding({ left: 16, right: 16, top: 6, bottom: 6 })
             }
-          })
+          }, (msg: ChatMessage) => msg.id)
         }
         .layoutWeight(1)
         .scrollBar(BarState.Off)
@@ -181,7 +186,7 @@ export struct SolutionPage {
             .layoutWeight(1).height(42).borderRadius(21)
             .backgroundColor('#F5F5F5').fontSize(14)
             .onChange((value: string) => { this.chatInput = value; })
-            .onSubmit(() => { this.sendMessage(); })
+            .onSubmit((enterKey: EnterKeyType) => { this.sendMessage(); })
 
           Button({ type: ButtonType.Circle }) {
             Text('→').fontSize(20).fontColor('#FFFFFF')
