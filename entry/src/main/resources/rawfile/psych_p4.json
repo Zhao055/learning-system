@@ -1,0 +1,166 @@
+{
+  "chapters": [
+    {
+      "id": "ch1",
+      "title": "Applied Research Methods",
+      "titleCn": "应用研究方法",
+      "knowledgePoints": [
+        {
+          "id": "1.1",
+          "title": "Advanced Experimental Design",
+          "titleCn": "高级实验设计",
+          "image": "",
+          "questions": [
+            {
+              "id": "q1_1_01",
+              "stem": "A researcher uses a 2x2 factorial design to investigate the effects of caffeine (caffeine vs no caffeine) and sleep deprivation (deprived vs not deprived) on reaction time. What is a key advantage of this factorial design over conducting two separate single-factor experiments?",
+              "options": [
+                "It reduces the total number of participants needed by combining two experiments into one",
+                "It allows the researcher to examine interaction effects between the two independent variables",
+                "It eliminates the need for a control group because all conditions act as controls for each other",
+                "It ensures that all participants experience all conditions, reducing individual differences"
+              ],
+              "correctIndex": 1,
+              "explanation": "A key advantage of factorial designs is the ability to examine interaction effects — whether the effect of one independent variable differs depending on the level of another IV. For example, caffeine might improve reaction time only when participants are sleep deprived but have no effect when they are well-rested. Single-factor experiments cannot detect such interactions.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_1_02",
+              "stem": "A researcher investigates the effect of a new anti-anxiety intervention by comparing employees in companies that voluntarily adopted the programme with employees in companies that did not. The researcher did not assign companies to conditions. Which research design does this represent?",
+              "options": [
+                "A true experiment, because the researcher is comparing two groups on a measurable outcome",
+                "A quasi-experiment, because the IV was not directly manipulated by the researcher",
+                "A natural experiment, because the researcher had no control over any aspect of the study",
+                "A correlational study, because the researcher is measuring two variables simultaneously"
+              ],
+              "correctIndex": 1,
+              "explanation": "A quasi-experiment resembles a true experiment in that it compares groups on a dependent variable, but the researcher does not randomly assign participants to conditions. Instead, pre-existing groups are used (companies that already chose to adopt the programme vs those that did not). This limits causal conclusions because pre-existing differences between groups (confounding variables) may explain outcome differences.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_1_03",
+              "stem": "A psychologist conducts a cross-cultural study comparing conformity levels in Japanese and American university students. Which of the following is the most significant methodological challenge in cross-cultural research?",
+              "options": [
+                "Ensuring that the sample sizes are equal across both cultural groups",
+                "Achieving measurement equivalence — ensuring that constructs and measures have equivalent meaning in both cultures",
+                "Obtaining ethical approval from two separate institutional review boards",
+                "Translating questionnaires from English to Japanese without losing nuanced meaning"
+              ],
+              "correctIndex": 1,
+              "explanation": "Measurement equivalence (also called construct equivalence) is the most fundamental challenge in cross-cultural research. It refers to whether a psychological construct (e.g., 'conformity') has the same meaning in both cultures and whether the measurement instrument captures the same construct in both contexts. Without establishing equivalence, observed differences may reflect measurement artefacts rather than genuine cultural differences. Translation issues are a component of this broader challenge.",
+              "difficulty": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch2",
+      "title": "Advanced Research Design",
+      "titleCn": "高级研究设计",
+      "knowledgePoints": [
+        {
+          "id": "2.1",
+          "title": "Sampling & Validity",
+          "titleCn": "抽样与效度",
+          "image": "",
+          "questions": [
+            {
+              "id": "q2_1_01",
+              "stem": "A researcher studying social media use and self-esteem recruits 200 participants by posting an advertisement on social media platforms. Which sampling method is being used and what is its main limitation?",
+              "options": [
+                "Stratified sampling; it may not include participants from all social media platforms equally",
+                "Volunteer (self-selected) sampling; the sample may be biased as only certain types of people respond to advertisements",
+                "Opportunity sampling; the sample is limited to those who happen to be available at the time",
+                "Random sampling; participants may not be representative of the general population"
+              ],
+              "correctIndex": 1,
+              "explanation": "This is volunteer (self-selected) sampling — participants choose to take part by responding to an advertisement. The main limitation is that volunteers may be systematically different from non-volunteers (e.g., more interested in social media, more willing to share their experiences), creating a biased sample that may not be representative of the population. This limits the generalisability of findings.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_1_02",
+              "stem": "A researcher conducts an experiment in a highly controlled laboratory setting with precise manipulation of variables. The study achieves high internal validity. However, a critic argues that the findings lack ecological validity. Which of the following best explains this tension?",
+              "options": [
+                "High internal validity always produces high ecological validity, so the critic's argument is incorrect",
+                "The controls that increase internal validity (reducing confounds) may create an artificial environment that does not reflect real-world behaviour",
+                "Ecological validity is only relevant for observational studies, not experiments",
+                "Internal validity refers to the consistency of measurements, not the control of variables"
+              ],
+              "correctIndex": 1,
+              "explanation": "There is a fundamental tension between internal and ecological validity in experimental research. The strict controls needed to establish internal validity (ensuring that only the IV affects the DV) often produce artificial conditions that do not reflect how people behave in natural environments. This reduces ecological validity — the extent to which findings can be generalised to real-world settings. Researchers must balance these competing demands.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_1_03",
+              "stem": "In a study investigating the effects of a new revision technique on exam performance, participants who know they are being observed change their revision habits to try to please the researcher. This is an example of which methodological issue?",
+              "options": [
+                "Investigator bias — the researcher unconsciously influences participants' behaviour",
+                "Demand characteristics — participants alter their behaviour in response to perceived expectations of the study",
+                "Social desirability bias — participants alter their responses to appear more socially acceptable",
+                "Experimenter expectancy effect — the researcher's expectations influence how they measure the DV"
+              ],
+              "correctIndex": 1,
+              "explanation": "Demand characteristics occur when participants pick up on cues about what the researcher expects (the 'demand' of the situation) and change their behaviour accordingly, either to support the hypothesis ('good subject' effect) or to disrupt it. This threatens internal validity because the DV changes are caused by demand characteristics rather than the IV. Orne (1962) highlighted demand characteristics as a major threat to experimental validity.",
+              "difficulty": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch3",
+      "title": "Issues & Debates",
+      "titleCn": "议题与辩论",
+      "knowledgePoints": [
+        {
+          "id": "3.1",
+          "title": "Nature vs Nurture",
+          "titleCn": "先天vs后天",
+          "image": "",
+          "questions": [
+            {
+              "id": "q3_1_01",
+              "stem": "Twin studies are frequently used in the nature-nurture debate. Bouchard et al. (1990) studied monozygotic (MZ) twins raised apart (separated at birth). What does a high concordance rate for a psychological trait in MZ twins raised apart most strongly suggest?",
+              "options": [
+                "Environmental factors are primarily responsible for the trait, since the twins were raised in different environments",
+                "Genetic factors play a significant role in the trait, since MZ twins share 100% of their DNA despite different environments",
+                "Neither genetic nor environmental factors are responsible, as the study lacks a control group",
+                "The trait is equally determined by genetic and environmental factors in all cases"
+              ],
+              "correctIndex": 1,
+              "explanation": "Monozygotic (identical) twins share 100% of their genetic material. If MZ twins raised in different environments (and thus with different environmental experiences) show high concordance rates for a psychological trait, this provides strong evidence for a genetic contribution to that trait, since the shared factor is their genetics rather than their environment.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_1_02",
+              "stem": "Biological reductionism and environmental reductionism both represent extreme positions in the nature-nurture debate. Which of the following statements best illustrates an interactionist position?",
+              "options": [
+                "Schizophrenia is caused entirely by genetic mutations affecting dopamine regulation in the brain",
+                "Intelligence is a product of genetic predispositions that are expressed differently depending on environmental opportunities and experiences",
+                "Aggression is learned exclusively through reinforcement and modelling of aggressive role models",
+                "Personality traits are determined solely by early childhood experiences and parenting style"
+              ],
+              "correctIndex": 1,
+              "explanation": "An interactionist position holds that both nature (genetic predispositions) and nurture (environmental factors) interact to produce psychological characteristics. The diathesis-stress model is a common interactionist framework in psychopathology. The statement that intelligence reflects genetic predispositions expressed through environmental opportunities captures this two-way interaction, neither dismissing genetics nor ignoring environment.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_1_03",
+              "stem": "When evaluating psychological research, it is important to consider ethical issues alongside scientific validity. Which of the following ethical concerns is most relevant when conducting research on genetic influences on behaviour?",
+              "options": [
+                "Ensuring that participants in twin studies are debriefed about the purpose of the research",
+                "The risk that findings could be misused to justify discrimination, determinism, or eugenics based on genetic differences",
+                "Maintaining confidentiality of participants' data in accordance with data protection legislation",
+                "Ensuring that research is conducted by qualified psychologists with appropriate training"
+              ],
+              "correctIndex": 1,
+              "explanation": "Genetic research in psychology raises particular ethical concerns about the potential misuse of findings. Historical examples, including the eugenics movement, demonstrate how research suggesting genetic bases for intelligence or behaviour has been misused to justify discrimination and harmful social policies. Researchers have a responsibility to present findings cautiously, acknowledge limitations, and consider the societal implications of their research — including its potential for misinterpretation and misuse.",
+              "difficulty": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

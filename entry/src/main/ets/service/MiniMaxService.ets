@@ -6,28 +6,30 @@ import { util } from '@kit.ArkTS';
 const API_URL = 'https://api.minimax.io/v1/chat/completions';
 const MODEL_NAME = 'MiniMax-M2.5';
 
-const MATH_TUTOR_SYSTEM_PROMPT = `You are an expert A-Level Mathematics (Cambridge 9709 Paper 1) tutor.
-Your role is to help students understand mathematical concepts clearly.
+const TUTOR_SYSTEM_PROMPT = `You are an expert Cambridge International A-Level tutor.
+Your role is to help students understand concepts clearly across Mathematics (9709), Biology (9700), and Psychology (9990).
 
 Guidelines:
 - Explain step by step, showing all working
-- Use proper mathematical notation (write fractions as a/b, powers as x^n, square root as sqrt())
+- For math: use proper notation (fractions as a/b, powers as x^n, square root as sqrt())
+- For biology: use correct scientific terminology and relate to biological processes
+- For psychology: reference key studies, theories, and evaluation points
 - Be encouraging but accurate
 - If a student got a question wrong, explain WHY the correct answer is right and WHERE they went wrong
 - Keep explanations concise but complete
 - Respond in English, but you may include brief Chinese translations of key terms in parentheses
 - Always relate back to the A-Level syllabus topic being studied`;
 
-const PHOTO_SOLVE_SYSTEM_PROMPT = `You are an expert A-Level Mathematics (Cambridge 9709 Paper 1) problem solver.
-A student has taken a photo of a math problem and the text has been extracted via OCR.
+const PHOTO_SOLVE_SYSTEM_PROMPT = `You are an expert Cambridge International A-Level problem solver.
+A student has taken a photo of a problem and the text has been extracted via OCR.
 
 Guidelines:
 - Read the problem carefully (OCR may have minor errors, use context to interpret)
 - Show complete, step-by-step solution with all working
-- State the method/technique being used (e.g., "Using completing the square...", "Applying chain rule...")
+- State the method/technique being used
 - Box or clearly state the final answer
 - If the problem has multiple parts, solve each part separately
-- Use proper mathematical notation
+- Use proper notation
 - After solving, briefly explain the key concept tested`;
 
 export class MiniMaxService {
@@ -80,13 +82,15 @@ export class MiniMaxService {
   }
 
   initTutorSession(sessionId: string, knowledgePointTitle: string, questionStem: string,
-    userAnswer: string, correctAnswer: string, explanation: string, isCorrect: boolean): void {
+    userAnswer: string, correctAnswer: string, explanation: string, isCorrect: boolean,
+    paperName: string = ''): void {
+    const paperContext = paperName ? ` (${paperName})` : '';
     const context = isCorrect
-      ? `The student correctly answered a question about "${knowledgePointTitle}". Question: "${questionStem}". They chose "${userAnswer}" which is correct. Brief explanation: ${explanation}. Praise them and offer to explain the concept further if they want.`
-      : `The student incorrectly answered a question about "${knowledgePointTitle}". Question: "${questionStem}". They chose "${userAnswer}" but the correct answer is "${correctAnswer}". Explanation: ${explanation}. Help them understand why they got it wrong and teach the concept clearly.`;
+      ? `The student correctly answered a question about "${knowledgePointTitle}"${paperContext}. Question: "${questionStem}". They chose "${userAnswer}" which is correct. Brief explanation: ${explanation}. Praise them and offer to explain the concept further if they want.`
+      : `The student incorrectly answered a question about "${knowledgePointTitle}"${paperContext}. Question: "${questionStem}". They chose "${userAnswer}" but the correct answer is "${correctAnswer}". Explanation: ${explanation}. Help them understand why they got it wrong and teach the concept clearly.`;
 
     this.chatHistory.set(sessionId, [
-      { role: 'system', content: MATH_TUTOR_SYSTEM_PROMPT },
+      { role: 'system', content: TUTOR_SYSTEM_PROMPT },
       { role: 'user', content: context }
     ]);
   }
@@ -94,7 +98,7 @@ export class MiniMaxService {
   initPhotoSolveSession(sessionId: string, ocrText: string): void {
     this.chatHistory.set(sessionId, [
       { role: 'system', content: PHOTO_SOLVE_SYSTEM_PROMPT },
-      { role: 'user', content: `Here is the math problem extracted from the photo:\n\n${ocrText}\n\nPlease solve this step by step.` }
+      { role: 'user', content: `Here is the problem extracted from the photo:\n\n${ocrText}\n\nPlease solve this step by step.` }
     ]);
   }
 
@@ -107,7 +111,7 @@ export class MiniMaxService {
 
     let history = this.chatHistory.get(sessionId);
     if (!history) {
-      history = [{ role: 'system', content: MATH_TUTOR_SYSTEM_PROMPT }];
+      history = [{ role: 'system', content: TUTOR_SYSTEM_PROMPT }];
       this.chatHistory.set(sessionId, history);
     }
 
@@ -212,8 +216,8 @@ export class MiniMaxService {
     this.chatHistory.delete(sessionId);
   }
 
-  getMathTutorSystemPrompt(): string {
-    return MATH_TUTOR_SYSTEM_PROMPT;
+  getTutorSystemPrompt(): string {
+    return TUTOR_SYSTEM_PROMPT;
   }
 
   getPhotoSolveSystemPrompt(): string {

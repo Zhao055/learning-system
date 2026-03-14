@@ -5,10 +5,9 @@ import { HomePage } from './HomePage';
 @Component
 struct Index {
   @Provide navPathStack: NavPathStack = new NavPathStack();
-  private repo: QuestionRepository = QuestionRepository.getInstance();
 
   aboutToAppear(): void {
-    this.repo.loadQuestionBank(getContext(this));
+    QuestionRepository.getInstance().loadPaper(getContext(this), 'math_p1.json', 'math_p1');
   }
 
   build() {

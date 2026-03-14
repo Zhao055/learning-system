@@ -1,0 +1,166 @@
+{
+  "chapters": [
+    {
+      "id": "ch1",
+      "title": "Research Methods",
+      "titleCn": "研究方法",
+      "knowledgePoints": [
+        {
+          "id": "1.1",
+          "title": "Types of Research",
+          "titleCn": "研究类型",
+          "image": "",
+          "questions": [
+            {
+              "id": "q1_1_01",
+              "stem": "A psychologist manipulates the amount of sleep participants get (4 hours vs 8 hours) and measures their performance on a memory test. Which research method is being used, and what is the independent variable (IV)?",
+              "options": [
+                "Correlational study; the IV is memory test performance",
+                "Laboratory experiment; the IV is the amount of sleep",
+                "Natural experiment; the IV is memory test performance",
+                "Observational study; the IV is the amount of sleep"
+              ],
+              "correctIndex": 1,
+              "explanation": "This is a laboratory experiment because the researcher directly manipulates a variable (amount of sleep) in a controlled environment. The independent variable (IV) is the variable that is manipulated by the researcher — in this case, the amount of sleep (4 hours vs 8 hours). The dependent variable (DV) is memory test performance.",
+              "difficulty": 1
+            },
+            {
+              "id": "q1_1_02",
+              "stem": "A researcher observes children's playground behaviour without their knowledge, recording instances of aggression every 5 minutes. Which observation technique is being used?",
+              "options": [
+                "Participant observation with event sampling",
+                "Non-participant observation with time sampling",
+                "Structured observation with event sampling",
+                "Covert participant observation with interval sampling"
+              ],
+              "correctIndex": 1,
+              "explanation": "This is non-participant observation (the researcher does not join the group being observed) and covert (without participants' knowledge). The researcher uses time sampling (recording behaviour at fixed time intervals — every 5 minutes) rather than event sampling (recording every instance of a specific behaviour).",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_1_03",
+              "stem": "Which of the following is a key advantage of case studies as a research method in psychology?",
+              "options": [
+                "They allow researchers to establish cause-and-effect relationships between variables",
+                "They provide rich, detailed, in-depth information about a unique individual or group",
+                "They can be easily replicated to test the reliability of findings",
+                "They produce quantitative data that can be statistically analysed"
+              ],
+              "correctIndex": 1,
+              "explanation": "A key advantage of case studies is that they provide rich, detailed, qualitative data about a specific individual or group that cannot be obtained through other methods. Classic examples include Freud's case studies and HM (the amnesic patient studied by Milner et al.). However, they lack generalisability due to the unique nature of the case.",
+              "difficulty": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch2",
+      "title": "Data Analysis",
+      "titleCn": "数据分析",
+      "knowledgePoints": [
+        {
+          "id": "2.1",
+          "title": "Descriptive Statistics",
+          "titleCn": "描述性统计",
+          "image": "",
+          "questions": [
+            {
+              "id": "q2_1_01",
+              "stem": "A researcher collects the following reaction times (in milliseconds) from 7 participants: 210, 195, 220, 198, 205, 215, 350. Which measure of central tendency would be most appropriate to use, and why?",
+              "options": [
+                "The mean, because it uses all values in the data set and is the most sensitive measure",
+                "The median, because it is not distorted by the extreme score of 350",
+                "The mode, because it is the only measure appropriate for continuous data",
+                "The mean, because it is always the most accurate measure of central tendency"
+              ],
+              "correctIndex": 1,
+              "explanation": "The median (middle value when data is ordered) is most appropriate here because the data set contains an extreme outlier (350 ms). The mean would be inflated by this outlier, giving a misleading impression of the typical score. The median is resistant to the influence of outliers and provides a more representative measure of central tendency for skewed data.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_1_02",
+              "stem": "Two classes of students take the same psychology test. Class A has a mean score of 65 with a standard deviation of 3. Class B has a mean score of 65 with a standard deviation of 15. What does this tell us about the two classes?",
+              "options": [
+                "Class A performed better overall, as a higher standard deviation indicates poorer performance",
+                "The scores in Class A are more tightly clustered around the mean, showing less variability than Class B",
+                "Class B performed better overall, as a higher standard deviation indicates greater understanding",
+                "Both classes show identical distributions because their means are the same"
+              ],
+              "correctIndex": 1,
+              "explanation": "Standard deviation measures the spread (variability) of scores around the mean. A smaller standard deviation (Class A: SD = 3) indicates that scores are tightly clustered around the mean, suggesting more consistent performance. A larger standard deviation (Class B: SD = 15) indicates greater spread, meaning scores vary more widely from the mean.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_1_03",
+              "stem": "A researcher wishes to display the frequency distribution of continuous data showing the number of hours of sleep participants reported. Which type of graph is most appropriate?",
+              "options": [
+                "A bar chart, because it allows comparison between discrete categories",
+                "A histogram, because the data is continuous and bars should touch to show this",
+                "A pie chart, because it shows proportions of each sleep category",
+                "A scattergraph, because it shows the relationship between two variables"
+              ],
+              "correctIndex": 1,
+              "explanation": "A histogram is used to display the frequency distribution of continuous data. Unlike bar charts (used for discrete/categorical data), the bars in a histogram touch each other to reflect the continuous nature of the data. The x-axis represents class intervals of the continuous variable (hours of sleep) and the y-axis represents frequency.",
+              "difficulty": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch3",
+      "title": "Research Ethics",
+      "titleCn": "研究伦理",
+      "knowledgePoints": [
+        {
+          "id": "3.1",
+          "title": "Ethical Guidelines",
+          "titleCn": "伦理准则",
+          "image": "",
+          "questions": [
+            {
+              "id": "q3_1_01",
+              "stem": "A researcher studying conformity tells participants they are taking part in a 'vision test' rather than a study on social pressure. After the study, the researcher explains the true nature of the research and checks for any distress. Which ethical procedures are illustrated here?",
+              "options": [
+                "Informed consent and right to withdraw",
+                "Deception followed by debriefing",
+                "Confidentiality followed by anonymity",
+                "Deception followed by right to withdraw"
+              ],
+              "correctIndex": 1,
+              "explanation": "The researcher uses deception (telling participants it is a 'vision test' to prevent demand characteristics) and then conducts a debriefing (explaining the true purpose and checking for distress afterwards). According to BPS guidelines, deception may be justified if the research cannot be conducted otherwise, but must be followed by a full debriefing.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_1_02",
+              "stem": "According to the British Psychological Society (BPS) Code of Ethics and Conduct, which of the following best describes the principle of informed consent?",
+              "options": [
+                "Participants must be told every detail of the study, including the specific hypotheses, before agreeing to take part",
+                "Participants should be given sufficient information about the nature and purpose of the research to make an informed decision about participation",
+                "Participants automatically consent to any procedures by agreeing to attend the research session",
+                "Consent is only required from participants who are considered vulnerable or at risk"
+              ],
+              "correctIndex": 1,
+              "explanation": "Informed consent requires that participants are given adequate information about the general nature and purpose of the research, what participation involves, and their right to withdraw, so they can make a free and informed decision. Note that full disclosure is not always required (e.g., when mild deception is used), but the general nature must be communicated.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_1_03",
+              "stem": "Milgram's obedience studies have been criticised on ethical grounds. Which of the following represents the most serious ethical concern raised about this research?",
+              "options": [
+                "The study lacked ecological validity because it was conducted in a laboratory setting",
+                "Participants experienced significant psychological distress and were not fully protected from harm",
+                "The sample was not representative because it only included male participants",
+                "The study used deception, which is never acceptable in psychological research"
+              ],
+              "correctIndex": 1,
+              "explanation": "The most serious ethical concern about Milgram's research is that participants experienced significant psychological distress (trembling, sweating, extreme stress) during the study. BPS guidelines state that researchers have a duty to protect participants from psychological and physical harm. While deception was also used, the primary concern is the psychological harm caused during the procedure.",
+              "difficulty": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

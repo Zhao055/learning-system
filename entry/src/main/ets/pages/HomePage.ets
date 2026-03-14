@@ -31,12 +31,12 @@ export struct HomePage {
             Text(this.greeting)
               .fontSize(16)
               .fontColor('#666666')
-            Text('A-Level Math P1')
+            Text('A-Level Helper')
               .fontSize(28)
               .fontWeight(FontWeight.Bold)
               .fontColor('#333333')
               .margin({ top: 4 })
-            Text('Cambridge 9709')
+            Text('Cambridge International')
               .fontSize(14)
               .fontColor('#999999')
               .margin({ top: 2 })
@@ -81,27 +81,27 @@ export struct HomePage {
             }
             .width('100%')
 
-            Text('Browse 37 knowledge points with visual cards, test yourself with 185 practice questions, and get AI-powered explanations.')
+            Text('Browse knowledge points with visual cards, test yourself with practice questions, and get AI-powered explanations across 3 subjects.')
               .fontSize(14)
               .fontColor('rgba(255,255,255,0.9)')
               .margin({ top: 16 })
               .lineHeight(22)
 
             Row() {
-              Text('8 Chapters')
+              Text('Math 9709')
                 .fontSize(12)
                 .fontColor('rgba(255,255,255,0.7)')
                 .padding({ left: 12, right: 12, top: 6, bottom: 6 })
                 .backgroundColor('rgba(255,255,255,0.2)')
                 .borderRadius(12)
-              Text('37 Topics')
+              Text('Bio 9700')
                 .fontSize(12)
                 .fontColor('rgba(255,255,255,0.7)')
                 .padding({ left: 12, right: 12, top: 6, bottom: 6 })
                 .backgroundColor('rgba(255,255,255,0.2)')
                 .borderRadius(12)
                 .margin({ left: 8 })
-              Text('185 Questions')
+              Text('Psych 9990')
                 .fontSize(12)
                 .fontColor('rgba(255,255,255,0.7)')
                 .padding({ left: 12, right: 12, top: 6, bottom: 6 })
@@ -122,7 +122,7 @@ export struct HomePage {
               .borderRadius(12)
               .margin({ top: 20 })
               .onClick(() => {
-                this.navPathStack.pushPathByName('ChapterListPage', null);
+                this.navPathStack.pushPathByName('SubjectSelectionPage', null);
               })
           }
           .width('100%')
@@ -153,7 +153,7 @@ export struct HomePage {
             }
             .width('100%')
 
-            Text('Take a photo of any A-Level math problem. AI will recognize the text and provide step-by-step solutions.')
+            Text('Take a photo of any A-Level problem. AI will recognize the text and provide step-by-step solutions.')
               .fontSize(14)
               .fontColor('rgba(255,255,255,0.9)')
               .margin({ top: 16 })

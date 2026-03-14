@@ -1,5 +1,6 @@
 import { QuestionRepository } from '../data/QuestionRepository';
 import { Question, KnowledgePoint, QuizAnswer, QuizResult } from '../model/ChapterModel';
+import { getPaper } from '../data/SubjectData';
 import { MiniMaxService } from '../service/MiniMaxService';
 import { ChatMessage } from '../model/ChatModel';
 import { OptionCard } from '../components/OptionCard';
@@ -13,6 +14,7 @@ export function QuizPageBuilder() {
 @Component
 export struct QuizPage {
   @Consume navPathStack: NavPathStack;
+  @State paperId: string = '';
   @State chapterId: string = '';
   @State kpId: string = '';
   @State knowledgePoint: KnowledgePoint | undefined = undefined;
@@ -30,11 +32,12 @@ export struct QuizPage {
     const params = this.navPathStack.getParamByName('QuizPage') as Object[];
     if (params && params.length > 0) {
       const p = params[0] as string[];
-      this.chapterId = p[0];
-      this.kpId = p[1];
+      this.paperId = p[0];
+      this.chapterId = p[1];
+      this.kpId = p[2];
       const repo = QuestionRepository.getInstance();
-      this.knowledgePoint = repo.getKnowledgePoint(this.chapterId, this.kpId);
-      this.questions = repo.getQuestions(this.chapterId, this.kpId);
+      this.knowledgePoint = repo.getKnowledgePoint(this.paperId, this.chapterId, this.kpId);
+      this.questions = repo.getQuestions(this.paperId, this.chapterId, this.kpId);
     }
   }
 
@@ -66,8 +69,11 @@ export struct QuizPage {
       this.selectedOption = -1;
       this.showResult = false;
     } else {
-      const chapter = QuestionRepository.getInstance().getChapter(this.chapterId);
+      const chapter = QuestionRepository.getInstance().getChapter(this.paperId, this.chapterId);
+      const paper = getPaper(this.paperId);
       const result: QuizResult = {
+        paperId: this.paperId,
+        paperName: paper?.name ?? '',
         chapterId: this.chapterId,
         chapterTitle: chapter?.title ?? '',
         knowledgePointId: this.kpId,
@@ -88,9 +94,11 @@ export struct QuizPage {
     const service = MiniMaxService.getInstance();
     const userAnswer = q.options[this.selectedOption];
     const correctAnswer = q.options[q.correctIndex];
+    const paper = getPaper(this.paperId);
 
     service.initTutorSession(sessionId, this.knowledgePoint?.title ?? '',
-      q.stem, userAnswer, correctAnswer, q.explanation, this.getIsCorrect());
+      q.stem, userAnswer, correctAnswer, q.explanation, this.getIsCorrect(),
+      paper?.name ?? '');
 
     this.chatMessages = [];
     this.isStreaming = true;

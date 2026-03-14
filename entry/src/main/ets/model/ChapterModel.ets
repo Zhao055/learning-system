@@ -1,3 +1,26 @@
+export interface SubjectInfo {
+  id: string;
+  name: string;
+  nameCn: string;
+  code: string;
+  icon: string;
+  color: string;
+  gradientColors: [string, string];
+  papers: PaperInfo[];
+}
+
+export interface PaperInfo {
+  id: string;
+  name: string;
+  nameCn: string;
+  subjectId: string;
+  jsonFile: string;
+  chapterCount: number;
+  kpCount: number;
+  questionCount: number;
+  available: boolean;
+}
+
 export interface Question {
   id: string;
   stem: string;
@@ -33,6 +56,8 @@ export interface QuizAnswer {
 }
 
 export interface QuizResult {
+  paperId: string;
+  paperName: string;
   chapterId: string;
   chapterTitle: string;
   knowledgePointId: string;

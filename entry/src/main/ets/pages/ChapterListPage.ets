@@ -1,5 +1,6 @@
 import { QuestionRepository } from '../data/QuestionRepository';
-import { Chapter } from '../model/ChapterModel';
+import { Chapter, PaperInfo } from '../model/ChapterModel';
+import { getPaper } from '../data/SubjectData';
 
 @Builder
 export function ChapterListPageBuilder() {
@@ -10,11 +11,19 @@ export function ChapterListPageBuilder() {
 export struct ChapterListPage {
   @Consume navPathStack: NavPathStack;
   @State chapters: Chapter[] = [];
+  @State paperId: string = '';
+  @State paper: PaperInfo | undefined = undefined;
 
-  private chapterIcons: string[] = ['📐', '🔗', '📍', '🔵', '📊', '📈', '🔺', '∫'];
+  private chapterIcons: string[] = ['📐', '🔗', '📍', '🔵', '📊', '📈', '🔺', '∫', '🧮', '📏', '🔢'];
 
   aboutToAppear(): void {
-    this.chapters = QuestionRepository.getInstance().getChapters();
+    const params = this.navPathStack.getParamByName('ChapterListPage') as Object[];
+    if (params && params.length > 0) {
+      const p = params[0] as string[];
+      this.paperId = p[1];
+      this.paper = getPaper(this.paperId);
+      this.chapters = QuestionRepository.getInstance().getChapters(this.paperId);
+    }
   }
 
   build() {
@@ -35,12 +44,20 @@ export struct ChapterListPage {
             this.navPathStack.pop();
           })
 
-          Text('Chapters')
-            .fontSize(22)
-            .fontWeight(FontWeight.Bold)
-            .margin({ left: 16 })
-
-          Blank()
+          Column() {
+            Text(this.paper?.name ?? 'Chapters')
+              .fontSize(18)
+              .fontWeight(FontWeight.Bold)
+              .maxLines(1)
+              .textOverflow({ overflow: TextOverflow.Ellipsis })
+            Text(this.paper?.nameCn ?? '')
+              .fontSize(12)
+              .fontColor('#999999')
+              .margin({ top: 2 })
+          }
+          .alignItems(HorizontalAlign.Start)
+          .margin({ left: 16 })
+          .layoutWeight(1)
 
           Text(`${this.chapters.length} chapters`)
             .fontSize(14)
@@ -86,7 +103,8 @@ export struct ChapterListPage {
               .borderRadius(16)
               .shadow({ radius: 4, color: 'rgba(0,0,0,0.05)', offsetX: 0, offsetY: 2 })
               .onClick(() => {
-                this.navPathStack.pushPathByName('KnowledgeCardPage', chapter.id);
+                const navParams: string[] = [this.paperId, chapter.id];
+                this.navPathStack.pushPathByName('KnowledgeCardPage', navParams);
               })
             }
           }, (chapter: Chapter) => chapter.id)

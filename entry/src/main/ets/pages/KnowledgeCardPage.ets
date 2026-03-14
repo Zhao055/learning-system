@@ -13,12 +13,15 @@ export struct KnowledgeCardPage {
   @State selectedKP: KnowledgePoint | undefined = undefined;
   @State showImagePreview: boolean = false;
   @State imageScale: number = 1;
+  private paperId: string = '';
 
   aboutToAppear(): void {
-    const params = this.navPathStack.getParamByName('KnowledgeCardPage') as string[];
+    const params = this.navPathStack.getParamByName('KnowledgeCardPage') as Object[];
     if (params && params.length > 0) {
-      const chapterId = params[0];
-      this.chapter = QuestionRepository.getInstance().getChapter(chapterId);
+      const p = params[0] as string[];
+      this.paperId = p[0];
+      const chapterId = p[1];
+      this.chapter = QuestionRepository.getInstance().getChapter(this.paperId, chapterId);
     }
   }
 
@@ -110,7 +113,7 @@ export struct KnowledgeCardPage {
                         .borderRadius(20)
                         .height(36)
                         .onClick(() => {
-                          const params: string[] = [this.chapter?.id ?? '', kp.id];
+                          const params: string[] = [this.paperId, this.chapter?.id ?? '', kp.id];
                           this.navPathStack.pushPathByName('QuizPage', params);
                         })
                     }

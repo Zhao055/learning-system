@@ -3,7 +3,7 @@ import { util } from '@kit.ArkTS';
 
 export class QuestionRepository {
   private static instance: QuestionRepository;
-  private questionBank: QuestionBank | null = null;
+  private papers: Map<string, QuestionBank> = new Map();
 
   private constructor() {}
 
@@ -14,34 +14,38 @@ export class QuestionRepository {
     return QuestionRepository.instance;
   }
 
-  async loadQuestionBank(context: Context): Promise<void> {
-    if (this.questionBank) return;
+  async loadPaper(context: Context, jsonFile: string, paperId: string): Promise<void> {
+    if (this.papers.has(paperId)) return;
     try {
-      const rawFile = context.resourceManager.getRawFileContentSync('question_bank.json');
+      const rawFile = context.resourceManager.getRawFileContentSync(jsonFile);
       const textDecoder = new util.TextDecoder('utf-8');
       const jsonStr = textDecoder.decodeToString(rawFile);
       const parsed: QuestionBank = JSON.parse(jsonStr);
-      this.questionBank = parsed;
+      this.papers.set(paperId, parsed);
     } catch (e) {
-      console.error('Failed to load question bank: ' + JSON.stringify(e));
+      console.error(`Failed to load paper ${paperId}: ` + JSON.stringify(e));
     }
   }
 
-  getChapters(): Chapter[] {
-    return this.questionBank?.chapters ?? [];
+  isPaperLoaded(paperId: string): boolean {
+    return this.papers.has(paperId);
   }
 
-  getChapter(chapterId: string): Chapter | undefined {
-    return this.questionBank?.chapters.find(c => c.id === chapterId);
+  getChapters(paperId: string): Chapter[] {
+    return this.papers.get(paperId)?.chapters ?? [];
   }
 
-  getKnowledgePoint(chapterId: string, kpId: string): KnowledgePoint | undefined {
-    const chapter = this.getChapter(chapterId);
+  getChapter(paperId: string, chapterId: string): Chapter | undefined {
+    return this.papers.get(paperId)?.chapters.find(c => c.id === chapterId);
+  }
+
+  getKnowledgePoint(paperId: string, chapterId: string, kpId: string): KnowledgePoint | undefined {
+    const chapter = this.getChapter(paperId, chapterId);
     return chapter?.knowledgePoints.find(kp => kp.id === kpId);
   }
 
-  getQuestions(chapterId: string, kpId: string): Question[] {
-    const kp = this.getKnowledgePoint(chapterId, kpId);
+  getQuestions(paperId: string, chapterId: string, kpId: string): Question[] {
+    const kp = this.getKnowledgePoint(paperId, chapterId, kpId);
     return kp?.questions ?? [];
   }
 }

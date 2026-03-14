@@ -1,0 +1,220 @@
+{
+  "chapters": [
+    {
+      "id": "ch1",
+      "title": "Biological Approach",
+      "titleCn": "生物学方法",
+      "knowledgePoints": [
+        {
+          "id": "1.1",
+          "title": "Core Studies: Biological",
+          "titleCn": "核心研究：生物学",
+          "image": "",
+          "questions": [
+            {
+              "id": "q1_1_01",
+              "stem": "Sperry's (1968) split-brain research investigated the functions of the two hemispheres of the brain. Which of the following best describes a key finding from this study?",
+              "options": [
+                "The left hemisphere is specialised for spatial tasks and the right hemisphere for language",
+                "The left hemisphere is specialised for language and the right hemisphere for spatial tasks",
+                "Both hemispheres process all types of information equally",
+                "The corpus callosum is responsible for language production in both hemispheres"
+              ],
+              "correctIndex": 1,
+              "explanation": "Sperry's split-brain research demonstrated that the left hemisphere is specialised for language (verbal processing) while the right hemisphere is specialised for spatial tasks and non-verbal processing. This is a classic demonstration of brain lateralisation.",
+              "difficulty": 1
+            },
+            {
+              "id": "q1_1_02",
+              "stem": "Raine et al. (1997) used PET scans to compare the brains of murderers pleading not guilty by reason of insanity (NGRI) with a control group. Which brain region showed reduced activity in the NGRI group, and what function is it associated with?",
+              "options": [
+                "The amygdala; reduced fear processing and emotional regulation",
+                "The prefrontal cortex; reduced impulse control and decision-making",
+                "The hippocampus; reduced memory formation and spatial navigation",
+                "The cerebellum; reduced motor coordination and balance"
+              ],
+              "correctIndex": 1,
+              "explanation": "Raine et al. found reduced glucose metabolism (activity) in the prefrontal cortex of NGRI murderers. The prefrontal cortex is associated with impulse control, planning, and decision-making. Reduced activity in this region may be linked to impulsive violent behaviour.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_1_03",
+              "stem": "A researcher argues that depression is entirely caused by low levels of serotonin in the brain. This explanation is an example of which of the following?",
+              "options": [
+                "Interactionist reductionism, because it considers both biological and environmental factors",
+                "Biological reductionism, because it reduces a complex behaviour to a single biological cause",
+                "Environmental determinism, because it implies behaviour is determined by neurotransmitter levels alone",
+                "Holism, because it explains depression at the level of brain chemistry"
+              ],
+              "correctIndex": 1,
+              "explanation": "Biological reductionism involves explaining complex psychological phenomena (such as depression) by reducing them to simpler biological processes (such as neurotransmitter levels). This ignores psychological, social, and environmental factors that may contribute to depression.",
+              "difficulty": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch2",
+      "title": "Cognitive Approach",
+      "titleCn": "认知方法",
+      "knowledgePoints": [
+        {
+          "id": "2.1",
+          "title": "Core Studies: Cognitive",
+          "titleCn": "核心研究：认知",
+          "image": "",
+          "questions": [
+            {
+              "id": "q2_1_01",
+              "stem": "According to Atkinson and Shiffrin's (1968) Multi-Store Model of Memory, which of the following correctly describes the capacity and duration of short-term memory (STM)?",
+              "options": [
+                "Unlimited capacity and duration of up to 30 seconds without rehearsal",
+                "7 (+/- 2) items capacity and duration of up to 30 seconds without rehearsal",
+                "7 (+/- 2) items capacity and unlimited duration",
+                "Limited capacity and unlimited duration with maintenance rehearsal"
+              ],
+              "correctIndex": 1,
+              "explanation": "According to the Multi-Store Model, STM has a limited capacity of approximately 7 (+/- 2) items (Miller, 1956) and a duration of up to approximately 30 seconds without rehearsal. Information is lost through decay or displacement if not rehearsed into long-term memory.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_1_02",
+              "stem": "Bartlett's (1932) study 'War of the Ghosts' demonstrated that memory is reconstructive. Which concept best explains why participants changed details of the Native American story when recalling it?",
+              "options": [
+                "Decay theory — the memory trace fades over time without rehearsal",
+                "Schema theory — prior knowledge and expectations distort memory recall",
+                "Interference theory — other memories disrupt the original memory trace",
+                "Encoding failure — the story was not properly encoded into long-term memory"
+              ],
+              "correctIndex": 1,
+              "explanation": "Bartlett argued that schemas (organised mental frameworks based on prior experience) influence how we encode and recall information. Participants changed unfamiliar elements of the story to fit their existing cultural schemas, demonstrating that memory is an active, reconstructive process rather than a passive recording.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_1_03",
+              "stem": "Loftus and Palmer (1974) asked participants about a car accident using different verbs (e.g., 'smashed' vs 'hit'). Participants who heard 'smashed' reported higher speed estimates. This finding is best explained by which cognitive concept?",
+              "options": [
+                "Retroactive interference, where new information disrupts previously stored memories",
+                "The misinformation effect, where post-event information alters memory of an original event",
+                "Source monitoring error, where participants misattribute the source of their memories",
+                "Encoding specificity, where memory recall depends on matching encoding and retrieval cues"
+              ],
+              "correctIndex": 1,
+              "explanation": "The misinformation effect refers to the phenomenon where exposure to misleading post-event information (such as leading questions using different verbs) alters a witness's memory of the original event. Loftus and Palmer's study is a classic demonstration of this cognitive bias in eyewitness testimony.",
+              "difficulty": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch3",
+      "title": "Learning Approach",
+      "titleCn": "学习方法",
+      "knowledgePoints": [
+        {
+          "id": "3.1",
+          "title": "Core Studies: Learning",
+          "titleCn": "核心研究：学习",
+          "image": "",
+          "questions": [
+            {
+              "id": "q3_1_01",
+              "stem": "In Pavlov's classical conditioning experiments with dogs, the bell became a conditioned stimulus (CS) after being repeatedly paired with food. Which of the following correctly defines the unconditioned response (UCR) in this experiment?",
+              "options": [
+                "Salivation in response to the bell alone, after conditioning has occurred",
+                "Salivation in response to food, which occurs naturally without prior learning",
+                "The bell, which initially produces no salivation response",
+                "The food, which naturally elicits salivation without prior conditioning"
+              ],
+              "correctIndex": 1,
+              "explanation": "The unconditioned response (UCR) is the natural, unlearned reaction to the unconditioned stimulus. In Pavlov's experiment, salivation in response to food is the UCR because it occurs naturally without any prior learning or conditioning.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_1_02",
+              "stem": "Skinner (1948) demonstrated operant conditioning using a 'Skinner box'. A rat presses a lever and receives a food pellet, increasing the likelihood of lever-pressing in the future. This is an example of which operant conditioning process?",
+              "options": [
+                "Negative reinforcement, because an aversive stimulus is removed to increase behaviour",
+                "Positive punishment, because a pleasant stimulus is added to decrease behaviour",
+                "Positive reinforcement, because a pleasant stimulus is added to increase behaviour",
+                "Negative punishment, because a pleasant stimulus is removed to decrease behaviour"
+              ],
+              "correctIndex": 2,
+              "explanation": "Positive reinforcement involves adding a pleasant stimulus (food pellet) following a behaviour (lever pressing) to increase the frequency of that behaviour. This is distinguished from negative reinforcement (removal of an aversive stimulus) and punishment (which decreases behaviour).",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_1_03",
+              "stem": "Bandura, Ross and Ross (1961) conducted the Bobo doll experiment to investigate social learning theory. Which of the following findings from this study supports the concept of vicarious reinforcement?",
+              "options": [
+                "Children who observed an aggressive model showed more aggression than those who observed a non-aggressive model",
+                "Children were more likely to imitate aggression when they saw the model being rewarded for aggressive behaviour",
+                "Boys showed more physical aggression than girls regardless of the model's gender",
+                "Children only imitated behaviour when directly instructed to do so by an experimenter"
+              ],
+              "correctIndex": 1,
+              "explanation": "Vicarious reinforcement refers to learning through observing others being rewarded for their behaviour. Bandura found that children were more likely to imitate aggressive behaviour when they saw the model being rewarded (reinforced) for it, demonstrating that reinforcement can be indirect (vicarious) rather than direct.",
+              "difficulty": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch4",
+      "title": "Social Approach",
+      "titleCn": "社会方法",
+      "knowledgePoints": [
+        {
+          "id": "4.1",
+          "title": "Core Studies: Social",
+          "titleCn": "核心研究：社会",
+          "image": "",
+          "questions": [
+            {
+              "id": "q4_1_01",
+              "stem": "Milgram (1963) investigated obedience to authority. In his baseline study, what percentage of participants delivered the maximum 450-volt shock to the confederate learner?",
+              "options": [
+                "25%",
+                "45%",
+                "65%",
+                "85%"
+              ],
+              "correctIndex": 2,
+              "explanation": "In Milgram's baseline study, 65% of participants (26 out of 40) delivered the maximum 450-volt shock when instructed to do so by the experimenter. This surprisingly high figure demonstrated the powerful influence of legitimate authority on obedient behaviour.",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_1_02",
+              "stem": "Asch (1951) conducted a series of line-matching experiments to study conformity. Which of the following best distinguishes normative social influence from informational social influence as explanations for Asch's findings?",
+              "options": [
+                "Normative influence involves conforming to gain accurate information; informational influence involves conforming to be liked",
+                "Normative influence involves conforming to avoid social rejection; informational influence involves conforming because others are seen as a source of correct information",
+                "Normative influence only occurs in ambiguous situations; informational influence only occurs in clear situations",
+                "Normative influence leads to internalisation; informational influence leads to compliance only"
+              ],
+              "correctIndex": 1,
+              "explanation": "Normative social influence refers to conforming to fit in with the group and avoid social rejection (compliance without private belief change). Informational social influence refers to conforming because we believe others have more accurate knowledge, especially in ambiguous situations (can lead to internalisation).",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_1_03",
+              "stem": "Tajfel and Turner's (1979) Social Identity Theory proposes that individuals categorise themselves and others into social groups. Which concept describes the tendency to view one's own group more favourably than outgroups, leading to potential prejudice?",
+              "options": [
+                "Social loafing — reduced effort when working in a group",
+                "In-group favouritism — preferential treatment of members of one's own social group",
+                "Deindividuation — loss of personal identity in a group setting",
+                "Social facilitation — improved performance in the presence of others"
+              ],
+              "correctIndex": 1,
+              "explanation": "In-group favouritism (also called in-group bias) is the tendency to view and treat members of one's own social group more positively than members of outgroups. According to Social Identity Theory, this occurs because individuals derive part of their self-esteem from group membership, motivating them to perceive their group as superior.",
+              "difficulty": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

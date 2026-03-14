@@ -94,6 +94,16 @@ export struct QuizResultPage {
               Text('Details').fontSize(16).fontWeight(FontWeight.Bold).fontColor('#333333')
               Column({ space: 0 }) {
                 Row() {
+                  Text('Paper').fontSize(14).fontColor('#999999')
+                  Blank()
+                  Text(this.result?.paperName ?? '').fontSize(14).fontColor('#333333')
+                    .constraintSize({ maxWidth: '60%' }).textAlign(TextAlign.End)
+                }
+                .width('100%').padding({ top: 12, bottom: 12 })
+
+                Divider().color('#F0F0F0')
+
+                Row() {
                   Text('Topic').fontSize(14).fontColor('#999999')
                   Blank()
                   Text(this.result?.knowledgePointTitle ?? '').fontSize(14).fontColor('#333333')

@@ -6,6 +6,16 @@
       "buildFunction": "HomePageBuilder"
     },
     {
+      "name": "SubjectSelectionPage",
+      "pageSourceFile": "src/main/ets/pages/SubjectSelectionPage.ets",
+      "buildFunction": "SubjectSelectionPageBuilder"
+    },
+    {
+      "name": "PaperSelectionPage",
+      "pageSourceFile": "src/main/ets/pages/PaperSelectionPage.ets",
+      "buildFunction": "PaperSelectionPageBuilder"
+    },
+    {
       "name": "ChapterListPage",
       "pageSourceFile": "src/main/ets/pages/ChapterListPage.ets",
       "buildFunction": "ChapterListPageBuilder"

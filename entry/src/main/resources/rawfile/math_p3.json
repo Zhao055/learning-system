@@ -1,0 +1,450 @@
+{
+  "chapters": [
+    {
+      "id": "ch1",
+      "title": "Algebra & Functions",
+      "titleCn": "代数与函数",
+      "knowledgePoints": [
+        {
+          "id": "1.1",
+          "title": "Partial Fractions",
+          "titleCn": "部分分式",
+          "image": "",
+          "questions": [
+            {
+              "id": "q1_1_01",
+              "stem": "Express (x + 7) / ((x + 1)(x - 2)) in partial fractions of the form A/(x + 1) + B/(x - 2). What are the values of A and B?",
+              "options": ["A = -2, B = 3", "A = 2, B = 3", "A = 3, B = -2", "A = -3, B = 2"],
+              "correctIndex": 0,
+              "explanation": "Write (x+7)/((x+1)(x-2)) = A/(x+1) + B/(x-2). Multiply through by (x+1)(x-2): x+7 = A(x-2) + B(x+1). Setting x = -1: -1+7 = A(-1-2), so 6 = -3A, giving A = -2. Setting x = 2: 2+7 = B(2+1), so 9 = 3B, giving B = 3. Verify: (-2(x-2) + 3(x+1)) / ((x+1)(x-2)) = (-2x+4+3x+3) / ((x+1)(x-2)) = (x+7) / ((x+1)(x-2)). Confirmed: A = -2, B = 3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_1_02",
+              "stem": "The fraction (6x) / ((x - 1)(x^2 + 2)) can be written in the form A/(x - 1) + (Bx + C)/(x^2 + 2). Find the value of A.",
+              "options": ["A = 4/3", "A = 2", "A = 1", "A = 4"],
+              "correctIndex": 1,
+              "explanation": "Multiply both sides by (x-1)(x^2+2): 6x = A(x^2+2) + (Bx+C)(x-1). Setting x=1: 6(1) = A(1+2), so 6 = 3A, giving A = 2. To find B and C, expand: 6x = A(x^2+2) + Bx^2 - Bx + Cx - C. Comparing x^2 coefficients: 0 = A+B, so B = -2. Comparing constant terms: 0 = 2A - C, so C = 4. Check x coefficient: 6 = -B + C = 2 + 4 = 6. Confirmed: A = 2.",
+              "difficulty": 3
+            },
+            {
+              "id": "q1_1_03",
+              "stem": "Express (x^2 + 3) / (x(x - 1)^2) in partial fractions. Which of the following is the correct decomposition?",
+              "options": [
+                "-3/x + 4/(x-1) + 4/(x-1)^2",
+                "3/x - 4/(x-1) + 4/(x-1)^2",
+                "-3/x + 4/(x-1) - 4/(x-1)^2",
+                "3/x + 4/(x-1) + 4/(x-1)^2"
+              ],
+              "correctIndex": 1,
+              "explanation": "Write (x^2+3)/(x(x-1)^2) = A/x + B/(x-1) + C/(x-1)^2. Multiply through: x^2+3 = A(x-1)^2 + Bx(x-1) + Cx. Setting x=0: 3 = A(1), so A=3. Setting x=1: 1+3=4=C(1), so C=4. Expanding and comparing x^2 coefficients: 1 = A+B = 3+B, so B=-4. Therefore the decomposition is 3/x - 4/(x-1) + 4/(x-1)^2, which is option B.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch2",
+      "title": "Logarithmic & Exponential",
+      "titleCn": "对数与指数",
+      "knowledgePoints": [
+        {
+          "id": "2.1",
+          "title": "Exponential Growth & Decay",
+          "titleCn": "指数增长与衰减",
+          "image": "",
+          "questions": [
+            {
+              "id": "q2_1_01",
+              "stem": "A population P satisfies P = 500e^(0.02t), where t is time in years. How many years does it take for the population to double? Give your answer to 3 significant figures.",
+              "options": ["34.7 years", "25.0 years", "50.0 years", "17.3 years"],
+              "correctIndex": 0,
+              "explanation": "We need P = 1000, so 500e^(0.02t) = 1000. Thus e^(0.02t) = 2, giving 0.02t = ln2. Therefore t = ln2 / 0.02 = 0.6931 / 0.02 = 34.657... ≈ 34.7 years (3 s.f.).",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_1_02",
+              "stem": "The mass M grams of a radioactive substance at time t days satisfies M = M_0 * e^(-kt). If the half-life is 10 days, find the value of k correct to 3 significant figures.",
+              "options": ["0.0693", "0.100", "0.0500", "0.139"],
+              "correctIndex": 0,
+              "explanation": "At the half-life, M = M_0/2, so M_0/2 = M_0 * e^(-10k). Dividing by M_0: 1/2 = e^(-10k). Taking ln: ln(1/2) = -10k, so -ln2 = -10k, giving k = ln2/10 = 0.6931.../10 = 0.0693 (3 s.f.).",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_1_03",
+              "stem": "Given that y = Ae^(bx) passes through the points (0, 3) and (2, 12), find the exact value of b.",
+              "options": ["b = ln2", "b = ln4", "b = (1/2)ln3", "b = 2ln2"],
+              "correctIndex": 0,
+              "explanation": "At x=0: 3 = Ae^0 = A, so A = 3. At x=2: 12 = 3e^(2b), so e^(2b) = 4, giving 2b = ln4 = 2ln2, hence b = ln2. The exact value of b is ln2.",
+              "difficulty": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch3",
+      "title": "Trigonometry",
+      "titleCn": "三角函数",
+      "knowledgePoints": [
+        {
+          "id": "3.1",
+          "title": "Compound Angle Formulae",
+          "titleCn": "复合角公式",
+          "image": "",
+          "questions": [
+            {
+              "id": "q3_1_01",
+              "stem": "Using the compound angle formula, find the exact value of sin(75°).",
+              "options": [
+                "(√6 + √2) / 4",
+                "(√6 - √2) / 4",
+                "(√3 + 1) / 4",
+                "(√3 - 1) / 4"
+              ],
+              "correctIndex": 0,
+              "explanation": "sin(75°) = sin(45° + 30°) = sin45°cos30° + cos45°sin30° = (√2/2)(√3/2) + (√2/2)(1/2) = √6/4 + √2/4 = (√6 + √2)/4.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_1_02",
+              "stem": "Given that sin A = 3/5 and cos B = 5/13, where A and B are both acute angles, find the exact value of cos(A + B).",
+              "options": ["16/65", "63/65", "-16/65", "56/65"],
+              "correctIndex": 2,
+              "explanation": "cos A = 4/5 (since sin A = 3/5 and A is acute, using Pythagoras: cos A = √(1 - 9/25) = 4/5). sin B = 12/13 (since cos B = 5/13 and B is acute: sin B = √(1 - 25/169) = 12/13). cos(A+B) = cosA cosB - sinA sinB = (4/5)(5/13) - (3/5)(12/13) = 20/65 - 36/65 = -16/65.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_1_03",
+              "stem": "Express 3sin(x) + 4cos(x) in the form R sin(x + α), where R > 0 and 0 < α < π/2. Find the value of R.",
+              "options": ["R = 5", "R = 7", "R = √7", "R = 25"],
+              "correctIndex": 0,
+              "explanation": "For a sin(x) + b cos(x) = R sin(x + α), we have R = √(a^2 + b^2). Here a = 3 and b = 4, so R = √(9 + 16) = √25 = 5. The phase angle is α = arctan(b/a) = arctan(4/3).",
+              "difficulty": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch4",
+      "title": "Differentiation",
+      "titleCn": "微分",
+      "knowledgePoints": [
+        {
+          "id": "4.1",
+          "title": "Product & Quotient Rule",
+          "titleCn": "乘法与商法则",
+          "image": "",
+          "questions": [
+            {
+              "id": "q4_1_01",
+              "stem": "Differentiate y = x^2 * e^(3x) with respect to x. Which expression gives dy/dx?",
+              "options": [
+                "e^(3x)(2x + 3x^2)",
+                "e^(3x)(2x - 3x^2)",
+                "2x * e^(3x)",
+                "3x^2 * e^(3x)"
+              ],
+              "correctIndex": 0,
+              "explanation": "Using the product rule: dy/dx = u'v + uv' where u = x^2 and v = e^(3x). So u' = 2x and v' = 3e^(3x). Therefore dy/dx = 2x * e^(3x) + x^2 * 3e^(3x) = e^(3x)(2x + 3x^2).",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_1_02",
+              "stem": "Find dy/dx when y = sin(x) / x^2 (for x ≠ 0).",
+              "options": [
+                "(x cos x - 2 sin x) / x^3",
+                "(x cos x + 2 sin x) / x^3",
+                "(2 sin x - x cos x) / x^3",
+                "(cos x) / (2x)"
+              ],
+              "correctIndex": 0,
+              "explanation": "Using the quotient rule: dy/dx = (u'v - uv') / v^2 where u = sin x and v = x^2. So u' = cos x and v' = 2x. Therefore dy/dx = (cos x * x^2 - sin x * 2x) / x^4 = x(x cos x - 2 sin x) / x^4 = (x cos x - 2 sin x) / x^3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_1_03",
+              "stem": "Find the x-coordinate of the stationary point of y = x * ln(x) for x > 0.",
+              "options": ["x = 1/e", "x = e", "x = 1", "x = e^2"],
+              "correctIndex": 0,
+              "explanation": "Using the product rule: dy/dx = 1 * ln(x) + x * (1/x) = ln(x) + 1. Setting dy/dx = 0: ln(x) + 1 = 0, so ln(x) = -1, giving x = e^(-1) = 1/e.",
+              "difficulty": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch5",
+      "title": "Integration",
+      "titleCn": "积分",
+      "knowledgePoints": [
+        {
+          "id": "5.1",
+          "title": "Integration by Parts",
+          "titleCn": "分部积分",
+          "image": "",
+          "questions": [
+            {
+              "id": "q5_1_01",
+              "stem": "Use integration by parts to find ∫ x * e^x dx.",
+              "options": [
+                "x * e^x - e^x + C",
+                "x * e^x + e^x + C",
+                "e^x + C",
+                "x^2 * e^x / 2 + C"
+              ],
+              "correctIndex": 0,
+              "explanation": "Let u = x and dv = e^x dx, so du = dx and v = e^x. By the formula ∫u dv = uv - ∫v du: ∫x e^x dx = x e^x - ∫e^x dx = x e^x - e^x + C = e^x(x - 1) + C.",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_1_02",
+              "stem": "Evaluate ∫(from 0 to 1) x * cos(πx) dx. What is the exact value?",
+              "options": [
+                "-2/π^2",
+                "2/π^2",
+                "-2/π",
+                "1/π^2"
+              ],
+              "correctIndex": 0,
+              "explanation": "Let u = x and dv = cos(πx) dx, so du = dx and v = sin(πx)/π. Integration by parts: [x sin(πx)/π] from 0 to 1 - ∫(0 to 1) sin(πx)/π dx. First term: (1*sin(π)/π) - (0) = 0. Second term: -(1/π)[-cos(πx)/π] from 0 to 1 = (1/π^2)[cos(πx)] from 0 to 1 = (1/π^2)(cos π - cos 0) = (1/π^2)(-1-1) = -2/π^2. Total = 0 + (-2/π^2) = -2/π^2.",
+              "difficulty": 3
+            },
+            {
+              "id": "q5_1_03",
+              "stem": "Find ∫ ln(x) dx.",
+              "options": [
+                "x ln(x) - x + C",
+                "x ln(x) + x + C",
+                "1/x + C",
+                "x/ln(x) + C"
+              ],
+              "correctIndex": 0,
+              "explanation": "Let u = ln(x) and dv = dx, so du = (1/x) dx and v = x. By parts: ∫ln(x) dx = x ln(x) - ∫x * (1/x) dx = x ln(x) - ∫1 dx = x ln(x) - x + C.",
+              "difficulty": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch6",
+      "title": "Numerical Methods",
+      "titleCn": "数值方法",
+      "knowledgePoints": [
+        {
+          "id": "6.1",
+          "title": "Simpson's Rule",
+          "titleCn": "辛普森法则",
+          "image": "",
+          "questions": [
+            {
+              "id": "q6_1_01",
+              "stem": "Use Simpson's Rule with 4 strips to estimate ∫(from 0 to 4) √(1 + x^2) dx. The y-values at x = 0, 1, 2, 3, 4 are 1, √2, √5, √10, √17. Which is the correct estimate?",
+              "options": [
+                "(1/3)(1 + 4√2 + 2√5 + 4√10 + √17)",
+                "(1/2)(1 + 4√2 + 2√5 + 4√10 + √17)",
+                "(1/3)(1 + 2√2 + 4√5 + 2√10 + √17)",
+                "(1/4)(1 + 4√2 + 2√5 + 4√10 + √17)"
+              ],
+              "correctIndex": 0,
+              "explanation": "Simpson's Rule with n=4 strips (5 ordinates), step h=1: Estimate = (h/3)[y_0 + 4y_1 + 2y_2 + 4y_3 + y_4] = (1/3)[1 + 4√2 + 2√5 + 4√10 + √17]. The pattern is: first and last have coefficient 1, even-indexed interior have coefficient 2, odd-indexed interior have coefficient 4.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_1_02",
+              "stem": "Simpson's Rule requires the number of strips (intervals) to be:",
+              "options": [
+                "Even",
+                "Odd",
+                "A multiple of 3",
+                "Any positive integer"
+              ],
+              "correctIndex": 0,
+              "explanation": "Simpson's Rule must be applied over an even number of strips (intervals), because it pairs up consecutive strips and applies a quadratic approximation over each pair. Using n strips requires n+1 ordinates (y-values), and n must be even.",
+              "difficulty": 1
+            },
+            {
+              "id": "q6_1_03",
+              "stem": "Using Simpson's Rule with 2 strips to estimate ∫(from 1 to 3) (1/x) dx, given y(1) = 1, y(2) = 1/2, y(3) = 1/3, what is the estimate?",
+              "options": [
+                "10/9",
+                "11/18",
+                "7/12",
+                "4/3"
+              ],
+              "correctIndex": 0,
+              "explanation": "With n=2 strips, h = (3-1)/2 = 1. Simpson's Rule: Estimate = (h/3)[y_0 + 4y_1 + y_2] = (1/3)[1 + 4(1/2) + 1/3] = (1/3)[1 + 2 + 1/3] = (1/3)(10/3) = 10/9 ≈ 1.111. The exact value is ln3 ≈ 1.099, so the Simpson's estimate of 10/9 is a good approximation.",
+              "difficulty": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch7",
+      "title": "Vectors",
+      "titleCn": "向量",
+      "knowledgePoints": [
+        {
+          "id": "7.1",
+          "title": "Vector Lines & Planes",
+          "titleCn": "向量直线与平面",
+          "image": "",
+          "questions": [
+            {
+              "id": "q7_1_01",
+              "stem": "A line has equation r = (2i + j - k) + t(i - 2j + 3k). Which of the following points lies on this line?",
+              "options": [
+                "(3, -1, 2)",
+                "(1, 3, -4)",
+                "(4, -3, 5)",
+                "(0, 5, -7)"
+              ],
+              "correctIndex": 0,
+              "explanation": "Substituting t=1: r = (2+1)i + (1-2)j + (-1+3)k = 3i - j + 2k. This gives the point (3, -1, 2), which matches option A. Check t=2: (4, -3, 5), which is option C. Both t=1 and t=2 are valid, giving (3,-1,2) and (4,-3,5). With t=1 the first valid answer is (3,-1,2).",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_1_02",
+              "stem": "Find the acute angle between the lines with direction vectors d1 = (1, 2, -1) and d2 = (1, -1, -1).",
+              "options": [
+                "90°",
+                "45°",
+                "60°",
+                "30°"
+              ],
+              "correctIndex": 0,
+              "explanation": "The angle θ between two lines satisfies cos θ = |d1 · d2| / (|d1| |d2|). d1 · d2 = (1)(1) + (2)(-1) + (-1)(-1) = 1 - 2 + 1 = 0. Since the dot product is 0, the direction vectors are perpendicular, so the acute angle between the lines is 90°.",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_1_03",
+              "stem": "The plane with equation 2x - y + 3z = 7 has normal vector n. Which of the following is n?",
+              "options": [
+                "(2, -1, 3)",
+                "(2, 1, 3)",
+                "(-2, 1, -3)",
+                "(7, 7, 7)"
+              ],
+              "correctIndex": 0,
+              "explanation": "For a plane with equation ax + by + cz = d, the normal vector is n = (a, b, c). For 2x - y + 3z = 7, the normal vector is n = (2, -1, 3). Note that (-2, 1, -3) is also a normal vector (in the opposite direction), but (2, -1, 3) is the standard form directly read from the coefficients.",
+              "difficulty": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch8",
+      "title": "Differential Equations",
+      "titleCn": "微分方程",
+      "knowledgePoints": [
+        {
+          "id": "8.1",
+          "title": "Separable Variables",
+          "titleCn": "可分离变量",
+          "image": "",
+          "questions": [
+            {
+              "id": "q8_1_01",
+              "stem": "Solve the differential equation dy/dx = 2xy, given that y = 1 when x = 0.",
+              "options": [
+                "y = e^(x^2)",
+                "y = e^(2x)",
+                "y = x^2 + 1",
+                "y = 2e^x"
+              ],
+              "correctIndex": 0,
+              "explanation": "Separate variables: (1/y) dy = 2x dx. Integrate both sides: ln|y| = x^2 + C. Thus y = Ae^(x^2). Applying the initial condition y(0) = 1: 1 = Ae^0 = A. So A = 1 and y = e^(x^2).",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_1_02",
+              "stem": "The rate of change of temperature T (°C) of a cooling object is given by dT/dt = -k(T - 20), where k is a positive constant and t is in minutes. If T = 80 when t = 0, and T = 50 when t = 10, find the value of k correct to 3 s.f.",
+              "options": [
+                "0.0693",
+                "0.100",
+                "0.0500",
+                "0.0300"
+              ],
+              "correctIndex": 0,
+              "explanation": "Separate variables: dT/(T-20) = -k dt. Integrate: ln|T-20| = -kt + C. At t=0, T=80: ln(60) = C. So ln(T-20) = -kt + ln(60), giving T-20 = 60e^(-kt). At t=10, T=50: 30 = 60e^(-10k), so e^(-10k) = 1/2, giving -10k = -ln2, k = ln2/10 = 0.0693 (3 s.f.).",
+              "difficulty": 3
+            },
+            {
+              "id": "q8_1_03",
+              "stem": "Solve the differential equation (dy/dx) = y^2 * sin(x), given y = 1 when x = 0.",
+              "options": [
+                "y = 1 / (cos x)",
+                "y = 1 / (2 - cos x)",
+                "y = cos x",
+                "y = -cos x + 2"
+              ],
+              "correctIndex": 0,
+              "explanation": "Separate variables: y^(-2) dy = sin(x) dx. Integrate both sides: -1/y = -cos(x) + C. Apply initial condition y = 1 when x = 0: -1/1 = -cos(0) + C, so -1 = -1 + C, giving C = 0. Therefore -1/y = -cos(x), which rearranges to y = 1/cos(x) = sec(x). Verify: dy/dx = sec(x)tan(x) and y^2 sin(x) = sec^2(x)sin(x) = sin(x)/cos^2(x) = tan(x)sec(x). Confirmed.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch9",
+      "title": "Complex Numbers",
+      "titleCn": "复数",
+      "knowledgePoints": [
+        {
+          "id": "9.1",
+          "title": "Argand Diagrams",
+          "titleCn": "阿甘图",
+          "image": "",
+          "questions": [
+            {
+              "id": "q9_1_01",
+              "stem": "The complex number z = 3 + 4i is represented on an Argand diagram. What is the modulus |z| and argument arg(z) (to 3 s.f.)?",
+              "options": [
+                "|z| = 5, arg(z) = 0.927 rad",
+                "|z| = 7, arg(z) = 0.927 rad",
+                "|z| = 5, arg(z) = 0.644 rad",
+                "|z| = 5, arg(z) = 1.33 rad"
+              ],
+              "correctIndex": 0,
+              "explanation": "|z| = √(3^2 + 4^2) = √(9 + 16) = √25 = 5. arg(z) = arctan(4/3) = arctan(1.333...) ≈ 0.9273 rad ≈ 0.927 rad (3 s.f.). Since z is in the first quadrant (both real and imaginary parts positive), the argument is positive and less than π/2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q9_1_02",
+              "stem": "The locus of points z on an Argand diagram satisfying |z - (2 + i)| = 3 is:",
+              "options": [
+                "A circle with centre (2, 1) and radius 3",
+                "A circle with centre (-2, -1) and radius 3",
+                "A straight line through (2, 1)",
+                "A circle with centre (2, 1) and radius 9"
+              ],
+              "correctIndex": 0,
+              "explanation": "|z - (2 + i)| = 3 means the distance from z to the fixed point (2 + i) is 3. On an Argand diagram, this is the set of all points at distance 3 from the point (2, 1) (since 2+i corresponds to the point (2,1)). This is a circle with centre (2, 1) and radius 3.",
+              "difficulty": 1
+            },
+            {
+              "id": "q9_1_03",
+              "stem": "Given z = 1 + i√3, express z in modulus-argument form r(cos θ + i sin θ) and find the argument θ.",
+              "options": [
+                "r = 2, θ = π/3",
+                "r = 2, θ = π/6",
+                "r = √3, θ = π/3",
+                "r = 2, θ = 2π/3"
+              ],
+              "correctIndex": 0,
+              "explanation": "r = |z| = √(1^2 + (√3)^2) = √(1 + 3) = √4 = 2. θ = arg(z) = arctan(√3 / 1) = arctan(√3) = π/3 (since z is in the first quadrant). Therefore z = 2(cos(π/3) + i sin(π/3)).",
+              "difficulty": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

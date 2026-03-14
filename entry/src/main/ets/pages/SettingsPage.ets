@@ -79,15 +79,15 @@ export struct SettingsPage {
               Row() {
                 Text('App').fontSize(14).fontColor('#999999')
                 Blank()
-                Text('A-Level Math P1 Helper').fontSize(14).fontColor('#333333')
+                Text('A-Level Helper').fontSize(14).fontColor('#333333')
               }.width('100%').padding({ top: 8 })
 
               Divider().color('#F0F0F0')
 
               Row() {
-                Text('Syllabus').fontSize(14).fontColor('#999999')
+                Text('Subjects').fontSize(14).fontColor('#999999')
                 Blank()
-                Text('Cambridge 9709').fontSize(14).fontColor('#333333')
+                Text('Math, Bio, Psych').fontSize(14).fontColor('#333333')
               }.width('100%').padding({ top: 8 })
 
               Divider().color('#F0F0F0')
@@ -103,7 +103,7 @@ export struct SettingsPage {
               Row() {
                 Text('Version').fontSize(14).fontColor('#999999')
                 Blank()
-                Text('1.0.0').fontSize(14).fontColor('#333333')
+                Text('2.0.0').fontSize(14).fontColor('#333333')
               }.width('100%').padding({ top: 8 })
             }
             .width('100%')

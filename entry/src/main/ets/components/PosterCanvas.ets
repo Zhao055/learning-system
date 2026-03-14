@@ -3,6 +3,8 @@ import { QuizResult } from '../model/ChapterModel';
 @Component
 export struct PosterCanvas {
   @Prop result: QuizResult = {
+    paperId: '',
+    paperName: '',
     chapterId: '',
     chapterTitle: '',
     knowledgePointId: '',
@@ -42,10 +44,10 @@ export struct PosterCanvas {
       Column({ space: 0 }) {
         // Header gradient
         Column() {
-          Text('A-Level Math P1')
+          Text(this.result.paperName || 'A-Level Helper')
             .fontSize(14)
             .fontColor('rgba(255,255,255,0.8)')
-          Text('Cambridge 9709')
+          Text('Cambridge International')
             .fontSize(11)
             .fontColor('rgba(255,255,255,0.6)')
             .margin({ top: 2 })
@@ -99,7 +101,7 @@ export struct PosterCanvas {
 
         // Footer
         Row() {
-          Text('A-Level Math P1 Helper')
+          Text('A-Level Helper')
             .fontSize(10)
             .fontColor('#AAAAAA')
           Blank()
