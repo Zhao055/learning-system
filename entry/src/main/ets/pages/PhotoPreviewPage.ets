@@ -1,6 +1,7 @@
 import { image } from '@kit.ImageKit';
 import { fileIo } from '@kit.CoreFileKit';
 import { OcrService } from '../service/OcrService';
+import { MiniMaxService } from '../service/MiniMaxService';
 
 @Builder
 export function PhotoPreviewPageBuilder() {
@@ -26,11 +27,19 @@ export struct PhotoPreviewPage {
   private async recognizeText(): Promise<void> {
     this.isRecognizing = true;
     try {
-      // Create PixelMap from URI
-      const file = fileIo.openSync(this.photoUri, fileIo.OpenMode.READ_ONLY);
-      const imageSource = image.createImageSource(file.fd);
-      const pixelMap = await imageSource.createPixelMap();
-      fileIo.closeSync(file.fd);
+      let pixelMap: image.PixelMap;
+      try {
+        // Try file descriptor approach first (works for file:// URIs)
+        const file = fileIo.openSync(this.photoUri, fileIo.OpenMode.READ_ONLY);
+        const imageSource = image.createImageSource(file.fd);
+        pixelMap = await imageSource.createPixelMap();
+        fileIo.closeSync(file.fd);
+      } catch (fileErr) {
+        // Fallback: try creating ImageSource directly from URI (works for content:// URIs from PhotoViewPicker)
+        console.info('File open failed, trying URI directly: ' + JSON.stringify(fileErr));
+        const imageSource = image.createImageSource(this.photoUri);
+        pixelMap = await imageSource.createPixelMap();
+      }
 
       const text = await OcrService.getInstance().recognizeText(pixelMap);
       this.ocrText = text;
@@ -129,6 +138,23 @@ export struct PhotoPreviewPage {
               .borderRadius(14)
               .enabled(this.ocrText.trim().length > 0 && !this.isRecognizing)
               .onClick(() => {
+                if (!MiniMaxService.getInstance().hasApiKey()) {
+                  AlertDialog.show({
+                    title: 'API Key Required',
+                    message: 'Please configure your MiniMax API Key in Settings first.',
+                    primaryButton: {
+                      value: 'Go to Settings',
+                      action: () => {
+                        this.navPathStack.pushPathByName('SettingsPage', null);
+                      }
+                    },
+                    secondaryButton: {
+                      value: 'Cancel',
+                      action: () => {}
+                    }
+                  });
+                  return;
+                }
                 this.navPathStack.pushPathByName('SolutionPage', this.ocrText.trim());
               })
           }

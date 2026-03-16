@@ -27,21 +27,28 @@ export struct HomePage {
       Column() {
         // Header
         Row() {
+          Image($rawfile('logo.jpeg'))
+            .width(52)
+            .height(52)
+            .borderRadius(12)
+            .objectFit(ImageFit.Cover)
+
           Column() {
             Text(this.greeting)
-              .fontSize(16)
+              .fontSize(14)
               .fontColor('#666666')
             Text('A-Level Helper')
-              .fontSize(28)
+              .fontSize(22)
               .fontWeight(FontWeight.Bold)
               .fontColor('#333333')
-              .margin({ top: 4 })
-            Text('Cambridge International')
-              .fontSize(14)
-              .fontColor('#999999')
               .margin({ top: 2 })
+            Text('Cambridge International')
+              .fontSize(12)
+              .fontColor('#999999')
+              .margin({ top: 1 })
           }
           .alignItems(HorizontalAlign.Start)
+          .margin({ left: 12 })
 
           Blank()
 

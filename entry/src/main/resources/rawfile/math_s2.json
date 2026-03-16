@@ -17,40 +17,66 @@
               "id": "q3_1_01",
               "stem": "X ~ Po(3). What is P(X = 2)? Give your answer to 4 decimal places. (Use e⁻³ ≈ 0.0498)",
               "options": [
-                "0.2240",
                 "0.0498",
                 "0.1494",
+                "0.2240",
                 "0.4232"
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "explanation": "P(X = k) = e^(−λ) × λ^k / k!. P(X = 2) = e^(−3) × 3² / 2! = 0.0498 × 9 / 2 = 0.0498 × 4.5 = 0.2241 ≈ 0.2240.",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q3_1_02",
               "stem": "Which of the following conditions is NOT required for a Poisson distribution to be a suitable model?",
               "options": [
                 "Events occur in fixed-sized groups",
-                "Events occur randomly and independently",
+                "Events cannot occur simultaneously",
                 "The mean rate of occurrence is constant",
-                "Events cannot occur simultaneously"
+                "Events occur randomly and independently"
               ],
               "correctIndex": 0,
               "explanation": "The Poisson model requires: events occur randomly and independently; the average rate λ is constant; events cannot occur simultaneously (singly). Events occurring in fixed groups violates the 'singly' condition and is precisely a scenario where Poisson is NOT appropriate.",
-              "difficulty": "medium"
+              "difficulty": 2
             },
             {
               "id": "q3_1_03",
               "stem": "Flaws in a wire occur at a mean rate of 2 per metre. What is the probability of finding exactly 0 flaws in a 1.5 m length? (Use e^(−3) ≈ 0.0498)",
               "options": [
-                "0.0498",
-                "0.2240",
                 "0.1494",
-                "0.3347"
+                "0.0498",
+                "0.3347",
+                "0.2240"
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "explanation": "For 1.5 m, the mean number of flaws is λ = 2 × 1.5 = 3. P(X = 0) = e^(−3) × 3⁰ / 0! = e^(−3) = 0.0498.",
-              "difficulty": "medium"
+              "difficulty": 2
+            },
+            {
+              "id": "q3_1_04",
+              "stem": "X ~ Po(4). Find P(X ≥ 2). (Use e⁻⁴ ≈ 0.0183, give your answer to 4 decimal places.)",
+              "options": [
+                "0.8647",
+                "0.1353",
+                "0.0916",
+                "0.9084"
+              ],
+              "correctIndex": 3,
+              "explanation": "P(X ≥ 2) = 1 − P(X = 0) − P(X = 1). P(X = 0) = e⁻⁴ = 0.0183. P(X = 1) = e⁻⁴ × 4 = 0.0183 × 4 = 0.0733. P(X ≥ 2) = 1 − 0.0183 − 0.0733 = 1 − 0.0916 = 0.9084.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_1_05",
+              "stem": "The random variable X follows a Poisson distribution with parameter λ, where λ > 0. Given that P(X = 1) = 2 × P(X = 2), find the value of λ.",
+              "options": [
+                "2",
+                "0.5",
+                "4",
+                "1"
+              ],
+              "correctIndex": 3,
+              "explanation": "P(X = 1) = λe⁻λ and P(X = 2) = λ²e⁻λ/2. The condition P(X = 1) = 2P(X = 2) gives λe⁻λ = 2 × λ²e⁻λ/2 = λ²e⁻λ. Since λ > 0 and e⁻λ > 0, we can divide both sides by λe⁻λ to get 1 = λ. Therefore λ = 1.",
+              "difficulty": 3
             }
           ]
         }
@@ -73,38 +99,64 @@
               "options": [
                 "5",
                 "11",
-                "1",
-                "19"
+                "19",
+                "1"
               ],
               "correctIndex": 0,
               "explanation": "E(2X − 3Y + 4) = 2·E(X) − 3·E(Y) + 4 = 2(5) − 3(3) + 4 = 10 − 9 + 4 = 5.",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q3_2_02",
               "stem": "X and Y are independent with Var(X) = 4 and Var(Y) = 9. What is Var(3X − 2Y)?",
               "options": [
-                "72",
-                "13",
+                "6",
                 "2",
-                "6"
+                "72",
+                "13"
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "explanation": "Since X and Y are independent: Var(3X − 2Y) = 3²·Var(X) + (−2)²·Var(Y) = 9 × 4 + 4 × 9 = 36 + 36 = 72.",
-              "difficulty": "medium"
+              "difficulty": 2
             },
             {
               "id": "q3_2_03",
               "stem": "X ~ N(10, 4) and Y ~ N(6, 9), and X and Y are independent. What is the distribution of X + Y?",
               "options": [
                 "N(16, 13)",
-                "N(16, 5)",
+                "N(16, 36)",
                 "N(4, 13)",
-                "N(16, 36)"
+                "N(16, 5)"
               ],
               "correctIndex": 0,
               "explanation": "For independent normal variables: E(X + Y) = E(X) + E(Y) = 10 + 6 = 16. Var(X + Y) = Var(X) + Var(Y) = 4 + 9 = 13. So X + Y ~ N(16, 13).",
-              "difficulty": "medium"
+              "difficulty": 2
+            },
+            {
+              "id": "q3_2_04",
+              "stem": "X ~ N(10, 4). A random sample of 16 observations is taken. What is the distribution of the sample mean X̄?",
+              "options": [
+                "N(160, 4)",
+                "N(10, 4)",
+                "N(10, 64)",
+                "N(10, 0.25)"
+              ],
+              "correctIndex": 3,
+              "explanation": "For a sample mean of n independent observations from N(μ, σ²), X̄ ~ N(μ, σ²/n). Here μ = 10, σ² = 4, and n = 16. Therefore X̄ ~ N(10, 4/16) = N(10, 0.25).",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_2_05",
+              "stem": "X ~ N(20, 9) and Y ~ N(15, 16), where X and Y are independent. Let W = 2X − Y + 5. What is the distribution of W?",
+              "options": [
+                "N(30, 61)",
+                "N(30, 25)",
+                "N(25, 52)",
+                "N(30, 52)"
+              ],
+              "correctIndex": 3,
+              "explanation": "E(W) = 2E(X) − E(Y) + 5 = 2(20) − 15 + 5 = 40 − 15 + 5 = 30. For independent X and Y: Var(W) = 2²Var(X) + (−1)²Var(Y) = 4(9) + 1(16) = 36 + 16 = 52. Since X and Y are normal and W is a linear combination, W ~ N(30, 52).",
+              "difficulty": 3
             }
           ]
         }
@@ -125,40 +177,66 @@
               "id": "q3_3_01",
               "stem": "A continuous random variable X has PDF f(x) = kx for 0 ≤ x ≤ 4, and f(x) = 0 otherwise. What is the value of k?",
               "options": [
-                "1/8",
-                "1/4",
                 "1/16",
-                "1/2"
+                "1/2",
+                "1/8",
+                "1/4"
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "explanation": "For a valid PDF, ∫₀⁴ kx dx = 1. Evaluating: k [x²/2]₀⁴ = k × 8 = 1. So k = 1/8.",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q3_3_02",
               "stem": "For the PDF f(x) = (1/8)x on 0 ≤ x ≤ 4, what is P(1 ≤ X ≤ 3)?",
               "options": [
-                "1/2",
+                "1/8",
                 "1/4",
-                "3/4",
-                "1/8"
+                "1/2",
+                "3/4"
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "explanation": "P(1 ≤ X ≤ 3) = ∫₁³ (1/8)x dx = (1/8)[x²/2]₁³ = (1/16)[x²]₁³ = (1/16)(9 − 1) = 8/16 = 1/2.",
-              "difficulty": "medium"
+              "difficulty": 2
             },
             {
               "id": "q3_3_03",
               "stem": "A continuous random variable X has CDF F(x) = x²/9 for 0 ≤ x ≤ 3. What is the median of X?",
               "options": [
-                "3/√2",
-                "√3",
+                "9/4",
                 "3/2",
-                "9/4"
+                "√3",
+                "3/√2"
+              ],
+              "correctIndex": 3,
+              "explanation": "The median m satisfies F(m) = 0.5. So m²/9 = 1/2, giving m² = 9/2, thus m = √(9/2) = 3/√2 ≈ 2.12.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_3_04",
+              "stem": "A continuous random variable X has PDF f(x) = kx² for 0 ≤ x ≤ 3, and f(x) = 0 otherwise. What is the value of k?",
+              "options": [
+                "1/9",
+                "1/27",
+                "1/3",
+                "3"
               ],
               "correctIndex": 0,
-              "explanation": "The median m satisfies F(m) = 0.5. So m²/9 = 1/2, giving m² = 9/2, thus m = √(9/2) = 3/√2 ≈ 2.12.",
-              "difficulty": "medium"
+              "explanation": "For a valid PDF, ∫₀³ kx² dx = 1. Evaluating: k[x³/3]₀³ = k × (27/3) = 9k = 1. So k = 1/9.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_3_05",
+              "stem": "A continuous random variable X has PDF f(x) = (1/8)x for 0 ≤ x ≤ 4. Find E(X).",
+              "options": [
+                "4",
+                "8/3",
+                "2",
+                "3"
+              ],
+              "correctIndex": 1,
+              "explanation": "E(X) = ∫₀⁴ x · f(x) dx = ∫₀⁴ x · (x/8) dx = (1/8) ∫₀⁴ x² dx = (1/8) [x³/3]₀⁴ = (1/8)(64/3) = 64/24 = 8/3 ≈ 2.667.",
+              "difficulty": 3
             }
           ]
         }
@@ -179,40 +257,66 @@
               "id": "q3_4_01",
               "stem": "A random sample of size n = 100 is taken from a population with known variance σ² = 25. The sample mean is x̄ = 47. What is the 95% confidence interval for the population mean? (Use z = 1.96)",
               "options": [
-                "(46.02, 47.98)",
-                "(42, 52)",
+                "(46.5, 47.5)",
                 "(45, 49)",
-                "(46.5, 47.5)"
+                "(42, 52)",
+                "(46.02, 47.98)"
               ],
-              "correctIndex": 0,
+              "correctIndex": 3,
               "explanation": "Standard error = σ/√n = 5/√100 = 5/10 = 0.5. 95% CI: x̄ ± 1.96 × 0.5 = 47 ± 0.98 = (46.02, 47.98).",
-              "difficulty": "medium"
+              "difficulty": 2
             },
             {
               "id": "q3_4_02",
               "stem": "By the Central Limit Theorem, if X̄ is the sample mean of a random sample of size n from a population with mean μ and variance σ², what is the approximate distribution of X̄ for large n?",
               "options": [
-                "N(μ, σ²/n)",
-                "N(μ, σ²)",
                 "N(0, 1)",
-                "N(nμ, nσ²)"
+                "N(μ, σ²/n)",
+                "N(nμ, nσ²)",
+                "N(μ, σ²)"
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "explanation": "The Central Limit Theorem states that for large n, the sample mean X̄ is approximately normally distributed with mean μ and variance σ²/n (i.e. standard error σ/√n). So X̄ ~ N(μ, σ²/n) approximately.",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q3_4_03",
               "stem": "A 90% confidence interval for a population mean is found to be (23.4, 26.6). What is the sample mean x̄?",
               "options": [
-                "25",
                 "23.4",
+                "25",
                 "26.6",
                 "24"
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "explanation": "The sample mean is the midpoint of the confidence interval: x̄ = (23.4 + 26.6) / 2 = 50 / 2 = 25.",
-              "difficulty": "easy"
+              "difficulty": 1
+            },
+            {
+              "id": "q3_4_04",
+              "stem": "A random sample of size n = 100 is taken from a population with known standard deviation σ = 10. The sample mean is x̄ = 50. What is the 99% confidence interval for the population mean? (Use z = 2.576)",
+              "options": [
+                "(48, 52)",
+                "(47.424, 52.576)",
+                "(49, 51)",
+                "(45, 55)"
+              ],
+              "correctIndex": 1,
+              "explanation": "Standard error = σ/√n = 10/√100 = 1. The 99% CI: x̄ ± z × SE = 50 ± 2.576 × 1 = 50 ± 2.576 = (47.424, 52.576).",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_4_05",
+              "stem": "A random sample of 10 observations of a variable X gives Σx = 45 and Σx² = 285. What is the unbiased estimate of the population variance?",
+              "options": [
+                "2.85",
+                "6.75",
+                "9.17",
+                "20.25"
+              ],
+              "correctIndex": 2,
+              "explanation": "The sample mean x̄ = Σx/n = 45/10 = 4.5. The unbiased estimate of variance s² = [Σx² − n(x̄)²] / (n − 1) = [285 − 10(4.5)²] / 9 = [285 − 10(20.25)] / 9 = [285 − 202.5] / 9 = 82.5 / 9 ≈ 9.17.",
+              "difficulty": 3
             }
           ]
         }
@@ -235,38 +339,64 @@
               "options": [
                 "Yes, reject H₀ since |z| = 3 > 1.645",
                 "No, accept H₀ since |z| = 3 < 1.645",
-                "Yes, reject H₀ since |z| = 0.375 > 1.645",
-                "No, accept H₀ since |z| = 0.375 < 1.645"
+                "No, accept H₀ since |z| = 0.375 < 1.645",
+                "Yes, reject H₀ since |z| = 0.375 > 1.645"
               ],
               "correctIndex": 0,
               "explanation": "H₀: μ = 1000, H₁: μ < 1000 (one-tailed). Test statistic z = (x̄ − μ₀) / (σ/√n) = (985 − 1000) / (40/√64) = −15 / 5 = −3. Since |z| = 3 > 1.645, we reject H₀. There is significant evidence that the mean lifetime is less than 1000 hours.",
-              "difficulty": "medium"
+              "difficulty": 2
             },
             {
               "id": "q3_5_02",
               "stem": "In a hypothesis test, the p-value is calculated as 0.032. The significance level is 5%. What is the correct conclusion?",
               "options": [
-                "Reject H₀, since 0.032 < 0.05",
-                "Accept H₀, since 0.032 < 0.05",
                 "Reject H₀, since 0.032 > 0.01",
-                "Cannot conclude without the test statistic"
+                "Cannot conclude without the test statistic",
+                "Reject H₀, since 0.032 < 0.05",
+                "Accept H₀, since 0.032 < 0.05"
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "explanation": "We reject H₀ when the p-value is less than the significance level. Since 0.032 < 0.05, we reject H₀. There is sufficient evidence at the 5% level to reject the null hypothesis.",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q3_5_03",
               "stem": "A two-tailed Z-test is conducted at the 5% significance level. The critical values are ±1.96. The test statistic is z = −1.75. What is the conclusion?",
               "options": [
-                "Do not reject H₀; insufficient evidence to reject at 5%",
                 "Reject H₀; sufficient evidence at 5%",
-                "Reject H₀; z is negative so H₁ is supported",
-                "Cannot conclude without knowing the p-value"
+                "Do not reject H₀; insufficient evidence to reject at 5%",
+                "Cannot conclude without knowing the p-value",
+                "Reject H₀; z is negative so H₁ is supported"
+              ],
+              "correctIndex": 1,
+              "explanation": "For a two-tailed test at 5%, we reject H₀ if |z| > 1.96. Here |z| = 1.75 < 1.96, so we do not reject H₀. There is insufficient evidence at the 5% significance level to reject the null hypothesis.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_5_04",
+              "stem": "A Type I error in hypothesis testing is defined as:",
+              "options": [
+                "Rejecting H₀ when H₀ is true",
+                "Rejecting H₁ when H₁ is true",
+                "Accepting H₀ when H₀ is false",
+                "Accepting H₁ when H₁ is false"
               ],
               "correctIndex": 0,
-              "explanation": "For a two-tailed test at 5%, we reject H₀ if |z| > 1.96. Here |z| = 1.75 < 1.96, so we do not reject H₀. There is insufficient evidence at the 5% significance level to reject the null hypothesis.",
-              "difficulty": "medium"
+              "explanation": "A Type I error occurs when we reject the null hypothesis H₀ when it is in fact true. The probability of a Type I error is equal to the significance level α. A Type II error, in contrast, is failing to reject H₀ when it is false.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_5_05",
+              "stem": "A population is known to have standard deviation σ = 8. A random sample of 64 observations has mean x̄ = 52. A two-tailed test is conducted at the 1% significance level to test H₀: μ = 50 against H₁: μ ≠ 50. The critical values are ±2.576. What is the conclusion?",
+              "options": [
+                "Do not reject H₀; |z| = 2 < 2.576",
+                "Reject H₀; |z| = 2 > 2.576",
+                "Reject H₀; |z| = 16 > 2.576",
+                "Do not reject H₀; |z| = 0.25 < 2.576"
+              ],
+              "correctIndex": 0,
+              "explanation": "Test statistic z = (x̄ − μ₀) / (σ/√n) = (52 − 50) / (8/√64) = 2 / (8/8) = 2/1 = 2. For a two-tailed test at 1%, the critical values are ±2.576. Since |z| = 2 < 2.576, we do not reject H₀. There is insufficient evidence at the 1% significance level to conclude that the population mean differs from 50.",
+              "difficulty": 3
             }
           ]
         }

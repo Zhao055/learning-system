@@ -410,11 +410,212 @@ All JSON files follow the established schema: `{ chapters: [{ id, title, titleCn
 
 ---
 
+## Session 3 — 2026-03-15: Bug Fixes, API Integration & Device Testing
+
+### Overview
+
+**Objective:** Build, deploy to device (HUAWEI Mate XT), and fix all bugs found during real-device testing. Focus on making the app stable and usable.
+
+**Duration:** ~4 hours of iterative build → deploy → test → fix cycles
+
+---
+
+#### Build System Setup
+
+Established CLI build workflow (no DevEco Studio GUI needed):
+
+```bash
+DEVECO_SDK_HOME=/Applications/DevEco-Studio.app/Contents/sdk \
+NODE_HOME=/Applications/DevEco-Studio.app/Contents/tools/node \
+/Applications/DevEco-Studio.app/Contents/tools/hvigor/bin/hvigorw assembleHap --no-daemon
+```
+
+Output: `entry/build/default/outputs/default/entry-default-signed.hap`
+
+---
+
+#### Bug Fix 1: Quiz Options Not Updating Between Questions
+
+**Problem:** All questions displayed the same 4 options (from the first question). Selecting a different question showed different stem text but identical options.
+
+**Root cause:** `ForEach` key generator was `opt_${idx}` — same keys across questions, so ArkUI reused old `OptionCard` components without updating props.
+
+**Fix in `QuizPage.ets`:**
+```typescript
+// Before:
+}, (option: string, idx: number) => `opt_${idx}`)
+// After:
+}, (option: string, idx: number) => `q${this.currentIndex}_opt_${idx}`)
+```
+
+---
+
+#### Bug Fix 2: Action Buttons Hidden Below Fold
+
+**Problem:** After submitting an answer, "Ask AI" and "Next" buttons were pushed off-screen by the large `ResultBadge` circle (140x140) and explanation text. Users couldn't find them.
+
+**Fix in `QuizPage.ets`:**
+- Moved Submit/Ask AI/Next buttons out of Scroll into a **fixed bottom bar** with shadow
+- Replaced large `ResultBadge` circle with compact inline result banner (Row with icon + text)
+
+---
+
+#### Bug Fix 3: AI Tutor Not Responding
+
+**Problem:** Clicking "Ask AI" showed the chat panel but no AI response appeared. MiniMax API returned error responses as non-SSE JSON which was silently ignored.
+
+**Fix in `MiniMaxService.ets`:**
+- Added `rawResponse` tracking to capture non-SSE error responses
+- Added error detection in `dataEnd` handler: parse `base_resp.status_msg` and `error.message` from MiniMax error format
+- MiniMax returns HTTP 200 even for API errors (error in `base_resp.status_code`)
+
+---
+
+#### Bug Fix 4: Wrong API Domain
+
+**Problem:** API key was rejected as "invalid api key" despite being correct on MiniMax platform.
+
+**Discovery:** Tested via curl — the correct domain is `api.minimax.chat` (NOT `api.minimax.io`).
+
+**Fix:** Changed `API_URLS` to use `api.minimax.chat`:
+```typescript
+const API_URLS: string[] = [
+  'https://api.minimax.chat/v1/text/chatcompletion_v2',
+  'https://api.minimax.chat/v1/chat/completions'
+];
+```
+
+---
+
+#### Bug Fix 5: API Key Debugging Support
+
+**Problem:** Hard to diagnose API key issues without visibility into what's being sent.
+
+**Fix in `SettingsPage.ets` + `MiniMaxService.ets`:**
+- Added `testApiConnection()` method that tries both endpoints
+- Checks `base_resp.status_code` for MiniMax API-level errors (not just HTTP status)
+- Shows key info (first 6 + last 4 chars + length) for debugging
+- Added "Test API" button alongside "Save" button with color-coded result display
+
+---
+
+#### Bug Fix 6: Logo Added to HomePage
+
+**Problem:** Project had `logo.jpeg` but it wasn't displayed anywhere.
+
+**Fix:** Copied logo to `rawfile/`, added to HomePage header:
+```typescript
+Image($rawfile('logo.jpeg'))
+  .width(52).height(52).borderRadius(12).objectFit(ImageFit.Cover)
+```
+
+---
+
+#### Bug Fix 7: App Icons Converted to PNG
+
+Converted all icon files from JPEG to PNG using `sips` for better HarmonyOS compatibility:
+- `AppScope/resources/base/media/app_icon.png`
+- `entry/src/main/resources/base/media/icon.png`
+- `entry/src/main/resources/base/media/startIcon.png`
+
+---
+
+#### Bug Fix 8: Session Memory Leak
+
+**Problem:** AI chat sessions (`chatHistory` Map entries) were never cleaned up.
+
+**Fix:**
+- `QuizPage.ets`: Added `closeChatPanel()` method that calls `clearSession()`, plus `aboutToDisappear()` fallback cleanup
+- `SolutionPage.ets`: Added `aboutToDisappear()` to call `clearSession()`
+
+---
+
+#### Bug Fix 9: API Key Pre-checks
+
+**Problem:** Tapping "Ask AI" or "Solve with AI" without an API key produced silent failures.
+
+**Fix:** Added `hasApiKey()` checks with AlertDialog prompts in:
+- `QuizPage.ets` → `openAIChat()`
+- `CameraPage.ets` → "Solve with AI" button
+- `PhotoPreviewPage.ets` → "Solve with AI" button
+
+---
+
+#### Bug Fix 10: Camera Page → Album + Text Input
+
+**Problem:** Camera capture was not implemented (placeholder workaround).
+
+**Fix:** Rewrote `CameraPage.ets` with dual-mode UI:
+1. **Select from Album** (primary): Uses `PhotoViewPicker` system UI — no permissions needed
+2. **Type Problem Manually** (secondary): Expandable TextArea with "Solve with AI" button
+
+---
+
+#### Streaming Issue: `requestInStream` Unreliable on HarmonyOS
+
+**Problem:** AI responses consistently truncated mid-sentence. The streaming cursor "|" remained but no more content arrived. Multiple fix attempts failed:
+
+1. ~~Byte accumulation + re-decode~~ → `TextEncoder.encodeInto()` crash (returns `{read, written}`, not `Uint8Array`)
+2. ~~ProcessedTextLen tracking~~ → Still stuck after a few chunks
+3. ~~Simple per-chunk decode~~ → Still stuck
+4. ~~setTimeout simulated streaming~~ → Also stuck (`@State` update issues)
+
+**Root cause:** HarmonyOS `requestInStream` `dataReceive` events **stop firing** after several chunks. This is a [known issue reported to Huawei](https://bbs.itying.com/topic/678d98114b218c005fa23295) but not yet fixed. `setTimeout` + `@State` reactivity in ArkUI also has documented compatibility issues.
+
+**Final solution:** Switched to non-streaming `request()` call with `stream: false`. Full response is returned at once and displayed immediately. Reliable on device.
+
+**Future option:** Huawei recommends migrating to **RCP (`@kit.RemoteCommunicationKit`)** which may have better streaming support.
+
+---
+
+#### Files Modified in Session 3
+
+**Code (8 files):**
+| File | Changes |
+|------|---------|
+| `MiniMaxService.ets` | API domain fix, non-streaming request, `testApiConnection()`, error handling, session cleanup |
+| `QuizPage.ets` | ForEach key fix, fixed bottom bar, compact result banner, `closeChatPanel()`, `aboutToDisappear()`, API key check |
+| `HomePage.ets` | Logo display with `$rawfile('logo.jpeg')` |
+| `SettingsPage.ets` | Test API button, result display |
+| `CameraPage.ets` | Rewrite: album picker + text input dual mode |
+| `PhotoPreviewPage.ets` | API key pre-check |
+| `SolutionPage.ets` | `aboutToDisappear()` session cleanup |
+| `ChatModel.ets` | (import cleanup) |
+
+**Assets:**
+- `entry/src/main/resources/rawfile/logo.jpeg` (new)
+- App icons converted JPEG → PNG (3 files)
+
+---
+
+## Current Project Statistics
+
+| Metric | Count |
+|--------|-------|
+| Source files (.ets) | 25 |
+| Pages | 12 |
+| Components | 5 |
+| Services | 3 |
+| Models | 2 |
+| Data files | 2 (.ets) |
+| Question bank files | 12 |
+| Routes | 11 |
+| Subjects | 3 |
+| Papers | 12 |
+| Total chapters | 71 |
+| Total knowledge points | 100 |
+| Total questions | 374 |
+| Total JSON content lines | 5,164 |
+| Current Version | 2.1.0 |
+
+---
+
 ## Pending / Future Work
 
 - [ ] Push to GitHub (needs repo creation: `gh repo create`)
 - [ ] Add knowledge point images for new papers (currently `image: ""`)
 - [ ] Expand question banks (new papers have 3 questions per KP vs P1's 5)
+- [ ] Investigate RCP (`@kit.RemoteCommunicationKit`) for true streaming support
 - [ ] Add progress tracking per paper/subject
 - [ ] Add search/filter across subjects
 - [ ] Add quiz history and statistics dashboard

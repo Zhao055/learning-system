@@ -11,6 +11,8 @@ export struct SettingsPage {
   @State apiKey: string = '';
   @State showKey: boolean = false;
   @State saved: boolean = false;
+  @State testResult: string = '';
+  @State testing: boolean = false;
 
   aboutToAppear(): void {
     this.apiKey = MiniMaxService.getInstance().getApiKey();
@@ -20,6 +22,17 @@ export struct SettingsPage {
     await MiniMaxService.getInstance().saveApiKey(getContext(this), this.apiKey.trim());
     this.saved = true;
     setTimeout(() => { this.saved = false; }, 2000);
+  }
+
+  private async testApi(): Promise<void> {
+    this.testing = true;
+    this.testResult = 'Testing...';
+    try {
+      this.testResult = await MiniMaxService.getInstance().testApiConnection();
+    } catch (e) {
+      this.testResult = 'Test failed: ' + JSON.stringify(e);
+    }
+    this.testing = false;
   }
 
   build() {
@@ -60,11 +73,32 @@ export struct SettingsPage {
               }
               .width('100%')
 
-              Button(this.saved ? 'Saved ✓' : 'Save API Key')
-                .width('100%').height(44)
-                .backgroundColor(this.saved ? '#4CAF50' : '#4E6EF2')
-                .fontColor('#FFFFFF').fontSize(15).borderRadius(12)
-                .onClick(() => { this.saveApiKey(); })
+              Row({ space: 12 }) {
+                Button(this.saved ? 'Saved ✓' : 'Save')
+                  .layoutWeight(1).height(44)
+                  .backgroundColor(this.saved ? '#4CAF50' : '#4E6EF2')
+                  .fontColor('#FFFFFF').fontSize(15).borderRadius(12)
+                  .onClick(() => { this.saveApiKey(); })
+
+                Button(this.testing ? 'Testing...' : 'Test API')
+                  .layoutWeight(1).height(44)
+                  .backgroundColor(this.testing ? '#CCCCCC' : '#FF8E53')
+                  .fontColor('#FFFFFF').fontSize(15).borderRadius(12)
+                  .enabled(!this.testing)
+                  .onClick(() => { this.testApi(); })
+              }
+              .width('100%')
+
+              if (this.testResult.length > 0) {
+                Text(this.testResult)
+                  .fontSize(12)
+                  .fontColor(this.testResult.startsWith('Success') ? '#4CAF50' : '#F44336')
+                  .width('100%')
+                  .padding(12)
+                  .backgroundColor(this.testResult.startsWith('Success') ? '#E8F5E9' : '#FFEBEE')
+                  .borderRadius(8)
+                  .copyOption(CopyOptions.LocalDevice)
+              }
             }
             .width('100%')
             .padding(20)

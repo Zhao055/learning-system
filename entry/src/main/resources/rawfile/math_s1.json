@@ -17,14 +17,14 @@
               "id": "q2_1_01",
               "stem": "A histogram shows a bar for the class interval 20 ≤ x < 30 with a frequency density of 3.5. What is the frequency for this class?",
               "options": [
-                "35",
-                "3.5",
                 "350",
-                "0.35"
+                "3.5",
+                "0.35",
+                "35"
               ],
-              "correctIndex": 0,
+              "correctIndex": 3,
               "explanation": "Frequency = Frequency Density × Class Width = 3.5 × 10 = 35.",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q2_1_02",
@@ -32,25 +32,51 @@
               "options": [
                 "4",
                 "24",
-                "6",
-                "0.25"
+                "0.25",
+                "6"
               ],
               "correctIndex": 0,
               "explanation": "Class width = 16 − 10 = 6. Frequency density = Frequency / Class Width = 24 / 6 = 4.",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q2_1_03",
               "stem": "A stem-and-leaf diagram has stems 3, 4, 5 with leaves: 3|1 2 5 8, 4|0 3 6 6 9, 5|2 4. How many values are greater than 45?",
               "options": [
-                "5",
-                "4",
+                "3",
                 "7",
-                "3"
+                "4",
+                "5"
               ],
-              "correctIndex": 0,
+              "correctIndex": 3,
               "explanation": "Values greater than 45: from stem 4 — leaves 6, 6, 9 (giving 46, 46, 49) and from stem 5 — leaves 2, 4 (giving 52, 54). That is 3 + 2 = 5 values.",
-              "difficulty": "medium"
+              "difficulty": 2
+            },
+            {
+              "id": "q2_1_04",
+              "stem": "A histogram has three classes: 0 ≤ x < 5 with frequency density 2, 5 ≤ x < 15 with frequency density 3, and 15 ≤ x < 20 with frequency density 1. What is the total frequency?",
+              "options": [
+                "30",
+                "6",
+                "45",
+                "60"
+              ],
+              "correctIndex": 2,
+              "explanation": "Frequency = frequency density × class width for each class. Class 1: 2 × 5 = 10. Class 2: 3 × 10 = 30. Class 3: 1 × 5 = 5. Total frequency = 10 + 30 + 5 = 45.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_1_05",
+              "stem": "A data set of 11 values is displayed on a stem-and-leaf diagram with stems 1, 2, 3 and leaves: 1|3 5 9, 2|1 4 5 7 9, 3|1 4 5. What is the interquartile range of the data?",
+              "options": [
+                "8",
+                "14",
+                "12",
+                "10"
+              ],
+              "correctIndex": 2,
+              "explanation": "The 11 ordered values are: 13, 15, 19, 21, 24, 25, 27, 29, 31, 34, 35. For 11 values, Q1 is the 3rd value = 19 and Q3 is the 9th value = 31. The interquartile range = Q3 − Q1 = 31 − 19 = 12.",
+              "difficulty": 3
             }
           ]
         }
@@ -73,38 +99,64 @@
               "options": [
                 "126",
                 "3024",
-                "36",
-                "84"
+                "84",
+                "36"
               ],
               "correctIndex": 0,
               "explanation": "This is a combination (order does not matter): ⁹C₄ = 9! / (4! × 5!) = (9 × 8 × 7 × 6) / (4 × 3 × 2 × 1) = 3024 / 24 = 126.",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q2_2_02",
               "stem": "How many different 3-letter arrangements can be made from the letters of the word MATHS (no repetition)?",
               "options": [
-                "60",
-                "10",
+                "15",
                 "120",
-                "15"
+                "10",
+                "60"
               ],
-              "correctIndex": 0,
+              "correctIndex": 3,
               "explanation": "This is a permutation (order matters): ⁵P₃ = 5! / (5−3)! = 5! / 2! = 120 / 2 = 60.",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q2_2_03",
               "stem": "A team of 3 is chosen from 5 men and 4 women, with at least 1 woman required. How many possible teams are there?",
               "options": [
-                "74",
-                "84",
                 "10",
-                "60"
+                "60",
+                "74",
+                "84"
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "explanation": "Total ways without restriction = ⁹C₃ = 84. Ways with NO women (all men) = ⁵C₃ = 10. Teams with at least 1 woman = 84 − 10 = 74.",
-              "difficulty": "medium"
+              "difficulty": 2
+            },
+            {
+              "id": "q2_2_04",
+              "stem": "How many different arrangements are there of all the letters in the word STATISTICS?",
+              "options": [
+                "3628800",
+                "100800",
+                "50400",
+                "25200"
+              ],
+              "correctIndex": 2,
+              "explanation": "STATISTICS has 10 letters: S appears 3 times, T appears 3 times, I appears 2 times, A appears 1 time, C appears 1 time. The number of distinct arrangements = 10! / (3! × 3! × 2!) = 3628800 / (6 × 6 × 2) = 3628800 / 72 = 50400.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_2_05",
+              "stem": "A committee of 5 is to be chosen from 6 men and 4 women. The committee must contain at least 2 women. How many different committees can be formed?",
+              "options": [
+                "120",
+                "252",
+                "60",
+                "186"
+              ],
+              "correctIndex": 3,
+              "explanation": "The valid cases are: (2 women, 3 men), (3 women, 2 men), or (4 women, 1 man). Case 1: ⁴C₂ × ⁶C₃ = 6 × 20 = 120. Case 2: ⁴C₃ × ⁶C₂ = 4 × 15 = 60. Case 3: ⁴C₄ × ⁶C₁ = 1 × 6 = 6. Total = 120 + 60 + 6 = 186.",
+              "difficulty": 3
             }
           ]
         }
@@ -125,40 +177,66 @@
               "id": "q2_3_01",
               "stem": "P(A) = 0.6, P(B) = 0.5, P(A ∩ B) = 0.3. What is P(A | B)?",
               "options": [
-                "0.6",
                 "0.5",
-                "0.3",
-                "0.18"
+                "0.6",
+                "0.18",
+                "0.3"
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "explanation": "P(A | B) = P(A ∩ B) / P(B) = 0.3 / 0.5 = 0.6.",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q2_3_02",
               "stem": "A bag contains 3 red and 5 blue balls. Two balls are drawn without replacement. What is the probability that both are red?",
               "options": [
                 "3/28",
-                "9/64",
                 "3/8",
+                "9/64",
                 "1/4"
               ],
               "correctIndex": 0,
               "explanation": "P(1st red) = 3/8. Given 1st is red, P(2nd red) = 2/7. So P(both red) = (3/8) × (2/7) = 6/56 = 3/28.",
-              "difficulty": "medium"
+              "difficulty": 2
             },
             {
               "id": "q2_3_03",
               "stem": "Events A and B are such that P(A) = 0.4, P(B) = 0.3, and A and B are independent. What is P(A ∪ B)?",
               "options": [
+                "0.12",
                 "0.58",
                 "0.70",
-                "0.12",
                 "0.50"
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "explanation": "Since A and B are independent, P(A ∩ B) = P(A) × P(B) = 0.4 × 0.3 = 0.12. P(A ∪ B) = P(A) + P(B) − P(A ∩ B) = 0.4 + 0.3 − 0.12 = 0.58.",
-              "difficulty": "medium"
+              "difficulty": 2
+            },
+            {
+              "id": "q2_3_04",
+              "stem": "A box contains 4 red balls, 3 blue balls, and 3 green balls. Two balls are drawn at random without replacement. What is the probability that both balls are the same colour?",
+              "options": [
+                "4/15",
+                "1/3",
+                "2/5",
+                "3/10"
+              ],
+              "correctIndex": 0,
+              "explanation": "Total ways to choose 2 balls from 10: ¹⁰C₂ = 45. Ways to choose 2 of the same colour: ⁴C₂ + ³C₂ + ³C₂ = 6 + 3 + 3 = 12. P(same colour) = 12/45 = 4/15.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_3_05",
+              "stem": "A medical test for a disease has the following properties: P(positive | disease) = 0.95 and P(positive | no disease) = 0.05. In a population, 1% of people have the disease. A randomly selected person tests positive. What is the probability that they actually have the disease? (Give your answer to 3 decimal places.)",
+              "options": [
+                "0.500",
+                "0.950",
+                "0.050",
+                "0.161"
+              ],
+              "correctIndex": 3,
+              "explanation": "Using Bayes' theorem: P(disease | positive) = P(positive | disease) × P(disease) / P(positive). P(positive) = P(positive | disease) × P(disease) + P(positive | no disease) × P(no disease) = 0.95 × 0.01 + 0.05 × 0.99 = 0.0095 + 0.0495 = 0.0590. Therefore P(disease | positive) = 0.0095 / 0.0590 = 19/118 ≈ 0.161.",
+              "difficulty": 3
             }
           ]
         }
@@ -179,14 +257,14 @@
               "id": "q2_4_01",
               "stem": "A discrete random variable X has the distribution: P(X=1)=0.2, P(X=2)=0.5, P(X=3)=0.3. What is E(X)?",
               "options": [
-                "2.1",
                 "2.0",
-                "1.5",
-                "2.5"
+                "2.1",
+                "2.5",
+                "1.5"
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "explanation": "E(X) = Σ x·P(X=x) = 1(0.2) + 2(0.5) + 3(0.3) = 0.2 + 1.0 + 0.9 = 2.1.",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q2_4_02",
@@ -194,25 +272,51 @@
               "options": [
                 "0.49",
                 "2.1",
-                "1.0",
-                "0.7"
+                "0.7",
+                "1.0"
               ],
               "correctIndex": 0,
               "explanation": "E(X²) = 1²(0.2) + 2²(0.5) + 3²(0.3) = 0.2 + 2.0 + 2.7 = 4.9. Var(X) = E(X²) − [E(X)]² = 4.9 − (2.1)² = 4.9 − 4.41 = 0.49.",
-              "difficulty": "medium"
+              "difficulty": 2
             },
             {
               "id": "q2_4_03",
               "stem": "If E(X) = 3 and Var(X) = 4, what is E(2X + 1)?",
               "options": [
                 "7",
-                "9",
                 "13",
+                "9",
                 "4"
               ],
               "correctIndex": 0,
               "explanation": "E(2X + 1) = 2·E(X) + 1 = 2(3) + 1 = 6 + 1 = 7.",
-              "difficulty": "easy"
+              "difficulty": 1
+            },
+            {
+              "id": "q2_4_04",
+              "stem": "If E(X) = 3 and Var(X) = 4, what is Var(2X + 1)?",
+              "options": [
+                "4",
+                "16",
+                "8",
+                "9"
+              ],
+              "correctIndex": 1,
+              "explanation": "Var(aX + b) = a²·Var(X). Therefore Var(2X + 1) = 2² × Var(X) = 4 × 4 = 16. Note that adding a constant does not affect the variance.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_4_05",
+              "stem": "A discrete random variable X has the probability distribution P(X = x) = kx for x = 1, 2, 3, 4, and P(X = x) = 0 otherwise. Find the value of Var(X).",
+              "options": [
+                "3",
+                "0.1",
+                "1",
+                "9"
+              ],
+              "correctIndex": 2,
+              "explanation": "First find k: k(1 + 2 + 3 + 4) = 10k = 1, so k = 0.1. Then P(X=1) = 0.1, P(X=2) = 0.2, P(X=3) = 0.3, P(X=4) = 0.4. E(X) = 1(0.1) + 2(0.2) + 3(0.3) + 4(0.4) = 0.1 + 0.4 + 0.9 + 1.6 = 3. E(X²) = 1(0.1) + 4(0.2) + 9(0.3) + 16(0.4) = 0.1 + 0.8 + 2.7 + 6.4 = 10. Var(X) = E(X²) − [E(X)]² = 10 − 9 = 1.",
+              "difficulty": 3
             }
           ]
         }
@@ -233,14 +337,14 @@
               "id": "q2_5_01",
               "stem": "X ~ N(50, 16). What is the z-score corresponding to x = 54?",
               "options": [
-                "1",
-                "4",
                 "0.25",
-                "2"
+                "2",
+                "1",
+                "4"
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "explanation": "The variance is 16, so the standard deviation σ = √16 = 4. z = (x − μ) / σ = (54 − 50) / 4 = 4 / 4 = 1.",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q2_5_02",
@@ -253,20 +357,46 @@
               ],
               "correctIndex": 0,
               "explanation": "σ = √25 = 5. z = (110 − 100) / 5 = 2. P(X < 110) = Φ(2) ≈ 0.9772. P(X > 110) = 1 − 0.9772 = 0.0228.",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q2_5_03",
               "stem": "X ~ N(μ, 9). It is given that P(X < 17) = 0.9332, and Φ(1.5) = 0.9332. What is the value of μ?",
               "options": [
-                "12.5",
                 "14",
-                "17",
-                "15.5"
+                "12.5",
+                "15.5",
+                "17"
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "explanation": "σ = √9 = 3. Since P(X < 17) = 0.9332 = Φ(1.5), the z-score is 1.5. So (17 − μ) / 3 = 1.5, giving 17 − μ = 4.5, thus μ = 12.5.",
-              "difficulty": "medium"
+              "difficulty": 2
+            },
+            {
+              "id": "q2_5_04",
+              "stem": "X ~ N(80, 25). Using Φ(1) = 0.8413 and Φ(2) = 0.9772, find P(75 < X < 90).",
+              "options": [
+                "0.1359",
+                "0.8185",
+                "0.9772",
+                "0.1587"
+              ],
+              "correctIndex": 1,
+              "explanation": "σ = √25 = 5. For x = 75: z = (75 − 80)/5 = −1. For x = 90: z = (90 − 80)/5 = 2. P(75 < X < 90) = Φ(2) − Φ(−1) = 0.9772 − (1 − 0.8413) = 0.9772 − 0.1587 = 0.8185.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_5_05",
+              "stem": "X ~ N(μ, σ²). It is given that P(X > 20) = 0.1587 and P(X < 14) = 0.3085. Using Φ(1) = 0.8413 and Φ(0.5) = 0.6915, find the value of μ.",
+              "options": [
+                "15",
+                "18",
+                "17",
+                "16"
+              ],
+              "correctIndex": 3,
+              "explanation": "P(X > 20) = 0.1587 means P(X < 20) = 0.8413 = Φ(1), so (20 − μ)/σ = 1. P(X < 14) = 0.3085 = 1 − 0.6915 = 1 − Φ(0.5), so (14 − μ)/σ = −0.5. From the first equation: 20 − μ = σ. From the second equation: 14 − μ = −0.5σ. Subtracting the second from the first: 6 = 1.5σ, so σ = 4. Substituting back: μ = 20 − 4 = 16.",
+              "difficulty": 3
             }
           ]
         }

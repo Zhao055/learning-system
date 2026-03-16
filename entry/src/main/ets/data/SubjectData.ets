@@ -18,7 +18,7 @@ export const SUBJECTS: SubjectInfo[] = [
         jsonFile: 'math_p1.json',
         chapterCount: 8,
         kpCount: 37,
-        questionCount: 185,
+        questionCount: 296,
         available: true
       },
       {
@@ -29,7 +29,7 @@ export const SUBJECTS: SubjectInfo[] = [
         jsonFile: 'math_p2.json',
         chapterCount: 6,
         kpCount: 6,
-        questionCount: 18,
+        questionCount: 30,
         available: true
       },
       {
@@ -40,7 +40,7 @@ export const SUBJECTS: SubjectInfo[] = [
         jsonFile: 'math_p3.json',
         chapterCount: 9,
         kpCount: 9,
-        questionCount: 27,
+        questionCount: 45,
         available: true
       },
       {
@@ -51,7 +51,7 @@ export const SUBJECTS: SubjectInfo[] = [
         jsonFile: 'math_m1.json',
         chapterCount: 5,
         kpCount: 5,
-        questionCount: 15,
+        questionCount: 25,
         available: true
       },
       {
@@ -62,7 +62,7 @@ export const SUBJECTS: SubjectInfo[] = [
         jsonFile: 'math_s1.json',
         chapterCount: 5,
         kpCount: 5,
-        questionCount: 15,
+        questionCount: 25,
         available: true
       },
       {
@@ -73,7 +73,7 @@ export const SUBJECTS: SubjectInfo[] = [
         jsonFile: 'math_s2.json',
         chapterCount: 5,
         kpCount: 5,
-        questionCount: 15,
+        questionCount: 25,
         available: true
       }
     ]
@@ -95,7 +95,7 @@ export const SUBJECTS: SubjectInfo[] = [
         jsonFile: 'bio_as.json',
         chapterCount: 11,
         kpCount: 11,
-        questionCount: 33,
+        questionCount: 55,
         available: true
       },
       {
@@ -106,7 +106,7 @@ export const SUBJECTS: SubjectInfo[] = [
         jsonFile: 'bio_a2.json',
         chapterCount: 8,
         kpCount: 8,
-        questionCount: 24,
+        questionCount: 40,
         available: true
       }
     ]
@@ -128,7 +128,7 @@ export const SUBJECTS: SubjectInfo[] = [
         jsonFile: 'psych_p1.json',
         chapterCount: 4,
         kpCount: 4,
-        questionCount: 12,
+        questionCount: 20,
         available: true
       },
       {
@@ -139,7 +139,7 @@ export const SUBJECTS: SubjectInfo[] = [
         jsonFile: 'psych_p2.json',
         chapterCount: 3,
         kpCount: 3,
-        questionCount: 9,
+        questionCount: 15,
         available: true
       },
       {
@@ -150,7 +150,7 @@ export const SUBJECTS: SubjectInfo[] = [
         jsonFile: 'psych_p3.json',
         chapterCount: 4,
         kpCount: 4,
-        questionCount: 12,
+        questionCount: 20,
         available: true
       },
       {
@@ -161,7 +161,7 @@ export const SUBJECTS: SubjectInfo[] = [
         jsonFile: 'psych_p4.json',
         chapterCount: 3,
         kpCount: 3,
-        questionCount: 9,
+        questionCount: 15,
         available: true
       }
     ]

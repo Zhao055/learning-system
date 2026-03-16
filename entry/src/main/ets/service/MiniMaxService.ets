@@ -1,9 +1,11 @@
 import { http } from '@kit.NetworkKit';
-import { MiniMaxRequest, MiniMaxMessage, MiniMaxResponse } from '../model/ChatModel';
+import { MiniMaxRequest, MiniMaxMessage } from '../model/ChatModel';
 import { preferences } from '@kit.ArkData';
-import { util } from '@kit.ArkTS';
 
-const API_URL = 'https://api.minimax.io/v1/chat/completions';
+const API_URLS: string[] = [
+  'https://api.minimax.chat/v1/text/chatcompletion_v2',
+  'https://api.minimax.chat/v1/chat/completions'
+];
 const MODEL_NAME = 'MiniMax-M2.5';
 
 const TUTOR_SYSTEM_PROMPT = `You are an expert Cambridge International A-Level tutor.
@@ -58,10 +60,12 @@ export class MiniMaxService {
 
   async saveApiKey(context: Context, key: string): Promise<void> {
     try {
+      // Strip all whitespace, newlines, and non-printable characters
+      const cleanKey = key.replace(/\s+/g, '').replace(/[^\x20-\x7E]/g, '');
       const store = preferences.getPreferencesSync(context, { name: 'settings' });
-      store.putSync('minimax_api_key', key);
+      store.putSync('minimax_api_key', cleanKey);
       await store.flush();
-      this.apiKey = key;
+      this.apiKey = cleanKey;
     } catch (e) {
       console.error('Failed to save API key: ' + JSON.stringify(e));
     }
@@ -115,7 +119,6 @@ export class MiniMaxService {
       this.chatHistory.set(sessionId, history);
     }
 
-    // Only add user message if it's not already the initial context
     if (userMessage.length > 0) {
       history.push({ role: 'user', content: userMessage });
     }
@@ -123,80 +126,15 @@ export class MiniMaxService {
     const requestBody: MiniMaxRequest = {
       model: MODEL_NAME,
       messages: history,
-      stream: true,
+      stream: false,
       temperature: 0.7,
-      max_tokens: 2048
+      max_tokens: 20480
     };
 
     const httpRequest = http.createHttp();
-    let fullResponse = '';
-    let buffer = '';
 
     try {
-      httpRequest.on('dataReceive', (data: ArrayBuffer) => {
-        const decoder = new util.TextDecoder('utf-8');
-        const text = decoder.decodeToString(new Uint8Array(data));
-        buffer += text;
-
-        const lines = buffer.split('\n');
-        buffer = lines.pop() ?? '';
-
-        for (const line of lines) {
-          const trimmed = line.trim();
-          if (!trimmed || !trimmed.startsWith('data: ')) continue;
-
-          const jsonStr = trimmed.substring(6);
-          if (jsonStr === '[DONE]') {
-            continue;
-          }
-
-          try {
-            const parsed: MiniMaxResponse = JSON.parse(jsonStr);
-            if (parsed.choices && parsed.choices.length > 0) {
-              const delta = parsed.choices[0].delta;
-              if (delta && delta.content) {
-                fullResponse += delta.content;
-                onChunk(delta.content);
-              }
-            }
-          } catch (parseErr) {
-            // Skip malformed JSON chunks
-          }
-        }
-      });
-
-      httpRequest.on('dataEnd', () => {
-        // Process remaining buffer
-        if (buffer.trim()) {
-          const lines = buffer.split('\n');
-          for (const line of lines) {
-            const trimmed = line.trim();
-            if (!trimmed || !trimmed.startsWith('data: ')) continue;
-            const jsonStr = trimmed.substring(6);
-            if (jsonStr === '[DONE]') continue;
-            try {
-              const parsed: MiniMaxResponse = JSON.parse(jsonStr);
-              if (parsed.choices && parsed.choices.length > 0) {
-                const delta = parsed.choices[0].delta;
-                if (delta && delta.content) {
-                  fullResponse += delta.content;
-                  onChunk(delta.content);
-                }
-              }
-            } catch (parseErr) {
-              // Skip
-            }
-          }
-        }
-
-        if (fullResponse.length > 0 && history) {
-          history.push({ role: 'assistant', content: fullResponse });
-        }
-        onComplete();
-        httpRequest.destroy();
-      });
-
-      await httpRequest.requestInStream(API_URL, {
+      const response = await httpRequest.request(API_URLS[0], {
         method: http.RequestMethod.POST,
         header: {
           'Content-Type': 'application/json',
@@ -204,12 +142,121 @@ export class MiniMaxService {
         },
         extraData: JSON.stringify(requestBody),
         connectTimeout: 30000,
-        readTimeout: 120000
+        readTimeout: 300000
       });
+
+      httpRequest.destroy();
+      const code = response.responseCode;
+      const body = response.result ? response.result.toString() : '';
+
+      if (code !== 200 || body.length === 0) {
+        onError(`HTTP ${code}: ${body.substring(0, 300)}`);
+        return;
+      }
+
+      const respObj: Record<string, Object> = JSON.parse(body);
+
+      // Check MiniMax base_resp for API-level errors
+      const baseResp = respObj['base_resp'] as Record<string, Object>;
+      if (baseResp) {
+        const statusCode = baseResp['status_code'] as number;
+        if (statusCode !== 0) {
+          const statusMsg = baseResp['status_msg'] as string;
+          onError(`API error (${statusCode}): ${statusMsg}`);
+          return;
+        }
+      }
+
+      // Extract content from choices
+      const choices = respObj['choices'] as Object[];
+      if (choices && choices.length > 0) {
+        const choice = choices[0] as Record<string, Object>;
+        const message = choice['message'] as Record<string, Object>;
+        if (message && message['content']) {
+          const content = message['content'].toString();
+          onChunk(content);
+          history.push({ role: 'assistant', content: content });
+          onComplete();
+          return;
+        }
+      }
+
+      onError('No content in API response');
     } catch (err) {
       onError('Network error: ' + JSON.stringify(err));
       httpRequest.destroy();
     }
+  }
+
+  async testApiConnection(): Promise<string> {
+    if (!this.hasApiKey()) {
+      return 'No API key configured.';
+    }
+
+    const keyInfo = `Key: ${this.apiKey.substring(0, 6)}...${this.apiKey.substring(this.apiKey.length - 4)} (len=${this.apiKey.length})`;
+
+    const sysMsg: MiniMaxMessage = { role: 'system', content: 'Reply with exactly: OK' };
+    const userMsg: MiniMaxMessage = { role: 'user', content: 'Test' };
+    const testRequest: MiniMaxRequest = {
+      model: MODEL_NAME,
+      messages: [sysMsg, userMsg],
+      stream: false,
+      max_tokens: 10
+    };
+    const requestBody = JSON.stringify(testRequest);
+
+    for (let i = 0; i < API_URLS.length; i++) {
+      const url = API_URLS[i];
+      try {
+        const httpRequest = http.createHttp();
+        const response = await httpRequest.request(url, {
+          method: http.RequestMethod.POST,
+          header: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${this.apiKey}`
+          },
+          extraData: requestBody,
+          connectTimeout: 15000,
+          readTimeout: 30000
+        });
+
+        httpRequest.destroy();
+        const code = response.responseCode;
+        const body = response.result ? response.result.toString() : '';
+
+        if (code === 200 && body.length > 0) {
+          // Check MiniMax base_resp for API-level errors
+          try {
+            const respObj: Record<string, Object> = JSON.parse(body);
+            const baseResp = respObj['base_resp'] as Record<string, Object>;
+            if (baseResp) {
+              const statusCode = baseResp['status_code'] as number;
+              const statusMsg = baseResp['status_msg'] as string;
+              if (statusCode !== 0) {
+                if (i < API_URLS.length - 1) continue;
+                return `API Error (${statusCode}): ${statusMsg}\n${keyInfo}\nEndpoint: ${url}`;
+              }
+            }
+          } catch (e) {
+            // Not JSON or no base_resp — might be SSE or valid response
+          }
+
+          if (i !== 0) {
+            const tmp = API_URLS[0];
+            API_URLS[0] = url;
+            API_URLS[i] = tmp;
+          }
+          return `Success!\n${keyInfo}\nEndpoint: ${url}\nResponse: ${body.substring(0, 200)}`;
+        } else if (i === API_URLS.length - 1) {
+          return `HTTP ${code}\n${keyInfo}\nEndpoint: ${url}\nResponse: ${body.substring(0, 300)}`;
+        }
+      } catch (err) {
+        if (i === API_URLS.length - 1) {
+          return `Network error: ${JSON.stringify(err)}\n${keyInfo}\nEndpoint: ${url}`;
+        }
+      }
+    }
+    return 'All endpoints failed.';
   }
 
   clearSession(sessionId: string): void {

@@ -15,12 +15,12 @@
               "id": "q1_1_01",
               "stem": "Sperry's (1968) split-brain research investigated the functions of the two hemispheres of the brain. Which of the following best describes a key finding from this study?",
               "options": [
+                "Both hemispheres process all types of information equally",
                 "The left hemisphere is specialised for spatial tasks and the right hemisphere for language",
                 "The left hemisphere is specialised for language and the right hemisphere for spatial tasks",
-                "Both hemispheres process all types of information equally",
                 "The corpus callosum is responsible for language production in both hemispheres"
               ],
-              "correctIndex": 1,
+              "correctIndex": 2,
               "explanation": "Sperry's split-brain research demonstrated that the left hemisphere is specialised for language (verbal processing) while the right hemisphere is specialised for spatial tasks and non-verbal processing. This is a classic demonstration of brain lateralisation.",
               "difficulty": 1
             },
@@ -29,11 +29,11 @@
               "stem": "Raine et al. (1997) used PET scans to compare the brains of murderers pleading not guilty by reason of insanity (NGRI) with a control group. Which brain region showed reduced activity in the NGRI group, and what function is it associated with?",
               "options": [
                 "The amygdala; reduced fear processing and emotional regulation",
-                "The prefrontal cortex; reduced impulse control and decision-making",
                 "The hippocampus; reduced memory formation and spatial navigation",
+                "The prefrontal cortex; reduced impulse control and decision-making",
                 "The cerebellum; reduced motor coordination and balance"
               ],
-              "correctIndex": 1,
+              "correctIndex": 2,
               "explanation": "Raine et al. found reduced glucose metabolism (activity) in the prefrontal cortex of NGRI murderers. The prefrontal cortex is associated with impulse control, planning, and decision-making. Reduced activity in this region may be linked to impulsive violent behaviour.",
               "difficulty": 2
             },
@@ -42,13 +42,39 @@
               "stem": "A researcher argues that depression is entirely caused by low levels of serotonin in the brain. This explanation is an example of which of the following?",
               "options": [
                 "Interactionist reductionism, because it considers both biological and environmental factors",
+                "Holism, because it explains depression at the level of brain chemistry",
                 "Biological reductionism, because it reduces a complex behaviour to a single biological cause",
-                "Environmental determinism, because it implies behaviour is determined by neurotransmitter levels alone",
-                "Holism, because it explains depression at the level of brain chemistry"
+                "Environmental determinism, because it implies behaviour is determined by neurotransmitter levels alone"
               ],
-              "correctIndex": 1,
+              "correctIndex": 2,
               "explanation": "Biological reductionism involves explaining complex psychological phenomena (such as depression) by reducing them to simpler biological processes (such as neurotransmitter levels). This ignores psychological, social, and environmental factors that may contribute to depression.",
               "difficulty": 2
+            },
+            {
+              "id": "q1_1_04",
+              "stem": "In Sperry's split-brain study, when an image was presented to the left visual field only, the participant was unable to verbally name the object but could select it with their left hand. Which of the following best explains this pattern of findings?",
+              "options": [
+                "The left visual field projects to the right hemisphere, which lacks language centres but controls the left hand via contralateral pathways",
+                "Both visual fields project to the right hemisphere, but only the left hand is connected to the speech production area",
+                "The left visual field projects to the left hemisphere, which controls verbal output, but the severed corpus callosum prevented motor responses",
+                "The right visual field projects to the right hemisphere, which can process visual information but cannot generate speech"
+              ],
+              "correctIndex": 0,
+              "explanation": "Visual information from the left visual field is processed by the right hemisphere (contralateral processing). In split-brain patients, because the corpus callosum is severed, the right hemisphere cannot communicate with the left hemisphere's language centres (Broca's and Wernicke's areas). However, the right hemisphere controls the left side of the body, so the participant could use their left hand to select the correct object despite being unable to name it verbally. This demonstrates both lateralisation of function and the role of the corpus callosum in interhemispheric communication.",
+              "difficulty": 3
+            },
+            {
+              "id": "q1_1_05",
+              "stem": "Raine et al. (1997) matched each NGRI murderer with a control participant on age, sex, and handedness. Despite finding differences in prefrontal cortex activity, the researchers cautioned against drawing strong conclusions. Which of the following is the most valid methodological reason for this caution?",
+              "options": [
+                "PET scans have poor spatial resolution and cannot accurately identify specific brain regions",
+                "The NGRI murderers were all taking psychoactive medication, which would have confounded brain activity measures",
+                "The control group was not screened for criminal behaviour, making comparisons invalid",
+                "The study used a correlational design, so reduced prefrontal activity cannot be established as a cause of violent behaviour"
+              ],
+              "correctIndex": 3,
+              "explanation": "Although Raine et al. found a relationship between reduced prefrontal cortex activity and NGRI status, the study is essentially correlational — it compares pre-existing groups rather than manipulating an independent variable. This means it is not possible to conclude that reduced prefrontal activity caused the violent behaviour. The reduced activity could be a consequence of other factors (e.g., substance abuse, head injuries) or the violent behaviour itself. Furthermore, the researchers explicitly stated that the findings do not demonstrate that violence is determined by biology alone, nor that PET scans can be used to diagnose violent tendencies.",
+              "difficulty": 3
             }
           ]
         }
@@ -69,9 +95,9 @@
               "id": "q2_1_01",
               "stem": "According to Atkinson and Shiffrin's (1968) Multi-Store Model of Memory, which of the following correctly describes the capacity and duration of short-term memory (STM)?",
               "options": [
-                "Unlimited capacity and duration of up to 30 seconds without rehearsal",
-                "7 (+/- 2) items capacity and duration of up to 30 seconds without rehearsal",
                 "7 (+/- 2) items capacity and unlimited duration",
+                "7 (+/- 2) items capacity and duration of up to 30 seconds without rehearsal",
+                "Unlimited capacity and duration of up to 30 seconds without rehearsal",
                 "Limited capacity and unlimited duration with maintenance rehearsal"
               ],
               "correctIndex": 1,
@@ -82,10 +108,10 @@
               "id": "q2_1_02",
               "stem": "Bartlett's (1932) study 'War of the Ghosts' demonstrated that memory is reconstructive. Which concept best explains why participants changed details of the Native American story when recalling it?",
               "options": [
-                "Decay theory — the memory trace fades over time without rehearsal",
+                "Encoding failure — the story was not properly encoded into long-term memory",
                 "Schema theory — prior knowledge and expectations distort memory recall",
-                "Interference theory — other memories disrupt the original memory trace",
-                "Encoding failure — the story was not properly encoded into long-term memory"
+                "Decay theory — the memory trace fades over time without rehearsal",
+                "Interference theory — other memories disrupt the original memory trace"
               ],
               "correctIndex": 1,
               "explanation": "Bartlett argued that schemas (organised mental frameworks based on prior experience) influence how we encode and recall information. Participants changed unfamiliar elements of the story to fit their existing cultural schemas, demonstrating that memory is an active, reconstructive process rather than a passive recording.",
@@ -97,12 +123,38 @@
               "options": [
                 "Retroactive interference, where new information disrupts previously stored memories",
                 "The misinformation effect, where post-event information alters memory of an original event",
-                "Source monitoring error, where participants misattribute the source of their memories",
-                "Encoding specificity, where memory recall depends on matching encoding and retrieval cues"
+                "Encoding specificity, where memory recall depends on matching encoding and retrieval cues",
+                "Source monitoring error, where participants misattribute the source of their memories"
               ],
               "correctIndex": 1,
               "explanation": "The misinformation effect refers to the phenomenon where exposure to misleading post-event information (such as leading questions using different verbs) alters a witness's memory of the original event. Loftus and Palmer's study is a classic demonstration of this cognitive bias in eyewitness testimony.",
               "difficulty": 2
+            },
+            {
+              "id": "q2_1_04",
+              "stem": "In the second experiment of Loftus and Palmer (1974), participants who heard the verb 'smashed' were significantly more likely to report seeing broken glass one week later, even though there was no broken glass in the original film. Which of the following best explains the theoretical significance of this finding?",
+              "options": [
+                "It supports the memory reconstruction hypothesis — that the misleading verb altered the original memory representation, not just the verbal report",
+                "It demonstrates demand characteristics, as participants guessed the purpose of the study and responded accordingly",
+                "It shows that participants simply forgot the original details and guessed based on the most recent information available",
+                "It suggests that leading questions only create response bias at the time of questioning but do not alter the underlying memory trace"
+              ],
+              "correctIndex": 0,
+              "explanation": "The second experiment was specifically designed to distinguish between two explanations: response bias (participants adjust their verbal answer but retain the original memory) and memory reconstruction (the misleading information actually alters the stored memory). The fact that participants 'remembered' broken glass one week later — when there was none — supports the reconstruction hypothesis. The leading question containing 'smashed' appears to have been integrated into the original memory trace, fundamentally changing what participants believed they had seen. This has significant implications for the reliability of eyewitness testimony.",
+              "difficulty": 3
+            },
+            {
+              "id": "q2_1_05",
+              "stem": "Baddeley and Hitch (1974) proposed the Working Memory Model as an alternative to the Multi-Store Model's concept of a unitary short-term store. Which of the following provides the strongest evidence against the Multi-Store Model and in favour of the Working Memory Model?",
+              "options": [
+                "People can remember approximately 7 items in a digit span task, supporting the idea of a single STM store",
+                "Brain imaging studies show that memory tasks activate multiple brain regions simultaneously",
+                "The primacy effect in free recall demonstrates that early items are rehearsed into long-term memory",
+                "Patients with damage to STM (e.g., KF) showed impaired recall for auditory but not visual information, suggesting STM comprises separate components rather than a single store"
+              ],
+              "correctIndex": 3,
+              "explanation": "The case of patient KF (Shallice and Warrington, 1970) provides strong evidence against the Multi-Store Model's unitary STM. KF had impaired ability to process auditory information in STM but relatively intact visual STM processing. If STM were a single unitary store, as the Multi-Store Model proposes, damage should affect all types of short-term processing equally. The dissociation between auditory and visual STM supports Baddeley and Hitch's Working Memory Model, which proposes separate slave systems: the phonological loop (for auditory/verbal information) and the visuo-spatial sketchpad (for visual/spatial information), coordinated by the central executive.",
+              "difficulty": 3
             }
           ]
         }
@@ -125,8 +177,8 @@
               "options": [
                 "Salivation in response to the bell alone, after conditioning has occurred",
                 "Salivation in response to food, which occurs naturally without prior learning",
-                "The bell, which initially produces no salivation response",
-                "The food, which naturally elicits salivation without prior conditioning"
+                "The food, which naturally elicits salivation without prior conditioning",
+                "The bell, which initially produces no salivation response"
               ],
               "correctIndex": 1,
               "explanation": "The unconditioned response (UCR) is the natural, unlearned reaction to the unconditioned stimulus. In Pavlov's experiment, salivation in response to food is the UCR because it occurs naturally without any prior learning or conditioning.",
@@ -138,10 +190,10 @@
               "options": [
                 "Negative reinforcement, because an aversive stimulus is removed to increase behaviour",
                 "Positive punishment, because a pleasant stimulus is added to decrease behaviour",
-                "Positive reinforcement, because a pleasant stimulus is added to increase behaviour",
-                "Negative punishment, because a pleasant stimulus is removed to decrease behaviour"
+                "Negative punishment, because a pleasant stimulus is removed to decrease behaviour",
+                "Positive reinforcement, because a pleasant stimulus is added to increase behaviour"
               ],
-              "correctIndex": 2,
+              "correctIndex": 3,
               "explanation": "Positive reinforcement involves adding a pleasant stimulus (food pellet) following a behaviour (lever pressing) to increase the frequency of that behaviour. This is distinguished from negative reinforcement (removal of an aversive stimulus) and punishment (which decreases behaviour).",
               "difficulty": 1
             },
@@ -149,14 +201,40 @@
               "id": "q3_1_03",
               "stem": "Bandura, Ross and Ross (1961) conducted the Bobo doll experiment to investigate social learning theory. Which of the following findings from this study supports the concept of vicarious reinforcement?",
               "options": [
-                "Children who observed an aggressive model showed more aggression than those who observed a non-aggressive model",
                 "Children were more likely to imitate aggression when they saw the model being rewarded for aggressive behaviour",
                 "Boys showed more physical aggression than girls regardless of the model's gender",
+                "Children who observed an aggressive model showed more aggression than those who observed a non-aggressive model",
                 "Children only imitated behaviour when directly instructed to do so by an experimenter"
               ],
-              "correctIndex": 1,
+              "correctIndex": 0,
               "explanation": "Vicarious reinforcement refers to learning through observing others being rewarded for their behaviour. Bandura found that children were more likely to imitate aggressive behaviour when they saw the model being rewarded (reinforced) for it, demonstrating that reinforcement can be indirect (vicarious) rather than direct.",
               "difficulty": 2
+            },
+            {
+              "id": "q3_1_04",
+              "stem": "Watson and Rayner (1920) conditioned 'Little Albert' to fear a white rat by pairing the rat with a loud noise. Albert subsequently showed fear responses to other white furry objects, such as a rabbit and a fur coat. Which classical conditioning concept does this illustrate, and why is this study considered ethically problematic?",
+              "options": [
+                "Stimulus generalisation — the fear response extended to similar stimuli; the study is problematic because the conditioned fear was never removed and Albert was not protected from psychological harm",
+                "Extinction — the conditioned fear faded over time; the study is problematic because Albert was too young to give consent",
+                "Higher-order conditioning — the rabbit became a secondary conditioned stimulus; the study is problematic because the noise used was dangerously loud",
+                "Discrimination — Albert learned to distinguish between the rat and other stimuli; the study is problematic because the results were never published"
+              ],
+              "correctIndex": 0,
+              "explanation": "Stimulus generalisation occurs when a conditioned response (fear) transfers to stimuli that resemble the original conditioned stimulus (the white rat). Albert showed fear of the rabbit, fur coat, and even a Santa Claus mask with a white beard. The study raises serious ethical concerns: Albert was unable to give informed consent (being only 11 months old), he experienced significant psychological distress, and crucially, the conditioned fear was never extinguished (removed) before he left the study — meaning he may have carried the phobia into later life. This violates the modern ethical principle of protection from harm.",
+              "difficulty": 3
+            },
+            {
+              "id": "q3_1_05",
+              "stem": "A key criticism of Bandura's Bobo doll experiment is that it may lack ecological validity. Which of the following is the most compelling version of this criticism?",
+              "options": [
+                "The study only included children from middle-class families, so the results cannot be generalised to other social groups",
+                "The children were not told to be aggressive, so the study does not demonstrate true learning",
+                "The Bobo doll is designed to be hit and bounces back, so striking it may reflect playful behaviour rather than genuine aggression, meaning the study may not generalise to real-world violence",
+                "The laboratory setting increased the likelihood that children would behave naturally because they felt comfortable"
+              ],
+              "correctIndex": 2,
+              "explanation": "The most compelling ecological validity criticism is that the Bobo doll is a novelty toy specifically designed to be struck — it bounces back when hit, which may have invited playful rather than genuinely aggressive behaviour. Critics argue that hitting an inflatable toy in a controlled setting is qualitatively different from aggression towards a real person in the real world. Indeed, when the study was replicated with a live clown instead of a Bobo doll, fewer children were aggressive, suggesting that the original findings may not generalise straightforwardly to real-world interpersonal aggression. This challenges the study's claim to demonstrate that observed aggression leads to genuine aggressive behaviour.",
+              "difficulty": 3
             }
           ]
         }
@@ -177,8 +255,8 @@
               "id": "q4_1_01",
               "stem": "Milgram (1963) investigated obedience to authority. In his baseline study, what percentage of participants delivered the maximum 450-volt shock to the confederate learner?",
               "options": [
-                "25%",
                 "45%",
+                "25%",
                 "65%",
                 "85%"
               ],
@@ -190,12 +268,12 @@
               "id": "q4_1_02",
               "stem": "Asch (1951) conducted a series of line-matching experiments to study conformity. Which of the following best distinguishes normative social influence from informational social influence as explanations for Asch's findings?",
               "options": [
-                "Normative influence involves conforming to gain accurate information; informational influence involves conforming to be liked",
                 "Normative influence involves conforming to avoid social rejection; informational influence involves conforming because others are seen as a source of correct information",
+                "Normative influence involves conforming to gain accurate information; informational influence involves conforming to be liked",
                 "Normative influence only occurs in ambiguous situations; informational influence only occurs in clear situations",
                 "Normative influence leads to internalisation; informational influence leads to compliance only"
               ],
-              "correctIndex": 1,
+              "correctIndex": 0,
               "explanation": "Normative social influence refers to conforming to fit in with the group and avoid social rejection (compliance without private belief change). Informational social influence refers to conforming because we believe others have more accurate knowledge, especially in ambiguous situations (can lead to internalisation).",
               "difficulty": 2
             },
@@ -203,14 +281,40 @@
               "id": "q4_1_03",
               "stem": "Tajfel and Turner's (1979) Social Identity Theory proposes that individuals categorise themselves and others into social groups. Which concept describes the tendency to view one's own group more favourably than outgroups, leading to potential prejudice?",
               "options": [
+                "Social facilitation — improved performance in the presence of others",
                 "Social loafing — reduced effort when working in a group",
-                "In-group favouritism — preferential treatment of members of one's own social group",
                 "Deindividuation — loss of personal identity in a group setting",
-                "Social facilitation — improved performance in the presence of others"
+                "In-group favouritism — preferential treatment of members of one's own social group"
               ],
-              "correctIndex": 1,
+              "correctIndex": 3,
               "explanation": "In-group favouritism (also called in-group bias) is the tendency to view and treat members of one's own social group more positively than members of outgroups. According to Social Identity Theory, this occurs because individuals derive part of their self-esteem from group membership, motivating them to perceive their group as superior.",
               "difficulty": 2
+            },
+            {
+              "id": "q4_1_04",
+              "stem": "Milgram conducted several variations of his baseline obedience study to identify situational factors affecting obedience. In one variation, the experimenter gave instructions by telephone rather than being physically present in the room. How did this change affect obedience levels, and which theoretical explanation best accounts for this?",
+              "options": [
+                "Obedience increased to 80% because participants felt less personally responsible when the authority figure was absent",
+                "Obedience dropped to 40% because participants experienced cognitive dissonance between following orders and their personal morality",
+                "Obedience remained at 65% because the authority figure's instructions were equally compelling regardless of the medium of delivery",
+                "Obedience dropped to 20.5% because the reduced physical presence of the authority figure weakened the legitimacy and immediacy of their commands"
+              ],
+              "correctIndex": 3,
+              "explanation": "When the experimenter gave orders by telephone rather than being in the same room, obedience dropped dramatically from 65% to 20.5%. This demonstrates the importance of proximity of the authority figure as a situational factor in obedience. According to Milgram, the physical presence of an authority figure increases their perceived legitimacy and the immediacy of their social pressure, making it harder for participants to resist. When the authority was remote, participants found it easier to disobey — some even lied about administering shocks. This variation highlights the power of situational factors over dispositional ones in determining obedient behaviour.",
+              "difficulty": 3
+            },
+            {
+              "id": "q4_1_05",
+              "stem": "Tajfel et al. (1971) conducted the 'minimal group studies' to investigate the origins of in-group favouritism. Schoolboys were assigned to groups based on trivial criteria (e.g., preference for Klee or Kandinsky paintings) and then allocated points to in-group and out-group members. Which finding was most significant, and what does it suggest about the nature of prejudice?",
+              "options": [
+                "Boys allocated points equally between groups, suggesting that mere categorisation alone is insufficient to produce discrimination",
+                "Boys showed in-group favouritism and were willing to sacrifice maximum overall profit to maintain a difference between their group and the out-group, suggesting that social categorisation alone is sufficient to produce intergroup discrimination",
+                "Boys showed out-group favouritism, allocating more points to the other group, suggesting that competition for resources is necessary for prejudice to emerge",
+                "Boys only showed in-group favouritism when they knew the personal identities of group members, suggesting that prejudice requires interpersonal conflict"
+              ],
+              "correctIndex": 1,
+              "explanation": "Tajfel's minimal group studies found that merely being categorised into arbitrary groups was sufficient to produce in-group favouritism and out-group discrimination. Crucially, participants often chose point allocations that maximised the difference between in-group and out-group rewards, even when this meant their own group received fewer total points than would have been possible with a fairer distribution. This demonstrates that intergroup conflict, competition for resources, or personal knowledge of group members is not necessary for discrimination to occur — mere social categorisation is sufficient. This finding is foundational to Social Identity Theory and challenges Realistic Conflict Theory (Sherif), which proposed that intergroup hostility requires competition over scarce resources.",
+              "difficulty": 3
             }
           ]
         }

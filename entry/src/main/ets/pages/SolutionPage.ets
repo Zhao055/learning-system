@@ -15,6 +15,12 @@ export struct SolutionPage {
   @State isStreaming: boolean = false;
   private sessionId: string = '';
 
+  aboutToDisappear(): void {
+    if (this.sessionId) {
+      MiniMaxService.getInstance().clearSession(this.sessionId);
+    }
+  }
+
   aboutToAppear(): void {
     const params = this.navPathStack.getParamByName('SolutionPage') as string[];
     if (params && params.length > 0) {

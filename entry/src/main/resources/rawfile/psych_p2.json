@@ -15,10 +15,10 @@
               "id": "q1_1_01",
               "stem": "A psychologist manipulates the amount of sleep participants get (4 hours vs 8 hours) and measures their performance on a memory test. Which research method is being used, and what is the independent variable (IV)?",
               "options": [
-                "Correlational study; the IV is memory test performance",
+                "Observational study; the IV is the amount of sleep",
                 "Laboratory experiment; the IV is the amount of sleep",
-                "Natural experiment; the IV is memory test performance",
-                "Observational study; the IV is the amount of sleep"
+                "Correlational study; the IV is memory test performance",
+                "Natural experiment; the IV is memory test performance"
               ],
               "correctIndex": 1,
               "explanation": "This is a laboratory experiment because the researcher directly manipulates a variable (amount of sleep) in a controlled environment. The independent variable (IV) is the variable that is manipulated by the researcher — in this case, the amount of sleep (4 hours vs 8 hours). The dependent variable (DV) is memory test performance.",
@@ -28,10 +28,10 @@
               "id": "q1_1_02",
               "stem": "A researcher observes children's playground behaviour without their knowledge, recording instances of aggression every 5 minutes. Which observation technique is being used?",
               "options": [
-                "Participant observation with event sampling",
-                "Non-participant observation with time sampling",
                 "Structured observation with event sampling",
-                "Covert participant observation with interval sampling"
+                "Non-participant observation with time sampling",
+                "Covert participant observation with interval sampling",
+                "Participant observation with event sampling"
               ],
               "correctIndex": 1,
               "explanation": "This is non-participant observation (the researcher does not join the group being observed) and covert (without participants' knowledge). The researcher uses time sampling (recording behaviour at fixed time intervals — every 5 minutes) rather than event sampling (recording every instance of a specific behaviour).",
@@ -41,14 +41,40 @@
               "id": "q1_1_03",
               "stem": "Which of the following is a key advantage of case studies as a research method in psychology?",
               "options": [
+                "They produce quantitative data that can be statistically analysed",
                 "They allow researchers to establish cause-and-effect relationships between variables",
                 "They provide rich, detailed, in-depth information about a unique individual or group",
-                "They can be easily replicated to test the reliability of findings",
-                "They produce quantitative data that can be statistically analysed"
+                "They can be easily replicated to test the reliability of findings"
               ],
-              "correctIndex": 1,
+              "correctIndex": 2,
               "explanation": "A key advantage of case studies is that they provide rich, detailed, qualitative data about a specific individual or group that cannot be obtained through other methods. Classic examples include Freud's case studies and HM (the amnesic patient studied by Milner et al.). However, they lack generalisability due to the unique nature of the case.",
               "difficulty": 1
+            },
+            {
+              "id": "q1_1_04",
+              "stem": "A researcher investigates whether there is a relationship between hours spent on social media per day and self-reported anxiety levels in teenagers. Neither variable is manipulated. The researcher finds a positive correlation (r = +0.62). Which of the following conclusions is justified?",
+              "options": [
+                "The correlation is too weak to draw any meaningful conclusions about the relationship",
+                "Spending more time on social media causes increased anxiety in teenagers",
+                "There is a moderately strong positive relationship between social media use and anxiety, but causation cannot be established",
+                "Anxiety causes teenagers to spend more time on social media as a coping mechanism"
+              ],
+              "correctIndex": 2,
+              "explanation": "A correlation coefficient of +0.62 indicates a moderately strong positive relationship — as social media use increases, anxiety tends to increase. However, because neither variable was manipulated, it is impossible to establish the direction of causation. The relationship could be: social media causing anxiety, anxiety leading to more social media use, or a third variable (e.g., loneliness, poor sleep) causing both. This is a fundamental limitation of correlational research: correlation does not imply causation.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_1_05",
+              "stem": "A researcher wishes to compare the effectiveness of three different therapies for treating phobias. She randomly assigns participants to one of three therapy conditions and measures their fear levels before and after treatment. To analyse the data, she must choose an appropriate statistical test. Which experimental design has been used, and which design feature creates the greatest threat to internal validity?",
+              "options": [
+                "Independent groups design; demand characteristics are the greatest threat because participants know which therapy they receive",
+                "Repeated measures design; order effects are the greatest threat because all participants experience all conditions",
+                "Matched pairs design; the difficulty of accurately matching participants is the greatest threat to validity",
+                "Independent groups design; participant variables (individual differences between groups) are the greatest threat because different people are in each condition"
+              ],
+              "correctIndex": 3,
+              "explanation": "Because participants are randomly assigned to one of the three conditions (each participant experiences only one therapy), this is an independent groups design. The greatest threat to internal validity in this design is participant variables — systematic differences between the groups that exist before the experiment begins. Even with random allocation, the groups may differ in important ways (e.g., severity of phobia, age, motivation) that could confound the results. This is why random allocation is used — to attempt to distribute participant variables evenly — but with small samples, chance differences between groups may still occur. Repeated measures designs avoid participant variables but introduce order effects; matched pairs designs attempt to control individual differences through matching.",
+              "difficulty": 3
             }
           ]
         }
@@ -69,10 +95,10 @@
               "id": "q2_1_01",
               "stem": "A researcher collects the following reaction times (in milliseconds) from 7 participants: 210, 195, 220, 198, 205, 215, 350. Which measure of central tendency would be most appropriate to use, and why?",
               "options": [
-                "The mean, because it uses all values in the data set and is the most sensitive measure",
+                "The mean, because it is always the most accurate measure of central tendency",
                 "The median, because it is not distorted by the extreme score of 350",
-                "The mode, because it is the only measure appropriate for continuous data",
-                "The mean, because it is always the most accurate measure of central tendency"
+                "The mean, because it uses all values in the data set and is the most sensitive measure",
+                "The mode, because it is the only measure appropriate for continuous data"
               ],
               "correctIndex": 1,
               "explanation": "The median (middle value when data is ordered) is most appropriate here because the data set contains an extreme outlier (350 ms). The mean would be inflated by this outlier, giving a misleading impression of the typical score. The median is resistant to the influence of outliers and provides a more representative measure of central tendency for skewed data.",
@@ -83,11 +109,11 @@
               "stem": "Two classes of students take the same psychology test. Class A has a mean score of 65 with a standard deviation of 3. Class B has a mean score of 65 with a standard deviation of 15. What does this tell us about the two classes?",
               "options": [
                 "Class A performed better overall, as a higher standard deviation indicates poorer performance",
-                "The scores in Class A are more tightly clustered around the mean, showing less variability than Class B",
                 "Class B performed better overall, as a higher standard deviation indicates greater understanding",
-                "Both classes show identical distributions because their means are the same"
+                "Both classes show identical distributions because their means are the same",
+                "The scores in Class A are more tightly clustered around the mean, showing less variability than Class B"
               ],
-              "correctIndex": 1,
+              "correctIndex": 3,
               "explanation": "Standard deviation measures the spread (variability) of scores around the mean. A smaller standard deviation (Class A: SD = 3) indicates that scores are tightly clustered around the mean, suggesting more consistent performance. A larger standard deviation (Class B: SD = 15) indicates greater spread, meaning scores vary more widely from the mean.",
               "difficulty": 1
             },
@@ -95,14 +121,40 @@
               "id": "q2_1_03",
               "stem": "A researcher wishes to display the frequency distribution of continuous data showing the number of hours of sleep participants reported. Which type of graph is most appropriate?",
               "options": [
-                "A bar chart, because it allows comparison between discrete categories",
                 "A histogram, because the data is continuous and bars should touch to show this",
-                "A pie chart, because it shows proportions of each sleep category",
-                "A scattergraph, because it shows the relationship between two variables"
+                "A scattergraph, because it shows the relationship between two variables",
+                "A bar chart, because it allows comparison between discrete categories",
+                "A pie chart, because it shows proportions of each sleep category"
               ],
-              "correctIndex": 1,
+              "correctIndex": 0,
               "explanation": "A histogram is used to display the frequency distribution of continuous data. Unlike bar charts (used for discrete/categorical data), the bars in a histogram touch each other to reflect the continuous nature of the data. The x-axis represents class intervals of the continuous variable (hours of sleep) and the y-axis represents frequency.",
               "difficulty": 1
+            },
+            {
+              "id": "q2_1_04",
+              "stem": "A researcher calculates the mean, median, and mode for a data set and finds: mean = 72, median = 68, mode = 65. What does this pattern of values indicate about the distribution of the data?",
+              "options": [
+                "The data is bimodal because the mean and mode are very different from each other",
+                "The data has a negative skew because the mean is higher than the median and mode",
+                "The data is normally distributed because all three measures of central tendency are similar",
+                "The data has a positive skew because the mean has been pulled towards a few high outliers, making it the largest of the three values"
+              ],
+              "correctIndex": 3,
+              "explanation": "When the mean is greater than the median, which is greater than the mode (mean > median > mode), this indicates a positive skew in the distribution. In a positively skewed distribution, a few unusually high scores (outliers) pull the mean upwards, away from the median and mode. The mean is the measure of central tendency most affected by extreme values. In a negatively skewed distribution, the pattern would be reversed (mean < median < mode). In a normal distribution, all three measures would be approximately equal. Understanding skewness is important because it determines which measure of central tendency is most appropriate to report.",
+              "difficulty": 3
+            },
+            {
+              "id": "q2_1_05",
+              "stem": "A researcher obtains the following descriptive statistics for two conditions in an experiment on the effects of noise on concentration: Condition A (silence): mean = 82, range = 8; Condition B (loud noise): mean = 74, range = 35. A student concludes that noise reduces concentration. Which of the following is the most important statistical limitation of this conclusion?",
+              "options": [
+                "The researcher should have used the mode instead of the mean because the data is clearly categorical",
+                "The large range in Condition B suggests high variability, meaning the mean may not be representative and the difference could be caused by individual differences rather than the IV",
+                "The means are too close together to demonstrate a meaningful difference between conditions",
+                "The range is not a valid measure of dispersion and should never be used in psychological research"
+              ],
+              "correctIndex": 1,
+              "explanation": "The large range in Condition B (35 vs 8) indicates substantial variability in scores. This is important for two reasons: first, a highly variable data set means the mean is less representative of the group as a whole, because individual scores are widely spread. Second, the high variability suggests that noise did not consistently impair concentration — some participants may have been minimally affected while others were greatly affected. This individual variation could be caused by participant variables (e.g., some people concentrate well despite noise) rather than the IV itself. To determine whether the difference in means is statistically significant (unlikely to be due to chance), the researcher would need to conduct an inferential statistical test, which takes variability into account.",
+              "difficulty": 3
             }
           ]
         }
@@ -123,12 +175,12 @@
               "id": "q3_1_01",
               "stem": "A researcher studying conformity tells participants they are taking part in a 'vision test' rather than a study on social pressure. After the study, the researcher explains the true nature of the research and checks for any distress. Which ethical procedures are illustrated here?",
               "options": [
-                "Informed consent and right to withdraw",
                 "Deception followed by debriefing",
-                "Confidentiality followed by anonymity",
-                "Deception followed by right to withdraw"
+                "Informed consent and right to withdraw",
+                "Deception followed by right to withdraw",
+                "Confidentiality followed by anonymity"
               ],
-              "correctIndex": 1,
+              "correctIndex": 0,
               "explanation": "The researcher uses deception (telling participants it is a 'vision test' to prevent demand characteristics) and then conducts a debriefing (explaining the true purpose and checking for distress afterwards). According to BPS guidelines, deception may be justified if the research cannot be conducted otherwise, but must be followed by a full debriefing.",
               "difficulty": 1
             },
@@ -136,12 +188,12 @@
               "id": "q3_1_02",
               "stem": "According to the British Psychological Society (BPS) Code of Ethics and Conduct, which of the following best describes the principle of informed consent?",
               "options": [
-                "Participants must be told every detail of the study, including the specific hypotheses, before agreeing to take part",
                 "Participants should be given sufficient information about the nature and purpose of the research to make an informed decision about participation",
+                "Consent is only required from participants who are considered vulnerable or at risk",
                 "Participants automatically consent to any procedures by agreeing to attend the research session",
-                "Consent is only required from participants who are considered vulnerable or at risk"
+                "Participants must be told every detail of the study, including the specific hypotheses, before agreeing to take part"
               ],
-              "correctIndex": 1,
+              "correctIndex": 0,
               "explanation": "Informed consent requires that participants are given adequate information about the general nature and purpose of the research, what participation involves, and their right to withdraw, so they can make a free and informed decision. Note that full disclosure is not always required (e.g., when mild deception is used), but the general nature must be communicated.",
               "difficulty": 1
             },
@@ -149,14 +201,40 @@
               "id": "q3_1_03",
               "stem": "Milgram's obedience studies have been criticised on ethical grounds. Which of the following represents the most serious ethical concern raised about this research?",
               "options": [
-                "The study lacked ecological validity because it was conducted in a laboratory setting",
-                "Participants experienced significant psychological distress and were not fully protected from harm",
                 "The sample was not representative because it only included male participants",
-                "The study used deception, which is never acceptable in psychological research"
+                "The study used deception, which is never acceptable in psychological research",
+                "Participants experienced significant psychological distress and were not fully protected from harm",
+                "The study lacked ecological validity because it was conducted in a laboratory setting"
               ],
-              "correctIndex": 1,
+              "correctIndex": 2,
               "explanation": "The most serious ethical concern about Milgram's research is that participants experienced significant psychological distress (trembling, sweating, extreme stress) during the study. BPS guidelines state that researchers have a duty to protect participants from psychological and physical harm. While deception was also used, the primary concern is the psychological harm caused during the procedure.",
               "difficulty": 2
+            },
+            {
+              "id": "q3_1_04",
+              "stem": "A researcher wants to study the behaviour of football fans during a match by secretly joining a group of supporters and observing them without revealing that she is conducting research. Which ethical principle is most directly compromised by this approach, and how might the researcher justify this decision?",
+              "options": [
+                "Informed consent is compromised, but the researcher may argue that the behaviour is in a public setting and that revealing the research purpose would fundamentally alter the natural behaviour being studied",
+                "Protection from harm is compromised because football matches can be dangerous environments",
+                "Confidentiality is compromised because the researcher will know the identities of the fans she observes",
+                "Right to withdraw is compromised, and this cannot be justified under any circumstances"
+              ],
+              "correctIndex": 0,
+              "explanation": "Covert participant observation directly violates the principle of informed consent, as participants do not know they are being studied and therefore cannot consent. However, BPS guidelines acknowledge that covert observation may be justified when the behaviour occurs in a public setting where people might reasonably expect to be observed, and when revealing the research purpose would invalidate the findings by changing participants' natural behaviour. The researcher must still protect participants' anonymity and confidentiality when reporting findings, and should seek ethical committee approval beforehand. This represents a genuine ethical dilemma — balancing the scientific value of naturalistic data against participants' right to know they are being studied.",
+              "difficulty": 3
+            },
+            {
+              "id": "q3_1_05",
+              "stem": "Zimbardo's (1973) Stanford Prison Experiment has been used as a key example in discussions of research ethics. Guards became increasingly authoritarian and prisoners showed signs of severe emotional disturbance, yet the study continued for six days. Which combination of ethical failures is most accurately identified in this study?",
+              "options": [
+                "Use of deception and lack of anonymity, as participants were filmed without their knowledge throughout the study",
+                "Breach of confidentiality and failure to obtain ethical approval, as the study was conducted without institutional oversight",
+                "Failure to protect participants from harm, inadequate right to withdraw (prisoners were told they could not leave), and lack of appropriate debriefing during the study period",
+                "Lack of informed consent and breach of confidentiality, as participants' names were published in research reports"
+              ],
+              "correctIndex": 2,
+              "explanation": "Zimbardo's Stanford Prison Experiment involved multiple ethical failures. Participants experienced severe psychological harm — prisoners showed signs of extreme distress, including uncontrollable crying and disorganised thinking. Critically, when prisoners asked to leave, they were initially told 'you cannot leave' (using their prisoner numbers), effectively undermining their right to withdraw. Zimbardo himself admitted becoming too involved in his role as 'prison superintendent' to make objective decisions about stopping the study. The study was eventually terminated after six days (of a planned fourteen) only when an outside observer (Christina Maslach) objected to the conditions. These failures illustrate the importance of independent ethical oversight, clear withdrawal procedures, and the need for researchers to maintain objectivity when their dual role as researcher and participant could compromise ethical decision-making.",
+              "difficulty": 3
             }
           ]
         }

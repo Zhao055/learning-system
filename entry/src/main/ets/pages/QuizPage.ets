@@ -27,6 +27,13 @@ export struct QuizPage {
   @State chatMessages: ChatMessage[] = [];
   @State chatInput: string = '';
   @State isStreaming: boolean = false;
+  private currentChatSessionId: string = '';
+
+  aboutToDisappear(): void {
+    if (this.currentChatSessionId) {
+      MiniMaxService.getInstance().clearSession(this.currentChatSessionId);
+    }
+  }
 
   aboutToAppear(): void {
     const params = this.navPathStack.getParamByName('QuizPage') as Object[];
@@ -87,10 +94,38 @@ export struct QuizPage {
     }
   }
 
+  private closeChatPanel(): void {
+    this.showChatPanel = false;
+    if (this.currentChatSessionId) {
+      MiniMaxService.getInstance().clearSession(this.currentChatSessionId);
+      this.currentChatSessionId = '';
+    }
+  }
+
   private openAIChat(): void {
     const q = this.getCurrentQuestion();
     if (!q) return;
+
+    if (!MiniMaxService.getInstance().hasApiKey()) {
+      AlertDialog.show({
+        title: 'API Key Required',
+        message: 'Please configure your MiniMax API Key in Settings first.',
+        primaryButton: {
+          value: 'Go to Settings',
+          action: () => {
+            this.navPathStack.pushPathByName('SettingsPage', null);
+          }
+        },
+        secondaryButton: {
+          value: 'Cancel',
+          action: () => {}
+        }
+      });
+      return;
+    }
+
     const sessionId = `quiz_${q.id}`;
+    this.currentChatSessionId = sessionId;
     const service = MiniMaxService.getInstance();
     const userAnswer = q.options[this.selectedOption];
     const correctAnswer = q.options[q.correctIndex];
@@ -267,59 +302,75 @@ export struct QuizPage {
                   showResult: this.showResult,
                   onSelect: () => { this.selectedOption = idx; }
                 })
-              }, (option: string, idx: number) => `opt_${idx}`)
+              }, (option: string, idx: number) => `q${this.currentIndex}_opt_${idx}`)
 
-              // Result feedback
+              // Result feedback (inline)
               if (this.showResult) {
-                Column({ space: 12 }) {
-                  ResultBadge({ isCorrect: this.getIsCorrect() })
-
-                  // Explanation
-                  Column() {
-                    Text('Explanation')
-                      .fontSize(14).fontWeight(FontWeight.Bold).fontColor('#4E6EF2')
-                    Text(this.getCurrentQuestion()?.explanation ?? '')
-                      .fontSize(14).fontColor('#333333').lineHeight(22).margin({ top: 8 })
-                  }
-                  .width('100%')
-                  .padding(16)
-                  .backgroundColor('#F0F4FF')
-                  .borderRadius(12)
-
-                  // Action buttons
-                  Row({ space: 12 }) {
-                    Button('Ask AI')
-                      .layoutWeight(1).height(44)
-                      .backgroundColor('#FF8E53').fontColor('#FFFFFF')
-                      .borderRadius(12).fontSize(15)
-                      .onClick(() => { this.openAIChat(); })
-
-                    Button(this.currentIndex < this.questions.length - 1 ? 'Next' : 'Results')
-                      .layoutWeight(1).height(44)
-                      .backgroundColor('#4E6EF2').fontColor('#FFFFFF')
-                      .borderRadius(12).fontSize(15)
-                      .onClick(() => { this.nextQuestion(); })
-                  }
-                  .width('100%')
+                // Compact result banner
+                Row() {
+                  Text(this.getIsCorrect() ? '✓' : '✗')
+                    .fontSize(22).fontWeight(FontWeight.Bold).fontColor('#FFFFFF')
+                    .width(36).height(36).textAlign(TextAlign.Center)
+                    .borderRadius(18)
+                    .backgroundColor(this.getIsCorrect() ? '#4CAF50' : '#F44336')
+                  Text(this.getIsCorrect() ? 'Correct!' : 'Incorrect')
+                    .fontSize(16).fontWeight(FontWeight.Bold)
+                    .fontColor(this.getIsCorrect() ? '#4CAF50' : '#F44336')
+                    .margin({ left: 12 })
                 }
                 .width('100%')
-                .alignItems(HorizontalAlign.Center)
-              }
+                .padding(12)
+                .backgroundColor(this.getIsCorrect() ? '#E8F5E9' : '#FFEBEE')
+                .borderRadius(12)
 
-              // Submit button (before answering)
-              if (!this.showResult) {
-                Button('Submit Answer')
-                  .width('100%').height(48)
-                  .backgroundColor(this.selectedOption >= 0 ? '#4E6EF2' : '#CCCCCC')
-                  .fontColor('#FFFFFF').fontSize(16).borderRadius(12)
-                  .enabled(this.selectedOption >= 0)
-                  .onClick(() => { this.submitAnswer(); })
+                // Explanation
+                Column() {
+                  Text('Explanation')
+                    .fontSize(14).fontWeight(FontWeight.Bold).fontColor('#4E6EF2')
+                  Text(this.getCurrentQuestion()?.explanation ?? '')
+                    .fontSize(14).fontColor('#333333').lineHeight(22).margin({ top: 8 })
+                }
+                .width('100%')
+                .padding(16)
+                .backgroundColor('#F0F4FF')
+                .borderRadius(12)
               }
             }
-            .padding({ left: 20, right: 20, bottom: 40 })
+            .padding({ left: 20, right: 20, bottom: 20 })
           }
           .layoutWeight(1)
           .scrollBar(BarState.Off)
+
+          // Fixed bottom action bar
+          Column() {
+            if (!this.showResult) {
+              Button('Submit Answer')
+                .width('100%').height(48)
+                .backgroundColor(this.selectedOption >= 0 ? '#4E6EF2' : '#CCCCCC')
+                .fontColor('#FFFFFF').fontSize(16).borderRadius(12)
+                .enabled(this.selectedOption >= 0)
+                .onClick(() => { this.submitAnswer(); })
+            } else {
+              Row({ space: 12 }) {
+                Button('Ask AI')
+                  .layoutWeight(1).height(44)
+                  .backgroundColor('#FF8E53').fontColor('#FFFFFF')
+                  .borderRadius(12).fontSize(15)
+                  .onClick(() => { this.openAIChat(); })
+
+                Button(this.currentIndex < this.questions.length - 1 ? 'Next' : 'Results')
+                  .layoutWeight(1).height(44)
+                  .backgroundColor('#4E6EF2').fontColor('#FFFFFF')
+                  .borderRadius(12).fontSize(15)
+                  .onClick(() => { this.nextQuestion(); })
+              }
+              .width('100%')
+            }
+          }
+          .width('100%')
+          .padding({ left: 20, right: 20, top: 12, bottom: 16 })
+          .backgroundColor('#FFFFFF')
+          .shadow({ radius: 8, color: 'rgba(0,0,0,0.08)', offsetX: 0, offsetY: -2 })
         }
         .width('100%').height('100%').backgroundColor('#F5F5F5')
 
@@ -330,7 +381,7 @@ export struct QuizPage {
               .width('100%')
               .layoutWeight(1)
               .backgroundColor('rgba(0,0,0,0.4)')
-              .onClick(() => { this.showChatPanel = false; })
+              .onClick(() => { this.closeChatPanel(); })
 
             Column() {
               Column()
@@ -344,7 +395,7 @@ export struct QuizPage {
                   Text('X').fontSize(16).fontColor('#666666')
                 }
                 .width(32).height(32).backgroundColor('#F0F0F0')
-                .onClick(() => { this.showChatPanel = false; })
+                .onClick(() => { this.closeChatPanel(); })
               }
               .width('100%').padding({ left: 20, right: 20 })
 

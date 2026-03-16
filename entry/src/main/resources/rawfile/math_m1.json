@@ -17,40 +17,66 @@
               "id": "q1_1_01",
               "stem": "A particle is in equilibrium under three forces. Two of the forces are 6 N due East and 8 N due North. What is the magnitude of the third force?",
               "options": [
-                "10 N",
-                "14 N",
+                "7 N",
                 "2 N",
-                "7 N"
+                "10 N",
+                "14 N"
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "explanation": "For equilibrium, the third force must be equal and opposite to the resultant of the first two. The resultant of 6 N East and 8 N North has magnitude √(6² + 8²) = √(36 + 64) = √100 = 10 N. So the third force is 10 N (directed South-West).",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q1_1_02",
               "stem": "A block of weight 50 N rests on a rough horizontal plane. A force of 30 N is applied at 30° above the horizontal. The coefficient of friction is 0.4. What is the friction force acting on the block?",
               "options": [
-                "12 N",
                 "15 N",
-                "20 N",
-                "30 N"
+                "14 N",
+                "30 N",
+                "20 N"
               ],
               "correctIndex": 1,
-              "explanation": "The horizontal component of the applied force is 30 cos 30° = 30 × (√3/2) ≈ 25.98 N. The vertical component is 30 sin 30° = 15 N, so the normal reaction N = 50 − 15 = 35 N. Maximum friction = 0.4 × 35 = 14 N. Since 25.98 N > 14 N, the block is on the point of sliding (or sliding), so friction = μN = 14 N. However, if we check: the closest answer is 15 N. Re-evaluating: if the block is in equilibrium, friction equals the horizontal component only if ≤ μN. Since 14 N < 25.98 N, the block slides and friction = 14 N ≈ 15 N (to nearest 5 N). The correct answer from the choices is 15 N.",
-              "difficulty": "medium"
+              "explanation": "The vertical component of the applied force is 30 sin 30° = 15 N (upward), so the normal reaction N = 50 − 15 = 35 N. The horizontal component is 30 cos 30° ≈ 25.98 N. Maximum friction = μN = 0.4 × 35 = 14 N. Since 25.98 N > 14 N, the block slides and friction equals the maximum: F = 14 N.",
+              "difficulty": 2
             },
             {
               "id": "q1_1_03",
               "stem": "Three coplanar forces act at a point: F₁ = 10 N at 0°, F₂ = 10 N at 120°, F₃ = 10 N at 240°. What is the resultant force?",
               "options": [
-                "0 N",
                 "10 N",
                 "20 N",
-                "30 N"
+                "30 N",
+                "0 N"
+              ],
+              "correctIndex": 3,
+              "explanation": "Resolving horizontally: 10 cos 0° + 10 cos 120° + 10 cos 240° = 10 + 10(−½) + 10(−½) = 10 − 5 − 5 = 0 N. Resolving vertically: 10 sin 0° + 10 sin 120° + 10 sin 240° = 0 + 10(√3/2) + 10(−√3/2) = 0 N. The resultant is 0 N — the three forces form a balanced system (symmetric arrangement at 120° intervals).",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_1_04",
+              "stem": "Two forces of magnitudes 5 N and 12 N act on a particle at right angles to each other. What is the magnitude of their resultant?",
+              "options": [
+                "8.5 N",
+                "7 N",
+                "13 N",
+                "17 N"
+              ],
+              "correctIndex": 2,
+              "explanation": "When two forces act at right angles, the magnitude of the resultant is found using Pythagoras' theorem: R = √(5² + 12²) = √(25 + 144) = √169 = 13 N.",
+              "difficulty": 1
+            },
+            {
+              "id": "q1_1_05",
+              "stem": "A box of weight 40 N rests on a rough plane inclined at angle α to the horizontal, where sin α = 0.6 and cos α = 0.8. A force of magnitude P N acts on the box along the line of greatest slope directed up the plane. The box is in limiting equilibrium and about to slide up the plane. The coefficient of friction is 0.5. What is the value of P?",
+              "options": [
+                "40 N",
+                "32 N",
+                "16 N",
+                "24 N"
               ],
               "correctIndex": 0,
-              "explanation": "Resolving horizontally: 10 cos 0° + 10 cos 120° + 10 cos 240° = 10 + 10(−½) + 10(−½) = 10 − 5 − 5 = 0 N. Resolving vertically: 10 sin 0° + 10 sin 120° + 10 sin 240° = 0 + 10(√3/2) + 10(−√3/2) = 0 N. The resultant is 0 N — the three forces form a balanced system (symmetric arrangement at 120° intervals).",
-              "difficulty": "medium"
+              "explanation": "Resolving perpendicular to the plane: R = 40 cos α = 40 × 0.8 = 32 N. Since the box is about to slide up the plane, friction acts down the plane. Friction = μR = 0.5 × 32 = 16 N. Resolving parallel to the plane: P = 40 sin α + friction = 40 × 0.6 + 16 = 24 + 16 = 40 N.",
+              "difficulty": 3
             }
           ]
         }
@@ -71,40 +97,66 @@
               "id": "q1_2_01",
               "stem": "A car starts from rest and accelerates uniformly at 2 m/s² for 5 seconds. How far does it travel in this time?",
               "options": [
-                "25 m",
-                "10 m",
                 "50 m",
-                "20 m"
+                "25 m",
+                "20 m",
+                "10 m"
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "explanation": "Using s = ut + ½at²: s = 0 × 5 + ½ × 2 × 5² = 0 + ½ × 2 × 25 = 25 m.",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q1_2_02",
               "stem": "A ball is thrown vertically upward with initial velocity 20 m/s. Taking g = 10 m/s², what is the maximum height reached?",
               "options": [
-                "20 m",
                 "40 m",
                 "10 m",
-                "30 m"
+                "30 m",
+                "20 m"
               ],
-              "correctIndex": 0,
+              "correctIndex": 3,
               "explanation": "At maximum height, v = 0. Using v² = u² + 2as: 0 = 20² + 2(−10)s, so 20s = 400, giving s = 20 m.",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q1_2_03",
               "stem": "A velocity-time graph shows a particle moving with constant acceleration. At t = 0 the velocity is 4 m/s, and at t = 6 s the velocity is 16 m/s. What is the displacement in the first 6 seconds?",
               "options": [
+                "96 m",
                 "60 m",
                 "72 m",
-                "48 m",
-                "96 m"
+                "48 m"
+              ],
+              "correctIndex": 1,
+              "explanation": "The displacement equals the area under the velocity-time graph (a trapezium): s = ½ × (4 + 16) × 6 = ½ × 20 × 6 = 60 m. Alternatively, using s = ut + ½at² with a = (16−4)/6 = 2 m/s²: s = 4×6 + ½×2×36 = 24 + 36 = 60 m.",
+              "difficulty": 1
+            },
+            {
+              "id": "q1_2_04",
+              "stem": "A particle moves in a straight line with constant acceleration. It passes point A with velocity 3 m/s and point B with velocity 9 m/s. The distance AB is 12 m. What is the acceleration?",
+              "options": [
+                "3 m/s²",
+                "6 m/s²",
+                "1 m/s²",
+                "4.5 m/s²"
               ],
               "correctIndex": 0,
-              "explanation": "The displacement equals the area under the velocity-time graph (a trapezium): s = ½ × (4 + 16) × 6 = ½ × 20 × 6 = 60 m. Alternatively, using s = ut + ½at² with a = (16−4)/6 = 2 m/s²: s = 4×6 + ½×2×36 = 24 + 36 = 60 m.",
-              "difficulty": "easy"
+              "explanation": "Using v² = u² + 2as: 9² = 3² + 2a(12). So 81 = 9 + 24a, giving 24a = 72, therefore a = 3 m/s².",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_2_05",
+              "stem": "A particle is projected vertically upward with speed 30 m/s from ground level. Taking g = 10 m/s², find the total time for which the particle is more than 25 m above the ground.",
+              "options": [
+                "4 s",
+                "5 s",
+                "3 s",
+                "2 s"
+              ],
+              "correctIndex": 0,
+              "explanation": "Using s = ut − ½gt², set s = 25: 25 = 30t − 5t². Rearranging: 5t² − 30t + 25 = 0, so t² − 6t + 5 = 0, which factors as (t − 1)(t − 5) = 0. The particle is at height 25 m at t = 1 s and t = 5 s. It is above 25 m between these times, so the total time above 25 m is 5 − 1 = 4 s.",
+              "difficulty": 3
             }
           ]
         }
@@ -127,38 +179,64 @@
               "options": [
                 "3 m/s",
                 "4 m/s",
-                "1 m/s",
-                "12 m/s"
+                "12 m/s",
+                "1 m/s"
               ],
               "correctIndex": 0,
               "explanation": "Conservation of momentum: (3)(4) + (1)(0) = (3 + 1)v. So 12 = 4v, giving v = 3 m/s.",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q1_3_02",
               "stem": "A ball of mass 0.5 kg hits a wall with velocity 8 m/s and rebounds with velocity 6 m/s in the opposite direction. What is the impulse exerted by the wall on the ball?",
               "options": [
                 "7 N s",
+                "2 N s",
                 "1 N s",
-                "4 N s",
-                "2 N s"
+                "4 N s"
               ],
               "correctIndex": 0,
               "explanation": "Taking the initial direction as positive, the change in momentum = m(v − u) = 0.5 × (−6 − 8) = 0.5 × (−14) = −7 N s. The impulse from the wall on the ball is 7 N s (in the direction of rebound, i.e. magnitude 7 N s).",
-              "difficulty": "medium"
+              "difficulty": 2
             },
             {
               "id": "q1_3_03",
               "stem": "Particle P (mass 2 kg, velocity 5 m/s to the right) collides with particle Q (mass 3 kg, velocity 2 m/s to the left). After collision, P moves at 1 m/s to the left. What is Q's velocity after the collision?",
               "options": [
-                "2 m/s to the right",
                 "1 m/s to the left",
+                "3 m/s to the right",
                 "4 m/s to the right",
-                "3 m/s to the right"
+                "2 m/s to the right"
               ],
-              "correctIndex": 0,
+              "correctIndex": 3,
               "explanation": "Taking right as positive. Total momentum before = 2(5) + 3(−2) = 10 − 6 = 4 N s. After collision: 2(−1) + 3v_Q = 4. So −2 + 3v_Q = 4, giving 3v_Q = 6, v_Q = 2 m/s to the right.",
-              "difficulty": "medium"
+              "difficulty": 2
+            },
+            {
+              "id": "q1_3_04",
+              "stem": "A bullet of mass 20 g is fired horizontally into a stationary wooden block of mass 1.98 kg resting on a smooth surface. The bullet embeds in the block, which then moves at 5 m/s. What was the speed of the bullet?",
+              "options": [
+                "250 m/s",
+                "500 m/s",
+                "1000 m/s",
+                "100 m/s"
+              ],
+              "correctIndex": 1,
+              "explanation": "By conservation of momentum: (0.02)u + (1.98)(0) = (0.02 + 1.98)(5). So 0.02u = 2 × 5 = 10. Therefore u = 10 / 0.02 = 500 m/s.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_3_05",
+              "stem": "Particle A of mass 4 kg moves at 6 m/s and collides head-on with particle B of mass 2 kg moving at 3 m/s in the opposite direction. After the collision, A has velocity 1.5 m/s in its original direction. What is the kinetic energy lost in the collision?",
+              "options": [
+                "20.25 J",
+                "0 J",
+                "81 J",
+                "40.5 J"
+              ],
+              "correctIndex": 3,
+              "explanation": "Taking A's original direction as positive. Before: momentum = 4(6) + 2(−3) = 24 − 6 = 18 N s. After: 4(1.5) + 2v_B = 18, so 6 + 2v_B = 18, giving v_B = 6 m/s. KE before = ½(4)(6²) + ½(2)(3²) = 72 + 9 = 81 J. KE after = ½(4)(1.5²) + ½(2)(6²) = 4.5 + 36 = 40.5 J. KE lost = 81 − 40.5 = 40.5 J.",
+              "difficulty": 3
             }
           ]
         }
@@ -179,40 +257,66 @@
               "id": "q1_4_01",
               "stem": "Two particles A (2 kg) and B (3 kg) are connected by a light inextensible string over a smooth pulley. Taking g = 10 m/s², what is the acceleration of the system?",
               "options": [
-                "2 m/s²",
-                "5 m/s²",
                 "6 m/s²",
-                "10 m/s²"
+                "10 m/s²",
+                "2 m/s²",
+                "5 m/s²"
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "explanation": "Net force = (3 − 2)g = 1 × 10 = 10 N. Total mass = 2 + 3 = 5 kg. Using F = ma: a = 10/5 = 2 m/s².",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q1_4_02",
               "stem": "A lift of mass 500 kg accelerates upward at 1.5 m/s². Taking g = 10 m/s², what is the tension in the lift cable?",
               "options": [
-                "5750 N",
                 "5000 N",
+                "5750 N",
                 "4250 N",
                 "7500 N"
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "explanation": "Applying Newton's second law (upward positive): T − mg = ma. So T = m(g + a) = 500(10 + 1.5) = 500 × 11.5 = 5750 N.",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q1_4_03",
               "stem": "Particles A (4 kg) and B (6 kg) are on a smooth horizontal surface, connected by a light string. A horizontal force of 20 N is applied to A away from B. What is the tension in the string between them?",
               "options": [
-                "12 N",
+                "6 N",
                 "8 N",
-                "20 N",
-                "6 N"
+                "12 N",
+                "20 N"
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "explanation": "System acceleration: a = F / (m_A + m_B) = 20 / (4 + 6) = 2 m/s². For particle B alone (tension T pulls it): T = m_B × a = 6 × 2 = 12 N.",
-              "difficulty": "medium"
+              "difficulty": 2
+            },
+            {
+              "id": "q1_4_04",
+              "stem": "Two particles of masses 2 kg and 3 kg are connected by a light string passing over a smooth fixed pulley. Taking g = 10 m/s², what is the tension in the string?",
+              "options": [
+                "20 N",
+                "25 N",
+                "24 N",
+                "30 N"
+              ],
+              "correctIndex": 2,
+              "explanation": "The acceleration of the system is a = (3 − 2)g / (3 + 2) = 10/5 = 2 m/s². For the 2 kg particle (accelerating upward): T − 2g = 2a, so T = 2(10) + 2(2) = 20 + 4 = 24 N. This can be verified using the 3 kg particle: 3g − T = 3a gives T = 30 − 6 = 24 N.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_4_05",
+              "stem": "Particle A of mass 5 kg rests on a rough horizontal table and is connected by a light inextensible string passing over a smooth pulley at the edge of the table to particle B of mass 3 kg hanging freely. The coefficient of friction between A and the table is 0.2. Taking g = 10 m/s², what is the acceleration of the system?",
+              "options": [
+                "3.75 m/s²",
+                "2.5 m/s²",
+                "5 m/s²",
+                "1.25 m/s²"
+              ],
+              "correctIndex": 1,
+              "explanation": "For B (taking downward as positive): 3g − T = 3a, so 30 − T = 3a. For A on the table: T − friction = 5a. Friction = μR = 0.2 × 5g = 0.2 × 50 = 10 N. So T − 10 = 5a. Adding the two equations: 30 − 10 = 8a, so 20 = 8a, giving a = 2.5 m/s².",
+              "difficulty": 3
             }
           ]
         }
@@ -233,14 +337,14 @@
               "id": "q1_5_01",
               "stem": "A stone of mass 2 kg is dropped from a height of 20 m. Taking g = 10 m/s² and ignoring air resistance, what is the speed of the stone just before it hits the ground?",
               "options": [
-                "20 m/s",
+                "14 m/s",
                 "10 m/s",
                 "40 m/s",
-                "14 m/s"
+                "20 m/s"
               ],
-              "correctIndex": 0,
+              "correctIndex": 3,
               "explanation": "Using conservation of energy: KE gained = PE lost. ½mv² = mgh. So v² = 2gh = 2 × 10 × 20 = 400, giving v = 20 m/s.",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q1_5_02",
@@ -253,20 +357,46 @@
               ],
               "correctIndex": 0,
               "explanation": "At constant speed, the driving force equals the resistance force = 800 N. Power = Force × velocity = 800 × 15 = 12000 W (12 kW).",
-              "difficulty": "easy"
+              "difficulty": 1
             },
             {
               "id": "q1_5_03",
               "stem": "A particle of mass 3 kg slides down a smooth inclined plane of length 10 m inclined at 30° to the horizontal. Taking g = 10 m/s², what is the speed at the bottom if the particle starts from rest?",
               "options": [
-                "10 m/s",
                 "√50 m/s",
+                "√150 m/s",
                 "20 m/s",
-                "√150 m/s"
+                "10 m/s"
+              ],
+              "correctIndex": 3,
+              "explanation": "Height fallen: h = 10 sin 30° = 5 m. By conservation of energy: ½mv² = mgh, so v² = 2 × 10 × 5 = 100, giving v = 10 m/s.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_5_04",
+              "stem": "A car of mass 800 kg travels up a slope inclined at angle θ to the horizontal, where sin θ = 0.05. The car moves at a constant speed of 20 m/s and the resistance to motion is 400 N. Taking g = 10 m/s², what is the power output of the engine?",
+              "options": [
+                "8 kW",
+                "12 kW",
+                "16 kW",
+                "20 kW"
+              ],
+              "correctIndex": 2,
+              "explanation": "At constant speed, the driving force equals the total resistance: weight component along slope + friction. Weight component = mg sin θ = 800 × 10 × 0.05 = 400 N. Total driving force = 400 + 400 = 800 N. Power = Force × velocity = 800 × 20 = 16000 W = 16 kW.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_5_05",
+              "stem": "A block of mass 2 kg slides from rest down a rough slope of length 8 m inclined at angle α to the horizontal, where sin α = 3/5 and cos α = 4/5. The coefficient of friction is 0.25. Taking g = 10 m/s², find the speed of the block at the bottom of the slope.",
+              "options": [
+                "8 m/s",
+                "10 m/s",
+                "6 m/s",
+                "4 m/s"
               ],
               "correctIndex": 0,
-              "explanation": "Height fallen: h = 10 sin 30° = 5 m. By conservation of energy: ½mv² = mgh, so v² = 2 × 10 × 5 = 100, giving v = 10 m/s.",
-              "difficulty": "medium"
+              "explanation": "Height descended: h = 8 × 3/5 = 4.8 m. Normal reaction: R = mg cos α = 2 × 10 × 4/5 = 16 N. Friction = μR = 0.25 × 16 = 4 N. Using the work-energy theorem: ½mv² = mgh − (friction × distance) = 2 × 10 × 4.8 − 4 × 8 = 96 − 32 = 64 J. So ½(2)v² = 64, giving v² = 64, and v = 8 m/s.",
+              "difficulty": 3
             }
           ]
         }

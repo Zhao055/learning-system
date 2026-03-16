@@ -15,12 +15,12 @@
               "id": "q1_1_01",
               "stem": "A researcher uses a 2x2 factorial design to investigate the effects of caffeine (caffeine vs no caffeine) and sleep deprivation (deprived vs not deprived) on reaction time. What is a key advantage of this factorial design over conducting two separate single-factor experiments?",
               "options": [
+                "It eliminates the need for a control group because all conditions act as controls for each other",
                 "It reduces the total number of participants needed by combining two experiments into one",
                 "It allows the researcher to examine interaction effects between the two independent variables",
-                "It eliminates the need for a control group because all conditions act as controls for each other",
                 "It ensures that all participants experience all conditions, reducing individual differences"
               ],
-              "correctIndex": 1,
+              "correctIndex": 2,
               "explanation": "A key advantage of factorial designs is the ability to examine interaction effects — whether the effect of one independent variable differs depending on the level of another IV. For example, caffeine might improve reaction time only when participants are sleep deprived but have no effect when they are well-rested. Single-factor experiments cannot detect such interactions.",
               "difficulty": 2
             },
@@ -28,10 +28,10 @@
               "id": "q1_1_02",
               "stem": "A researcher investigates the effect of a new anti-anxiety intervention by comparing employees in companies that voluntarily adopted the programme with employees in companies that did not. The researcher did not assign companies to conditions. Which research design does this represent?",
               "options": [
-                "A true experiment, because the researcher is comparing two groups on a measurable outcome",
+                "A correlational study, because the researcher is measuring two variables simultaneously",
                 "A quasi-experiment, because the IV was not directly manipulated by the researcher",
-                "A natural experiment, because the researcher had no control over any aspect of the study",
-                "A correlational study, because the researcher is measuring two variables simultaneously"
+                "A true experiment, because the researcher is comparing two groups on a measurable outcome",
+                "A natural experiment, because the researcher had no control over any aspect of the study"
               ],
               "correctIndex": 1,
               "explanation": "A quasi-experiment resembles a true experiment in that it compares groups on a dependent variable, but the researcher does not randomly assign participants to conditions. Instead, pre-existing groups are used (companies that already chose to adopt the programme vs those that did not). This limits causal conclusions because pre-existing differences between groups (confounding variables) may explain outcome differences.",
@@ -41,14 +41,40 @@
               "id": "q1_1_03",
               "stem": "A psychologist conducts a cross-cultural study comparing conformity levels in Japanese and American university students. Which of the following is the most significant methodological challenge in cross-cultural research?",
               "options": [
-                "Ensuring that the sample sizes are equal across both cultural groups",
                 "Achieving measurement equivalence — ensuring that constructs and measures have equivalent meaning in both cultures",
+                "Translating questionnaires from English to Japanese without losing nuanced meaning",
                 "Obtaining ethical approval from two separate institutional review boards",
-                "Translating questionnaires from English to Japanese without losing nuanced meaning"
+                "Ensuring that the sample sizes are equal across both cultural groups"
               ],
-              "correctIndex": 1,
+              "correctIndex": 0,
               "explanation": "Measurement equivalence (also called construct equivalence) is the most fundamental challenge in cross-cultural research. It refers to whether a psychological construct (e.g., 'conformity') has the same meaning in both cultures and whether the measurement instrument captures the same construct in both contexts. Without establishing equivalence, observed differences may reflect measurement artefacts rather than genuine cultural differences. Translation issues are a component of this broader challenge.",
               "difficulty": 2
+            },
+            {
+              "id": "q1_1_04",
+              "stem": "A researcher uses a longitudinal design to study the development of attachment styles from infancy to adulthood, following the same cohort of 200 participants over 25 years. Which of the following represents the most significant methodological threat to this type of research design?",
+              "options": [
+                "Demand characteristics, because participants will guess the purpose of the study over such a long period",
+                "Order effects, because participants are tested repeatedly and may improve through practice",
+                "Attrition (participant dropout), because systematic loss of certain types of participants over time can bias the remaining sample and compromise the validity of conclusions",
+                "Low ecological validity, because studying attachment in a research context does not reflect real-world relationships"
+              ],
+              "correctIndex": 2,
+              "explanation": "Attrition (also called participant mortality) is the most significant threat to longitudinal research. Over 25 years, many participants will inevitably drop out — they may move, lose interest, become uncontactable, or die. Critically, attrition is often systematic rather than random: participants who drop out may differ in important ways from those who remain (e.g., those with insecure attachment styles may be less likely to maintain contact with researchers). This selective attrition means the remaining sample becomes progressively less representative of the original cohort, potentially biasing findings towards a particular subgroup. Researchers attempt to manage attrition by maintaining regular contact, offering incentives, and statistically comparing dropouts with remaining participants to assess the extent of bias.",
+              "difficulty": 3
+            },
+            {
+              "id": "q1_1_05",
+              "stem": "A researcher designs an experiment to test whether background music affects reading comprehension. She uses a repeated measures design where all participants complete a reading test in silence and then a reading test with music. A colleague points out that any difference in scores could be explained by an extraneous variable rather than the music. Which extraneous variable is the colleague most likely referring to, and how could it be controlled?",
+              "options": [
+                "Experimenter bias; this could be controlled by using a double-blind procedure",
+                "Social desirability bias; this could be controlled by using anonymous questionnaires rather than reading tests",
+                "Order effects (e.g., practice or fatigue from completing two tests); this could be controlled by counterbalancing the order of conditions across participants",
+                "Individual differences between participants; this could be controlled by using an independent groups design instead"
+              ],
+              "correctIndex": 2,
+              "explanation": "In a repeated measures design, all participants complete all conditions, which eliminates individual differences as a confound but introduces order effects. Because all participants complete the silence condition first and the music condition second, any improvement could be due to practice (getting better at the reading tests) or any decline could be due to fatigue (getting tired from doing two tests). Counterbalancing — randomly assigning half the participants to do silence first and music second, while the other half do music first and silence second — distributes order effects equally across conditions so they cannot systematically bias the results. This is a fundamental technique for controlling order effects in within-subjects designs, though it does not eliminate them entirely (it spreads them equally rather than removing them).",
+              "difficulty": 3
             }
           ]
         }
@@ -69,12 +95,12 @@
               "id": "q2_1_01",
               "stem": "A researcher studying social media use and self-esteem recruits 200 participants by posting an advertisement on social media platforms. Which sampling method is being used and what is its main limitation?",
               "options": [
+                "Opportunity sampling; the sample is limited to those who happen to be available at the time",
                 "Stratified sampling; it may not include participants from all social media platforms equally",
                 "Volunteer (self-selected) sampling; the sample may be biased as only certain types of people respond to advertisements",
-                "Opportunity sampling; the sample is limited to those who happen to be available at the time",
                 "Random sampling; participants may not be representative of the general population"
               ],
-              "correctIndex": 1,
+              "correctIndex": 2,
               "explanation": "This is volunteer (self-selected) sampling — participants choose to take part by responding to an advertisement. The main limitation is that volunteers may be systematically different from non-volunteers (e.g., more interested in social media, more willing to share their experiences), creating a biased sample that may not be representative of the population. This limits the generalisability of findings.",
               "difficulty": 1
             },
@@ -82,12 +108,12 @@
               "id": "q2_1_02",
               "stem": "A researcher conducts an experiment in a highly controlled laboratory setting with precise manipulation of variables. The study achieves high internal validity. However, a critic argues that the findings lack ecological validity. Which of the following best explains this tension?",
               "options": [
+                "Internal validity refers to the consistency of measurements, not the control of variables",
                 "High internal validity always produces high ecological validity, so the critic's argument is incorrect",
-                "The controls that increase internal validity (reducing confounds) may create an artificial environment that does not reflect real-world behaviour",
                 "Ecological validity is only relevant for observational studies, not experiments",
-                "Internal validity refers to the consistency of measurements, not the control of variables"
+                "The controls that increase internal validity (reducing confounds) may create an artificial environment that does not reflect real-world behaviour"
               ],
-              "correctIndex": 1,
+              "correctIndex": 3,
               "explanation": "There is a fundamental tension between internal and ecological validity in experimental research. The strict controls needed to establish internal validity (ensuring that only the IV affects the DV) often produce artificial conditions that do not reflect how people behave in natural environments. This reduces ecological validity — the extent to which findings can be generalised to real-world settings. Researchers must balance these competing demands.",
               "difficulty": 2
             },
@@ -96,13 +122,39 @@
               "stem": "In a study investigating the effects of a new revision technique on exam performance, participants who know they are being observed change their revision habits to try to please the researcher. This is an example of which methodological issue?",
               "options": [
                 "Investigator bias — the researcher unconsciously influences participants' behaviour",
-                "Demand characteristics — participants alter their behaviour in response to perceived expectations of the study",
+                "Experimenter expectancy effect — the researcher's expectations influence how they measure the DV",
                 "Social desirability bias — participants alter their responses to appear more socially acceptable",
-                "Experimenter expectancy effect — the researcher's expectations influence how they measure the DV"
+                "Demand characteristics — participants alter their behaviour in response to perceived expectations of the study"
               ],
-              "correctIndex": 1,
+              "correctIndex": 3,
               "explanation": "Demand characteristics occur when participants pick up on cues about what the researcher expects (the 'demand' of the situation) and change their behaviour accordingly, either to support the hypothesis ('good subject' effect) or to disrupt it. This threatens internal validity because the DV changes are caused by demand characteristics rather than the IV. Orne (1962) highlighted demand characteristics as a major threat to experimental validity.",
               "difficulty": 2
+            },
+            {
+              "id": "q2_1_04",
+              "stem": "A researcher wants to ensure that her sample of 500 participants reflects the gender, ethnic, and age composition of the UK population. She divides the population into subgroups based on these characteristics and then randomly selects participants from each subgroup in proportion to their representation in the population. Which sampling method is she using, and why is it considered superior to simple random sampling for this purpose?",
+              "options": [
+                "Stratified sampling; it is superior because it guarantees that key subgroups are proportionally represented, reducing the risk that any group is over- or under-represented by chance",
+                "Snowball sampling; it is superior because existing participants recruit others from their own demographic groups",
+                "Opportunity sampling; it is superior because it is quicker and more cost-effective than random sampling",
+                "Systematic sampling; it is superior because selecting every nth person from a list ensures equal representation"
+              ],
+              "correctIndex": 0,
+              "explanation": "Stratified sampling involves dividing the target population into relevant subgroups (strata) — such as gender, ethnicity, and age — and then randomly selecting participants from each stratum in proportion to their representation in the population. This method is superior to simple random sampling because, although random sampling theoretically produces a representative sample, in practice (especially with smaller samples) some subgroups may be over- or under-represented by chance. Stratified sampling eliminates this risk by ensuring proportional representation of key demographic characteristics. This increases the external validity (generalisability) of the findings. However, it requires detailed knowledge of the population composition beforehand, which can be difficult and time-consuming to obtain.",
+              "difficulty": 3
+            },
+            {
+              "id": "q2_1_05",
+              "stem": "A study reports that a new cognitive-behavioural therapy (CBT) programme significantly reduced anxiety scores compared to a waitlist control group (p < 0.01). However, the effect size (Cohen's d) was only 0.15. A student argues that the therapy is highly effective because the p-value is very small. Which of the following correctly evaluates this claim?",
+              "options": [
+                "The student is incorrect — a p-value of less than 0.01 means the result is likely a Type II error and should be disregarded",
+                "The student is incorrect — statistical significance (p < 0.01) only indicates that the result is unlikely due to chance, but the very small effect size (d = 0.15) suggests the actual improvement in anxiety is minimal and may have little practical or clinical significance",
+                "The student is correct — a p-value below 0.01 indicates a very large and practically meaningful treatment effect",
+                "The student is correct — effect sizes are irrelevant when the p-value is below 0.01, because this guarantees the finding is important"
+              ],
+              "correctIndex": 1,
+              "explanation": "This question illustrates the critical distinction between statistical significance and practical (clinical) significance. A p-value < 0.01 means there is less than a 1% probability that the observed difference occurred by chance — but this does not indicate how large or meaningful the difference is. With a large sample, even a trivially small difference can reach statistical significance. Cohen's d = 0.15 is classified as a very small effect size (Cohen suggested d = 0.2 as 'small', 0.5 as 'medium', and 0.8 as 'large'). This means the actual reduction in anxiety was minimal — the therapy may produce a statistically real but practically negligible improvement. In clinical psychology, it is essential to consider effect sizes alongside p-values to determine whether a treatment produces meaningful improvements in patients' lives.",
+              "difficulty": 3
             }
           ]
         }
@@ -123,12 +175,12 @@
               "id": "q3_1_01",
               "stem": "Twin studies are frequently used in the nature-nurture debate. Bouchard et al. (1990) studied monozygotic (MZ) twins raised apart (separated at birth). What does a high concordance rate for a psychological trait in MZ twins raised apart most strongly suggest?",
               "options": [
+                "The trait is equally determined by genetic and environmental factors in all cases",
                 "Environmental factors are primarily responsible for the trait, since the twins were raised in different environments",
-                "Genetic factors play a significant role in the trait, since MZ twins share 100% of their DNA despite different environments",
                 "Neither genetic nor environmental factors are responsible, as the study lacks a control group",
-                "The trait is equally determined by genetic and environmental factors in all cases"
+                "Genetic factors play a significant role in the trait, since MZ twins share 100% of their DNA despite different environments"
               ],
-              "correctIndex": 1,
+              "correctIndex": 3,
               "explanation": "Monozygotic (identical) twins share 100% of their genetic material. If MZ twins raised in different environments (and thus with different environmental experiences) show high concordance rates for a psychological trait, this provides strong evidence for a genetic contribution to that trait, since the shared factor is their genetics rather than their environment.",
               "difficulty": 1
             },
@@ -149,14 +201,40 @@
               "id": "q3_1_03",
               "stem": "When evaluating psychological research, it is important to consider ethical issues alongside scientific validity. Which of the following ethical concerns is most relevant when conducting research on genetic influences on behaviour?",
               "options": [
-                "Ensuring that participants in twin studies are debriefed about the purpose of the research",
                 "The risk that findings could be misused to justify discrimination, determinism, or eugenics based on genetic differences",
                 "Maintaining confidentiality of participants' data in accordance with data protection legislation",
+                "Ensuring that participants in twin studies are debriefed about the purpose of the research",
                 "Ensuring that research is conducted by qualified psychologists with appropriate training"
               ],
-              "correctIndex": 1,
+              "correctIndex": 0,
               "explanation": "Genetic research in psychology raises particular ethical concerns about the potential misuse of findings. Historical examples, including the eugenics movement, demonstrate how research suggesting genetic bases for intelligence or behaviour has been misused to justify discrimination and harmful social policies. Researchers have a responsibility to present findings cautiously, acknowledge limitations, and consider the societal implications of their research — including its potential for misinterpretation and misuse.",
               "difficulty": 2
+            },
+            {
+              "id": "q3_1_04",
+              "stem": "The diathesis-stress model is an interactionist framework used to explain the development of mental disorders such as schizophrenia. According to this model, an individual may carry a genetic predisposition (diathesis) for schizophrenia but only develop the disorder if exposed to significant environmental stressors. Which of the following research findings provides the strongest support for the diathesis-stress model?",
+              "options": [
+                "Brain imaging studies reveal that all individuals with schizophrenia have identical patterns of prefrontal cortex abnormality",
+                "Monozygotic twins have a concordance rate of approximately 48% for schizophrenia, meaning that even with identical genetics, more than half of co-twins do not develop the disorder",
+                "The prevalence of schizophrenia is approximately 1% across all cultures, suggesting that only genetics are involved",
+                "Adoption studies show that children raised by parents with schizophrenia always develop the disorder regardless of their biological parents' mental health"
+              ],
+              "correctIndex": 1,
+              "explanation": "The concordance rate for schizophrenia in monozygotic (MZ) twins is approximately 48% (Gottesman, 1991). Since MZ twins share 100% of their DNA, if schizophrenia were entirely genetic, the concordance rate would be 100%. The fact that it is well below this demonstrates that genetics alone are insufficient — environmental factors must also play a role in triggering the disorder. This is precisely what the diathesis-stress model predicts: a genetic vulnerability (diathesis) combined with environmental triggers (stress) determines whether the disorder manifests. Tienari et al. (2004) provided further support by showing that adopted children with a biological mother with schizophrenia were more likely to develop the disorder only when raised in a dysfunctional adoptive family environment, not when raised in a healthy one.",
+              "difficulty": 3
+            },
+            {
+              "id": "q3_1_05",
+              "stem": "The nature-nurture debate intersects with several other debates in psychology, including the debate about free will versus determinism. A strict biological determinist position on criminal behaviour would argue that some individuals are genetically predisposed to commit crimes and therefore cannot be held fully responsible for their actions. Which of the following most effectively challenges this position?",
+              "options": [
+                "The existence of identical twins where one is a criminal and the other is not demonstrates that genetic predisposition does not inevitably lead to criminal behaviour, and that environmental, cognitive, and volitional factors also contribute",
+                "Brain imaging studies show that some criminals have abnormal brain structures, proving that biology determines criminal behaviour",
+                "Criminal behaviour is most common in lower socioeconomic groups, proving that poverty rather than genetics is the sole cause",
+                "All psychological research supports the biological determinist position because behaviour is ultimately controlled by the brain"
+              ],
+              "correctIndex": 0,
+              "explanation": "Discordant MZ twins (identical twins who differ in criminal behaviour despite sharing 100% of their DNA) provide powerful evidence against strict biological determinism. If one twin becomes a criminal and the other does not, genetics alone cannot be the determining factor — environmental experiences, personal choices, cognitive appraisals, and social circumstances must also play a role. This supports an interactionist perspective and has profound implications for the legal and ethical treatment of offenders. If behaviour is entirely biologically determined, the concepts of moral responsibility, free will, and criminal liability become problematic. Most psychologists adopt a 'soft determinism' position, acknowledging that behaviour is influenced (but not entirely determined) by biological and environmental factors, while still allowing for some degree of personal agency and choice.",
+              "difficulty": 3
             }
           ]
         }
