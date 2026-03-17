@@ -55,6 +55,34 @@ export interface QuizAnswer {
   isCorrect: boolean;
 }
 
+export interface ProgressRecord {
+  paperId: string;
+  chapterId: string;
+  kpId: string;
+  questionId: string;
+  correct: boolean;
+  selectedIndex: number;
+  timestamp: number;
+}
+
+export interface KpProgress {
+  total: number;
+  correct: number;
+  attempted: number;
+}
+
+export interface ChapterProgress {
+  totalKps: number;
+  completedKps: number;
+  correctRate: number;
+}
+
+export interface PaperProgress {
+  totalChapters: number;
+  completedChapters: number;
+  correctRate: number;
+}
+
 export interface QuizResult {
   paperId: string;
   paperName: string;

@@ -54,6 +54,11 @@
       "name": "SettingsPage",
       "pageSourceFile": "src/main/ets/pages/SettingsPage.ets",
       "buildFunction": "SettingsPageBuilder"
+    },
+    {
+      "name": "WrongAnswerPage",
+      "pageSourceFile": "src/main/ets/pages/WrongAnswerPage.ets",
+      "buildFunction": "WrongAnswerPageBuilder"
     }
   ]
 }

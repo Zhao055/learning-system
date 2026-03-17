@@ -1,4 +1,5 @@
 import { MiniMaxService } from '../service/MiniMaxService';
+import { ProgressService } from '../service/ProgressService';
 
 @Builder
 export function HomePageBuilder() {
@@ -9,6 +10,10 @@ export function HomePageBuilder() {
 export struct HomePage {
   @Consume navPathStack: NavPathStack;
   @State greeting: string = '';
+  @State totalAnswered: number = 0;
+  @State totalCorrect: number = 0;
+  @State accuracy: number = 0;
+  @State wrongCount: number = 0;
 
   aboutToAppear(): void {
     const hour = new Date().getHours();
@@ -20,6 +25,20 @@ export struct HomePage {
       this.greeting = 'Good Evening! 🌙';
     }
     MiniMaxService.getInstance().loadApiKey(getContext(this));
+    this.refreshStats();
+  }
+
+  onPageShow(): void {
+    this.refreshStats();
+  }
+
+  private refreshStats(): void {
+    const service = ProgressService.getInstance();
+    const stats = service.getTotalStats();
+    this.totalAnswered = stats.totalAnswered;
+    this.totalCorrect = stats.totalCorrect;
+    this.accuracy = stats.accuracy;
+    this.wrongCount = service.getWrongAnswerCount();
   }
 
   build() {
@@ -66,8 +85,63 @@ export struct HomePage {
         .width('100%')
         .padding({ left: 24, right: 24, top: 16 })
 
-        // Feature Cards
+        Scroll() {
         Column({ space: 20 }) {
+          // Stats summary bar
+          if (this.totalAnswered > 0) {
+            Row() {
+              Column() {
+                Text(`${this.totalAnswered}`)
+                  .fontSize(20).fontWeight(FontWeight.Bold).fontColor('#4E6EF2')
+                Text('Answered')
+                  .fontSize(11).fontColor('#999999').margin({ top: 2 })
+              }
+              .layoutWeight(1)
+              .alignItems(HorizontalAlign.Center)
+
+              Column()
+                .width(1).height(30).backgroundColor('#E0E0E0')
+
+              Column() {
+                Text(`${this.totalCorrect}`)
+                  .fontSize(20).fontWeight(FontWeight.Bold).fontColor('#4CAF50')
+                Text('Correct')
+                  .fontSize(11).fontColor('#999999').margin({ top: 2 })
+              }
+              .layoutWeight(1)
+              .alignItems(HorizontalAlign.Center)
+
+              Column()
+                .width(1).height(30).backgroundColor('#E0E0E0')
+
+              Column() {
+                Text(`${this.accuracy}%`)
+                  .fontSize(20).fontWeight(FontWeight.Bold).fontColor('#FF9800')
+                Text('Accuracy')
+                  .fontSize(11).fontColor('#999999').margin({ top: 2 })
+              }
+              .layoutWeight(1)
+              .alignItems(HorizontalAlign.Center)
+
+              Column()
+                .width(1).height(30).backgroundColor('#E0E0E0')
+
+              Column() {
+                Text(`${this.wrongCount}`)
+                  .fontSize(20).fontWeight(FontWeight.Bold).fontColor('#F44336')
+                Text('Wrong')
+                  .fontSize(11).fontColor('#999999').margin({ top: 2 })
+              }
+              .layoutWeight(1)
+              .alignItems(HorizontalAlign.Center)
+            }
+            .width('100%')
+            .padding({ top: 16, bottom: 16 })
+            .backgroundColor('#FFFFFF')
+            .borderRadius(16)
+            .shadow({ radius: 4, color: 'rgba(0,0,0,0.05)', offsetX: 0, offsetY: 2 })
+          }
+
           // Card 1: Knowledge & Quiz
           Column() {
             Row() {
@@ -204,10 +278,72 @@ export struct HomePage {
             angle: 135,
             colors: [['#FF6B6B', 0], ['#FF8E53', 1]]
           })
+
+          // Card 3: Wrong Answer Book
+          Column() {
+            Row() {
+              Text('📝')
+                .fontSize(40)
+              Column() {
+                Text('Wrong Answer Book')
+                  .fontSize(20)
+                  .fontWeight(FontWeight.Bold)
+                  .fontColor('#FFFFFF')
+                Text('Review & re-practice mistakes')
+                  .fontSize(14)
+                  .fontColor('rgba(255,255,255,0.8)')
+                  .margin({ top: 4 })
+              }
+              .alignItems(HorizontalAlign.Start)
+              .margin({ left: 16 })
+
+              Blank()
+
+              if (this.wrongCount > 0) {
+                Text(`${this.wrongCount}`)
+                  .fontSize(16)
+                  .fontWeight(FontWeight.Bold)
+                  .fontColor('#F44336')
+                  .width(32).height(32)
+                  .textAlign(TextAlign.Center)
+                  .backgroundColor('#FFFFFF')
+                  .borderRadius(16)
+              }
+            }
+            .width('100%')
+
+            Text('Review questions you got wrong, see explanations, and re-quiz to strengthen weak areas.')
+              .fontSize(14)
+              .fontColor('rgba(255,255,255,0.9)')
+              .margin({ top: 16 })
+              .lineHeight(22)
+
+            Button('Open Wrong Answer Book →')
+              .width('100%')
+              .height(48)
+              .backgroundColor('rgba(255,255,255,0.25)')
+              .fontColor('#FFFFFF')
+              .fontSize(16)
+              .fontWeight(FontWeight.Medium)
+              .borderRadius(12)
+              .margin({ top: 20 })
+              .onClick(() => {
+                this.navPathStack.pushPathByName('WrongAnswerPage', null);
+              })
+          }
+          .width('100%')
+          .padding(24)
+          .borderRadius(20)
+          .linearGradient({
+            angle: 135,
+            colors: [['#7B1FA2', 0], ['#E040FB', 1]]
+          })
         }
         .width('100%')
-        .padding({ left: 24, right: 24, top: 32 })
+        .padding({ left: 24, right: 24, top: 32, bottom: 40 })
+        }
         .layoutWeight(1)
+        .scrollBar(BarState.Off)
       }
       .width('100%')
       .height('100%')

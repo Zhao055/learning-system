@@ -1,4 +1,5 @@
 import { QuestionRepository } from '../data/QuestionRepository';
+import { ProgressService } from '../service/ProgressService';
 import { HomePage } from './HomePage';
 
 @Entry
@@ -8,6 +9,7 @@ struct Index {
 
   aboutToAppear(): void {
     QuestionRepository.getInstance().loadPaper(getContext(this), 'math_p1.json', 'math_p1');
+    ProgressService.getInstance().loadProgress(getContext(this));
   }
 
   build() {

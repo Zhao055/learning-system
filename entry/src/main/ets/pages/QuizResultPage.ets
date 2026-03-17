@@ -1,4 +1,5 @@
 import { QuizResult } from '../model/ChapterModel';
+import { ProgressService } from '../service/ProgressService';
 
 @Builder
 export function QuizResultPageBuilder() {
@@ -10,12 +11,14 @@ export struct QuizResultPage {
   @Consume navPathStack: NavPathStack;
   @State result: QuizResult | undefined = undefined;
   @State showPoster: boolean = false;
+  @State totalWrongCount: number = 0;
 
   aboutToAppear(): void {
     const params = this.navPathStack.getParamByName('QuizResultPage') as Object[];
     if (params && params.length > 0) {
       this.result = params[0] as QuizResult;
     }
+    this.totalWrongCount = ProgressService.getInstance().getWrongAnswerCount();
   }
 
   private getScoreColor(): string {
@@ -144,6 +147,33 @@ export struct QuizResultPage {
             .padding(20)
             .backgroundColor('#FFFFFF')
             .borderRadius(16)
+
+            // Wrong answers notice
+            if (this.totalWrongCount > 0) {
+              Row() {
+                Text('📝')
+                  .fontSize(24)
+                Column() {
+                  Text(`${this.totalWrongCount} wrong answers in your book`)
+                    .fontSize(14).fontWeight(FontWeight.Medium).fontColor('#333333')
+                  Text('Tap to review and re-practice')
+                    .fontSize(12).fontColor('#999999').margin({ top: 2 })
+                }
+                .alignItems(HorizontalAlign.Start)
+                .margin({ left: 12 })
+                .layoutWeight(1)
+
+                Image($r('sys.media.ohos_ic_public_arrow_right'))
+                  .width(20).height(20).fillColor('#CCCCCC')
+              }
+              .width('100%')
+              .padding(16)
+              .backgroundColor('#FFF3E0')
+              .borderRadius(12)
+              .onClick(() => {
+                this.navPathStack.pushPathByName('WrongAnswerPage', null);
+              })
+            }
 
             // Action buttons
             Column({ space: 12 }) {

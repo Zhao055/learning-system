@@ -1,6 +1,7 @@
 import { QuestionRepository } from '../data/QuestionRepository';
-import { Chapter, PaperInfo } from '../model/ChapterModel';
+import { Chapter, PaperInfo, ChapterProgress } from '../model/ChapterModel';
 import { getPaper } from '../data/SubjectData';
+import { ProgressService } from '../service/ProgressService';
 
 @Builder
 export function ChapterListPageBuilder() {
@@ -13,6 +14,7 @@ export struct ChapterListPage {
   @State chapters: Chapter[] = [];
   @State paperId: string = '';
   @State paper: PaperInfo | undefined = undefined;
+  @State chapterProgressMap: Map<string, ChapterProgress> = new Map();
 
   private chapterIcons: string[] = ['📐', '🔗', '📍', '🔵', '📊', '📈', '🔺', '∫', '🧮', '📏', '🔢'];
 
@@ -23,7 +25,27 @@ export struct ChapterListPage {
       this.paperId = p[1];
       this.paper = getPaper(this.paperId);
       this.chapters = QuestionRepository.getInstance().getChapters(this.paperId);
+      this.refreshProgress();
     }
+  }
+
+  onPageShow(): void {
+    this.refreshProgress();
+  }
+
+  private refreshProgress(): void {
+    const service = ProgressService.getInstance();
+    const newMap = new Map<string, ChapterProgress>();
+    for (const ch of this.chapters) {
+      newMap.set(ch.id, service.getChapterProgress(this.paperId, ch.id));
+    }
+    this.chapterProgressMap = newMap;
+  }
+
+  private getChapterProgressText(chapterId: string): string {
+    const prog = this.chapterProgressMap.get(chapterId);
+    if (!prog || prog.completedKps === 0) return '';
+    return `${prog.completedKps}/${prog.totalKps} done · ${prog.correctRate}%`;
   }
 
   build() {
@@ -84,10 +106,20 @@ export struct ChapterListPage {
                     .fontSize(13)
                     .fontColor('#999999')
                     .margin({ top: 4 })
-                  Text(`${chapter.knowledgePoints.length} knowledge points`)
-                    .fontSize(12)
-                    .fontColor('#4E6EF2')
-                    .margin({ top: 4 })
+                  Row({ space: 8 }) {
+                    Text(`${chapter.knowledgePoints.length} knowledge points`)
+                      .fontSize(12)
+                      .fontColor('#4E6EF2')
+                    if (this.getChapterProgressText(chapter.id).length > 0) {
+                      Text(this.getChapterProgressText(chapter.id))
+                        .fontSize(11)
+                        .fontColor('#4CAF50')
+                        .padding({ left: 6, right: 6, top: 2, bottom: 2 })
+                        .backgroundColor('#E8F5E9')
+                        .borderRadius(4)
+                    }
+                  }
+                  .margin({ top: 4 })
                 }
                 .alignItems(HorizontalAlign.Start)
                 .layoutWeight(1)

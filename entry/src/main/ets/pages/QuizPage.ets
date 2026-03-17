@@ -2,6 +2,7 @@ import { QuestionRepository } from '../data/QuestionRepository';
 import { Question, KnowledgePoint, QuizAnswer, QuizResult } from '../model/ChapterModel';
 import { getPaper } from '../data/SubjectData';
 import { MiniMaxService } from '../service/MiniMaxService';
+import { ProgressService } from '../service/ProgressService';
 import { ChatMessage } from '../model/ChatModel';
 import { OptionCard } from '../components/OptionCard';
 import { ResultBadge } from '../components/ResultBadge';
@@ -62,12 +63,19 @@ export struct QuizPage {
     if (this.selectedOption < 0 || !q) return;
     this.showResult = true;
 
+    const isCorrect = this.getIsCorrect();
     const answer: QuizAnswer = {
       questionId: q.id,
       selectedIndex: this.selectedOption,
-      isCorrect: this.getIsCorrect()
+      isCorrect: isCorrect
     };
     this.answers.push(answer);
+
+    // Record answer for progress tracking
+    ProgressService.getInstance().recordAnswer(
+      getContext(this), this.paperId, this.chapterId, this.kpId,
+      q.id, isCorrect, this.selectedOption
+    );
   }
 
   private nextQuestion(): void {

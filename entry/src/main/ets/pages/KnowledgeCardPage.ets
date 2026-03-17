@@ -1,5 +1,6 @@
 import { QuestionRepository } from '../data/QuestionRepository';
-import { Chapter, KnowledgePoint } from '../model/ChapterModel';
+import { Chapter, KnowledgePoint, KpProgress } from '../model/ChapterModel';
+import { ProgressService } from '../service/ProgressService';
 
 @Builder
 export function KnowledgeCardPageBuilder() {
@@ -13,6 +14,7 @@ export struct KnowledgeCardPage {
   @State selectedKP: KnowledgePoint | undefined = undefined;
   @State showImagePreview: boolean = false;
   @State imageScale: number = 1;
+  @State kpProgressMap: Map<string, KpProgress> = new Map();
   private paperId: string = '';
 
   aboutToAppear(): void {
@@ -22,7 +24,29 @@ export struct KnowledgeCardPage {
       this.paperId = p[0];
       const chapterId = p[1];
       this.chapter = QuestionRepository.getInstance().getChapter(this.paperId, chapterId);
+      this.refreshProgress();
     }
+  }
+
+  onPageShow(): void {
+    this.refreshProgress();
+  }
+
+  private refreshProgress(): void {
+    const service = ProgressService.getInstance();
+    const chapterId = this.chapter?.id ?? '';
+    const kps = this.chapter?.knowledgePoints ?? [];
+    const newMap = new Map<string, KpProgress>();
+    for (const kp of kps) {
+      newMap.set(kp.id, service.getKpProgress(this.paperId, chapterId, kp.id));
+    }
+    this.kpProgressMap = newMap;
+  }
+
+  private getKpProgressText(kpId: string): string {
+    const prog = this.kpProgressMap.get(kpId);
+    if (!prog || prog.attempted === 0) return '';
+    return `${prog.correct}/${prog.attempted} correct`;
   }
 
   build() {
@@ -99,11 +123,22 @@ export struct KnowledgeCardPage {
                       .fontColor('#999999')
                       .margin({ top: 4 })
 
-                    Row() {
+                    Row({ space: 8 }) {
                       Text(`${kp.questions.length} questions`)
                         .fontSize(12)
                         .fontColor('#4E6EF2')
+                      if (this.getKpProgressText(kp.id).length > 0) {
+                        Text(this.getKpProgressText(kp.id))
+                          .fontSize(11)
+                          .fontColor('#4CAF50')
+                          .padding({ left: 6, right: 6, top: 2, bottom: 2 })
+                          .backgroundColor('#E8F5E9')
+                          .borderRadius(4)
+                      }
+                    }
+                    .margin({ top: 6 })
 
+                    Row() {
                       Blank()
 
                       Button('Start Quiz →')
@@ -143,25 +178,32 @@ export struct KnowledgeCardPage {
         // Full-screen image preview overlay
         if (this.showImagePreview && this.selectedKP) {
           Column() {
-            // Close button
+            // Top bar with close button
             Row() {
-              Blank()
+              Text(`${this.selectedKP?.id ?? ''} ${this.selectedKP?.title ?? ''}`)
+                .fontSize(16)
+                .fontWeight(FontWeight.Medium)
+                .fontColor('#FFFFFF')
+                .layoutWeight(1)
+                .maxLines(1)
+                .textOverflow({ overflow: TextOverflow.Ellipsis })
+
               Button({ type: ButtonType.Circle }) {
                 Text('✕')
-                  .fontSize(20)
+                  .fontSize(18)
                   .fontColor('#FFFFFF')
               }
-              .width(40)
-              .height(40)
-              .backgroundColor('rgba(0,0,0,0.5)')
+              .width(36)
+              .height(36)
+              .backgroundColor('rgba(255,255,255,0.2)')
               .onClick(() => {
                 this.showImagePreview = false;
               })
             }
             .width('100%')
-            .padding({ right: 20, top: 50 })
+            .padding({ left: 20, right: 20, top: 16, bottom: 8 })
 
-            // Zoomable image
+            // Zoomable image - takes full remaining space
             if ((this.selectedKP?.image?.length ?? 0) > 0) {
               Image($rawfile(`images/${this.selectedKP?.image ?? ''}`))
                 .width('100%')
@@ -169,35 +211,42 @@ export struct KnowledgeCardPage {
                 .objectFit(ImageFit.Contain)
                 .scale({ x: this.imageScale, y: this.imageScale })
                 .gesture(
-                  PinchGesture({ fingers: 2 })
-                    .onActionUpdate((event: GestureEvent) => {
-                      this.imageScale = Math.max(0.5, Math.min(3.0, event.scale));
-                    })
-                    .onActionEnd(() => {
-                      if (this.imageScale < 1) {
-                        this.imageScale = 1;
-                      }
-                    })
+                  GestureGroup(GestureMode.Exclusive,
+                    PinchGesture({ fingers: 2 })
+                      .onActionUpdate((event: GestureEvent) => {
+                        this.imageScale = Math.max(0.5, Math.min(5.0, event.scale));
+                      })
+                      .onActionEnd(() => {
+                        if (this.imageScale < 1) {
+                          this.imageScale = 1;
+                        }
+                      }),
+                    TapGesture({ count: 2 })
+                      .onAction(() => {
+                        if (this.imageScale > 1) {
+                          this.imageScale = 1;
+                        } else {
+                          this.imageScale = 2.5;
+                        }
+                      }),
+                    SwipeGesture({ direction: SwipeDirection.Vertical })
+                      .onAction(() => {
+                        this.showImagePreview = false;
+                      })
+                  )
                 )
             }
 
-            // Title overlay
-            Column() {
-              Text(`${this.selectedKP?.id ?? ''} ${this.selectedKP?.title ?? ''}`)
-                .fontSize(18)
-                .fontWeight(FontWeight.Bold)
-                .fontColor('#FFFFFF')
-              Text(this.selectedKP?.titleCn ?? '')
-                .fontSize(14)
-                .fontColor('rgba(255,255,255,0.8)')
-                .margin({ top: 4 })
-            }
-            .width('100%')
-            .padding(20)
+            // Bottom info
+            Text(this.selectedKP?.titleCn ?? '')
+              .fontSize(13)
+              .fontColor('rgba(255,255,255,0.6)')
+              .padding({ left: 20, right: 20, bottom: 16, top: 8 })
           }
           .width('100%')
           .height('100%')
-          .backgroundColor('rgba(0,0,0,0.95)')
+          .backgroundColor('#000000')
+          .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])
         }
       }
       .width('100%')
