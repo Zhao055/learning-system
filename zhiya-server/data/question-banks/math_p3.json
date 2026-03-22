@@ -1,0 +1,724 @@
+{
+  "chapters": [
+    {
+      "id": "ch1",
+      "title": "Algebra & Functions",
+      "titleCn": "代数与函数",
+      "knowledgePoints": [
+        {
+          "id": "1.1",
+          "title": "Partial Fractions",
+          "titleCn": "部分分式",
+          "image": "",
+          "questions": [
+            {
+              "id": "q1_1_01",
+              "stem": "Express (x + 7) / ((x + 1)(x - 2)) in partial fractions of the form A/(x + 1) + B/(x - 2). What are the values of A and B?",
+              "options": [
+                "A = -2, B = 3",
+                "A = 3, B = -2",
+                "A = 2, B = 3",
+                "A = -3, B = 2"
+              ],
+              "correctIndex": 0,
+              "explanation": "Write (x+7)/((x+1)(x-2)) = A/(x+1) + B/(x-2). Multiply through by (x+1)(x-2): x+7 = A(x-2) + B(x+1). Setting x = -1: -1+7 = A(-1-2), so 6 = -3A, giving A = -2. Setting x = 2: 2+7 = B(2+1), so 9 = 3B, giving B = 3. Verify: (-2(x-2) + 3(x+1)) / ((x+1)(x-2)) = (-2x+4+3x+3) / ((x+1)(x-2)) = (x+7) / ((x+1)(x-2)). Confirmed: A = -2, B = 3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_1_02",
+              "stem": "The fraction (6x) / ((x - 1)(x^2 + 2)) can be written in the form A/(x - 1) + (Bx + C)/(x^2 + 2). Find the value of A.",
+              "options": [
+                "A = 4/3",
+                "A = 1",
+                "A = 4",
+                "A = 2"
+              ],
+              "correctIndex": 3,
+              "explanation": "Multiply both sides by (x-1)(x^2+2): 6x = A(x^2+2) + (Bx+C)(x-1). Setting x=1: 6(1) = A(1+2), so 6 = 3A, giving A = 2. To find B and C, expand: 6x = A(x^2+2) + Bx^2 - Bx + Cx - C. Comparing x^2 coefficients: 0 = A+B, so B = -2. Comparing constant terms: 0 = 2A - C, so C = 4. Check x coefficient: 6 = -B + C = 2 + 4 = 6. Confirmed: A = 2.",
+              "difficulty": 3
+            },
+            {
+              "id": "q1_1_03",
+              "stem": "Express (x^2 + 3) / (x(x - 1)^2) in partial fractions. Which of the following is the correct decomposition?",
+              "options": [
+                "3/x + 4/(x-1) + 4/(x-1)^2",
+                "-3/x + 4/(x-1) - 4/(x-1)^2",
+                "3/x - 4/(x-1) + 4/(x-1)^2",
+                "-3/x + 4/(x-1) + 4/(x-1)^2"
+              ],
+              "correctIndex": 2,
+              "explanation": "Write (x^2+3)/(x(x-1)^2) = A/x + B/(x-1) + C/(x-1)^2. Multiply through: x^2+3 = A(x-1)^2 + Bx(x-1) + Cx. Setting x=0: 3 = A(1), so A=3. Setting x=1: 1+3=4=C(1), so C=4. Expanding and comparing x^2 coefficients: 1 = A+B = 3+B, so B=-4. Therefore the decomposition is 3/x - 4/(x-1) + 4/(x-1)^2, which is option B.",
+              "difficulty": 3
+            },
+            {
+              "id": "q1_1_04",
+              "stem": "Express (5x + 3) / ((2x + 1)(x - 1)) in partial fractions of the form A/(2x + 1) + B/(x - 1). Find the values of A and B.",
+              "options": [
+                "A = 1, B = 8/3",
+                "A = -1/3, B = -8/3",
+                "A = 1/3, B = 8/3",
+                "A = -1/3, B = 8/3"
+              ],
+              "correctIndex": 3,
+              "explanation": "Write (5x+3)/((2x+1)(x-1)) = A/(2x+1) + B/(x-1). Multiply both sides by (2x+1)(x-1): 5x+3 = A(x-1) + B(2x+1). Setting x = 1: 5+3 = A(0) + B(3), so 8 = 3B, giving B = 8/3. Setting x = -1/2: 5(-1/2)+3 = A(-1/2-1) + B(0), so -5/2+3 = A(-3/2), giving 1/2 = -3A/2, so A = -1/3. Verify: (-1/3)(x-1) + (8/3)(2x+1) = (-x/3+1/3+16x/3+8/3) = (15x/3+9/3) = (5x+3). Dividing by (2x+1)(x-1) recovers the original fraction. Confirmed: A = -1/3, B = 8/3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_1_05",
+              "stem": "Express (3x^2 + 3x + 4) / ((x + 1)(x^2 + 1)) in partial fractions of the form A/(x + 1) + (Bx + C)/(x^2 + 1). Find the value of B + C.",
+              "options": [
+                "4",
+                "1",
+                "3",
+                "2"
+              ],
+              "correctIndex": 2,
+              "explanation": "Multiply through by (x+1)(x^2+1): 3x^2+3x+4 = A(x^2+1) + (Bx+C)(x+1). Setting x = -1: 3-3+4 = A(1+1), so 4 = 2A, giving A = 2. Expanding the right side: A(x^2+1) + Bx^2+Bx+Cx+C = (A+B)x^2 + (B+C)x + (A+C). Comparing x^2 coefficients: 3 = A+B = 2+B, so B = 1. Comparing constant terms: 4 = A+C = 2+C, so C = 2. Check x coefficient: 3 = B+C = 1+2 = 3. Confirmed. Therefore B+C = 1+2 = 3.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch2",
+      "title": "Logarithmic & Exponential",
+      "titleCn": "对数与指数",
+      "knowledgePoints": [
+        {
+          "id": "2.1",
+          "title": "Exponential Growth & Decay",
+          "titleCn": "指数增长与衰减",
+          "image": "",
+          "questions": [
+            {
+              "id": "q2_1_01",
+              "stem": "A population P satisfies P = 500e^(0.02t), where t is time in years. How many years does it take for the population to double? Give your answer to 3 significant figures.",
+              "options": [
+                "25.0 years",
+                "17.3 years",
+                "34.7 years",
+                "50.0 years"
+              ],
+              "correctIndex": 2,
+              "explanation": "We need P = 1000, so 500e^(0.02t) = 1000. Thus e^(0.02t) = 2, giving 0.02t = ln2. Therefore t = ln2 / 0.02 = 0.6931 / 0.02 = 34.657... ≈ 34.7 years (3 s.f.).",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_1_02",
+              "stem": "The mass M grams of a radioactive substance at time t days satisfies M = M_0 * e^(-kt). If the half-life is 10 days, find the value of k correct to 3 significant figures.",
+              "options": [
+                "0.139",
+                "0.0500",
+                "0.0693",
+                "0.100"
+              ],
+              "correctIndex": 2,
+              "explanation": "At the half-life, M = M_0/2, so M_0/2 = M_0 * e^(-10k). Dividing by M_0: 1/2 = e^(-10k). Taking ln: ln(1/2) = -10k, so -ln2 = -10k, giving k = ln2/10 = 0.6931.../10 = 0.0693 (3 s.f.).",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_1_03",
+              "stem": "Given that y = Ae^(bx) passes through the points (0, 3) and (2, 12), find the exact value of b.",
+              "options": [
+                "b = 2ln2",
+                "b = ln2",
+                "b = ln4",
+                "b = (1/2)ln3"
+              ],
+              "correctIndex": 1,
+              "explanation": "At x=0: 3 = Ae^0 = A, so A = 3. At x=2: 12 = 3e^(2b), so e^(2b) = 4, giving 2b = ln4 = 2ln2, hence b = ln2. The exact value of b is ln2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_1_04",
+              "stem": "The number of bacteria N in a culture satisfies N = 200e^(kt). After 5 hours there are 3600 bacteria. Find the exact value of k.",
+              "options": [
+                "k = (1/5)ln18",
+                "k = (1/5)ln(18/5)",
+                "k = 5ln18",
+                "k = ln18"
+              ],
+              "correctIndex": 0,
+              "explanation": "At t = 5: 3600 = 200e^(5k), so e^(5k) = 3600/200 = 18. Taking natural log: 5k = ln18, giving k = (1/5)ln18. This is the exact value of k.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_1_05",
+              "stem": "A substance decays according to M = M_0 * e^(-0.05t). The substance also receives a constant input, so the modified model is dM/dt = -0.05M + 2. Find the equilibrium value of M (i.e., the value when dM/dt = 0).",
+              "options": [
+                "M = 40",
+                "M = 100",
+                "M = 20",
+                "M = 50"
+              ],
+              "correctIndex": 0,
+              "explanation": "At equilibrium, dM/dt = 0, so -0.05M + 2 = 0. Solving: 0.05M = 2, giving M = 2/0.05 = 40. This means that in the long run, the mass stabilises at 40 units, where the rate of decay exactly balances the constant input rate. This is a common type of question in the CIE 9709 P3 syllabus combining exponential decay with differential equations.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch3",
+      "title": "Trigonometry",
+      "titleCn": "三角函数",
+      "knowledgePoints": [
+        {
+          "id": "3.1",
+          "title": "Compound Angle Formulae",
+          "titleCn": "复合角公式",
+          "image": "",
+          "questions": [
+            {
+              "id": "q3_1_01",
+              "stem": "Using the compound angle formula, find the exact value of sin(75°).",
+              "options": [
+                "(√6 - √2) / 4",
+                "(√6 + √2) / 4",
+                "(√3 + 1) / 4",
+                "(√3 - 1) / 4"
+              ],
+              "correctIndex": 1,
+              "explanation": "sin(75°) = sin(45° + 30°) = sin45°cos30° + cos45°sin30° = (√2/2)(√3/2) + (√2/2)(1/2) = √6/4 + √2/4 = (√6 + √2)/4.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_1_02",
+              "stem": "Given that sin A = 3/5 and cos B = 5/13, where A and B are both acute angles, find the exact value of cos(A + B).",
+              "options": [
+                "56/65",
+                "63/65",
+                "-16/65",
+                "16/65"
+              ],
+              "correctIndex": 2,
+              "explanation": "cos A = 4/5 (since sin A = 3/5 and A is acute, using Pythagoras: cos A = √(1 - 9/25) = 4/5). sin B = 12/13 (since cos B = 5/13 and B is acute: sin B = √(1 - 25/169) = 12/13). cos(A+B) = cosA cosB - sinA sinB = (4/5)(5/13) - (3/5)(12/13) = 20/65 - 36/65 = -16/65.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_1_03",
+              "stem": "Express 3sin(x) + 4cos(x) in the form R sin(x + α), where R > 0 and 0 < α < π/2. Find the value of R.",
+              "options": [
+                "R = 5",
+                "R = 25",
+                "R = 7",
+                "R = √7"
+              ],
+              "correctIndex": 0,
+              "explanation": "For a sin(x) + b cos(x) = R sin(x + α), we have R = √(a^2 + b^2). Here a = 3 and b = 4, so R = √(9 + 16) = √25 = 5. The phase angle is α = arctan(b/a) = arctan(4/3).",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_1_04",
+              "stem": "Using the compound angle formula, find the exact value of tan(15°).",
+              "options": [
+                "√3 - 2",
+                "2 + √3",
+                "2 - √3",
+                "(√3 - 1) / 2"
+              ],
+              "correctIndex": 2,
+              "explanation": "tan(15°) = tan(45° - 30°) = (tan45° - tan30°) / (1 + tan45° tan30°) = (1 - 1/√3) / (1 + 1/√3). Multiply numerator and denominator by √3: (√3 - 1) / (√3 + 1). Rationalise by multiplying by (√3 - 1)/(√3 - 1): (√3 - 1)^2 / (3 - 1) = (3 - 2√3 + 1) / 2 = (4 - 2√3) / 2 = 2 - √3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_1_05",
+              "stem": "Express 5cos(θ) - 12sin(θ) in the form R cos(θ + α), where R > 0 and 0 < α < π/2. Find the maximum value of 1 / (5cos(θ) - 12sin(θ) + 15).",
+              "options": [
+                "1/15",
+                "13/15",
+                "1/28",
+                "1/2"
+              ],
+              "correctIndex": 3,
+              "explanation": "First, R = √(5^2 + 12^2) = √(25 + 144) = √169 = 13, and α = arctan(12/5). So 5cos(θ) - 12sin(θ) = 13cos(θ + α). The minimum value of 13cos(θ + α) is -13 (when cos(θ + α) = -1). Therefore the minimum value of the denominator 5cos(θ) - 12sin(θ) + 15 = 13cos(θ + α) + 15 is -13 + 15 = 2. Since we want to maximise 1/(denominator), we need the denominator to be as small as possible (and positive). The minimum positive value of the denominator is 2, so the maximum value of 1/(denominator) is 1/2.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch4",
+      "title": "Differentiation",
+      "titleCn": "微分",
+      "knowledgePoints": [
+        {
+          "id": "4.1",
+          "title": "Product & Quotient Rule",
+          "titleCn": "乘法与商法则",
+          "image": "",
+          "questions": [
+            {
+              "id": "q4_1_01",
+              "stem": "Differentiate y = x^2 * e^(3x) with respect to x. Which expression gives dy/dx?",
+              "options": [
+                "2x * e^(3x)",
+                "e^(3x)(2x + 3x^2)",
+                "e^(3x)(2x - 3x^2)",
+                "3x^2 * e^(3x)"
+              ],
+              "correctIndex": 1,
+              "explanation": "Using the product rule: dy/dx = u'v + uv' where u = x^2 and v = e^(3x). So u' = 2x and v' = 3e^(3x). Therefore dy/dx = 2x * e^(3x) + x^2 * 3e^(3x) = e^(3x)(2x + 3x^2).",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_1_02",
+              "stem": "Find dy/dx when y = sin(x) / x^2 (for x ≠ 0).",
+              "options": [
+                "(x cos x + 2 sin x) / x^3",
+                "(cos x) / (2x)",
+                "(x cos x - 2 sin x) / x^3",
+                "(2 sin x - x cos x) / x^3"
+              ],
+              "correctIndex": 2,
+              "explanation": "Using the quotient rule: dy/dx = (u'v - uv') / v^2 where u = sin x and v = x^2. So u' = cos x and v' = 2x. Therefore dy/dx = (cos x * x^2 - sin x * 2x) / x^4 = x(x cos x - 2 sin x) / x^4 = (x cos x - 2 sin x) / x^3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_1_03",
+              "stem": "Find the x-coordinate of the stationary point of y = x * ln(x) for x > 0.",
+              "options": [
+                "x = e",
+                "x = 1",
+                "x = 1/e",
+                "x = e^2"
+              ],
+              "correctIndex": 2,
+              "explanation": "Using the product rule: dy/dx = 1 * ln(x) + x * (1/x) = ln(x) + 1. Setting dy/dx = 0: ln(x) + 1 = 0, so ln(x) = -1, giving x = e^(-1) = 1/e.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_1_04",
+              "stem": "Differentiate y = e^(2x) * tan(x) with respect to x. Which expression gives dy/dx?",
+              "options": [
+                "e^(2x)(2tan(x) + sec^2(x))",
+                "e^(2x) * sec^2(x)",
+                "2e^(2x) * tan(x)",
+                "e^(2x)(2tan(x) - sec^2(x))"
+              ],
+              "correctIndex": 0,
+              "explanation": "Using the product rule with u = e^(2x) and v = tan(x): u' = 2e^(2x) and v' = sec^2(x). Therefore dy/dx = u'v + uv' = 2e^(2x)tan(x) + e^(2x)sec^2(x) = e^(2x)(2tan(x) + sec^2(x)).",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_1_05",
+              "stem": "Find the exact gradient of the curve y = (ln x)^2 / x at the point where x = e^2.",
+              "options": [
+                "1/e^2",
+                "2/e^2",
+                "4/e^2",
+                "0"
+              ],
+              "correctIndex": 3,
+              "explanation": "Using the quotient rule with u = (ln x)^2 and v = x: u' = 2ln(x) * (1/x) = 2ln(x)/x and v' = 1. So dy/dx = (u'v - uv')/v^2 = (2ln(x)/x * x - (ln x)^2) / x^2 = (2ln(x) - (ln x)^2) / x^2 = ln(x)(2 - ln x) / x^2. At x = e^2: ln(e^2) = 2, so dy/dx = 2(2 - 2) / (e^2)^2 = 0 / e^4 = 0. This means x = e^2 is actually a stationary point of the curve.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch5",
+      "title": "Integration",
+      "titleCn": "积分",
+      "knowledgePoints": [
+        {
+          "id": "5.1",
+          "title": "Integration by Parts",
+          "titleCn": "分部积分",
+          "image": "",
+          "questions": [
+            {
+              "id": "q5_1_01",
+              "stem": "Use integration by parts to find ∫ x * e^x dx.",
+              "options": [
+                "e^x + C",
+                "x^2 * e^x / 2 + C",
+                "x * e^x + e^x + C",
+                "x * e^x - e^x + C"
+              ],
+              "correctIndex": 3,
+              "explanation": "Let u = x and dv = e^x dx, so du = dx and v = e^x. By the formula ∫u dv = uv - ∫v du: ∫x e^x dx = x e^x - ∫e^x dx = x e^x - e^x + C = e^x(x - 1) + C.",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_1_02",
+              "stem": "Evaluate ∫(from 0 to 1) x * cos(πx) dx. What is the exact value?",
+              "options": [
+                "-2/π^2",
+                "2/π^2",
+                "1/π^2",
+                "-2/π"
+              ],
+              "correctIndex": 0,
+              "explanation": "Let u = x and dv = cos(πx) dx, so du = dx and v = sin(πx)/π. Integration by parts: [x sin(πx)/π] from 0 to 1 - ∫(0 to 1) sin(πx)/π dx. First term: (1*sin(π)/π) - (0) = 0. Second term: -(1/π)[-cos(πx)/π] from 0 to 1 = (1/π^2)[cos(πx)] from 0 to 1 = (1/π^2)(cos π - cos 0) = (1/π^2)(-1-1) = -2/π^2. Total = 0 + (-2/π^2) = -2/π^2.",
+              "difficulty": 3
+            },
+            {
+              "id": "q5_1_03",
+              "stem": "Find ∫ ln(x) dx.",
+              "options": [
+                "x ln(x) + x + C",
+                "1/x + C",
+                "x/ln(x) + C",
+                "x ln(x) - x + C"
+              ],
+              "correctIndex": 3,
+              "explanation": "Let u = ln(x) and dv = dx, so du = (1/x) dx and v = x. By parts: ∫ln(x) dx = x ln(x) - ∫x * (1/x) dx = x ln(x) - ∫1 dx = x ln(x) - x + C.",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_1_04",
+              "stem": "Use integration by parts to find ∫ x^2 * e^x dx.",
+              "options": [
+                "e^x(x^2 - 2x + 2) + C",
+                "e^x(x^2 + 2x + 2) + C",
+                "x^2 * e^x - 2e^x + C",
+                "e^x(x^2 - 2x - 2) + C"
+              ],
+              "correctIndex": 0,
+              "explanation": "Apply integration by parts twice. First: let u = x^2, dv = e^x dx, so du = 2x dx, v = e^x. Then ∫x^2 e^x dx = x^2 e^x - 2∫x e^x dx. For the remaining integral, let u = x, dv = e^x dx, so du = dx, v = e^x. Then ∫x e^x dx = x e^x - e^x. Substituting back: ∫x^2 e^x dx = x^2 e^x - 2(x e^x - e^x) + C = x^2 e^x - 2x e^x + 2e^x + C = e^x(x^2 - 2x + 2) + C.",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_1_05",
+              "stem": "Evaluate ∫(from 0 to π) e^x * sin(x) dx.",
+              "options": [
+                "(e^π + 1) / 2",
+                "(e^π - 1) / 2",
+                "e^π / 2",
+                "(e^π + 1) / 4"
+              ],
+              "correctIndex": 0,
+              "explanation": "Let I = ∫e^x sin(x) dx. Apply parts with u = sin(x), dv = e^x dx: I = e^x sin(x) - ∫e^x cos(x) dx. Apply parts again to ∫e^x cos(x) dx with u = cos(x), dv = e^x dx: ∫e^x cos(x) dx = e^x cos(x) + ∫e^x sin(x) dx = e^x cos(x) + I. Substituting back: I = e^x sin(x) - e^x cos(x) - I. So 2I = e^x(sin(x) - cos(x)), giving I = e^x(sin(x) - cos(x))/2 + C. Evaluating from 0 to π: [e^π(sin π - cos π)/2] - [e^0(sin 0 - cos 0)/2] = [e^π(0 - (-1))/2] - [1(0 - 1)/2] = e^π/2 + 1/2 = (e^π + 1)/2.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch6",
+      "title": "Numerical Methods",
+      "titleCn": "数值方法",
+      "knowledgePoints": [
+        {
+          "id": "6.1",
+          "title": "Simpson's Rule",
+          "titleCn": "辛普森法则",
+          "image": "",
+          "questions": [
+            {
+              "id": "q6_1_01",
+              "stem": "Use Simpson's Rule with 4 strips to estimate ∫(from 0 to 4) √(1 + x^2) dx. The y-values at x = 0, 1, 2, 3, 4 are 1, √2, √5, √10, √17. Which is the correct estimate?",
+              "options": [
+                "(1/3)(1 + 2√2 + 4√5 + 2√10 + √17)",
+                "(1/3)(1 + 4√2 + 2√5 + 4√10 + √17)",
+                "(1/2)(1 + 4√2 + 2√5 + 4√10 + √17)",
+                "(1/4)(1 + 4√2 + 2√5 + 4√10 + √17)"
+              ],
+              "correctIndex": 1,
+              "explanation": "Simpson's Rule with n=4 strips (5 ordinates), step h=1: Estimate = (h/3)[y_0 + 4y_1 + 2y_2 + 4y_3 + y_4] = (1/3)[1 + 4√2 + 2√5 + 4√10 + √17]. The pattern is: first and last have coefficient 1, even-indexed interior have coefficient 2, odd-indexed interior have coefficient 4.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_1_02",
+              "stem": "Simpson's Rule requires the number of strips (intervals) to be:",
+              "options": [
+                "A multiple of 3",
+                "Odd",
+                "Any positive integer",
+                "Even"
+              ],
+              "correctIndex": 3,
+              "explanation": "Simpson's Rule must be applied over an even number of strips (intervals), because it pairs up consecutive strips and applies a quadratic approximation over each pair. Using n strips requires n+1 ordinates (y-values), and n must be even.",
+              "difficulty": 1
+            },
+            {
+              "id": "q6_1_03",
+              "stem": "Using Simpson's Rule with 2 strips to estimate ∫(from 1 to 3) (1/x) dx, given y(1) = 1, y(2) = 1/2, y(3) = 1/3, what is the estimate?",
+              "options": [
+                "10/9",
+                "11/18",
+                "7/12",
+                "4/3"
+              ],
+              "correctIndex": 0,
+              "explanation": "With n=2 strips, h = (3-1)/2 = 1. Simpson's Rule: Estimate = (h/3)[y_0 + 4y_1 + y_2] = (1/3)[1 + 4(1/2) + 1/3] = (1/3)[1 + 2 + 1/3] = (1/3)(10/3) = 10/9 ≈ 1.111. The exact value is ln3 ≈ 1.099, so the Simpson's estimate of 10/9 is a good approximation.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_1_04",
+              "stem": "Use Simpson's Rule with 4 strips to estimate ∫(from 0 to 2) e^(x^2) dx. Given h = 0.5 and the y-values y_0 = 1, y_1 = e^(0.25), y_2 = e, y_3 = e^(2.25), y_4 = e^4. Which of the following is the correct expression for the estimate?",
+              "options": [
+                "(0.5/3)(1 + 4e^(0.25) + 2e + 4e^(2.25) + e^4)",
+                "(0.5/3)(1 + 2e^(0.25) + 4e + 2e^(2.25) + e^4)",
+                "(1/3)(1 + 4e^(0.25) + 2e + 4e^(2.25) + e^4)",
+                "(0.5/2)(1 + 4e^(0.25) + 2e + 4e^(2.25) + e^4)"
+              ],
+              "correctIndex": 0,
+              "explanation": "With n = 4 strips over [0, 2], the step size is h = (2 - 0)/4 = 0.5. The x-values are 0, 0.5, 1, 1.5, 2, giving y-values e^0 = 1, e^(0.25), e^1 = e, e^(2.25), e^4. Simpson's Rule: (h/3)[y_0 + 4y_1 + 2y_2 + 4y_3 + y_4] = (0.5/3)(1 + 4e^(0.25) + 2e + 4e^(2.25) + e^4). Note that h/3 = 0.5/3 = 1/6.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_1_05",
+              "stem": "The integral ∫(from 0 to 6) f(x) dx is estimated using Simpson's Rule with 6 strips. The ordinates are y_0 = 3, y_1 = 4, y_2 = 5, y_3 = 3, y_4 = 4, y_5 = 5, y_6 = 3. What is the estimate?",
+              "options": [
+                "23",
+                "72",
+                "24",
+                "25"
+              ],
+              "correctIndex": 2,
+              "explanation": "With n = 6 strips, h = (6 - 0)/6 = 1. Simpson's Rule: (h/3)[y_0 + 4y_1 + 2y_2 + 4y_3 + 2y_4 + 4y_5 + y_6] = (1/3)[3 + 4(4) + 2(5) + 4(3) + 2(4) + 4(5) + 3] = (1/3)[3 + 16 + 10 + 12 + 8 + 20 + 3] = (1/3)(72) = 24. The coefficient pattern for 6 strips is: 1, 4, 2, 4, 2, 4, 1, applied to the 7 ordinates y_0 through y_6.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch7",
+      "title": "Vectors",
+      "titleCn": "向量",
+      "knowledgePoints": [
+        {
+          "id": "7.1",
+          "title": "Vector Lines & Planes",
+          "titleCn": "向量直线与平面",
+          "image": "",
+          "questions": [
+            {
+              "id": "q7_1_01",
+              "stem": "A line has equation r = (2i + j - k) + t(i - 2j + 3k). Which of the following points lies on this line?",
+              "options": [
+                "(0, 5, -7)",
+                "(4, -3, 6)",
+                "(3, -1, 2)",
+                "(1, 3, -4)"
+              ],
+              "correctIndex": 2,
+              "explanation": "Substituting t=1: r = (2+1)i + (1-2)j + (-1+3)k = 3i - j + 2k. This gives the point (3, -1, 2), which matches option A. The other points do not satisfy the line equation for any value of t.",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_1_02",
+              "stem": "Find the acute angle between the lines with direction vectors d1 = (1, 2, -1) and d2 = (1, -1, -1).",
+              "options": [
+                "60°",
+                "45°",
+                "30°",
+                "90°"
+              ],
+              "correctIndex": 3,
+              "explanation": "The angle θ between two lines satisfies cos θ = |d1 · d2| / (|d1| |d2|). d1 · d2 = (1)(1) + (2)(-1) + (-1)(-1) = 1 - 2 + 1 = 0. Since the dot product is 0, the direction vectors are perpendicular, so the acute angle between the lines is 90°.",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_1_03",
+              "stem": "The plane with equation 2x - y + 3z = 7 has normal vector n. Which of the following is n?",
+              "options": [
+                "(2, -1, 3)",
+                "(7, 7, 7)",
+                "(-2, 1, -3)",
+                "(2, 1, 3)"
+              ],
+              "correctIndex": 0,
+              "explanation": "For a plane with equation ax + by + cz = d, the normal vector is n = (a, b, c). For 2x - y + 3z = 7, the normal vector is n = (2, -1, 3). Note that (-2, 1, -3) is also a normal vector (in the opposite direction), but (2, -1, 3) is the standard form directly read from the coefficients.",
+              "difficulty": 1
+            },
+            {
+              "id": "q7_1_04",
+              "stem": "Find the shortest distance from the point P(1, 2, 3) to the plane 2x - 2y + z = 3.",
+              "options": [
+                "2",
+                "1",
+                "4/3",
+                "2/3"
+              ],
+              "correctIndex": 3,
+              "explanation": "The perpendicular distance from a point (x_0, y_0, z_0) to a plane ax + by + cz = d is |ax_0 + by_0 + cz_0 - d| / √(a^2 + b^2 + c^2). Here: |2(1) - 2(2) + 1(3) - 3| / √(4 + 4 + 1) = |2 - 4 + 3 - 3| / √9 = |-2| / 3 = 2/3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_1_05",
+              "stem": "The line r = (1, 0, 2) + t(2, 1, -1) intersects the plane x + 2y + z = 9. Find the coordinates of the point of intersection.",
+              "options": [
+                "(-1, -1, 3)",
+                "(5, 2, 0)",
+                "(7, 3, -1)",
+                "(3, 1, 1)"
+              ],
+              "correctIndex": 1,
+              "explanation": "A general point on the line is (1 + 2t, t, 2 - t). Substituting into the plane equation: (1 + 2t) + 2(t) + (2 - t) = 9. Simplify: 1 + 2t + 2t + 2 - t = 9, so 3 + 3t = 9, giving 3t = 6, t = 2. Substituting back: x = 1 + 4 = 5, y = 2, z = 2 - 2 = 0. The point of intersection is (5, 2, 0).",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch8",
+      "title": "Differential Equations",
+      "titleCn": "微分方程",
+      "knowledgePoints": [
+        {
+          "id": "8.1",
+          "title": "Separable Variables",
+          "titleCn": "可分离变量",
+          "image": "",
+          "questions": [
+            {
+              "id": "q8_1_01",
+              "stem": "Solve the differential equation dy/dx = 2xy, given that y = 1 when x = 0.",
+              "options": [
+                "y = 2e^x",
+                "y = e^(2x)",
+                "y = e^(x^2)",
+                "y = x^2 + 1"
+              ],
+              "correctIndex": 2,
+              "explanation": "Separate variables: (1/y) dy = 2x dx. Integrate both sides: ln|y| = x^2 + C. Thus y = Ae^(x^2). Applying the initial condition y(0) = 1: 1 = Ae^0 = A. So A = 1 and y = e^(x^2).",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_1_02",
+              "stem": "The rate of change of temperature T (°C) of a cooling object is given by dT/dt = -k(T - 20), where k is a positive constant and t is in minutes. If T = 80 when t = 0, and T = 50 when t = 10, find the value of k correct to 3 s.f.",
+              "options": [
+                "0.100",
+                "0.0693",
+                "0.0500",
+                "0.0300"
+              ],
+              "correctIndex": 1,
+              "explanation": "Separate variables: dT/(T-20) = -k dt. Integrate: ln|T-20| = -kt + C. At t=0, T=80: ln(60) = C. So ln(T-20) = -kt + ln(60), giving T-20 = 60e^(-kt). At t=10, T=50: 30 = 60e^(-10k), so e^(-10k) = 1/2, giving -10k = -ln2, k = ln2/10 = 0.0693 (3 s.f.).",
+              "difficulty": 3
+            },
+            {
+              "id": "q8_1_03",
+              "stem": "Solve the differential equation (dy/dx) = y^2 * sin(x), given y = 1 when x = 0.",
+              "options": [
+                "y = cos x",
+                "y = 1 / (2 - cos x)",
+                "y = -cos x + 2",
+                "y = 1 / (cos x)"
+              ],
+              "correctIndex": 3,
+              "explanation": "Separate variables: y^(-2) dy = sin(x) dx. Integrate both sides: -1/y = -cos(x) + C. Apply initial condition y = 1 when x = 0: -1/1 = -cos(0) + C, so -1 = -1 + C, giving C = 0. Therefore -1/y = -cos(x), which rearranges to y = 1/cos(x) = sec(x). Verify: dy/dx = sec(x)tan(x) and y^2 sin(x) = sec^2(x)sin(x) = sin(x)/cos^2(x) = tan(x)sec(x). Confirmed.",
+              "difficulty": 3
+            },
+            {
+              "id": "q8_1_04",
+              "stem": "Solve the differential equation dy/dx = (1 + y^2) / (1 + x^2), given y = 1 when x = 0.",
+              "options": [
+                "y = tan(x + π/4)",
+                "y = tan(arctan(x) + π/4)",
+                "y = arctan(x) + 1",
+                "y = tan(arctan(x))"
+              ],
+              "correctIndex": 1,
+              "explanation": "Separate variables: dy/(1 + y^2) = dx/(1 + x^2). Integrate both sides: arctan(y) = arctan(x) + C. Apply the initial condition y = 1 when x = 0: arctan(1) = arctan(0) + C, so π/4 = 0 + C, giving C = π/4. Therefore arctan(y) = arctan(x) + π/4, which gives y = tan(arctan(x) + π/4).",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_1_05",
+              "stem": "A population P satisfies the logistic equation dP/dt = 0.1P(100 - P), with P = 10 when t = 0. Using partial fractions, find the particular solution for P in terms of t.",
+              "options": [
+                "P = 10e^(10t) / (1 + e^(10t))",
+                "P = 100 / (1 + 9e^(-t))",
+                "P = 100 / (1 + 10e^(-10t))",
+                "P = 100 / (1 + 9e^(-10t))"
+              ],
+              "correctIndex": 3,
+              "explanation": "Separate variables: dP / (P(100 - P)) = 0.1 dt. Using partial fractions: 1/(P(100 - P)) = 1/100 * (1/P + 1/(100 - P)). So (1/100)(1/P + 1/(100 - P)) dP = 0.1 dt. Integrating: (1/100)(ln|P| - ln|100 - P|) = 0.1t + C, i.e., ln(P/(100 - P)) = 10t + K. At t = 0, P = 10: ln(10/90) = K, so K = ln(1/9) = -ln9. Therefore ln(P/(100 - P)) = 10t - ln9. Exponentiating: P/(100 - P) = e^(10t)/9. Rearranging: 9P = (100 - P)e^(10t), so 9P + Pe^(10t) = 100e^(10t), P(9 + e^(10t)) = 100e^(10t), P = 100e^(10t)/(9 + e^(10t)). Dividing numerator and denominator by e^(10t): P = 100/(9e^(-10t) + 1) = 100/(1 + 9e^(-10t)).",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch9",
+      "title": "Complex Numbers",
+      "titleCn": "复数",
+      "knowledgePoints": [
+        {
+          "id": "9.1",
+          "title": "Argand Diagrams",
+          "titleCn": "阿甘图",
+          "image": "",
+          "questions": [
+            {
+              "id": "q9_1_01",
+              "stem": "The complex number z = 3 + 4i is represented on an Argand diagram. What is the modulus |z| and argument arg(z) (to 3 s.f.)?",
+              "options": [
+                "|z| = 5, arg(z) = 0.644 rad",
+                "|z| = 5, arg(z) = 0.927 rad",
+                "|z| = 7, arg(z) = 0.927 rad",
+                "|z| = 5, arg(z) = 1.33 rad"
+              ],
+              "correctIndex": 1,
+              "explanation": "|z| = √(3^2 + 4^2) = √(9 + 16) = √25 = 5. arg(z) = arctan(4/3) = arctan(1.333...) ≈ 0.9273 rad ≈ 0.927 rad (3 s.f.). Since z is in the first quadrant (both real and imaginary parts positive), the argument is positive and less than π/2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q9_1_02",
+              "stem": "The locus of points z on an Argand diagram satisfying |z - (2 + i)| = 3 is:",
+              "options": [
+                "A straight line through (2, 1)",
+                "A circle with centre (2, 1) and radius 3",
+                "A circle with centre (2, 1) and radius 9",
+                "A circle with centre (-2, -1) and radius 3"
+              ],
+              "correctIndex": 1,
+              "explanation": "|z - (2 + i)| = 3 means the distance from z to the fixed point (2 + i) is 3. On an Argand diagram, this is the set of all points at distance 3 from the point (2, 1) (since 2+i corresponds to the point (2,1)). This is a circle with centre (2, 1) and radius 3.",
+              "difficulty": 1
+            },
+            {
+              "id": "q9_1_03",
+              "stem": "Given z = 1 + i√3, express z in modulus-argument form r(cos θ + i sin θ) and find the argument θ.",
+              "options": [
+                "r = 2, θ = π/3",
+                "r = 2, θ = 2π/3",
+                "r = 2, θ = π/6",
+                "r = √3, θ = π/3"
+              ],
+              "correctIndex": 0,
+              "explanation": "r = |z| = √(1^2 + (√3)^2) = √(1 + 3) = √4 = 2. θ = arg(z) = arctan(√3 / 1) = arctan(√3) = π/3 (since z is in the first quadrant). Therefore z = 2(cos(π/3) + i sin(π/3)).",
+              "difficulty": 2
+            },
+            {
+              "id": "q9_1_04",
+              "stem": "On an Argand diagram, the locus of points satisfying |z - 3| = |z + 1| is a straight line. Find the equation of this line in the form x = k.",
+              "options": [
+                "x = 3",
+                "x = 1",
+                "x = -1",
+                "x = 2"
+              ],
+              "correctIndex": 1,
+              "explanation": "Let z = x + iy. Then |z - 3| = |(x - 3) + iy| = √((x-3)^2 + y^2) and |z + 1| = |(x+1) + iy| = √((x+1)^2 + y^2). Setting these equal and squaring: (x-3)^2 + y^2 = (x+1)^2 + y^2. The y^2 terms cancel: (x-3)^2 = (x+1)^2. Expanding: x^2 - 6x + 9 = x^2 + 2x + 1. Simplifying: -6x + 9 = 2x + 1, so -8x = -8, giving x = 1. This is the perpendicular bisector of the line segment from -1 to 3 on the real axis, which is the vertical line x = 1.",
+              "difficulty": 2
+            },
+            {
+              "id": "q9_1_05",
+              "stem": "The complex number z satisfies |z - 4i| = |z|. On an Argand diagram, the locus is a straight line. A second condition is arg(z) = π/4. Find the complex number z that satisfies both conditions.",
+              "options": [
+                "z = 1 + i",
+                "z = 2 + 2i",
+                "z = 3 + 3i",
+                "z = 4 + 4i"
+              ],
+              "correctIndex": 1,
+              "explanation": "First condition: |z - 4i| = |z|. Let z = x + iy. Then √(x^2 + (y-4)^2) = √(x^2 + y^2). Squaring: x^2 + y^2 - 8y + 16 = x^2 + y^2. Simplifying: -8y + 16 = 0, so y = 2. This is the horizontal line y = 2 (the perpendicular bisector of the segment from 0 to 4i). Second condition: arg(z) = π/4 means y/x = tan(π/4) = 1 (with x > 0), so y = x. Combining y = 2 and y = x gives x = 2, y = 2. Therefore z = 2 + 2i.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

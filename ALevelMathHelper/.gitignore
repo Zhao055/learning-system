@@ -3,12 +3,9 @@
 /entry/build
 /.preview
 /entry/.preview
-build/
-.build/
 
 # DevEco Studio
 /.idea
-.idea/
 *.iml
 local.properties
 
@@ -17,10 +14,6 @@ node_modules/
 oh_modules/
 package-lock.json
 
-# Xcode
-*.xcworkspace/
-xcuserdata/
-
 # OS
 .DS_Store
 Thumbs.db
@@ -28,7 +21,3 @@ Thumbs.db
 # Cache
 .cxx/
 .hvigor/
-
-# Environment
-.env
-.env.local

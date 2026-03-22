@@ -1,0 +1,8 @@
+{
+  "string": [
+    { "name": "module_desc", "value": "A-Level Learning Helper" },
+    { "name": "EntryAbility_desc", "value": "A-Level Helper" },
+    { "name": "EntryAbility_label", "value": "A-Level Helper" },
+    { "name": "internet_reason", "value": "Used to connect to AI services for tutoring" }
+  ]
+}

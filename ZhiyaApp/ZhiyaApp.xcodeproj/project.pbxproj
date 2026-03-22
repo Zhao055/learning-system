@@ -1,0 +1,805 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A2000001 /* ZhiyaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000001 /* ZhiyaApp.swift */; };
+		A2000002 /* ZhiyaComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002 /* ZhiyaComponents.swift */; };
+		A2000003 /* ZhiyaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000003 /* ZhiyaTheme.swift */; };
+		A2000004 /* Color+Zhiya.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000004 /* Color+Zhiya.swift */; };
+		A2000005 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000005 /* ChatMessage.swift */; };
+		A2000006 /* CompanionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000006 /* CompanionState.swift */; };
+		A2000007 /* EmotionalProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000007 /* EmotionalProfile.swift */; };
+		A2000008 /* GrowthDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000008 /* GrowthDimension.swift */; };
+		A2000009 /* GrowthMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000009 /* GrowthMemory.swift */; };
+		A2000010 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000010 /* Progress.swift */; };
+		A2000011 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000011 /* QuestionBank.swift */; };
+		A2000012 /* QuizState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000012 /* QuizState.swift */; };
+		A2000013 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000013 /* Subject.swift */; };
+		A2000014 /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000014 /* AIService.swift */; };
+		A2000015 /* CompanionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000015 /* CompanionEngine.swift */; };
+		A2000016 /* EmotionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000016 /* EmotionEngine.swift */; };
+		A2000017 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000017 /* KeychainService.swift */; };
+		A2000018 /* MemoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000018 /* MemoryService.swift */; };
+		A2000019 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000019 /* NetworkService.swift */; };
+		A2000020 /* ProgressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000020 /* ProgressService.swift */; };
+		A2000021 /* QuestionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000021 /* QuestionRepository.swift */; };
+		A2000022 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000022 /* ChatViewModel.swift */; };
+		A2000023 /* GrowthTreeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000023 /* GrowthTreeViewModel.swift */; };
+		A2000025 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000025 /* OnboardingViewModel.swift */; };
+		A2000026 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000026 /* QuizViewModel.swift */; };
+		A2000027 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000027 /* SettingsViewModel.swift */; };
+		A2000031 /* ChatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000031 /* ChatBubbleView.swift */; };
+		A2000032 /* ChatPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000032 /* ChatPanelView.swift */; };
+		A2000033 /* GradientCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000033 /* GradientCard.swift */; };
+		A2000034 /* ZhiyaMascotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000034 /* ZhiyaMascotView.swift */; };
+		A2000035 /* AnnualReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000035 /* AnnualReviewView.swift */; };
+		A2000036 /* CelebrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000036 /* CelebrationView.swift */; };
+		A2000038 /* GrowthTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000038 /* GrowthTreeView.swift */; };
+		A2000039 /* MemoryWallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000039 /* MemoryWallView.swift */; };
+		A2000040 /* WeeklyLetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000040 /* WeeklyLetterView.swift */; };
+		A2000047 /* SeedMomentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000047 /* SeedMomentView.swift */; };
+		A2000051 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000051 /* SettingsView.swift */; };
+		A2000060 /* CompanionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000060 /* CompanionView.swift */; };
+		A2000061 /* CompanionInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000061 /* CompanionInputBar.swift */; };
+		A2000062 /* AmbientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000062 /* AmbientBackgroundView.swift */; };
+		A2000063 /* RichMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000063 /* RichMessageView.swift */; };
+		A2000064 /* ChallengeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000064 /* ChallengeCardView.swift */; };
+		A2000065 /* VoiceInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000065 /* VoiceInputView.swift */; };
+		A2000066 /* CameraInputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000066 /* CameraInputSheet.swift */; };
+		A2000067 /* GardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000067 /* GardenView.swift */; };
+		A2000068 /* CompanionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000068 /* CompanionViewModel.swift */; };
+		A2000069 /* ProactiveEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000069 /* ProactiveEngine.swift */; };
+		A2000070 /* QuestionSurfacingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000070 /* QuestionSurfacingService.swift */; };
+		A2000071 /* ConversationMemoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000071 /* ConversationMemoryService.swift */; };
+		A2000072 /* ZhiyaImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000072 /* ZhiyaImages.swift */; };
+		A2000073 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000073 /* NotificationService.swift */; };
+		A4000040 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3000040 /* Assets.xcassets */; };
+		A4000001 /* annual_review.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000001 /* annual_review.jpeg */; };
+		A4000002 /* bg_autumn.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000002 /* bg_autumn.jpeg */; };
+		A4000003 /* bg_celebration.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000003 /* bg_celebration.jpeg */; };
+		A4000004 /* bg_spring.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000004 /* bg_spring.jpeg */; };
+		A4000005 /* bg_summer.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000005 /* bg_summer.jpeg */; };
+		A4000006 /* bg_winter.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000006 /* bg_winter.jpeg */; };
+		A4000007 /* empty_memories.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000007 /* empty_memories.jpeg */; };
+		A4000008 /* empty_no_data.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000008 /* empty_no_data.jpeg */; };
+		A4000009 /* empty_no_letters.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000009 /* empty_no_letters.jpeg */; };
+		A4000010 /* empty_no_wrong.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000010 /* empty_no_wrong.jpeg */; };
+		A4000011 /* letter_paper_bg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000011 /* letter_paper_bg.jpeg */; };
+		A4000012 /* seed_moment_1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000012 /* seed_moment_1.jpeg */; };
+		A4000013 /* seed_moment_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000013 /* seed_moment_2.jpeg */; };
+		A4000014 /* seed_moment_3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000014 /* seed_moment_3.jpeg */; };
+		A4000015 /* subject_biology.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000015 /* subject_biology.jpeg */; };
+		A4000016 /* subject_math.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000016 /* subject_math.jpeg */; };
+		A4000017 /* subject_psychology.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000017 /* subject_psychology.jpeg */; };
+		A4000018 /* zhiya_avatar.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000018 /* zhiya_avatar.jpeg */; };
+		A4000019 /* zhiya_birthday.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000019 /* zhiya_birthday.jpeg */; };
+		A4000020 /* zhiya_cny.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000020 /* zhiya_cny.jpeg */; };
+		A4000021 /* zhiya_expressions.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000021 /* zhiya_expressions.jpeg */; };
+		A4000022 /* zhiya_growth_stages.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000022 /* zhiya_growth_stages.jpeg */; };
+		A4000023 /* zhiya_signature.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000023 /* zhiya_signature.jpeg */; };
+		A4000024 /* bio_a2.json in Resources */ = {isa = PBXBuildFile; fileRef = A3000024 /* bio_a2.json */; };
+		A4000025 /* bio_as.json in Resources */ = {isa = PBXBuildFile; fileRef = A3000025 /* bio_as.json */; };
+		A4000026 /* math_m1.json in Resources */ = {isa = PBXBuildFile; fileRef = A3000026 /* math_m1.json */; };
+		A4000027 /* math_p1.json in Resources */ = {isa = PBXBuildFile; fileRef = A3000027 /* math_p1.json */; };
+		A4000028 /* math_p2.json in Resources */ = {isa = PBXBuildFile; fileRef = A3000028 /* math_p2.json */; };
+		A4000029 /* math_p3.json in Resources */ = {isa = PBXBuildFile; fileRef = A3000029 /* math_p3.json */; };
+		A4000030 /* math_s1.json in Resources */ = {isa = PBXBuildFile; fileRef = A3000030 /* math_s1.json */; };
+		A4000031 /* math_s2.json in Resources */ = {isa = PBXBuildFile; fileRef = A3000031 /* math_s2.json */; };
+		A4000032 /* psych_p1.json in Resources */ = {isa = PBXBuildFile; fileRef = A3000032 /* psych_p1.json */; };
+		A4000033 /* psych_p2.json in Resources */ = {isa = PBXBuildFile; fileRef = A3000033 /* psych_p2.json */; };
+		A4000034 /* psych_p3.json in Resources */ = {isa = PBXBuildFile; fileRef = A3000034 /* psych_p3.json */; };
+		A4000035 /* psych_p4.json in Resources */ = {isa = PBXBuildFile; fileRef = A3000035 /* psych_p4.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A1000001 /* ZhiyaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhiyaApp.swift; sourceTree = "<group>"; };
+		A1000002 /* ZhiyaComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhiyaComponents.swift; sourceTree = "<group>"; };
+		A1000003 /* ZhiyaTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhiyaTheme.swift; sourceTree = "<group>"; };
+		A1000004 /* Color+Zhiya.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Zhiya.swift"; sourceTree = "<group>"; };
+		A1000005 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		A1000006 /* CompanionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionState.swift; sourceTree = "<group>"; };
+		A1000007 /* EmotionalProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionalProfile.swift; sourceTree = "<group>"; };
+		A1000008 /* GrowthDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthDimension.swift; sourceTree = "<group>"; };
+		A1000009 /* GrowthMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthMemory.swift; sourceTree = "<group>"; };
+		A1000010 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
+		A1000011 /* QuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
+		A1000012 /* QuizState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizState.swift; sourceTree = "<group>"; };
+		A1000013 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		A1000014 /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
+		A1000015 /* CompanionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionEngine.swift; sourceTree = "<group>"; };
+		A1000016 /* EmotionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionEngine.swift; sourceTree = "<group>"; };
+		A1000017 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		A1000018 /* MemoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryService.swift; sourceTree = "<group>"; };
+		A1000019 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		A1000020 /* ProgressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressService.swift; sourceTree = "<group>"; };
+		A1000021 /* QuestionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRepository.swift; sourceTree = "<group>"; };
+		A1000022 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		A1000023 /* GrowthTreeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthTreeViewModel.swift; sourceTree = "<group>"; };
+		A1000025 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		A1000026 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+		A1000027 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		A1000031 /* ChatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleView.swift; sourceTree = "<group>"; };
+		A1000032 /* ChatPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPanelView.swift; sourceTree = "<group>"; };
+		A1000033 /* GradientCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientCard.swift; sourceTree = "<group>"; };
+		A1000034 /* ZhiyaMascotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhiyaMascotView.swift; sourceTree = "<group>"; };
+		A1000035 /* AnnualReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualReviewView.swift; sourceTree = "<group>"; };
+		A1000036 /* CelebrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationView.swift; sourceTree = "<group>"; };
+		A1000038 /* GrowthTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthTreeView.swift; sourceTree = "<group>"; };
+		A1000039 /* MemoryWallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryWallView.swift; sourceTree = "<group>"; };
+		A1000040 /* WeeklyLetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyLetterView.swift; sourceTree = "<group>"; };
+		A1000047 /* SeedMomentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedMomentView.swift; sourceTree = "<group>"; };
+		A1000051 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A1000060 /* CompanionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionView.swift; sourceTree = "<group>"; };
+		A1000061 /* CompanionInputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionInputBar.swift; sourceTree = "<group>"; };
+		A1000062 /* AmbientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbientBackgroundView.swift; sourceTree = "<group>"; };
+		A1000063 /* RichMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichMessageView.swift; sourceTree = "<group>"; };
+		A1000064 /* ChallengeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCardView.swift; sourceTree = "<group>"; };
+		A1000065 /* VoiceInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceInputView.swift; sourceTree = "<group>"; };
+		A1000066 /* CameraInputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraInputSheet.swift; sourceTree = "<group>"; };
+		A1000067 /* GardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenView.swift; sourceTree = "<group>"; };
+		A1000068 /* CompanionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionViewModel.swift; sourceTree = "<group>"; };
+		A1000069 /* ProactiveEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProactiveEngine.swift; sourceTree = "<group>"; };
+		A1000070 /* QuestionSurfacingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSurfacingService.swift; sourceTree = "<group>"; };
+		A1000071 /* ConversationMemoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationMemoryService.swift; sourceTree = "<group>"; };
+		A1000072 /* ZhiyaImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhiyaImages.swift; sourceTree = "<group>"; };
+		A1000073 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		A3000040 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A3000001 /* annual_review.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = annual_review.jpeg; sourceTree = "<group>"; };
+		A3000002 /* bg_autumn.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_autumn.jpeg; sourceTree = "<group>"; };
+		A3000003 /* bg_celebration.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_celebration.jpeg; sourceTree = "<group>"; };
+		A3000004 /* bg_spring.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_spring.jpeg; sourceTree = "<group>"; };
+		A3000005 /* bg_summer.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_summer.jpeg; sourceTree = "<group>"; };
+		A3000006 /* bg_winter.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_winter.jpeg; sourceTree = "<group>"; };
+		A3000007 /* empty_memories.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = empty_memories.jpeg; sourceTree = "<group>"; };
+		A3000008 /* empty_no_data.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = empty_no_data.jpeg; sourceTree = "<group>"; };
+		A3000009 /* empty_no_letters.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = empty_no_letters.jpeg; sourceTree = "<group>"; };
+		A3000010 /* empty_no_wrong.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = empty_no_wrong.jpeg; sourceTree = "<group>"; };
+		A3000011 /* letter_paper_bg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = letter_paper_bg.jpeg; sourceTree = "<group>"; };
+		A3000012 /* seed_moment_1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = seed_moment_1.jpeg; sourceTree = "<group>"; };
+		A3000013 /* seed_moment_2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = seed_moment_2.jpeg; sourceTree = "<group>"; };
+		A3000014 /* seed_moment_3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = seed_moment_3.jpeg; sourceTree = "<group>"; };
+		A3000015 /* subject_biology.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = subject_biology.jpeg; sourceTree = "<group>"; };
+		A3000016 /* subject_math.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = subject_math.jpeg; sourceTree = "<group>"; };
+		A3000017 /* subject_psychology.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = subject_psychology.jpeg; sourceTree = "<group>"; };
+		A3000018 /* zhiya_avatar.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zhiya_avatar.jpeg; sourceTree = "<group>"; };
+		A3000019 /* zhiya_birthday.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zhiya_birthday.jpeg; sourceTree = "<group>"; };
+		A3000020 /* zhiya_cny.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zhiya_cny.jpeg; sourceTree = "<group>"; };
+		A3000021 /* zhiya_expressions.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zhiya_expressions.jpeg; sourceTree = "<group>"; };
+		A3000022 /* zhiya_growth_stages.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zhiya_growth_stages.jpeg; sourceTree = "<group>"; };
+		A3000023 /* zhiya_signature.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zhiya_signature.jpeg; sourceTree = "<group>"; };
+		A3000024 /* bio_a2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bio_a2.json; sourceTree = "<group>"; };
+		A3000025 /* bio_as.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bio_as.json; sourceTree = "<group>"; };
+		A3000026 /* math_m1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = math_m1.json; sourceTree = "<group>"; };
+		A3000027 /* math_p1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = math_p1.json; sourceTree = "<group>"; };
+		A3000028 /* math_p2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = math_p2.json; sourceTree = "<group>"; };
+		A3000029 /* math_p3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = math_p3.json; sourceTree = "<group>"; };
+		A3000030 /* math_s1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = math_s1.json; sourceTree = "<group>"; };
+		A3000031 /* math_s2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = math_s2.json; sourceTree = "<group>"; };
+		A3000032 /* psych_p1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = psych_p1.json; sourceTree = "<group>"; };
+		A3000033 /* psych_p2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = psych_p2.json; sourceTree = "<group>"; };
+		A3000034 /* psych_p3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = psych_p3.json; sourceTree = "<group>"; };
+		A3000035 /* psych_p4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = psych_p4.json; sourceTree = "<group>"; };
+		A6000013 /* ZhiyaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiyaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1000053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A6000011 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A5000000 /* root */ = {
+			isa = PBXGroup;
+			children = (
+				A5000001 /* ZhiyaApp */,
+				A6000012 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A6000012 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A6000013 /* ZhiyaApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A5000001 /* ZhiyaApp */ = {
+			isa = PBXGroup;
+			children = (
+				A1000001 /* ZhiyaApp.swift */,
+				A1000053 /* Info.plist */,
+				A3000040 /* Assets.xcassets */,
+				A5000002 /* Design */,
+				A5000003 /* Extensions */,
+				A5000004 /* Models */,
+				A5000018 /* Resources */,
+				A5000005 /* Services */,
+				A5000006 /* ViewModels */,
+				A5000007 /* Views */,
+			);
+			path = "";
+			sourceTree = "<group>";
+		};
+		A5000002 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				A1000002 /* ZhiyaComponents.swift */,
+				A1000072 /* ZhiyaImages.swift */,
+				A1000003 /* ZhiyaTheme.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		A5000003 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A1000004 /* Color+Zhiya.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A5000004 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A1000005 /* ChatMessage.swift */,
+				A1000006 /* CompanionState.swift */,
+				A1000007 /* EmotionalProfile.swift */,
+				A1000008 /* GrowthDimension.swift */,
+				A1000009 /* GrowthMemory.swift */,
+				A1000010 /* Progress.swift */,
+				A1000011 /* QuestionBank.swift */,
+				A1000012 /* QuizState.swift */,
+				A1000013 /* Subject.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A5000005 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A1000014 /* AIService.swift */,
+				A1000015 /* CompanionEngine.swift */,
+				A1000071 /* ConversationMemoryService.swift */,
+				A1000016 /* EmotionEngine.swift */,
+				A1000017 /* KeychainService.swift */,
+				A1000018 /* MemoryService.swift */,
+				A1000019 /* NetworkService.swift */,
+				A1000069 /* ProactiveEngine.swift */,
+				A1000020 /* ProgressService.swift */,
+				A1000021 /* QuestionRepository.swift */,
+				A1000070 /* QuestionSurfacingService.swift */,
+				A1000073 /* NotificationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A5000006 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A1000022 /* ChatViewModel.swift */,
+				A1000068 /* CompanionViewModel.swift */,
+				A1000023 /* GrowthTreeViewModel.swift */,
+				A1000025 /* OnboardingViewModel.swift */,
+				A1000026 /* QuizViewModel.swift */,
+				A1000027 /* SettingsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A5000007 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A5000009 /* Chat */,
+				A5000021 /* Companion */,
+				A5000010 /* Components */,
+				A5000022 /* Garden */,
+				A5000011 /* Growth */,
+				A5000014 /* Onboarding */,
+				A5000016 /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A5000009 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				A1000031 /* ChatBubbleView.swift */,
+				A1000032 /* ChatPanelView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		A5000021 /* Companion */ = {
+			isa = PBXGroup;
+			children = (
+				A1000062 /* AmbientBackgroundView.swift */,
+				A1000066 /* CameraInputSheet.swift */,
+				A1000064 /* ChallengeCardView.swift */,
+				A1000061 /* CompanionInputBar.swift */,
+				A1000060 /* CompanionView.swift */,
+				A1000063 /* RichMessageView.swift */,
+				A1000065 /* VoiceInputView.swift */,
+			);
+			path = Companion;
+			sourceTree = "<group>";
+		};
+		A5000010 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A1000033 /* GradientCard.swift */,
+				A1000034 /* ZhiyaMascotView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A5000022 /* Garden */ = {
+			isa = PBXGroup;
+			children = (
+				A1000067 /* GardenView.swift */,
+			);
+			path = Garden;
+			sourceTree = "<group>";
+		};
+		A5000011 /* Growth */ = {
+			isa = PBXGroup;
+			children = (
+				A1000035 /* AnnualReviewView.swift */,
+				A1000036 /* CelebrationView.swift */,
+				A1000038 /* GrowthTreeView.swift */,
+				A1000039 /* MemoryWallView.swift */,
+				A1000040 /* WeeklyLetterView.swift */,
+			);
+			path = Growth;
+			sourceTree = "<group>";
+		};
+		A5000014 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A1000047 /* SeedMomentView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A5000016 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A1000051 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A5000018 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A5000019 /* Images */,
+				A5000020 /* QuestionBanks */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A5000019 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A3000001 /* annual_review.jpeg */,
+				A3000002 /* bg_autumn.jpeg */,
+				A3000003 /* bg_celebration.jpeg */,
+				A3000004 /* bg_spring.jpeg */,
+				A3000005 /* bg_summer.jpeg */,
+				A3000006 /* bg_winter.jpeg */,
+				A3000007 /* empty_memories.jpeg */,
+				A3000008 /* empty_no_data.jpeg */,
+				A3000009 /* empty_no_letters.jpeg */,
+				A3000010 /* empty_no_wrong.jpeg */,
+				A3000011 /* letter_paper_bg.jpeg */,
+				A3000012 /* seed_moment_1.jpeg */,
+				A3000013 /* seed_moment_2.jpeg */,
+				A3000014 /* seed_moment_3.jpeg */,
+				A3000015 /* subject_biology.jpeg */,
+				A3000016 /* subject_math.jpeg */,
+				A3000017 /* subject_psychology.jpeg */,
+				A3000018 /* zhiya_avatar.jpeg */,
+				A3000019 /* zhiya_birthday.jpeg */,
+				A3000020 /* zhiya_cny.jpeg */,
+				A3000021 /* zhiya_expressions.jpeg */,
+				A3000022 /* zhiya_growth_stages.jpeg */,
+				A3000023 /* zhiya_signature.jpeg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		A5000020 /* QuestionBanks */ = {
+			isa = PBXGroup;
+			children = (
+				A3000024 /* bio_a2.json */,
+				A3000025 /* bio_as.json */,
+				A3000026 /* math_m1.json */,
+				A3000027 /* math_p1.json */,
+				A3000028 /* math_p2.json */,
+				A3000029 /* math_p3.json */,
+				A3000030 /* math_s1.json */,
+				A3000031 /* math_s2.json */,
+				A3000032 /* psych_p1.json */,
+				A3000033 /* psych_p2.json */,
+				A3000034 /* psych_p3.json */,
+				A3000035 /* psych_p4.json */,
+			);
+			path = QuestionBanks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A6000002 /* ZhiyaApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6000006 /* Build configuration list for PBXNativeTarget "ZhiyaApp" */;
+			buildPhases = (
+				A6000009 /* Sources */,
+				A6000011 /* Frameworks */,
+				A6000010 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZhiyaApp;
+			productName = ZhiyaApp;
+			productReference = A6000013 /* ZhiyaApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A6000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A6000002 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A6000005 /* Build configuration list for PBXProject "ZhiyaApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A5000000 /* root */;
+			productRefGroup = A6000012 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A6000002 /* ZhiyaApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A6000010 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4000040 /* Assets.xcassets in Resources */,
+				A4000001 /* annual_review.jpeg in Resources */,
+				A4000002 /* bg_autumn.jpeg in Resources */,
+				A4000003 /* bg_celebration.jpeg in Resources */,
+				A4000004 /* bg_spring.jpeg in Resources */,
+				A4000005 /* bg_summer.jpeg in Resources */,
+				A4000006 /* bg_winter.jpeg in Resources */,
+				A4000007 /* empty_memories.jpeg in Resources */,
+				A4000008 /* empty_no_data.jpeg in Resources */,
+				A4000009 /* empty_no_letters.jpeg in Resources */,
+				A4000010 /* empty_no_wrong.jpeg in Resources */,
+				A4000011 /* letter_paper_bg.jpeg in Resources */,
+				A4000012 /* seed_moment_1.jpeg in Resources */,
+				A4000013 /* seed_moment_2.jpeg in Resources */,
+				A4000014 /* seed_moment_3.jpeg in Resources */,
+				A4000015 /* subject_biology.jpeg in Resources */,
+				A4000016 /* subject_math.jpeg in Resources */,
+				A4000017 /* subject_psychology.jpeg in Resources */,
+				A4000018 /* zhiya_avatar.jpeg in Resources */,
+				A4000019 /* zhiya_birthday.jpeg in Resources */,
+				A4000020 /* zhiya_cny.jpeg in Resources */,
+				A4000021 /* zhiya_expressions.jpeg in Resources */,
+				A4000022 /* zhiya_growth_stages.jpeg in Resources */,
+				A4000023 /* zhiya_signature.jpeg in Resources */,
+				A4000024 /* bio_a2.json in Resources */,
+				A4000025 /* bio_as.json in Resources */,
+				A4000026 /* math_m1.json in Resources */,
+				A4000027 /* math_p1.json in Resources */,
+				A4000028 /* math_p2.json in Resources */,
+				A4000029 /* math_p3.json in Resources */,
+				A4000030 /* math_s1.json in Resources */,
+				A4000031 /* math_s2.json in Resources */,
+				A4000032 /* psych_p1.json in Resources */,
+				A4000033 /* psych_p2.json in Resources */,
+				A4000034 /* psych_p3.json in Resources */,
+				A4000035 /* psych_p4.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A6000009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2000001 /* ZhiyaApp.swift in Sources */,
+				A2000002 /* ZhiyaComponents.swift in Sources */,
+				A2000003 /* ZhiyaTheme.swift in Sources */,
+				A2000004 /* Color+Zhiya.swift in Sources */,
+				A2000005 /* ChatMessage.swift in Sources */,
+				A2000006 /* CompanionState.swift in Sources */,
+				A2000007 /* EmotionalProfile.swift in Sources */,
+				A2000008 /* GrowthDimension.swift in Sources */,
+				A2000009 /* GrowthMemory.swift in Sources */,
+				A2000010 /* Progress.swift in Sources */,
+				A2000011 /* QuestionBank.swift in Sources */,
+				A2000012 /* QuizState.swift in Sources */,
+				A2000013 /* Subject.swift in Sources */,
+				A2000014 /* AIService.swift in Sources */,
+				A2000015 /* CompanionEngine.swift in Sources */,
+				A2000016 /* EmotionEngine.swift in Sources */,
+				A2000017 /* KeychainService.swift in Sources */,
+				A2000018 /* MemoryService.swift in Sources */,
+				A2000019 /* NetworkService.swift in Sources */,
+				A2000020 /* ProgressService.swift in Sources */,
+				A2000021 /* QuestionRepository.swift in Sources */,
+				A2000069 /* ProactiveEngine.swift in Sources */,
+				A2000070 /* QuestionSurfacingService.swift in Sources */,
+				A2000071 /* ConversationMemoryService.swift in Sources */,
+				A2000022 /* ChatViewModel.swift in Sources */,
+				A2000068 /* CompanionViewModel.swift in Sources */,
+				A2000023 /* GrowthTreeViewModel.swift in Sources */,
+				A2000025 /* OnboardingViewModel.swift in Sources */,
+				A2000026 /* QuizViewModel.swift in Sources */,
+				A2000027 /* SettingsViewModel.swift in Sources */,
+				A2000031 /* ChatBubbleView.swift in Sources */,
+				A2000032 /* ChatPanelView.swift in Sources */,
+				A2000033 /* GradientCard.swift in Sources */,
+				A2000034 /* ZhiyaMascotView.swift in Sources */,
+				A2000060 /* CompanionView.swift in Sources */,
+				A2000061 /* CompanionInputBar.swift in Sources */,
+				A2000062 /* AmbientBackgroundView.swift in Sources */,
+				A2000063 /* RichMessageView.swift in Sources */,
+				A2000064 /* ChallengeCardView.swift in Sources */,
+				A2000065 /* VoiceInputView.swift in Sources */,
+				A2000066 /* CameraInputSheet.swift in Sources */,
+				A2000067 /* GardenView.swift in Sources */,
+				A2000035 /* AnnualReviewView.swift in Sources */,
+				A2000036 /* CelebrationView.swift in Sources */,
+				A2000038 /* GrowthTreeView.swift in Sources */,
+				A2000039 /* MemoryWallView.swift in Sources */,
+				A2000040 /* WeeklyLetterView.swift in Sources */,
+				A2000047 /* SeedMomentView.swift in Sources */,
+				A2000051 /* SettingsView.swift in Sources */,
+				A2000072 /* ZhiyaImages.swift in Sources */,
+				A2000073 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A6000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A6000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A6000007 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GG7YDX9538;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ZhiyaApp;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qizhao.zhiya;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A6000008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GG7YDX9538;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ZhiyaApp;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qizhao.zhiya;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A6000005 /* Build configuration list for PBXProject "ZhiyaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6000003 /* Debug */,
+				A6000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6000006 /* Build configuration list for PBXNativeTarget "ZhiyaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6000007 /* Debug */,
+				A6000008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A6000001 /* Project object */;
+}

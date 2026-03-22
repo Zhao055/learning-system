@@ -1,0 +1,324 @@
+{
+  "chapters": [
+    {
+      "id": "ch1",
+      "title": "Abnormal Psychology",
+      "titleCn": "异常心理学",
+      "knowledgePoints": [
+        {
+          "id": "1.1",
+          "title": "Defining Abnormality",
+          "titleCn": "定义异常",
+          "image": "",
+          "questions": [
+            {
+              "id": "q1_1_01",
+              "stem": "The DSM-5 (Diagnostic and Statistical Manual of Mental Disorders) is used to classify mental disorders. Which of the following is a limitation of using a classification system such as the DSM-5 in clinical psychology?",
+              "options": [
+                "It provides a universal language for clinicians to communicate about mental disorders",
+                "It is based on extensive empirical research and has high reliability across cultures",
+                "Diagnostic labels can stigmatise individuals and lead to self-fulfilling prophecy effects",
+                "Classification systems make it easier to research the causes and treatments of disorders"
+              ],
+              "correctIndex": 2,
+              "explanation": "A significant limitation of diagnostic classification systems like the DSM-5 is that diagnostic labels can stigmatise individuals, reducing them to their diagnosis and potentially leading to a self-fulfilling prophecy (where individuals begin to behave in accordance with their label). Rosenhan's (1973) study highlighted concerns about the reliability and validity of psychiatric diagnosis.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_1_02",
+              "stem": "According to the 'statistical infrequency' definition of abnormality, which of the following behaviours would be classified as abnormal?",
+              "options": [
+                "Feeling sad after the death of a close relative",
+                "Conforming to social norms in most everyday situations",
+                "Experiencing mild anxiety before an important exam",
+                "Having an IQ score of 145, which falls in the top 2% of the population"
+              ],
+              "correctIndex": 3,
+              "explanation": "Statistical infrequency defines abnormality as any behaviour or characteristic that deviates significantly from the statistical norm (i.e., occurs rarely in the population). An IQ of 145 falls more than 2 standard deviations above the mean and is statistically rare. This illustrates a key limitation of this definition — statistically rare does not always mean undesirable or in need of treatment.",
+              "difficulty": 1
+            },
+            {
+              "id": "q1_1_03",
+              "stem": "Deviation from social norms is one definition of abnormality. Which scenario best illustrates a limitation of this definition?",
+              "options": [
+                "A person diagnosed with schizophrenia experiences hallucinations, which are uncommon in the general population",
+                "Homosexuality was classified as a mental disorder until 1973 because it deviated from social norms at the time",
+                "Depression is more common in women than men, suggesting a statistical difference in prevalence",
+                "A person with a phobia experiences irrational fear that interferes significantly with daily functioning"
+              ],
+              "correctIndex": 1,
+              "explanation": "Homosexuality being previously classified as a mental disorder illustrates the major limitation of the social norms definition: what counts as 'normal' is culturally and historically relative. Social norms change over time and vary across cultures, meaning this definition can be used to pathologise behaviour that is simply culturally different or socially non-conformist rather than genuinely harmful.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_1_04",
+              "stem": "Rosenhan (1973) conducted the study 'On Being Sane in Insane Places' in which eight pseudopatients (healthy individuals) presented at psychiatric hospitals claiming to hear voices. All were admitted and diagnosed with schizophrenia. What does this study most directly demonstrate about psychiatric diagnosis?",
+              "options": [
+                "That psychiatric diagnosis may lack validity — clinicians could not distinguish genuinely disordered patients from healthy pseudopatients",
+                "That all psychiatric patients are misdiagnosed and classification systems should be abandoned entirely",
+                "That hearing voices is always a reliable indicator of schizophrenia and should lead to immediate hospitalisation",
+                "That the statistical infrequency definition of abnormality is the most reliable method of diagnosis"
+              ],
+              "correctIndex": 0,
+              "explanation": "Rosenhan's study demonstrated that psychiatric diagnosis may lack validity — the ability to accurately identify who is genuinely disordered. Despite behaving normally after admission, pseudopatients were not detected by staff (though real patients often recognised them as impostors). Once labelled 'schizophrenic', all their subsequent normal behaviour was interpreted through the lens of the diagnosis (confirmation bias). In a follow-up study, when a hospital was told pseudopatients would be sent, staff identified 41 out of 193 genuine patients as suspected impostors, demonstrating that the diagnostic system was unreliable in both directions. This study was highly influential in reforming psychiatric diagnostic practices.",
+              "difficulty": 3
+            },
+            {
+              "id": "q1_1_05",
+              "stem": "Jahoda (1958) proposed the 'failure to function adequately' and 'deviation from ideal mental health' definitions of abnormality. Her ideal mental health criteria include self-actualisation, autonomy, and accurate perception of reality. Which of the following is the most significant criticism of using deviation from ideal mental health as a definition of abnormality?",
+              "options": [
+                "Jahoda's criteria have been adopted universally across all cultures without any need for modification",
+                "The criteria are culturally biased towards Western, individualistic values (e.g., autonomy and self-actualisation) and set unrealistically high standards that very few people fully meet, potentially over-pathologising normal human experience",
+                "The criteria are too easy to meet, meaning almost no one would be classified as abnormal",
+                "The definition only applies to physical health and cannot be meaningfully applied to mental health"
+              ],
+              "correctIndex": 1,
+              "explanation": "Jahoda's ideal mental health criteria have been criticised on two main grounds. First, the criteria reflect Western, individualistic cultural values — concepts like autonomy and self-actualisation may not be equally valued or relevant in collectivist cultures (e.g., in many East Asian societies, interdependence rather than autonomy is considered healthy). Second, the standards are so high that most people would fail to meet all criteria at all times, which would classify the majority of the population as 'abnormal'. This over-inclusiveness undermines the utility of the definition. The definition is better understood as an aspirational framework rather than a practical diagnostic tool.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch2",
+      "title": "Consumer Behaviour",
+      "titleCn": "消费者行为",
+      "knowledgePoints": [
+        {
+          "id": "2.1",
+          "title": "Decision Making",
+          "titleCn": "决策制定",
+          "image": "",
+          "questions": [
+            {
+              "id": "q2_1_01",
+              "stem": "Kahneman and Tversky's research on heuristics identified the 'availability heuristic'. Which of the following is the best example of the availability heuristic influencing consumer decision-making?",
+              "options": [
+                "A consumer always buys the same brand of coffee because it is familiar and has been satisfactory in the past",
+                "A consumer chooses the middle-priced item from a menu to appear neither too cheap nor too extravagant",
+                "A consumer overestimates the risk of a car accident after seeing media coverage of a major crash and avoids driving",
+                "A consumer sticks with the default subscription option on a website rather than changing the settings"
+              ],
+              "correctIndex": 2,
+              "explanation": "The availability heuristic involves making judgements based on how easily examples come to mind. After seeing vivid media coverage of a car crash, examples of car accidents are mentally 'available', leading the consumer to overestimate the probability of such events and change their behaviour accordingly. This is a cognitive shortcut that can lead to systematic biases in decision-making.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_1_02",
+              "stem": "A consumer has purchased Nike products for 10 years and continues to do so despite the availability of cheaper alternatives of similar quality. Which psychological concept best explains this consumer behaviour?",
+              "options": [
+                "Social loafing — the consumer follows the purchasing decisions of their social group",
+                "The anchoring effect — the original price of Nike products sets a reference point for value judgements",
+                "Brand loyalty — consistent purchasing of a specific brand due to satisfaction, trust, and emotional attachment",
+                "The recency effect — the consumer remembers the most recent Nike advertisement most clearly"
+              ],
+              "correctIndex": 2,
+              "explanation": "Brand loyalty refers to a consumer's consistent preference for and commitment to purchasing a particular brand repeatedly. It is driven by a combination of satisfaction with past purchases, trust in the brand, and emotional attachment. Brand loyal consumers are less sensitive to price and competitor alternatives, making brand loyalty highly valuable to companies.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_1_03",
+              "stem": "Research on advertising effectiveness suggests that the mere exposure effect (Zajonc, 1968) influences consumer preference. Which of the following best describes this effect?",
+              "options": [
+                "Advertisements that use fear appeals are more effective than those using positive emotional appeals",
+                "Consumers prefer products endorsed by celebrities because they aspire to share the celebrity's lifestyle",
+                "Repeated exposure to a stimulus increases liking for it, even without conscious awareness of prior exposure",
+                "Consumers are more persuaded by two-sided arguments than one-sided arguments in advertising"
+              ],
+              "correctIndex": 2,
+              "explanation": "The mere exposure effect (Zajonc, 1968) demonstrates that repeated exposure to a stimulus — such as a brand name, logo, or jingle — increases positive feelings towards it, even when individuals have no conscious memory of previous exposure. This explains why repeated advertising can build brand preference without consumers being aware of its influence.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_1_04",
+              "stem": "Thaler and Sunstein (2008) introduced the concept of 'nudge theory' in behavioural economics. A supermarket places fruit at eye level and confectionery at the back of the store. Which concept from nudge theory does this illustrate, and why is it considered effective?",
+              "options": [
+                "Classical conditioning — repeated pairing of fruit with the supermarket environment creates a conditioned preference for healthy food",
+                "Choice architecture — the physical arrangement of options influences decisions by making healthier choices more convenient and salient without restricting freedom of choice",
+                "The anchoring effect — the fruit sets a healthy reference point that makes consumers judge confectionery more negatively",
+                "Social proof — consumers buy fruit because they see other shoppers selecting it at the prominent display"
+              ],
+              "correctIndex": 1,
+              "explanation": "This is an example of choice architecture, a core concept in nudge theory. Choice architects structure the environment in which decisions are made so that certain options are more prominent, convenient, or salient. Placing fruit at eye level makes it the default easy choice, while moving confectionery to a less accessible location makes unhealthy choices require more effort. Crucially, a nudge preserves freedom of choice — consumers can still buy confectionery if they wish. This approach has been adopted by governments and organisations to promote healthier behaviour without coercion, though critics argue it can be paternalistic.",
+              "difficulty": 3
+            },
+            {
+              "id": "q2_1_05",
+              "stem": "Kahneman and Tversky (1979) demonstrated the 'framing effect' in prospect theory. In a classic study, participants preferred a treatment described as having a '90% survival rate' over one described as having a '10% mortality rate', even though the outcomes are statistically identical. Which of the following best explains this finding and its application to consumer psychology?",
+              "options": [
+                "The availability heuristic makes mortality more salient because death is a more vivid and memorable concept than survival",
+                "Consumers always prefer numerically higher values because they associate larger numbers with better outcomes",
+                "Social desirability bias causes participants to choose the option that sounds more socially acceptable in a research setting",
+                "Loss aversion means people are more sensitive to potential losses than equivalent gains, so negatively framed information (mortality) has a disproportionately greater psychological impact than positively framed information (survival)"
+              ],
+              "correctIndex": 3,
+              "explanation": "The framing effect demonstrates that the way information is presented (framed) significantly influences decision-making, even when the objective content is identical. According to Kahneman and Tversky's prospect theory, people are loss-averse — they experience losses approximately twice as intensely as equivalent gains. The '10% mortality' frame highlights potential loss (death), triggering loss aversion and making the option feel worse, while '90% survival' highlights the gain (living), making the same option feel better. In consumer psychology, this principle is widely applied: products advertised as '95% fat-free' are preferred over those labelled as 'containing 5% fat', and marketers routinely frame messages in terms of gains rather than losses to increase appeal.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch3",
+      "title": "Health Psychology",
+      "titleCn": "健康心理学",
+      "knowledgePoints": [
+        {
+          "id": "3.1",
+          "title": "Stress & Coping",
+          "titleCn": "压力与应对",
+          "image": "",
+          "questions": [
+            {
+              "id": "q3_1_01",
+              "stem": "Selye's (1956) General Adaptation Syndrome (GAS) describes the body's physiological response to stress in three stages. Which of the following correctly identifies the three stages in the correct order?",
+              "options": [
+                "Alarm, Exhaustion, Resistance",
+                "Resistance, Alarm, Exhaustion",
+                "Exhaustion, Alarm, Resistance",
+                "Alarm, Resistance, Exhaustion"
+              ],
+              "correctIndex": 3,
+              "explanation": "Selye's General Adaptation Syndrome describes the body's response to prolonged stress in three sequential stages: (1) Alarm reaction — the initial 'fight or flight' response; (2) Resistance — the body attempts to adapt to the ongoing stressor; (3) Exhaustion — the body's resources become depleted and vulnerability to illness increases. This model illustrates how chronic stress can lead to physical illness.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_1_02",
+              "stem": "Lazarus and Folkman (1984) proposed a transactional model of stress and coping. According to this model, which type of coping strategy involves trying to manage or change the source of stress itself?",
+              "options": [
+                "Problem-focused coping, which aims to address and modify the stressor directly",
+                "Social support seeking, which involves relying on others to manage the stress response",
+                "Emotion-focused coping, which aims to reduce the emotional distress caused by the stressor",
+                "Avoidant coping, which involves withdrawing from the stressful situation entirely"
+              ],
+              "correctIndex": 0,
+              "explanation": "Problem-focused coping involves taking direct action to change or eliminate the source of stress (e.g., making a revision timetable to address exam stress). In contrast, emotion-focused coping aims to manage the emotional response to stress rather than changing the stressor itself (e.g., talking to a friend, exercising). Lazarus and Folkman proposed that the choice of coping strategy depends on the individual's cognitive appraisal of the stressor.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_1_03",
+              "stem": "Rotter's (1966) concept of locus of control (LOC) has been applied to health psychology. Which of the following describes a person with a strong internal locus of control in the context of health behaviour?",
+              "options": [
+                "A person who avoids health-related information because they find it overwhelming and anxiety-provoking",
+                "A person who consistently fails to adhere to prescribed medical treatments due to lack of motivation",
+                "A person who believes their health is determined primarily by luck, fate, or powerful others such as doctors",
+                "A person who believes their own actions and decisions significantly influence their health outcomes"
+              ],
+              "correctIndex": 3,
+              "explanation": "A person with an internal locus of control believes that their own behaviours, decisions, and efforts largely determine the outcomes they experience, including health outcomes. Research suggests that people with an internal health locus of control are more likely to engage in health-promoting behaviours (e.g., exercise, healthy diet) and adhere to medical advice compared to those with an external LOC.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_1_04",
+              "stem": "Friedman and Rosenman (1974) proposed the Type A and Type B personality theory in relation to coronary heart disease (CHD). Their Western Collaborative Group Study followed over 3,000 men for eight years. Which of the following accurately describes both a key finding and a significant limitation of this research?",
+              "options": [
+                "Type A individuals (characterised by competitiveness, time urgency, and hostility) had approximately twice the rate of CHD compared to Type B; a limitation is that the study only included men and may reflect a confound with other risk factors such as smoking and lifestyle",
+                "Type A and Type B individuals showed no difference in CHD rates; a limitation is that the study used self-report measures of personality",
+                "Type B individuals had higher CHD rates; a limitation is that the study only included women, reducing generalisability to men",
+                "Type A individuals had lower CHD rates because their competitive drive led to better health behaviours; a limitation is the small sample size"
+              ],
+              "correctIndex": 0,
+              "explanation": "Friedman and Rosenman found that Type A men were approximately twice as likely to develop CHD compared to Type B men over the eight-year follow-up period. Type A behaviour is characterised by competitiveness, time urgency, hostility, and impatience. However, the research has significant limitations: the sample included only middle-aged American men, limiting generalisability to women and other age groups; Type A individuals were also more likely to smoke and have other risk factors, creating potential confounding variables; and subsequent research (e.g., Ragland and Brand, 1988) has suggested that only the hostility component of Type A may be the significant risk factor for CHD, rather than the entire behavioural pattern.",
+              "difficulty": 3
+            },
+            {
+              "id": "q3_1_05",
+              "stem": "In Lazarus and Folkman's (1984) transactional model, stress is not simply a product of the environment but depends on the individual's cognitive appraisal. The model distinguishes between primary appraisal and secondary appraisal. Which of the following correctly describes the role of secondary appraisal in the stress response?",
+              "options": [
+                "Secondary appraisal occurs automatically and unconsciously, reflecting the body's physiological fight-or-flight response to perceived threat",
+                "Secondary appraisal involves evaluating whether the situation is irrelevant, benign-positive, or stressful — it determines whether a stress response is triggered",
+                "Secondary appraisal involves evaluating one's available coping resources and options — it determines whether the individual believes they can manage the demands of the stressor",
+                "Secondary appraisal involves seeking opinions from others about whether the situation is genuinely threatening"
+              ],
+              "correctIndex": 2,
+              "explanation": "In Lazarus and Folkman's transactional model, primary appraisal involves evaluating whether a situation is threatening, challenging, or irrelevant ('Is this a problem?'). Secondary appraisal involves evaluating one's coping resources and ability to deal with the stressor ('Can I cope with this?'). Stress occurs when an individual perceives that the demands of a situation exceed their perceived coping resources. This model is 'transactional' because stress is understood as arising from the dynamic interaction between the person and their environment, rather than being a fixed property of either. The model explains why the same event (e.g., a public speaking task) can be experienced as highly stressful by one person and as an exciting challenge by another.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch4",
+      "title": "Organisational Psychology",
+      "titleCn": "组织心理学",
+      "knowledgePoints": [
+        {
+          "id": "4.1",
+          "title": "Motivation Theories",
+          "titleCn": "动机理论",
+          "image": "",
+          "questions": [
+            {
+              "id": "q4_1_01",
+              "stem": "Maslow's (1943) Hierarchy of Needs proposes that human motivation follows a hierarchical structure. Which of the following correctly lists Maslow's five levels from the most basic to the highest?",
+              "options": [
+                "Physiological, Safety, Love/Belonging, Esteem, Self-Actualisation",
+                "Physiological, Love/Belonging, Safety, Esteem, Self-Actualisation",
+                "Safety, Physiological, Love/Belonging, Esteem, Self-Actualisation",
+                "Esteem, Safety, Physiological, Love/Belonging, Self-Actualisation"
+              ],
+              "correctIndex": 0,
+              "explanation": "Maslow's Hierarchy of Needs (from most basic to highest): (1) Physiological needs (food, water, shelter); (2) Safety needs (security, stability); (3) Love and Belonging needs (relationships, social connection); (4) Esteem needs (achievement, recognition); (5) Self-Actualisation (fulfilling one's potential). Maslow proposed that lower-level needs must be largely satisfied before individuals are motivated to pursue higher-level needs.",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_1_02",
+              "stem": "Herzberg's (1959) Two-Factor Theory distinguishes between 'hygiene factors' and 'motivators'. Which of the following is correctly classified as a hygiene factor?",
+              "options": [
+                "The work itself, because intrinsic interest in tasks is the primary motivator",
+                "Salary and working conditions, because their absence causes dissatisfaction but their presence does not create satisfaction",
+                "Recognition for achievement, because it directly increases job satisfaction",
+                "Responsibility and advancement opportunities, because they fulfil higher-order needs"
+              ],
+              "correctIndex": 1,
+              "explanation": "According to Herzberg's Two-Factor Theory, hygiene factors (also called maintenance factors) are environmental factors whose absence causes job dissatisfaction but whose presence does not actively motivate employees. Examples include salary, working conditions, company policy, and job security. Motivators, by contrast, are intrinsic factors (such as achievement, recognition, and responsibility) that actively increase job satisfaction and motivation.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_1_03",
+              "stem": "Research on job satisfaction suggests that intrinsic motivation is associated with higher quality performance and wellbeing. According to Self-Determination Theory (Deci and Ryan, 1985), which condition best supports intrinsic motivation in the workplace?",
+              "options": [
+                "Offering large financial bonuses to employees for completing specific tasks on time",
+                "Providing employees with autonomy, opportunities for skill development, and a sense of relatedness to colleagues",
+                "Implementing strict performance monitoring and frequent evaluations to maintain high standards",
+                "Reducing job complexity so that employees can complete tasks more quickly and efficiently"
+              ],
+              "correctIndex": 1,
+              "explanation": "Deci and Ryan's Self-Determination Theory proposes that intrinsic motivation is supported by three basic psychological needs: autonomy (sense of control over one's own actions), competence (opportunities to develop and use skills), and relatedness (positive relationships with others). Environments that satisfy these needs foster intrinsic motivation and wellbeing, whereas controlling environments (e.g., excessive monitoring or extrinsic rewards) can undermine intrinsic motivation.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_1_04",
+              "stem": "A critical evaluation of Maslow's Hierarchy of Needs suggests that the theory has several significant weaknesses. Which of the following is the most empirically supported criticism?",
+              "options": [
+                "The theory only applies to workplace motivation and has no relevance to understanding behaviour in other contexts",
+                "Maslow's theory has been universally supported by cross-cultural research, so it has no significant weaknesses",
+                "The theory is too simple, with only five levels of needs, whereas most people experience hundreds of different motivations",
+                "Research evidence does not consistently support the strict hierarchical ordering — people can pursue higher-level needs (e.g., self-actualisation or belonging) even when lower-level needs are not fully met"
+              ],
+              "correctIndex": 3,
+              "explanation": "The most significant empirical criticism of Maslow's hierarchy is that research does not consistently support the strict sequential ordering of needs. Wahba and Bridwell (1976) reviewed the evidence and found little support for the idea that needs must be satisfied in a fixed order. People frequently pursue belonging, esteem, or self-actualisation even when their physiological or safety needs are compromised — for example, artists who sacrifice financial security to pursue creative fulfilment, or hunger strikers who forgo physiological needs for ideological goals. Additionally, the theory reflects Western, individualistic values (emphasising personal achievement and self-actualisation) and may not adequately represent motivational priorities in collectivist cultures, where belonging and group harmony may take precedence over individual achievement.",
+              "difficulty": 3
+            },
+            {
+              "id": "q4_1_05",
+              "stem": "Deci (1971) conducted a classic experiment in which participants were asked to solve puzzles. One group was paid for solving puzzles, while another group was not paid. When payment was later withdrawn from the paid group, their time spent on the puzzles decreased below that of the unpaid group. Which concept does this finding illustrate?",
+              "options": [
+                "The overjustification effect — extrinsic rewards can undermine pre-existing intrinsic motivation, so that when the reward is removed, motivation falls below its original level",
+                "The Hawthorne effect — participants changed their behaviour because they knew they were being observed in an experiment",
+                "Learned helplessness — the withdrawal of payment caused the paid group to feel they had no control over outcomes",
+                "Social facilitation — being in the presence of other participants enhanced motivation in the unpaid group but not the paid group"
+              ],
+              "correctIndex": 0,
+              "explanation": "Deci's study demonstrates the overjustification effect, a phenomenon in which providing an extrinsic reward (payment) for an activity that is already intrinsically motivating causes the individual to attribute their motivation to the external reward rather than to their own interest. When the reward is subsequently removed, intrinsic motivation is undermined — the person no longer finds the activity enjoyable for its own sake. This has important implications for organisational psychology: excessive use of extrinsic rewards (e.g., bonuses, performance-related pay) may paradoxically decrease the quality and persistence of work behaviour if the rewards are later removed or if the tasks were previously enjoyed for intrinsic reasons. This finding supports Deci and Ryan's broader Self-Determination Theory.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

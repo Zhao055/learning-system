@@ -1,0 +1,484 @@
+{
+  "chapters": [
+    {
+      "id": "ch1",
+      "title": "Algebra",
+      "titleCn": "代数",
+      "knowledgePoints": [
+        {
+          "id": "1.1",
+          "title": "Modulus Function",
+          "titleCn": "模函数",
+          "image": "",
+          "questions": [
+            {
+              "id": "q1_1_01",
+              "stem": "Solve |2x - 3| = 5. Which of the following gives all solutions?",
+              "options": [
+                "x = 4 or x = -1",
+                "x = 4 or x = 1",
+                "x = -4 or x = 1",
+                "x = -4 or x = -1"
+              ],
+              "correctIndex": 0,
+              "explanation": "|2x - 3| = 5 gives two cases. Case 1: 2x - 3 = 5, so 2x = 8, x = 4. Case 2: 2x - 3 = -5, so 2x = -2, x = -1. The solutions are x = 4 or x = -1.",
+              "difficulty": 1
+            },
+            {
+              "id": "q1_1_02",
+              "stem": "Solve the inequality |x + 1| > |x - 3|. Which of the following is correct?",
+              "options": [
+                "x < 1",
+                "x > 1",
+                "x > -1",
+                "x < -1"
+              ],
+              "correctIndex": 1,
+              "explanation": "Squaring both sides (both sides are non-negative): (x+1)^2 > (x-3)^2. Expanding: x^2 + 2x + 1 > x^2 - 6x + 9. Simplifying: 8x > 8, so x > 1.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_1_03",
+              "stem": "The graph of y = |x^2 - 4| touches the x-axis where y = 0. At how many x-values does y = 0?",
+              "options": [
+                "3",
+                "0",
+                "2",
+                "1"
+              ],
+              "correctIndex": 2,
+              "explanation": "y = |x^2 - 4| = 0 when x^2 - 4 = 0, i.e. x^2 = 4, giving x = 2 or x = -2. So y = 0 at exactly 2 x-values.",
+              "difficulty": 1
+            },
+            {
+              "id": "q1_1_04",
+              "stem": "Solve |3x - 1| < |x + 5|. Which of the following is the solution set?",
+              "options": [
+                "x < 3",
+                "x < -1 or x > 3",
+                "-3 < x < 1",
+                "-1 < x < 3"
+              ],
+              "correctIndex": 3,
+              "explanation": "Squaring both sides (valid since both sides are non-negative): (3x - 1)^2 < (x + 5)^2. Expanding: 9x^2 - 6x + 1 < x^2 + 10x + 25. Rearranging: 8x^2 - 16x - 24 < 0, i.e. x^2 - 2x - 3 < 0, which factors as (x - 3)(x + 1) < 0. This holds for -1 < x < 3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_1_05",
+              "stem": "Find the complete set of values of x satisfying |x - 2| + |x + 1| = 5.",
+              "options": [
+                "x = 0 or x = 5",
+                "-2 <= x <= 3",
+                "x = -2 or x = 3",
+                "x = -3 or x = 2"
+              ],
+              "correctIndex": 2,
+              "explanation": "Consider three intervals. For x >= 2: (x - 2) + (x + 1) = 5, so 2x - 1 = 5, x = 3 (valid since 3 >= 2). For -1 <= x < 2: -(x - 2) + (x + 1) = 5, so 3 = 5, which is impossible. For x < -1: -(x - 2) + -(x + 1) = 5, so -2x + 1 = 5, x = -2 (valid since -2 < -1). The solutions are x = -2 or x = 3.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch2",
+      "title": "Logarithmic & Exponential Functions",
+      "titleCn": "对数与指数函数",
+      "knowledgePoints": [
+        {
+          "id": "2.1",
+          "title": "Logarithmic Equations",
+          "titleCn": "对数方程",
+          "image": "",
+          "questions": [
+            {
+              "id": "q2_1_01",
+              "stem": "Solve ln(x + 2) = 3. Give your answer to 3 significant figures.",
+              "options": [
+                "1.00",
+                "20.1",
+                "5.00",
+                "18.1"
+              ],
+              "correctIndex": 3,
+              "explanation": "ln(x + 2) = 3 means x + 2 = e^3. Since e^3 ≈ 20.086, we get x = e^3 - 2 ≈ 18.086 ≈ 18.1 (3 s.f.).",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_1_02",
+              "stem": "Simplify log_a(a^3 * sqrt(a)) to a single number.",
+              "options": [
+                "7/2",
+                "3",
+                "5/2",
+                "2"
+              ],
+              "correctIndex": 0,
+              "explanation": "log_a(a^3 * a^(1/2)) = log_a(a^(3 + 1/2)) = log_a(a^(7/2)) = 7/2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_1_03",
+              "stem": "Solve 2^x = 5. Which of the following is the exact value of x?",
+              "options": [
+                "5 / 2",
+                "ln2 / ln5",
+                "ln3",
+                "ln5 / ln2"
+              ],
+              "correctIndex": 3,
+              "explanation": "Taking natural logarithms of both sides: x * ln2 = ln5, so x = ln5 / ln2. This equals log_2(5) ≈ 2.32.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_1_04",
+              "stem": "Solve ln(x^2 - 3) = ln(2x). What are the solutions?",
+              "options": [
+                "x = 1 or x = 3",
+                "x = 3 only",
+                "x = -1 only",
+                "x = 3 or x = -1"
+              ],
+              "correctIndex": 1,
+              "explanation": "Since ln is one-to-one, ln(x^2 - 3) = ln(2x) implies x^2 - 3 = 2x, so x^2 - 2x - 3 = 0, giving (x - 3)(x + 1) = 0, thus x = 3 or x = -1. However, the arguments of ln must be positive: for x = -1, 2x = -2 < 0, which is invalid. Also x^2 - 3 must be positive: for x = 3, 9 - 3 = 6 > 0 and 2(3) = 6 > 0. So x = 3 is the only valid solution.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_1_05",
+              "stem": "Solve the equation e^(2x) - 5e^x + 6 = 0. What are the exact solutions for x?",
+              "options": [
+                "x = ln2 only",
+                "x = ln6",
+                "x = ln2 or x = ln3",
+                "x = 2 or x = 3"
+              ],
+              "correctIndex": 2,
+              "explanation": "Let u = e^x, so the equation becomes u^2 - 5u + 6 = 0, which factors as (u - 2)(u - 3) = 0. Thus u = 2 or u = 3. Since u = e^x: e^x = 2 gives x = ln2, and e^x = 3 gives x = ln3. Both are valid since e^x is always positive.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch3",
+      "title": "Trigonometry",
+      "titleCn": "三角函数",
+      "knowledgePoints": [
+        {
+          "id": "3.1",
+          "title": "Trigonometric Identities",
+          "titleCn": "三角恒等式",
+          "image": "",
+          "questions": [
+            {
+              "id": "q3_1_01",
+              "stem": "Solve sin2x = cosx for 0 <= x <= 2*pi. How many solutions are there?",
+              "options": [
+                "4",
+                "3",
+                "5",
+                "2"
+              ],
+              "correctIndex": 0,
+              "explanation": "sin2x = cosx gives 2sinx*cosx = cosx, so cosx(2sinx - 1) = 0. Either cosx = 0 (x = pi/2, 3pi/2) or sinx = 1/2 (x = pi/6, 5pi/6). That gives 4 solutions in [0, 2pi].",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_1_02",
+              "stem": "Which pair of double angle identities is used to prove (1 - cos2x) / sin2x = tanx?",
+              "options": [
+                "cos2x = 1 - 2sin^2x and sin2x = sin^2x - cos^2x",
+                "cos2x = 1 - 2sin^2x and sin2x = 2sinx*cosx",
+                "cos2x = cos^2x - sin^2x and sin2x = 2sinx*cosx",
+                "cos2x = 2cos^2x - 1 and sin2x = 2sinx*cosx"
+              ],
+              "correctIndex": 1,
+              "explanation": "Using cos2x = 1 - 2sin^2x: the numerator becomes 1 - (1 - 2sin^2x) = 2sin^2x. Using sin2x = 2sinx*cosx: the expression becomes 2sin^2x / (2sinx*cosx) = sinx/cosx = tanx.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_1_03",
+              "stem": "Find the exact value of cos(pi/12) using the identity for cos(A - B).",
+              "options": [
+                "(sqrt(6) + sqrt(2)) / 4",
+                "sqrt(3) / 2",
+                "1 / 2",
+                "(sqrt(6) - sqrt(2)) / 4"
+              ],
+              "correctIndex": 0,
+              "explanation": "cos(pi/12) = cos(pi/3 - pi/4). Using cos(A-B) = cosA*cosB + sinA*sinB: = cos(pi/3)*cos(pi/4) + sin(pi/3)*sin(pi/4) = (1/2)*(sqrt(2)/2) + (sqrt(3)/2)*(sqrt(2)/2) = sqrt(2)/4 + sqrt(6)/4 = (sqrt(2) + sqrt(6)) / 4.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_1_04",
+              "stem": "Given that tan(A + B) = (tanA + tanB) / (1 - tanA*tanB), find the exact value of tan(pi/12).",
+              "options": [
+                "1 / sqrt(3)",
+                "sqrt(3) + 2",
+                "2 - sqrt(3)",
+                "sqrt(3) - 2"
+              ],
+              "correctIndex": 2,
+              "explanation": "tan(pi/12) = tan(pi/3 - pi/4) = (tan(pi/3) - tan(pi/4)) / (1 + tan(pi/3)*tan(pi/4)) = (sqrt(3) - 1) / (1 + sqrt(3)). Rationalising: multiply numerator and denominator by (sqrt(3) - 1): = (sqrt(3) - 1)^2 / ((sqrt(3) + 1)(sqrt(3) - 1)) = (3 - 2*sqrt(3) + 1) / (3 - 1) = (4 - 2*sqrt(3)) / 2 = 2 - sqrt(3).",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_1_05",
+              "stem": "Solve 3cos2x + 7cosx + 4 = 0 for 0 <= x <= 2*pi. How many solutions are there?",
+              "options": [
+                "3",
+                "1",
+                "4",
+                "2"
+              ],
+              "correctIndex": 0,
+              "explanation": "Using cos2x = 2cos^2x - 1: 3(2cos^2x - 1) + 7cosx + 4 = 0, so 6cos^2x + 7cosx + 1 = 0. Let c = cosx: 6c^2 + 7c + 1 = 0 factors as (6c + 1)(c + 1) = 0. So cosx = -1/6 or cosx = -1. For cosx = -1: x = pi (1 solution). For cosx = -1/6: since -1 < -1/6 < 0, there are two solutions in (pi/2, pi) and (pi, 3pi/2). Total: 3 solutions.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch4",
+      "title": "Differentiation",
+      "titleCn": "微分",
+      "knowledgePoints": [
+        {
+          "id": "4.1",
+          "title": "Implicit Differentiation",
+          "titleCn": "隐函数微分",
+          "image": "",
+          "questions": [
+            {
+              "id": "q4_1_01",
+              "stem": "Given x^2 + y^2 = 25, find dy/dx in terms of x and y.",
+              "options": [
+                "-y/x",
+                "-x/y",
+                "x/y",
+                "y/x"
+              ],
+              "correctIndex": 1,
+              "explanation": "Differentiating implicitly with respect to x: 2x + 2y*(dy/dx) = 0. Solving for dy/dx: dy/dx = -2x / (2y) = -x/y.",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_1_02",
+              "stem": "A curve is defined parametrically by x = t^2 + 1 and y = 2t^3. Find dy/dx in terms of t.",
+              "options": [
+                "t/3",
+                "2t",
+                "3t",
+                "6t^2"
+              ],
+              "correctIndex": 2,
+              "explanation": "dx/dt = 2t and dy/dt = 6t^2. By the chain rule: dy/dx = (dy/dt) / (dx/dt) = 6t^2 / (2t) = 3t.",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_1_03",
+              "stem": "The radius of a circle is increasing at 2 cm/s. How fast is the area increasing when the radius is 5 cm?",
+              "options": [
+                "10*pi cm^2/s",
+                "25*pi cm^2/s",
+                "20*pi cm^2/s",
+                "4*pi cm^2/s"
+              ],
+              "correctIndex": 2,
+              "explanation": "A = pi*r^2, so dA/dr = 2*pi*r. By the chain rule: dA/dt = (dA/dr)*(dr/dt) = 2*pi*r * 2 = 4*pi*r. When r = 5: dA/dt = 4*pi*5 = 20*pi cm^2/s.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_1_04",
+              "stem": "Given x^2*y + x*y^2 = 6, find dy/dx in terms of x and y.",
+              "options": [
+                "-(x^2 + 2xy) / (2xy + y^2)",
+                "-(2xy + y^2) / (x^2 + 2xy)",
+                "(2xy + y^2) / (x^2 + 2xy)",
+                "2xy / (x^2 + y^2)"
+              ],
+              "correctIndex": 1,
+              "explanation": "Differentiating x^2*y + x*y^2 = 6 implicitly: using the product rule on each term: 2x*y + x^2*(dy/dx) + y^2 + x*2y*(dy/dx) = 0. Collecting dy/dx terms: (x^2 + 2xy)*(dy/dx) = -(2xy + y^2). Therefore dy/dx = -(2xy + y^2) / (x^2 + 2xy).",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_1_05",
+              "stem": "A curve is defined by e^y + xy = e + 1. Find the gradient of the curve at the point (1, 1).",
+              "options": [
+                "-(e + 1)",
+                "1/(e + 1)",
+                "e - 1",
+                "-1/(e + 1)"
+              ],
+              "correctIndex": 3,
+              "explanation": "First verify the point lies on the curve: e^1 + (1)(1) = e + 1, which is correct. Differentiating implicitly with respect to x: e^y*(dy/dx) + y + x*(dy/dx) = 0. Collecting dy/dx terms: (e^y + x)*(dy/dx) = -y. Therefore dy/dx = -y / (e^y + x). At the point (1, 1): dy/dx = -1 / (e^1 + 1) = -1/(e + 1).",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch5",
+      "title": "Integration",
+      "titleCn": "积分",
+      "knowledgePoints": [
+        {
+          "id": "5.1",
+          "title": "Integration Techniques",
+          "titleCn": "积分技巧",
+          "image": "",
+          "questions": [
+            {
+              "id": "q5_1_01",
+              "stem": "Find the integral of 1/(2x + 1) with respect to x.",
+              "options": [
+                "-1/(2x+1)^2 + C",
+                "2*ln|2x + 1| + C",
+                "(1/2)*ln|2x + 1| + C",
+                "ln|2x + 1| + C"
+              ],
+              "correctIndex": 2,
+              "explanation": "Using the standard result: integral of 1/(ax + b) dx = (1/a)*ln|ax + b| + C. Here a = 2 and b = 1, so the answer is (1/2)*ln|2x + 1| + C.",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_1_02",
+              "stem": "Express (3x + 1) / ((x + 1)(x - 1)) in the form A/(x+1) + B/(x-1). What are A and B?",
+              "options": [
+                "A = 2, B = 1",
+                "A = -1, B = 2",
+                "A = 1, B = -1",
+                "A = 1, B = 2"
+              ],
+              "correctIndex": 3,
+              "explanation": "Setting 3x + 1 = A(x - 1) + B(x + 1). Substituting x = 1: 4 = 2B, so B = 2. Substituting x = -1: -2 = -2A, so A = 1. The partial fractions are 1/(x+1) + 2/(x-1).",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_1_03",
+              "stem": "Use the substitution u = x^2 + 1 to evaluate the integral of x*sqrt(x^2 + 1) dx.",
+              "options": [
+                "(x^2 + 1)^(3/2) + C",
+                "(1/3)*(x^2 + 1)^(3/2) + C",
+                "(2/3)*(x^2 + 1)^(1/2) + C",
+                "(1/2)*(x^2 + 1)^(3/2) + C"
+              ],
+              "correctIndex": 1,
+              "explanation": "Let u = x^2 + 1, then du = 2x dx, so x dx = du/2. The integral becomes integral of sqrt(u)*(du/2) = (1/2)*(2/3)*u^(3/2) + C = (1/3)*(x^2 + 1)^(3/2) + C.",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_1_04",
+              "stem": "Find the integral of (5x + 8) / ((x + 1)(x + 2)) dx using partial fractions.",
+              "options": [
+                "3*ln|x + 1| + 2*ln|x + 2| + C",
+                "ln|(x + 1)(x + 2)| + C",
+                "5*ln|x + 1| - 2*ln|x + 2| + C",
+                "2*ln|x + 1| + 3*ln|x + 2| + C"
+              ],
+              "correctIndex": 0,
+              "explanation": "Write (5x + 8)/((x+1)(x+2)) = A/(x+1) + B/(x+2). Then 5x + 8 = A(x+2) + B(x+1). Setting x = -1: -5 + 8 = A(1), so A = 3. Setting x = -2: -10 + 8 = B(-1), so B = 2. Check: 3(x+2) + 2(x+1) = 3x + 6 + 2x + 2 = 5x + 8. Correct. The integral is 3*ln|x+1| + 2*ln|x+2| + C.",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_1_05",
+              "stem": "Evaluate the integral from 0 to 1 of x*e^(2x) dx.",
+              "options": [
+                "(e^2 - 1) / 4",
+                "(e^2 - 1) / 2",
+                "e^2 / 2",
+                "(e^2 + 1) / 4"
+              ],
+              "correctIndex": 3,
+              "explanation": "Using integration by parts: let u = x, dv = e^(2x) dx. Then du = dx, v = (1/2)*e^(2x). The integral = [x*(1/2)*e^(2x)] from 0 to 1 - integral from 0 to 1 of (1/2)*e^(2x) dx = (1/2)*e^2 - [(1/4)*e^(2x)] from 0 to 1 = (1/2)*e^2 - (1/4)*e^2 + 1/4 = (1/4)*e^2 + 1/4 = (e^2 + 1)/4.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch6",
+      "title": "Numerical Methods",
+      "titleCn": "数值方法",
+      "knowledgePoints": [
+        {
+          "id": "6.1",
+          "title": "Iterative Methods",
+          "titleCn": "迭代法",
+          "image": "",
+          "questions": [
+            {
+              "id": "q6_1_01",
+              "stem": "For f(x) = x^3 - 2x - 5, which values confirm a sign change showing a root lies between x = 2 and x = 3?",
+              "options": [
+                "f(2) = -1 and f(3) = 16",
+                "f(2) = 0 and f(3) = 16",
+                "f(2) = -1 and f(3) = -16",
+                "f(2) = 1 and f(3) = 16"
+              ],
+              "correctIndex": 0,
+              "explanation": "f(2) = 8 - 4 - 5 = -1 (negative) and f(3) = 27 - 6 - 5 = 16 (positive). Since f is continuous and changes sign on [2, 3], by the Intermediate Value Theorem there is a root in (2, 3).",
+              "difficulty": 1
+            },
+            {
+              "id": "q6_1_02",
+              "stem": "Apply one iteration of the Newton-Raphson method to f(x) = x^2 - 7 starting from x_0 = 3. What is x_1?",
+              "options": [
+                "4/3",
+                "3",
+                "7/3",
+                "8/3"
+              ],
+              "correctIndex": 3,
+              "explanation": "f(x) = x^2 - 7 and f'(x) = 2x. Newton-Raphson: x_1 = x_0 - f(x_0)/f'(x_0) = 3 - (9 - 7)/(2*3) = 3 - 2/6 = 3 - 1/3 = 8/3 ≈ 2.667.",
+              "difficulty": 1
+            },
+            {
+              "id": "q6_1_03",
+              "stem": "For the iteration x_{n+1} = g(x_n), which condition guarantees convergence near a root?",
+              "options": [
+                "g'(x) = 0 near the root",
+                "|g'(x)| < 1 near the root",
+                "g(x) = x near the root",
+                "|g'(x)| > 1 near the root"
+              ],
+              "correctIndex": 1,
+              "explanation": "An iteration x_{n+1} = g(x_n) converges to a fixed point (root) if and only if |g'(x)| < 1 in the neighbourhood of that root. If |g'(x)| > 1, the iteration diverges. The smaller |g'(x)| is, the faster the convergence.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_1_04",
+              "stem": "The equation x^3 + x - 1 = 0 is rearranged to x = 1/(x^2 + 1). Starting with x_0 = 0.7, find x_1 correct to 4 decimal places.",
+              "options": [
+                "0.6711",
+                "0.5000",
+                "0.8333",
+                "0.7241"
+              ],
+              "correctIndex": 0,
+              "explanation": "Using the iteration x_{n+1} = 1/(x_n^2 + 1) with x_0 = 0.7: x_1 = 1/(0.7^2 + 1) = 1/(0.49 + 1) = 1/1.49 = 0.67114... which rounds to 0.6711 (4 d.p.).",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_1_05",
+              "stem": "The equation x = 2 + 1/x is to be solved using the Newton-Raphson method applied to f(x) = x^2 - 2x - 1. Starting from x_0 = 2, find x_2 correct to 4 decimal places.",
+              "options": [
+                "2.5000",
+                "2.4167",
+                "2.4143",
+                "2.3333"
+              ],
+              "correctIndex": 1,
+              "explanation": "f(x) = x^2 - 2x - 1, f'(x) = 2x - 2. With x_0 = 2: f(2) = 4 - 4 - 1 = -1, f'(2) = 2. So x_1 = 2 - (-1)/2 = 2.5. Next: f(2.5) = 6.25 - 5 - 1 = 0.25, f'(2.5) = 3. So x_2 = 2.5 - 0.25/3 = 2.5 - 0.08333... = 2.41667, which rounds to 2.4167 (4 d.p.). The exact root is 1 + sqrt(2) ≈ 2.4142; the Newton-Raphson method converges rapidly towards it.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

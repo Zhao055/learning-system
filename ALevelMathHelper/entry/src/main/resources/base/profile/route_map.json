@@ -1,0 +1,64 @@
+{
+  "routerMap": [
+    {
+      "name": "HomePage",
+      "pageSourceFile": "src/main/ets/pages/HomePage.ets",
+      "buildFunction": "HomePageBuilder"
+    },
+    {
+      "name": "SubjectSelectionPage",
+      "pageSourceFile": "src/main/ets/pages/SubjectSelectionPage.ets",
+      "buildFunction": "SubjectSelectionPageBuilder"
+    },
+    {
+      "name": "PaperSelectionPage",
+      "pageSourceFile": "src/main/ets/pages/PaperSelectionPage.ets",
+      "buildFunction": "PaperSelectionPageBuilder"
+    },
+    {
+      "name": "ChapterListPage",
+      "pageSourceFile": "src/main/ets/pages/ChapterListPage.ets",
+      "buildFunction": "ChapterListPageBuilder"
+    },
+    {
+      "name": "KnowledgeCardPage",
+      "pageSourceFile": "src/main/ets/pages/KnowledgeCardPage.ets",
+      "buildFunction": "KnowledgeCardPageBuilder"
+    },
+    {
+      "name": "QuizPage",
+      "pageSourceFile": "src/main/ets/pages/QuizPage.ets",
+      "buildFunction": "QuizPageBuilder"
+    },
+    {
+      "name": "QuizResultPage",
+      "pageSourceFile": "src/main/ets/pages/QuizResultPage.ets",
+      "buildFunction": "QuizResultPageBuilder"
+    },
+    {
+      "name": "CameraPage",
+      "pageSourceFile": "src/main/ets/pages/CameraPage.ets",
+      "buildFunction": "CameraPageBuilder"
+    },
+    {
+      "name": "PhotoPreviewPage",
+      "pageSourceFile": "src/main/ets/pages/PhotoPreviewPage.ets",
+      "buildFunction": "PhotoPreviewPageBuilder"
+    },
+    {
+      "name": "SolutionPage",
+      "pageSourceFile": "src/main/ets/pages/SolutionPage.ets",
+      "buildFunction": "SolutionPageBuilder"
+    },
+    {
+      "name": "SettingsPage",
+      "pageSourceFile": "src/main/ets/pages/SettingsPage.ets",
+      "buildFunction": "SettingsPageBuilder"
+    },
+    {
+      "name": "WrongAnswerPage",
+      "pageSourceFile": "src/main/ets/pages/WrongAnswerPage.ets",
+      "buildFunction": "WrongAnswerPageBuilder"
+    }
+  ]
+}

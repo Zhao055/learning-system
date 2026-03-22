@@ -1,0 +1,887 @@
+{
+  "subject": "Biology AS Level",
+  "code": "9700",
+  "papers": "Papers 1 & 2",
+  "chapters": [
+    {
+      "id": "ch1",
+      "title": "Cell Structure",
+      "titleCn": "细胞结构",
+      "knowledgePoints": [
+        {
+          "id": "1.1",
+          "title": "Organelles & Functions",
+          "titleCn": "细胞器与功能",
+          "image": "",
+          "questions": [
+            {
+              "id": "q1_1_01",
+              "stem": "Which organelle is responsible for the synthesis of proteins that are destined for secretion from the cell?",
+              "options": [
+                "The Golgi apparatus",
+                "Ribosomes attached to the rough endoplasmic reticulum",
+                "Smooth endoplasmic reticulum",
+                "Free ribosomes in the cytoplasm"
+              ],
+              "correctIndex": 1,
+              "explanation": "Ribosomes attached to the rough endoplasmic reticulum (RER) synthesise proteins destined for secretion. The polypeptide is threaded into the lumen of the RER as it is made, then packaged into vesicles and transported to the Golgi apparatus for further modification and export.",
+              "difficulty": 1
+            },
+            {
+              "id": "q1_1_02",
+              "stem": "A student examines a cell under an electron microscope and observes a large number of mitochondria, an extensive rough endoplasmic reticulum, and numerous secretory vesicles near the plasma membrane. Which cell type does this most likely represent?",
+              "options": [
+                "A mature red blood cell",
+                "A plant mesophyll cell",
+                "A pancreatic acinar cell actively secreting digestive enzymes",
+                "A skeletal muscle fibre at rest"
+              ],
+              "correctIndex": 2,
+              "explanation": "Pancreatic acinar cells secrete large quantities of digestive enzymes. This requires extensive rough ER for protein synthesis, a well-developed Golgi apparatus, numerous secretory vesicles, and many mitochondria to provide ATP for the energy-intensive secretory pathway.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_1_03",
+              "stem": "The table below describes four organelles. Which row correctly matches the organelle to its function?\n\n| | Organelle | Function |\n|---|---|---|\n| A | Lysosome | Synthesises ATP by oxidative phosphorylation |\n| B | Ribosome | Translates mRNA into polypeptides |\n| C | Chloroplast | Produces hydrogen peroxide to destroy pathogens |\n| D | Nucleus | Packages proteins into vesicles for export |",
+              "options": [
+                "D",
+                "A",
+                "C",
+                "B"
+              ],
+              "correctIndex": 3,
+              "explanation": "Ribosomes are the sites of translation, where mRNA codons are read and amino acids are assembled into polypeptides. Option A is incorrect — lysosomes contain hydrolytic enzymes for intracellular digestion, not ATP synthesis. Option C is incorrect — peroxisomes produce hydrogen peroxide, not chloroplasts. Option D is incorrect — the Golgi apparatus packages proteins for export.",
+              "difficulty": 1
+            },
+            {
+              "id": "q1_1_04",
+              "stem": "A cell is treated with a drug that specifically inhibits the formation of vesicles from the Golgi apparatus. Which cellular process would be most directly affected?",
+              "options": [
+                "Secretion of proteins and formation of lysosomes",
+                "Transcription of mRNA from DNA",
+                "Oxidative phosphorylation in the mitochondria",
+                "DNA replication in the nucleus"
+              ],
+              "correctIndex": 0,
+              "explanation": "The Golgi apparatus modifies, packages, and sorts proteins and lipids into vesicles for transport. Vesicles budding from the trans face of the Golgi deliver secretory proteins to the plasma membrane for exocytosis and also form primary lysosomes containing hydrolytic enzymes. Blocking vesicle formation would directly impair both protein secretion and lysosome production. DNA replication, transcription, and oxidative phosphorylation do not depend on Golgi vesicle formation.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_1_05",
+              "stem": "An electron micrograph of a eukaryotic cell reveals an organelle bounded by a double membrane. The inner membrane is folded into cristae, and the matrix contains small (70S) ribosomes and circular DNA. A student concludes this is a mitochondrion. Another student argues these features also support the endosymbiotic theory. Which statement best evaluates the second student's argument?",
+              "options": [
+                "The argument is invalid because all eukaryotic organelles contain their own DNA and ribosomes.",
+                "The argument is invalid because mitochondria have 80S ribosomes, the same as the eukaryotic cytoplasm, disproving any link to prokaryotes.",
+                "The argument is only valid if the mitochondrion also contains cellulose in its outer membrane, as prokaryotes have cell walls.",
+                "The argument is valid — the presence of 70S ribosomes (the same size as prokaryotic ribosomes), circular DNA, and a double membrane are consistent with the hypothesis that mitochondria evolved from free-living aerobic prokaryotes engulfed by an ancestral eukaryote."
+              ],
+              "correctIndex": 3,
+              "explanation": "The endosymbiotic theory (proposed by Lynn Margulis) states that mitochondria (and chloroplasts) originated from free-living prokaryotes that were engulfed by an ancestral eukaryotic cell. Key evidence includes: (1) a double membrane — the inner membrane corresponds to the original prokaryotic membrane, and the outer membrane to the host's engulfing vesicle; (2) 70S ribosomes, the same size as prokaryotic ribosomes (eukaryotic cytoplasmic ribosomes are 80S); (3) circular DNA, similar to bacterial chromosomes; (4) they replicate by binary fission. Not all eukaryotic organelles have their own DNA — the ER and Golgi do not.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch2",
+      "title": "Biological Molecules",
+      "titleCn": "生物分子",
+      "knowledgePoints": [
+        {
+          "id": "2.1",
+          "title": "Carbohydrates & Proteins",
+          "titleCn": "碳水化合物与蛋白质",
+          "image": "",
+          "questions": [
+            {
+              "id": "q2_1_01",
+              "stem": "Which of the following statements correctly describes the formation of a peptide bond?",
+              "options": [
+                "A peptide bond forms between the R-group of one amino acid and the carboxyl group of another, consuming water.",
+                "A peptide bond forms between the amino group of one amino acid and the amino group of another, releasing water.",
+                "A peptide bond forms between the carboxyl group of one amino acid and the carboxyl group of another, releasing water.",
+                "A peptide bond forms between the carboxyl group of one amino acid and the amino group of another, releasing water."
+              ],
+              "correctIndex": 3,
+              "explanation": "A peptide bond is formed by a condensation reaction between the carboxyl group (-COOH) of one amino acid and the amino group (-NH2) of another. A molecule of water (H2O) is released in this process. This is the basis of all polypeptide chain formation during translation.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_1_02",
+              "stem": "Starch and glycogen are both storage polysaccharides made from glucose monomers. Which statement correctly distinguishes their structures?",
+              "options": [
+                "Starch is made from beta-glucose, whereas glycogen is made from alpha-glucose.",
+                "Glycogen is more highly branched than starch due to more frequent alpha-1,6-glycosidic bonds.",
+                "Starch contains only beta-1,4-glycosidic bonds, while glycogen contains only alpha-1,4-glycosidic bonds.",
+                "Glycogen contains beta-1,6-glycosidic bonds at branch points, while starch contains alpha-1,6-glycosidic bonds."
+              ],
+              "correctIndex": 1,
+              "explanation": "Both starch (specifically amylopectin) and glycogen contain alpha-1,4-glycosidic bonds along chains and alpha-1,6-glycosidic bonds at branch points. Glycogen has branch points approximately every 8–10 glucose units, compared to every 24–30 in amylopectin, making glycogen more highly branched. This allows more rapid release of glucose when needed.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_1_03",
+              "stem": "A biuret test is carried out on four solutions. Which result is correct?",
+              "options": [
+                "A solution of albumin (protein) gives a purple/violet colour, indicating the presence of peptide bonds.",
+                "A solution of starch gives a purple/violet colour with biuret reagent.",
+                "A solution of glucose gives a purple colour because it contains hydroxyl groups.",
+                "A solution of amino acids gives a strong purple colour due to many peptide bonds."
+              ],
+              "correctIndex": 0,
+              "explanation": "The biuret test detects peptide bonds. Copper(II) ions in alkaline solution form a coloured complex with peptide bonds, producing a purple/violet colour. Albumin is a protein with many peptide bonds, so it gives a positive result. Free amino acids have very few or no peptide bonds and give little or no colour. Starch and glucose do not contain peptide bonds.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_1_04",
+              "stem": "Cellulose is a structural polysaccharide found in plant cell walls. Which feature of cellulose makes it suitable for this role?",
+              "options": [
+                "Cellulose molecules are highly branched, creating a compact structure that resists compression.",
+                "Cellulose is made of alpha-glucose monomers arranged in a helical structure that is easily digestible.",
+                "Cellulose is made of beta-glucose monomers linked by beta-1,4-glycosidic bonds; adjacent chains form hydrogen bonds with each other, creating strong microfibrils.",
+                "Cellulose is soluble in water, allowing it to be transported through the plant and deposited in cell walls."
+              ],
+              "correctIndex": 2,
+              "explanation": "Cellulose is a polymer of beta-glucose monomers linked by beta-1,4-glycosidic bonds. Because every other glucose monomer is inverted, the chain is straight rather than helical. Adjacent cellulose chains form many hydrogen bonds with each other, bundling together into microfibrils with high tensile strength. These microfibrils are embedded in a matrix of other polysaccharides and provide structural support to the cell wall. Cellulose is insoluble and is not branched.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_1_05",
+              "stem": "Haemoglobin is a globular protein with quaternary structure. A single amino acid substitution (Glu → Val at position 6 of the beta chain) causes sickle cell anaemia. Which of the following best explains how this single change leads to the formation of abnormal haemoglobin fibres?",
+              "options": [
+                "Glutamic acid is larger than valine, so the substitution prevents the four subunits from assembling into a functional quaternary structure.",
+                "The substitution changes the primary structure so drastically that all four levels of protein structure are destroyed and the protein denatures.",
+                "Valine is hydrophobic whereas glutamic acid is hydrophilic and charged; the hydrophobic patch on the surface of deoxygenated HbS molecules causes them to aggregate into long, insoluble fibres that distort the red blood cell shape.",
+                "The substitution introduces a new disulfide bridge between beta chains, locking haemoglobin into a rigid conformation."
+              ],
+              "correctIndex": 2,
+              "explanation": "In sickle cell anaemia, the substitution of hydrophilic, negatively charged glutamic acid (Glu) with hydrophobic valine (Val) at position 6 of the beta-globin chain creates a 'sticky' hydrophobic patch on the surface of the haemoglobin molecule. When HbS is deoxygenated, this hydrophobic patch interacts with a complementary hydrophobic pocket on adjacent HbS molecules, causing them to polymerise into long, rigid fibres. These fibres distort the red blood cell into a characteristic sickle shape, reducing its flexibility and oxygen-carrying capacity, and causing blockages in capillaries.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch3",
+      "title": "Enzymes",
+      "titleCn": "酶",
+      "knowledgePoints": [
+        {
+          "id": "3.1",
+          "title": "Enzyme Kinetics",
+          "titleCn": "酶动力学",
+          "image": "",
+          "questions": [
+            {
+              "id": "q3_1_01",
+              "stem": "An experiment investigates the effect of increasing substrate concentration on enzyme activity, with enzyme concentration kept constant. Which graph shape correctly describes the relationship between substrate concentration and reaction rate?",
+              "options": [
+                "A bell-shaped curve with an optimum substrate concentration.",
+                "A straight line passing through the origin, with rate increasing indefinitely.",
+                "A curve that rises, reaches a peak, and then decreases as substrate concentration increases further.",
+                "A curve that rises steeply at first and then levels off to a maximum rate (Vmax)."
+              ],
+              "correctIndex": 3,
+              "explanation": "At low substrate concentrations, rate increases steeply as more substrate molecules occupy active sites. As concentration increases, active sites become saturated and rate increases more slowly. At Vmax, all active sites are occupied at all times and adding more substrate has no effect. The graph is a rectangular hyperbola levelling off at Vmax.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_1_02",
+              "stem": "A competitive inhibitor and a non-competitive inhibitor are both added to separate enzyme-catalysed reactions. Which statement correctly compares their effects?",
+              "options": [
+                "Both inhibitors reduce Vmax; only the competitive inhibitor increases Km.",
+                "The competitive inhibitor increases apparent Km but does not change Vmax; the non-competitive inhibitor reduces Vmax but does not change Km.",
+                "The competitive inhibitor binds to an allosteric site, permanently reducing enzyme activity.",
+                "The non-competitive inhibitor competes with substrate for the active site, reducing Km."
+              ],
+              "correctIndex": 1,
+              "explanation": "A competitive inhibitor occupies the active site and competes with the substrate. High substrate concentrations can displace it, so Vmax is unchanged but apparent Km increases (more substrate needed to reach half-Vmax). A non-competitive inhibitor binds to an allosteric site, changing the enzyme's shape and reducing its activity regardless of substrate concentration. This reduces Vmax but Km is unchanged.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_1_03",
+              "stem": "An enzyme is denatured at temperatures above 50°C. Which of the following best explains what happens to the enzyme at this temperature?",
+              "options": [
+                "The hydrogen bonds and other interactions maintaining the tertiary structure are disrupted, causing the active site to change shape.",
+                "The enzyme loses its primary structure as peptide bonds are broken by heat energy.",
+                "The substrate molecules gain too much kinetic energy and cannot bind to the active site.",
+                "The enzyme's R-groups are hydrolysed, causing the active site to be permanently blocked."
+              ],
+              "correctIndex": 0,
+              "explanation": "Denaturation involves the disruption of weak bonds (hydrogen bonds, ionic bonds, hydrophobic interactions, and disulfide bridges) that maintain the enzyme's tertiary structure. This causes the active site to change shape so that the substrate can no longer bind effectively. Peptide bonds (primary structure) are not broken during denaturation. Denaturation is usually irreversible.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_1_04",
+              "stem": "An experiment measures the rate of an enzyme-catalysed reaction at different pH values. The results show maximum activity at pH 7 and significantly reduced activity at pH 2 and pH 12. Which explanation is most accurate?",
+              "options": [
+                "Extreme pH values break the peptide bonds in the enzyme, completely destroying its primary structure.",
+                "The enzyme works at all pH values equally, but the substrate is destroyed at pH 2 and pH 12.",
+                "At extreme pH values, the ionic and hydrogen bonds maintaining the enzyme's tertiary structure are disrupted, altering the shape of the active site so that the substrate can no longer form an enzyme-substrate complex.",
+                "The substrate becomes positively charged at low pH and negatively charged at high pH, preventing it from entering the active site."
+              ],
+              "correctIndex": 2,
+              "explanation": "Changes in pH alter the ionisation of amino acid R-groups (side chains) in the enzyme. At extreme pH values, ionic bonds and hydrogen bonds that maintain the precise tertiary structure of the enzyme are disrupted. This changes the shape of the active site, so the substrate no longer fits (the enzyme-substrate complex cannot form). At the optimum pH, the active site has the exact conformation required for maximum catalytic activity. Peptide bonds are not broken by pH changes under normal conditions.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_1_05",
+              "stem": "An enzyme has a Km of 5 mmol/L and a Vmax of 100 arbitrary units. A competitive inhibitor is added to the reaction. A separate experiment adds a non-competitive inhibitor at the same concentration. Which row correctly shows the expected Km and Vmax values in the presence of each inhibitor?\n\n| | Competitive inhibitor | Non-competitive inhibitor |\n|---|---|---|\n| A | Km = 10, Vmax = 100 | Km = 5, Vmax = 60 |\n| B | Km = 5, Vmax = 60 | Km = 10, Vmax = 100 |\n| C | Km = 10, Vmax = 60 | Km = 10, Vmax = 60 |\n| D | Km = 5, Vmax = 100 | Km = 5, Vmax = 60 |",
+              "options": [
+                "C",
+                "D",
+                "A",
+                "B"
+              ],
+              "correctIndex": 2,
+              "explanation": "A competitive inhibitor competes with the substrate for the active site. It can be overcome by increasing substrate concentration, so Vmax remains at 100, but a higher substrate concentration is needed to reach half-Vmax, meaning Km increases to 10. A non-competitive inhibitor binds to an allosteric site, reducing the number of functional enzyme molecules regardless of substrate concentration. Km is unchanged at 5 (substrate affinity is not affected), but Vmax is reduced to 60 because fewer enzyme-substrate complexes can form product per unit time.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch4",
+      "title": "Cell Membranes",
+      "titleCn": "细胞膜",
+      "knowledgePoints": [
+        {
+          "id": "4.1",
+          "title": "Transport Across Membranes",
+          "titleCn": "跨膜运输",
+          "image": "",
+          "questions": [
+            {
+              "id": "q4_1_01",
+              "stem": "Red blood cells are placed in a solution and observed to shrink (crenate). What does this indicate about the solution?",
+              "options": [
+                "The solution is isotonic — active transport moved water out of the cells.",
+                "The solution is hypotonic — active transport removed water from the cells.",
+                "The solution is hypotonic relative to the cell contents — water moved into the cells by osmosis.",
+                "The solution is hypertonic relative to the cell contents — water moved out of the cells by osmosis."
+              ],
+              "correctIndex": 3,
+              "explanation": "Crenation (shrinkage) occurs when water moves out of the cell by osmosis into a solution with a lower water potential (higher solute concentration) than the cell contents — a hypertonic solution. Water moves from a region of higher water potential (inside the cell) to lower water potential (the external solution) through the partially permeable plasma membrane.",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_1_02",
+              "stem": "Which of the following correctly describes the difference between facilitated diffusion and active transport?",
+              "options": [
+                "Facilitated diffusion moves substances down their electrochemical gradient using channel or carrier proteins without ATP; active transport moves substances against their gradient using carrier proteins and ATP.",
+                "Both processes require ATP; facilitated diffusion uses channel or carrier proteins while active transport uses pumps.",
+                "Active transport is faster than facilitated diffusion because it uses the concentration gradient to drive movement.",
+                "Facilitated diffusion uses carrier proteins and moves substances against a concentration gradient; active transport uses channel proteins and moves substances down a gradient."
+              ],
+              "correctIndex": 0,
+              "explanation": "Facilitated diffusion is a passive process — it moves molecules (e.g. glucose, ions) down their concentration or electrochemical gradient through specific channel or carrier proteins, requiring no ATP. Active transport moves molecules against their concentration gradient using membrane-bound carrier proteins (pumps) that require metabolic energy in the form of ATP (e.g. the sodium-potassium pump).",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_1_03",
+              "stem": "A student places a plant cell in a concentrated sucrose solution. The cell becomes plasmolysed. Which of the following correctly describes what has happened?",
+              "options": [
+                "The cell wall has burst due to the high osmotic pressure of the solution.",
+                "Sucrose has entered the cell by active transport, diluting the cytoplasm.",
+                "Water has left the vacuole and cytoplasm by osmosis, causing the protoplast to shrink away from the cell wall.",
+                "The vacuole has expanded and the protoplast has pressed against the cell wall."
+              ],
+              "correctIndex": 2,
+              "explanation": "Plasmolysis occurs when a plant cell is placed in a solution with a lower water potential than the cell sap. Water moves out of the vacuole and cytoplasm by osmosis, causing the protoplast (cell contents) to shrink. Eventually the protoplast pulls away from the cell wall at the point of incipient plasmolysis, and further shrinkage leads to full plasmolysis. The cell wall itself does not burst.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_1_04",
+              "stem": "The fluid mosaic model describes the structure of cell membranes. Which of the following is NOT a feature of this model?",
+              "options": [
+                "The phospholipid bilayer is rigid and static, with all components fixed permanently in position.",
+                "Proteins are embedded in or attached to the phospholipid bilayer and can move laterally within it.",
+                "Phospholipids form a bilayer with hydrophilic heads facing outward and hydrophobic tails facing inward.",
+                "Cholesterol molecules are interspersed among the phospholipids, regulating membrane fluidity."
+              ],
+              "correctIndex": 0,
+              "explanation": "The fluid mosaic model (proposed by Singer and Nicolson, 1972) describes the membrane as a fluid structure in which phospholipids and proteins can move laterally. 'Fluid' refers to the lateral movement of components, and 'mosaic' refers to the diverse proteins scattered throughout. Phospholipids form a bilayer with hydrophilic phosphate heads facing the aqueous environment and hydrophobic fatty acid tails facing inward. Cholesterol is interspersed to regulate fluidity. The membrane is emphatically not rigid or static.",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_1_05",
+              "stem": "A cell is treated with a metabolic poison that inhibits all ATP production. Which of the following transport processes would continue to function normally?",
+              "options": [
+                "Endocytosis of large particles by the cell",
+                "Exocytosis of secretory vesicles at the plasma membrane",
+                "Osmosis of water molecules across the membrane and facilitated diffusion of glucose through carrier proteins",
+                "The sodium-potassium pump transporting Na+ out and K+ into the cell"
+              ],
+              "correctIndex": 2,
+              "explanation": "Osmosis and facilitated diffusion are passive processes that do not require ATP. Osmosis is the net movement of water from higher to lower water potential through a partially permeable membrane. Facilitated diffusion involves the movement of molecules down their concentration gradient through channel or carrier proteins. In contrast, the sodium-potassium pump (active transport), endocytosis, and exocytosis all require ATP. Inhibiting ATP production would halt these active processes but would not affect passive transport.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch5",
+      "title": "Mitosis & Cell Cycle",
+      "titleCn": "有丝分裂与细胞周期",
+      "knowledgePoints": [
+        {
+          "id": "5.1",
+          "title": "Stages of Mitosis",
+          "titleCn": "有丝分裂阶段",
+          "image": "",
+          "questions": [
+            {
+              "id": "q5_1_01",
+              "stem": "During which stage of mitosis do chromatids separate and move to opposite poles of the cell?",
+              "options": [
+                "Anaphase",
+                "Prophase",
+                "Telophase",
+                "Metaphase"
+              ],
+              "correctIndex": 0,
+              "explanation": "Anaphase is the stage during which the centromeres split and sister chromatids are pulled to opposite poles of the cell by spindle fibres attached to the kinetochores. This ensures each daughter cell receives a complete set of chromosomes. In metaphase, chromosomes are aligned at the equator; in prophase, chromosomes condense; in telophase, nuclear envelopes reform.",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_1_02",
+              "stem": "A human somatic cell (2n = 46) undergoes mitosis. What is the chromosome number in each daughter cell immediately after cytokinesis?",
+              "options": [
+                "92 chromosomes (tetraploid)",
+                "69 chromosomes (triploid)",
+                "46 chromosomes (diploid)",
+                "23 chromosomes (haploid)"
+              ],
+              "correctIndex": 2,
+              "explanation": "Mitosis is a form of cell division that produces two genetically identical daughter cells, each with the same chromosome number as the parent cell. A human somatic cell with 2n = 46 (diploid) produces two daughter cells each with 46 chromosomes. Meiosis, not mitosis, halves the chromosome number to produce haploid gametes.",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_1_03",
+              "stem": "A student observes a root tip squash preparation under a microscope and counts cells in different stages. The majority of cells appear to have uncondensed chromatin with no visible chromosomes. Which stage of the cell cycle do these cells represent?",
+              "options": [
+                "Interphase",
+                "Telophase of mitosis",
+                "Metaphase of mitosis",
+                "Anaphase of mitosis"
+              ],
+              "correctIndex": 0,
+              "explanation": "Interphase is the longest phase of the cell cycle, during which the cell carries out normal metabolic activities and prepares for division. During interphase, DNA is in the form of loosely packed chromatin (not condensed chromosomes), so individual chromosomes cannot be seen. Because it is the longest stage, the majority of cells in a preparation will be in interphase.",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_1_04",
+              "stem": "Colchicine is a drug that prevents spindle fibre formation during cell division. If colchicine is added to cells that are about to enter mitosis, at which stage would the process be arrested, and what would be observed?",
+              "options": [
+                "Arrested at anaphase — chromatids would begin to separate but would stop moving halfway to the poles.",
+                "Arrested at metaphase — chromosomes would condense and align but could not be separated because spindle fibres are absent.",
+                "Arrested at prophase — chromosomes would fail to condense and remain as chromatin.",
+                "Arrested at telophase — two nuclei would form but cytokinesis would not occur."
+              ],
+              "correctIndex": 1,
+              "explanation": "Colchicine inhibits tubulin polymerisation, preventing the formation of the mitotic spindle. Without spindle fibres, chromosomes can still condense (prophase occurs normally) and may align at the metaphase plate, but sister chromatids cannot be pulled apart because there are no kinetochore microtubules to generate the forces needed for separation. The cell is effectively arrested at metaphase. This technique is used in karyotyping to obtain cells with visible, condensed chromosomes.",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_1_05",
+              "stem": "A student counts cells in a root tip squash and records the following data: 210 cells in interphase, 14 in prophase, 6 in metaphase, 4 in anaphase, and 6 in telophase. The total cell cycle time is 24 hours. What is the approximate duration of prophase?",
+              "options": [
+                "3.4 hours",
+                "21.0 hours",
+                "1.4 hours",
+                "0.6 hours"
+              ],
+              "correctIndex": 2,
+              "explanation": "The duration of each stage is proportional to the number of cells observed in that stage (assuming cells are dividing asynchronously). Total cells = 210 + 14 + 6 + 4 + 6 = 240. The proportion of cells in prophase = 14/240. Duration of prophase = (14/240) × 24 hours = 1.4 hours. This calculation relies on the principle that the more time a cell spends in a particular stage, the more cells will be observed in that stage at any given moment.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch6",
+      "title": "Nucleic Acids",
+      "titleCn": "核酸",
+      "knowledgePoints": [
+        {
+          "id": "6.1",
+          "title": "DNA & RNA Structure",
+          "titleCn": "DNA与RNA结构",
+          "image": "",
+          "questions": [
+            {
+              "id": "q6_1_01",
+              "stem": "Which of the following correctly describes a difference between DNA and RNA?",
+              "options": [
+                "DNA nucleotides are linked by hydrogen bonds; RNA nucleotides are linked by phosphodiester bonds.",
+                "DNA is double-stranded and contains deoxyribose; RNA is typically single-stranded and contains ribose.",
+                "DNA contains the base uracil; RNA contains thymine instead.",
+                "RNA contains phosphate groups; DNA does not contain phosphate groups."
+              ],
+              "correctIndex": 1,
+              "explanation": "DNA is a double-stranded helix containing deoxyribose sugar and the bases adenine, thymine, guanine, and cytosine. RNA is typically single-stranded, contains ribose sugar, and uses uracil instead of thymine. Both DNA and RNA nucleotides contain phosphate groups and are linked by phosphodiester bonds. The two strands of DNA are held together by hydrogen bonds between complementary base pairs.",
+              "difficulty": 1
+            },
+            {
+              "id": "q6_1_02",
+              "stem": "A section of double-stranded DNA has the base sequence 5'-ATGCCTAGC-3' on one strand. What is the complementary base sequence on the antiparallel strand, written 5' to 3'?",
+              "options": [
+                "5'-GCTAGGCAT-3'",
+                "5'-CGTAGGCAT-3'",
+                "5'-ATGCCTAGC-3'",
+                "5'-TACGGATCG-3'"
+              ],
+              "correctIndex": 0,
+              "explanation": "The complementary strand is antiparallel (runs 3' to 5' alongside the 5' to 3' template). Complementary base pairing: A pairs with T, and G pairs with C. The complement of 5'-ATGCCTAGC-3' reading 3' to 5' is 3'-TACGGATCG-5'. Written 5' to 3', this becomes 5'-GCTAGGCAT-3'.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_1_03",
+              "stem": "During semi-conservative replication of DNA, which enzyme is responsible for synthesising new DNA strands by adding nucleotides complementary to the template strand?",
+              "options": [
+                "DNA polymerase",
+                "Helicase",
+                "RNA polymerase",
+                "DNA ligase"
+              ],
+              "correctIndex": 0,
+              "explanation": "DNA polymerase catalyses the addition of complementary deoxyribonucleotides to the 3' end of the growing new strand, using the template strand as a guide (always synthesising in the 5' to 3' direction). Helicase unwinds the double helix. DNA ligase joins Okazaki fragments on the lagging strand. RNA polymerase is involved in transcription, not DNA replication.",
+              "difficulty": 1
+            },
+            {
+              "id": "q6_1_04",
+              "stem": "Chargaff's rules state that in double-stranded DNA, the amount of adenine equals the amount of thymine, and the amount of guanine equals the amount of cytosine. A sample of double-stranded DNA is analysed and found to contain 20% adenine. What percentage of the bases is cytosine?",
+              "options": [
+                "25%",
+                "30%",
+                "40%",
+                "20%"
+              ],
+              "correctIndex": 1,
+              "explanation": "According to Chargaff's rules: %A = %T and %G = %C in double-stranded DNA. If adenine = 20%, then thymine = 20%. The total of A + T = 40%. The remaining bases (G + C) = 100% − 40% = 60%. Since %G = %C, cytosine = 60% / 2 = 30%. This rule is a direct consequence of complementary base pairing in the double helix.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_1_05",
+              "stem": "The Meselson-Stahl experiment used 15N-labelled and 14N-labelled DNA to investigate the mechanism of DNA replication. Bacteria were grown for many generations in 15N medium, then transferred to 14N medium. After one round of replication, all DNA was found at an intermediate density. After two rounds, DNA was found at both intermediate and light densities in equal proportions. Which conclusion is supported by these results?",
+              "options": [
+                "DNA replication is dispersive — parental and new DNA are randomly interspersed throughout both daughter molecules.",
+                "DNA replication is random — sometimes it is conservative and sometimes semi-conservative, depending on the cell.",
+                "DNA replication is conservative — the original double helix is preserved intact and a completely new double helix is synthesised.",
+                "DNA replication is semi-conservative — each daughter molecule contains one original (15N) strand and one newly synthesised (14N) strand."
+              ],
+              "correctIndex": 3,
+              "explanation": "The Meselson-Stahl experiment provided definitive evidence for semi-conservative replication. After one round of replication in 14N medium, all DNA molecules had intermediate density (one 15N strand + one 14N strand), ruling out conservative replication (which would produce one heavy and one light molecule). After two rounds, half the molecules were intermediate (one 15N + one 14N strand) and half were light (two 14N strands), ruling out dispersive replication (which would produce all molecules at a density between intermediate and light). Only semi-conservative replication explains both results.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch7",
+      "title": "Plant Transport",
+      "titleCn": "植物运输",
+      "knowledgePoints": [
+        {
+          "id": "7.1",
+          "title": "Xylem & Phloem",
+          "titleCn": "木质部与韧皮部",
+          "image": "",
+          "questions": [
+            {
+              "id": "q7_1_01",
+              "stem": "Which of the following correctly describes the mechanism by which water moves from the soil into the root hair cells?",
+              "options": [
+                "Facilitated diffusion — water moves through aquaporins down its concentration gradient, but this requires carrier proteins and ATP.",
+                "Osmosis — water moves from the soil solution (higher water potential) into the root hair cell (lower water potential) through the partially permeable membrane.",
+                "Active transport — water is pumped in against a concentration gradient using ATP.",
+                "Bulk flow — water is drawn in by the negative pressure created by transpiration."
+              ],
+              "correctIndex": 1,
+              "explanation": "Water moves from the soil solution into root hair cells by osmosis. Root hair cells have a lower water potential than the surrounding soil water (due to dissolved solutes in the cell sap), so water moves across the partially permeable plasma membrane from higher water potential (soil) to lower water potential (root hair cell). This is a passive process requiring no energy.",
+              "difficulty": 1
+            },
+            {
+              "id": "q7_1_02",
+              "stem": "The Casparian strip in the endodermis of plant roots plays a critical role in water transport. What is its function?",
+              "options": [
+                "It provides structural support to the root, preventing collapse under negative water potential.",
+                "It blocks the apoplast pathway, forcing water and solutes to pass through the symplast and cross the selectively permeable plasma membrane of endodermal cells.",
+                "It actively transports water from the cortex into the xylem.",
+                "It absorbs mineral ions from the soil solution by facilitated diffusion."
+              ],
+              "correctIndex": 1,
+              "explanation": "The Casparian strip is a band of suberin (a waxy, waterproof material) in the cell walls of endodermal cells. It blocks the apoplast pathway (movement through cell walls), forcing all water and dissolved solutes to pass through the symplast (through the cytoplasm of endodermal cells) via their selectively permeable plasma membranes. This allows the plant to control which ions enter the xylem.",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_1_03",
+              "stem": "In which direction does translocation occur in the phloem, and what is the primary substance transported?",
+              "options": [
+                "Only downward from leaves to roots; sucrose and amino acids.",
+                "Only upward from roots to leaves; sucrose and amino acids.",
+                "Bidirectionally from source to sink; mainly sucrose.",
+                "Only upward from roots to leaves; water and mineral ions."
+              ],
+              "correctIndex": 2,
+              "explanation": "Translocation in the phloem moves organic solutes (primarily sucrose, but also amino acids and other assimilates) from sources (e.g. photosynthetically active leaves) to sinks (e.g. roots, growing shoot tips, developing fruits). Crucially, translocation is bidirectional — it can move both up and down the plant simultaneously in different sieve tubes, depending on where sources and sinks are located.",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_1_04",
+              "stem": "The cohesion-tension theory explains the movement of water through the xylem. Which of the following correctly describes the role of cohesion in this process?",
+              "options": [
+                "Cohesion refers to the attraction between water molecules and the hydrophilic walls of the xylem vessels, which helps water cling to the vessel walls.",
+                "Cohesion is the active pumping of water molecules through pit pairs in the xylem vessel walls.",
+                "Cohesion is the force of gravity that pulls water down the xylem from the leaves to the roots.",
+                "Cohesion refers to hydrogen bonds between water molecules that hold the continuous column of water together in the xylem, preventing the column from breaking under tension."
+              ],
+              "correctIndex": 3,
+              "explanation": "In the cohesion-tension theory, transpiration from leaves creates a tension (negative pressure) that pulls water upward through the xylem. Cohesion refers to the attraction between water molecules due to hydrogen bonding. This cohesive force holds the continuous column of water together so that when water evaporates from the leaf, the entire column is pulled upward without breaking. Adhesion (not cohesion) is the attraction between water molecules and the hydrophilic lignified walls of the xylem, which helps support the water column.",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_1_05",
+              "stem": "A student investigates transpiration rate using a potometer. On a hot, dry, windy day, the rate of water uptake is found to be much higher than on a cool, humid, still day. Which combination of factors best explains the increased rate?",
+              "options": [
+                "High temperature increases photosynthesis, which directly increases water uptake; wind has no effect on transpiration.",
+                "Wind forces water vapour into the stomata, increasing the turgor pressure in guard cells and opening them wider.",
+                "High humidity increases the water potential gradient between the leaf air spaces and the external atmosphere, driving greater water loss.",
+                "High temperature increases the kinetic energy of water molecules, increasing evaporation; low humidity steepens the water potential gradient between the leaf and atmosphere; wind removes the layer of saturated air around the leaf, maintaining a steep diffusion gradient."
+              ],
+              "correctIndex": 3,
+              "explanation": "Transpiration rate is affected by several environmental factors: (1) Temperature — higher temperatures increase the kinetic energy of water molecules in the mesophyll cell walls, increasing the rate of evaporation into the leaf air spaces. (2) Humidity — low external humidity creates a steeper water potential gradient between the saturated air spaces inside the leaf and the drier external air, driving faster diffusion of water vapour out through stomata. (3) Wind — moves the boundary layer of moist air away from the leaf surface, maintaining a steep concentration gradient for water vapour diffusion. All three factors combine to increase transpiration rate significantly.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch8",
+      "title": "Mammalian Transport",
+      "titleCn": "哺乳动物运输",
+      "knowledgePoints": [
+        {
+          "id": "8.1",
+          "title": "Heart & Circulation",
+          "titleCn": "心脏与循环",
+          "image": "",
+          "questions": [
+            {
+              "id": "q8_1_01",
+              "stem": "Which sequence correctly describes the path of blood through the heart, starting from the right atrium?",
+              "options": [
+                "Right atrium → right ventricle → pulmonary artery → lungs → pulmonary veins → left atrium → left ventricle → aorta",
+                "Right atrium → right ventricle → aorta → pulmonary veins → left atrium",
+                "Right atrium → right ventricle → vena cava → lungs → pulmonary artery → left atrium",
+                "Right atrium → left atrium → right ventricle → pulmonary artery → lungs → left ventricle → aorta"
+              ],
+              "correctIndex": 0,
+              "explanation": "Blood enters the right atrium from the vena cava, passes through the tricuspid (right atrioventricular) valve into the right ventricle, then is pumped through the pulmonary semilunar valve into the pulmonary artery to the lungs. Oxygenated blood returns via the pulmonary veins to the left atrium, passes through the bicuspid (mitral) valve into the left ventricle, and is pumped into the aorta via the aortic semilunar valve.",
+              "difficulty": 1
+            },
+            {
+              "id": "q8_1_02",
+              "stem": "The cardiac cycle consists of systole and diastole. During ventricular systole, which valves are open and which are closed?",
+              "options": [
+                "All valves are open to allow blood to flow freely through the heart.",
+                "Semilunar valves closed; atrioventricular valves are also closed.",
+                "Atrioventricular valves open; semilunar valves closed.",
+                "Atrioventricular valves closed; semilunar valves open."
+              ],
+              "correctIndex": 3,
+              "explanation": "During ventricular systole, the ventricles contract and ventricular pressure exceeds atrial pressure, forcing the atrioventricular valves (tricuspid and mitral) shut — preventing backflow into the atria. As ventricular pressure rises above the pressure in the pulmonary artery and aorta, the semilunar valves open, allowing blood to be ejected into these vessels.",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_1_03",
+              "stem": "Why does the left ventricle have a thicker muscular wall than the right ventricle?",
+              "options": [
+                "The left ventricle pumps blood around the entire systemic circulation against a higher resistance, requiring greater force generation.",
+                "The left ventricle receives deoxygenated blood and must work harder to oxygenate it before pumping.",
+                "The left ventricle holds a greater volume of blood and needs a thicker wall to store it.",
+                "The left ventricle contracts for a longer period during each cardiac cycle and therefore develops more muscle."
+              ],
+              "correctIndex": 0,
+              "explanation": "The left ventricle must pump blood through the systemic circulation — around the entire body — against a much higher resistance and over a greater distance than the right ventricle, which only pumps blood to the lungs (pulmonary circulation) over a short distance and against a lower resistance. Therefore, the left ventricle must generate much higher pressure and has a proportionally thicker wall of cardiac muscle.",
+              "difficulty": 1
+            },
+            {
+              "id": "q8_1_04",
+              "stem": "The sinoatrial node (SAN) is sometimes called the pacemaker of the heart. Which of the following correctly describes its role in the cardiac cycle?",
+              "options": [
+                "The SAN is located in the left ventricle and directly causes ventricular contraction without atrial involvement.",
+                "The SAN releases acetylcholine, which stimulates the cardiac muscle to contract simultaneously in all four chambers.",
+                "The SAN initiates a wave of electrical excitation that spreads across both atria, causing atrial systole; the signal is then delayed at the atrioventricular node (AVN) before being conducted through the bundle of His and Purkinje fibres to the ventricles.",
+                "The SAN sends nerve impulses to the brain, which then sends signals back to the heart to initiate contraction."
+              ],
+              "correctIndex": 2,
+              "explanation": "The SAN is located in the wall of the right atrium and is myogenic — it spontaneously generates electrical impulses that set the heart rate without nervous stimulation. The wave of excitation spreads across both atria, causing atrial systole. The signal reaches the AVN (at the base of the right atrium), which delays the impulse briefly (~0.1 s) to allow the atria to finish contracting and emptying blood into the ventricles. The impulse then travels rapidly down the bundle of His (in the interventricular septum) and through Purkinje fibres, causing ventricular systole from the apex upward.",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_1_05",
+              "stem": "A pressure trace of the cardiac cycle shows that aortic pressure never drops to zero during diastole, unlike ventricular pressure. Which structural feature of the aorta explains this observation?",
+              "options": [
+                "The aorta contains valves along its length that prevent blood from flowing backward during diastole.",
+                "The elastic walls of the aorta stretch during ventricular systole to store energy, then recoil during diastole, maintaining blood pressure and smoothing the pulsatile flow into continuous flow.",
+                "The aorta receives blood from both ventricles simultaneously, so pressure is maintained from two sources.",
+                "The aorta has a thick layer of smooth muscle that actively contracts during diastole to maintain pressure."
+              ],
+              "correctIndex": 1,
+              "explanation": "The aorta (and other large arteries) has walls rich in elastic tissue. During ventricular systole, the high-pressure ejection of blood stretches the elastic walls of the aorta, storing elastic potential energy. During ventricular diastole (when the semilunar valve is closed and no blood enters the aorta), the elastic walls recoil inward, pushing blood forward and maintaining pressure. This elastic recoil converts the pulsatile output of the heart into a more continuous flow in the arteries and ensures blood pressure does not fall to zero between heartbeats.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch9",
+      "title": "Gas Exchange",
+      "titleCn": "气体交换",
+      "knowledgePoints": [
+        {
+          "id": "9.1",
+          "title": "Lung Structure",
+          "titleCn": "肺结构",
+          "image": "",
+          "questions": [
+            {
+              "id": "q9_1_01",
+              "stem": "Which combination of features makes the alveoli highly efficient for gas exchange?",
+              "options": [
+                "Small surface area, one-cell-thick walls, and a constant airflow",
+                "Large surface area, thick walls to withstand pressure, and a rich blood supply",
+                "Thick walls, large surface area, and dry surfaces",
+                "Large surface area, one-cell-thick walls, moist surfaces, and a rich blood supply"
+              ],
+              "correctIndex": 3,
+              "explanation": "The alveoli are adapted for efficient gas exchange by: (1) a very large total surface area (~70 m² in adult humans) due to the large number of alveoli; (2) walls of a single layer of squamous epithelium (one cell thick), minimising the diffusion distance; (3) moist surfaces to dissolve gases; and (4) a dense network of pulmonary capillaries maintaining a steep concentration gradient by continuously removing oxygen and supplying carbon dioxide.",
+              "difficulty": 1
+            },
+            {
+              "id": "q9_1_02",
+              "stem": "A patient has emphysema, a condition in which alveolar walls break down, creating larger but fewer air sacs. How would this affect gas exchange efficiency?",
+              "options": [
+                "Gas exchange efficiency would be unchanged because the total lung volume remains the same.",
+                "Gas exchange efficiency would decrease because the total surface area for diffusion is greatly reduced.",
+                "Gas exchange would be more efficient due to the increased size of individual air spaces.",
+                "Gas exchange would improve because larger air sacs allow greater air volume to enter the lungs per breath."
+              ],
+              "correctIndex": 1,
+              "explanation": "In emphysema, the breakdown of alveolar walls dramatically reduces the total surface area available for gas exchange. Even though individual air spaces are larger, the loss of the enormous surface area provided by millions of small alveoli means far less oxygen can diffuse into the blood per unit time. The distance for diffusion may also be affected. This explains why emphysema patients suffer from shortness of breath and reduced exercise tolerance.",
+              "difficulty": 2
+            },
+            {
+              "id": "q9_1_03",
+              "stem": "During inspiration (inhalation), which sequence of events is correct?",
+              "options": [
+                "Thoracic volume decreases due to diaphragm contraction; pressure in the lungs rises; air flows down the pressure gradient into the lungs.",
+                "The diaphragm contracts and moves upward; internal intercostal muscles contract; thoracic volume increases; air flows in.",
+                "The diaphragm contracts and moves downward; external intercostal muscles contract raising the ribs; thoracic volume increases; air pressure falls below atmospheric; air rushes in.",
+                "The diaphragm relaxes and moves upward; the external intercostal muscles contract; the thoracic volume decreases; air rushes in."
+              ],
+              "correctIndex": 2,
+              "explanation": "During inspiration: the diaphragm contracts, flattening and moving downward; external intercostal muscles contract, pulling the ribs upward and outward. Both actions increase the thoracic (chest) volume. As volume increases, pressure inside the lungs falls below atmospheric pressure (Boyle's Law: pressure and volume are inversely proportional), and air flows into the lungs down the pressure gradient.",
+              "difficulty": 2
+            },
+            {
+              "id": "q9_1_04",
+              "stem": "Fick's law of diffusion can be applied to gas exchange in the lungs. The law states: rate of diffusion is proportional to (surface area × concentration difference) / thickness of exchange surface. A patient with pulmonary fibrosis has thickened alveolar walls. How would this affect gas exchange?",
+              "options": [
+                "Gas exchange would not be affected because the concentration gradient is the only factor that matters.",
+                "Gas exchange rate would decrease because the increased thickness of the exchange surface increases the diffusion distance, reducing the rate according to Fick's law.",
+                "Gas exchange rate would increase because thicker walls provide more surface area for diffusion.",
+                "Gas exchange would increase because thicker walls can hold more dissolved oxygen."
+              ],
+              "correctIndex": 1,
+              "explanation": "According to Fick's law, the rate of diffusion is inversely proportional to the thickness of the exchange surface. In pulmonary fibrosis, scar tissue thickens the alveolar walls, increasing the diffusion distance between the alveolar air and the blood in the pulmonary capillaries. This reduces the rate at which oxygen diffuses into the blood and carbon dioxide diffuses out, leading to impaired gas exchange, reduced blood oxygen levels (hypoxaemia), and symptoms such as breathlessness.",
+              "difficulty": 2
+            },
+            {
+              "id": "q9_1_05",
+              "stem": "Surfactant is secreted by type II pneumocytes in the alveoli. A premature infant is born with insufficient surfactant production. Which of the following best explains why this causes respiratory distress syndrome?",
+              "options": [
+                "Surfactant reduces surface tension of the thin film of moisture lining the alveoli; without it, the high surface tension causes the alveoli to collapse during expiration, making re-inflation extremely difficult and reducing gas exchange.",
+                "Surfactant is needed to actively transport oxygen across the alveolar membrane; without it, no oxygen can enter the blood.",
+                "Surfactant provides nutrients to the alveolar cells; without it, the cells die and the lungs fill with fluid.",
+                "Without surfactant, the alveolar walls thicken and reduce the surface area available for gas exchange."
+              ],
+              "correctIndex": 0,
+              "explanation": "Surfactant is a mixture of phospholipids and proteins secreted by type II pneumocytes (alveolar cells). It reduces the surface tension of the thin aqueous film lining the inner surface of the alveoli. Without adequate surfactant, the surface tension is very high, causing the alveoli to collapse (atelectasis) during expiration. Collapsed alveoli are extremely difficult to re-inflate, greatly reducing the surface area for gas exchange and requiring much greater effort to breathe. This is neonatal respiratory distress syndrome (NRDS), common in premature infants whose type II pneumocytes have not yet matured.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch10",
+      "title": "Infectious Diseases",
+      "titleCn": "传染病",
+      "knowledgePoints": [
+        {
+          "id": "10.1",
+          "title": "Pathogens & Transmission",
+          "titleCn": "病原体与传播",
+          "image": "",
+          "questions": [
+            {
+              "id": "q10_1_01",
+              "stem": "Which of the following statements about viruses is correct?",
+              "options": [
+                "Viruses are eukaryotic pathogens that can be treated effectively with antibiotics.",
+                "Viruses contain either DNA or RNA enclosed in a protein coat (capsid) and can only replicate inside a host cell.",
+                "Viruses have their own ribosomes and mitochondria, which allow them to synthesise proteins and produce energy independently.",
+                "Viruses are living cells that reproduce by binary fission inside host cells."
+              ],
+              "correctIndex": 1,
+              "explanation": "Viruses are acellular (non-cellular) particles consisting of a nucleic acid genome (either DNA or RNA, but not both) surrounded by a protein coat called a capsid. Some viruses also have a lipid envelope. Viruses are obligate intracellular parasites — they cannot replicate independently and must use the host cell's ribosomes, enzymes, and raw materials. They are not cells, have no ribosomes or mitochondria, and antibiotics (which target bacterial structures) are ineffective against them.",
+              "difficulty": 1
+            },
+            {
+              "id": "q10_1_02",
+              "stem": "Malaria is caused by Plasmodium, a protoctist. Which of the following correctly describes its transmission to humans?",
+              "options": [
+                "Plasmodium is transmitted to humans via the bite of an infected female Anopheles mosquito, which acts as a vector.",
+                "Plasmodium is transmitted by direct contact with infected blood through open wounds.",
+                "Plasmodium spreads through contaminated water sources when humans consume infected water.",
+                "Plasmodium is an airborne pathogen transmitted when infected individuals cough or sneeze."
+              ],
+              "correctIndex": 0,
+              "explanation": "Malaria is a vector-borne disease. The Plasmodium parasite is transmitted to humans through the bite of an infected female Anopheles mosquito (the vector), which injects Plasmodium sporozoites into the bloodstream when it feeds. The mosquito becomes infected by biting an infected human and taking up Plasmodium gametocytes with the blood meal. The Anopheles mosquito is the definitive host; humans are intermediate hosts.",
+              "difficulty": 1
+            },
+            {
+              "id": "q10_1_03",
+              "stem": "Tuberculosis (TB) is caused by the bacterium Mycobacterium tuberculosis. A student states: 'TB can be cured with a single dose of antibiotics taken for one week.' Evaluate this statement.",
+              "options": [
+                "The statement is partially correct — a single antibiotic for three weeks is sufficient if the patient shows symptom improvement within the first few days.",
+                "The statement is incorrect — TB treatment requires a combination of several antibiotics taken for a minimum of 6 months to ensure all bacteria are eliminated and to prevent the development of antibiotic-resistant strains.",
+                "The statement is incorrect — TB cannot be treated with antibiotics because M. tuberculosis is a eukaryote.",
+                "The statement is correct — a one-week course of any broad-spectrum antibiotic is sufficient to eliminate all M. tuberculosis bacteria."
+              ],
+              "correctIndex": 1,
+              "explanation": "TB treatment requires multiple antibiotics (typically isoniazid, rifampicin, pyrazinamide, and ethambutol) for at least 6 months. Using a single antibiotic or a short course risks incomplete elimination — surviving bacteria may include naturally resistant mutants that then proliferate, leading to antibiotic-resistant TB (including multi-drug resistant TB, MDR-TB). The long course ensures even slow-growing or dormant bacteria within granulomas are killed.",
+              "difficulty": 2
+            },
+            {
+              "id": "q10_1_04",
+              "stem": "Cholera is caused by the bacterium Vibrio cholerae, which produces a toxin affecting intestinal epithelial cells. Which of the following correctly describes the mechanism by which the cholera toxin causes severe diarrhoea?",
+              "options": [
+                "The toxin causes the intestinal muscles to contract violently, physically expelling the contents of the gut.",
+                "The toxin stimulates excessive secretion of chloride ions (Cl-) into the intestinal lumen; water follows by osmosis, causing watery diarrhoea and severe dehydration.",
+                "The toxin destroys the intestinal epithelial cells, creating holes in the gut wall through which water leaks out.",
+                "The toxin prevents the absorption of glucose in the small intestine, causing glucose to accumulate and draw water into the lumen."
+              ],
+              "correctIndex": 1,
+              "explanation": "The cholera toxin binds to receptors on intestinal epithelial cells and permanently activates an intracellular signalling pathway involving cyclic AMP. This causes chloride ion (Cl-) channels in the apical membrane to open, leading to massive secretion of Cl- into the intestinal lumen. Sodium ions (Na+) follow the electrical gradient, and water moves into the lumen by osmosis down the water potential gradient. The result is profuse, watery diarrhoea ('rice-water stool'), leading to rapid dehydration and potentially fatal electrolyte imbalance if untreated.",
+              "difficulty": 2
+            },
+            {
+              "id": "q10_1_05",
+              "stem": "HIV (human immunodeficiency virus) is a retrovirus that targets CD4+ T helper lymphocytes. A student states that HIV leads to AIDS because 'the virus directly kills all white blood cells.' Which of the following is the most scientifically accurate correction?",
+              "options": [
+                "HIV does not kill any immune cells; it simply prevents the bone marrow from producing new white blood cells.",
+                "HIV kills all types of white blood cells equally, including neutrophils, eosinophils, and B lymphocytes, leading to total immune failure.",
+                "HIV destroys red blood cells, leading to anaemia that weakens the immune system and causes AIDS.",
+                "HIV specifically infects and destroys CD4+ T helper cells, which are essential for coordinating both humoral and cell-mediated immune responses; as T helper cell numbers decline, the immune system becomes progressively unable to mount effective responses to opportunistic infections and certain cancers, defining AIDS."
+              ],
+              "correctIndex": 3,
+              "explanation": "HIV is a retrovirus that uses the enzyme reverse transcriptase to convert its RNA genome into DNA, which integrates into the host cell genome. It specifically targets cells bearing the CD4 receptor — primarily T helper lymphocytes. Over years, the progressive destruction of CD4+ T helper cells compromises the immune system because T helper cells are central to activating both B lymphocytes (humoral immunity) and cytotoxic T cells (cell-mediated immunity). When the CD4+ count drops below a critical threshold (~200 cells/μL), the individual becomes susceptible to opportunistic infections (e.g. Pneumocystis pneumonia, TB) and certain cancers (e.g. Kaposi's sarcoma), which defines the progression to AIDS.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch11",
+      "title": "Immunity",
+      "titleCn": "免疫",
+      "knowledgePoints": [
+        {
+          "id": "11.1",
+          "title": "Immune Response",
+          "titleCn": "免疫应答",
+          "image": "",
+          "questions": [
+            {
+              "id": "q11_1_01",
+              "stem": "Which of the following correctly describes the role of B lymphocytes in the humoral immune response?",
+              "options": [
+                "B lymphocytes directly attack and destroy pathogen-infected cells by releasing perforin.",
+                "B lymphocytes present antigens to T helper cells using MHC class I molecules on their surface.",
+                "B lymphocytes phagocytose pathogens and break them down using lysosomal enzymes.",
+                "B lymphocytes differentiate into plasma cells that secrete specific antibodies, and into memory B cells that enable a faster secondary response."
+              ],
+              "correctIndex": 3,
+              "explanation": "When activated by T helper cells and antigen, B lymphocytes clonally expand and differentiate into plasma cells (which secrete large quantities of antigen-specific antibodies) and long-lived memory B cells. Memory B cells persist after the infection is cleared and allow a faster, larger secondary immune response upon re-exposure to the same antigen. Directly killing infected cells is the function of cytotoxic T lymphocytes (cell-mediated immunity).",
+              "difficulty": 1
+            },
+            {
+              "id": "q11_1_02",
+              "stem": "A person receives a vaccination containing inactivated influenza virus. Months later, they are exposed to the live influenza virus. Which of the following best explains why they do not develop severe disease?",
+              "options": [
+                "The inactivated virus in the vaccine continues to circulate in the blood and neutralises any new influenza virus that enters.",
+                "The vaccine stimulates the production of non-specific phagocytes that engulf any virus before it can cause infection.",
+                "Memory cells produced after vaccination recognise the influenza antigens and trigger a rapid secondary immune response, producing high levels of antibodies before the virus can replicate to harmful levels.",
+                "The vaccine permanently destroyed the influenza virus so it cannot replicate in the body."
+              ],
+              "correctIndex": 2,
+              "explanation": "Vaccination introduces antigens (from the inactivated virus) which stimulate a primary immune response — B and T lymphocytes are activated and memory cells are produced. Upon actual infection, these memory cells (memory B and T cells) recognise the viral antigens immediately and mount a rapid, amplified secondary immune response. High antibody titres are produced quickly, neutralising the virus before it reaches levels that cause significant disease.",
+              "difficulty": 1
+            },
+            {
+              "id": "q11_1_03",
+              "stem": "Monoclonal antibodies are used in medical diagnosis and therapy. Which of the following correctly describes how monoclonal antibodies are produced?",
+              "options": [
+                "Antibodies are extracted directly from the blood of many human donors who have been exposed to the target antigen, then purified and concentrated.",
+                "B lymphocytes from an immunised animal are cultured directly in a laboratory for many generations until they evolve the ability to produce antibodies indefinitely.",
+                "T lymphocytes are fused with cancer cells, and the resulting hybridomas are selected for specific antibody production.",
+                "A donor animal is immunised with a specific antigen; B lymphocytes are harvested and fused with tumour (myeloma) cells to form hybridomas; hybridomas are screened and selected for producing the desired antibody; they are cultured to produce large quantities of identical antibodies."
+              ],
+              "correctIndex": 3,
+              "explanation": "Monoclonal antibody production involves: (1) immunising a mouse with the target antigen; (2) harvesting antigen-specific B lymphocytes from the spleen; (3) fusing them with myeloma (cancer) cells to create hybridoma cells — the B cell provides antibody specificity while the myeloma cell provides immortality; (4) screening hybridomas by ELISA to identify those producing the desired antibody; (5) culturing selected hybridomas to produce large quantities of identical (monoclonal) antibodies.",
+              "difficulty": 2
+            },
+            {
+              "id": "q11_1_04",
+              "stem": "Active immunity and passive immunity both provide protection against disease. Which of the following correctly distinguishes between them?",
+              "options": [
+                "Active immunity provides immediate protection, while passive immunity takes weeks to develop.",
+                "Passive immunity lasts longer than active immunity because the antibodies received are more stable.",
+                "Active immunity involves the individual's own immune system producing antibodies and memory cells in response to an antigen; passive immunity involves receiving pre-formed antibodies from another source, providing immediate but temporary protection with no memory cell formation.",
+                "Active immunity is always artificial (from vaccines), while passive immunity is always natural (from infection)."
+              ],
+              "correctIndex": 2,
+              "explanation": "Active immunity is produced when the individual's own immune system encounters an antigen (either through infection — natural active — or vaccination — artificial active) and generates antibodies and memory cells. It takes time to develop but is long-lasting due to memory cells. Passive immunity involves receiving ready-made antibodies from another source (e.g. across the placenta or in breast milk — natural passive; or by injection of antibodies — artificial passive). It provides immediate protection but is temporary because the antibodies are eventually broken down and no memory cells are produced.",
+              "difficulty": 2
+            },
+            {
+              "id": "q11_1_05",
+              "stem": "Antibodies have a specific structure that enables them to perform their functions. An antibody molecule consists of two heavy chains and two light chains linked by disulfide bonds. Each antibody has two antigen-binding sites. Which of the following best explains why the variable regions of different antibodies differ while the constant regions remain the same?",
+              "options": [
+                "The variable regions have different amino acid sequences determined by gene rearrangement and somatic hypermutation during B cell development, giving each antibody specificity for a particular antigen epitope; the constant regions have a conserved amino acid sequence that determines the antibody class and mediates effector functions such as complement activation and binding to phagocyte receptors.",
+                "The variable regions are encoded by mitochondrial DNA, which mutates frequently, while the constant regions are encoded by nuclear DNA, which is stable.",
+                "All antibodies have identical variable and constant regions; the specificity comes from the number of antibodies produced, not their structure.",
+                "The variable regions are made of carbohydrates that change shape randomly, while the constant regions are made of lipids that are always the same."
+              ],
+              "correctIndex": 0,
+              "explanation": "The variable (V) regions at the tips of the two 'arms' of the Y-shaped antibody molecule have unique amino acid sequences, produced by V(D)J gene rearrangement and somatic hypermutation during B cell maturation. This generates enormous diversity, enabling the immune system to recognise virtually any antigen. The complementarity-determining regions (CDRs) within the variable regions form the antigen-binding site, which is complementary in shape and charge to a specific antigenic epitope. The constant (C) regions of the heavy chains are the same within an antibody class (e.g. IgG, IgM) and determine the effector functions — such as activating the complement system, crossing the placenta (IgG), or binding to Fc receptors on phagocytes to promote opsonisation.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

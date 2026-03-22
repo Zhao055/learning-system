@@ -1,0 +1,51 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/qizhao/.ohos/config/default_ALevelMathHelper_5u7rHyC8yTR4w7JY2ozz69Imb5S_tk8KCpyPetEM4rc=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001BA3F2914F61403DB6E2BFE3EE8CB4CC90DDA4688EFE591CD8E9C39CD68FC1457BCF4E0FC786E2F8",
+          "profile": "/Users/qizhao/.ohos/config/default_ALevelMathHelper_5u7rHyC8yTR4w7JY2ozz69Imb5S_tk8KCpyPetEM4rc=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/qizhao/.ohos/config/default_ALevelMathHelper_5u7rHyC8yTR4w7JY2ozz69Imb5S_tk8KCpyPetEM4rc=.p12",
+          "storePassword": "0000001B2FBD0FC0C06A8893F4C52922403C8242334F7A4E84FA78F3928760BEDFFE8BDE6461A361626950"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compileSdkVersion": "6.0.2(22)",
+        "compatibleSdkVersion": "6.0.2(22)",
+        "targetSdkVersion": "6.0.2(22)",
+        "runtimeOS": "HarmonyOS"
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug"
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

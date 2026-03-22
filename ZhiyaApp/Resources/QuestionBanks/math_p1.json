@@ -1,0 +1,4204 @@
+{
+  "chapters": [
+    {
+      "id": "ch1",
+      "title": "Quadratics",
+      "titleCn": "二次函数",
+      "knowledgePoints": [
+        {
+          "id": "1.1",
+          "title": "Completing the Square & Vertex",
+          "titleCn": "配方法与顶点",
+          "image": "1_1_completing_square.jpg",
+          "questions": [
+            {
+              "id": "q1_1_01",
+              "stem": "Write x^2 + 6x + 2 in the form (x + a)^2 + b. What is the value of b?",
+              "options": [
+                "-7",
+                "-11",
+                "11",
+                "7"
+              ],
+              "correctIndex": 0,
+              "explanation": "x^2 + 6x + 2 = (x + 3)^2 - 9 + 2 = (x + 3)^2 - 7, so b = -7.",
+              "difficulty": 1
+            },
+            {
+              "id": "q1_1_02",
+              "stem": "What is the vertex of the parabola y = x^2 - 4x + 7?",
+              "options": [
+                "(-2, -3)",
+                "(-2, 3)",
+                "(2, -3)",
+                "(2, 3)"
+              ],
+              "correctIndex": 3,
+              "explanation": "y = (x - 2)^2 - 4 + 7 = (x - 2)^2 + 3. The vertex is (2, 3).",
+              "difficulty": 1
+            },
+            {
+              "id": "q1_1_03",
+              "stem": "Express 2x^2 + 12x + 5 in the form a(x + p)^2 + q. What is q?",
+              "options": [
+                "-13",
+                "-7",
+                "7",
+                "13"
+              ],
+              "correctIndex": 0,
+              "explanation": "2x^2 + 12x + 5 = 2(x^2 + 6x) + 5 = 2((x + 3)^2 - 9) + 5 = 2(x + 3)^2 - 18 + 5 = 2(x + 3)^2 - 13. So q = -13.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_1_04",
+              "stem": "The minimum value of 3x^2 - 12x + 20 is:",
+              "options": [
+                "8",
+                "20",
+                "6",
+                "12"
+              ],
+              "correctIndex": 0,
+              "explanation": "3x^2 - 12x + 20 = 3(x^2 - 4x) + 20 = 3((x - 2)^2 - 4) + 20 = 3(x - 2)^2 + 8. Minimum value is 8 when x = 2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_1_05",
+              "stem": "For y = -x^2 + 8x - 10, what is the maximum value of y?",
+              "options": [
+                "6",
+                "16",
+                "8",
+                "10"
+              ],
+              "correctIndex": 0,
+              "explanation": "y = -(x^2 - 8x) - 10 = -((x - 4)^2 - 16) - 10 = -(x - 4)^2 + 16 - 10 = -(x - 4)^2 + 6. Maximum value is 6.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_1_06",
+              "stem": "Express 3x^2 - 18x + 30 in the form a(x + p)^2 + q. What is p?",
+              "options": [
+                "6",
+                "-6",
+                "-3",
+                "3"
+              ],
+              "correctIndex": 2,
+              "explanation": "3x^2 - 18x + 30 = 3(x^2 - 6x) + 30 = 3((x - 3)^2 - 9) + 30 = 3(x - 3)^2 - 27 + 30 = 3(x - 3)^2 + 3. Written as a(x + p)^2 + q, we have a = 3, p = -3, q = 3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_1_07",
+              "stem": "The vertex of y = 5 - 2(x + 1)^2 is at which point?",
+              "options": [
+                "(-1, -5)",
+                "(-1, 5)",
+                "(1, 5)",
+                "(1, 3)"
+              ],
+              "correctIndex": 1,
+              "explanation": "The equation is in vertex form: y = -2(x + 1)^2 + 5. The vertex of y = a(x - h)^2 + k is (h, k). Here h = -1 and k = 5, so the vertex is (-1, 5).",
+              "difficulty": 1
+            },
+            {
+              "id": "q1_1_08",
+              "stem": "Write 4x^2 + 8x - 5 in the form a(x + p)^2 + q. Find a + p + q.",
+              "options": [
+                "4",
+                "-5",
+                "0",
+                "-4"
+              ],
+              "correctIndex": 3,
+              "explanation": "4x^2 + 8x - 5 = 4(x^2 + 2x) - 5 = 4((x + 1)^2 - 1) - 5 = 4(x + 1)^2 - 4 - 5 = 4(x + 1)^2 - 9. So a = 4, p = 1, q = -9. Therefore a + p + q = 4 + 1 + (-9) = -4.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "1.2",
+          "title": "The Discriminant",
+          "titleCn": "判别式",
+          "image": "1_2_discriminant.jpg",
+          "questions": [
+            {
+              "id": "q1_2_01",
+              "stem": "What is the discriminant of x^2 + 5x + 6 = 0?",
+              "options": [
+                "-1",
+                "25",
+                "49",
+                "1"
+              ],
+              "correctIndex": 3,
+              "explanation": "Discriminant = b^2 - 4ac = 25 - 24 = 1.",
+              "difficulty": 1
+            },
+            {
+              "id": "q1_2_02",
+              "stem": "For what value of k does kx^2 + 6x + 3 = 0 have equal roots?",
+              "options": [
+                "12",
+                "3",
+                "6",
+                "9"
+              ],
+              "correctIndex": 1,
+              "explanation": "For equal roots, b^2 - 4ac = 0: 36 - 12k = 0, so k = 3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_2_03",
+              "stem": "The equation x^2 - 4x + p = 0 has no real roots when:",
+              "options": [
+                "p = 4",
+                "p >= 4",
+                "p > 4",
+                "p < 4"
+              ],
+              "correctIndex": 2,
+              "explanation": "No real roots when b^2 - 4ac < 0: 16 - 4p < 0, so p > 4.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_2_04",
+              "stem": "How many real roots does 2x^2 + 3x + 5 = 0 have?",
+              "options": [
+                "0",
+                "2",
+                "1",
+                "Cannot determine"
+              ],
+              "correctIndex": 0,
+              "explanation": "Discriminant = 9 - 40 = -31 < 0, so there are no real roots.",
+              "difficulty": 1
+            },
+            {
+              "id": "q1_2_05",
+              "stem": "The equation x^2 + bx + 9 = 0 has two distinct real roots when:",
+              "options": [
+                "b^2 > 36",
+                "b > 6",
+                "b^2 = 36",
+                "b^2 < 36"
+              ],
+              "correctIndex": 0,
+              "explanation": "Two distinct real roots when b^2 - 4(1)(9) > 0, i.e. b^2 - 36 > 0, so b^2 > 36.",
+              "difficulty": 3
+            },
+            {
+              "id": "q1_2_06",
+              "stem": "Find the value of k for which 2x^2 - 8x + k = 0 has equal roots.",
+              "options": [
+                "2",
+                "16",
+                "4",
+                "8"
+              ],
+              "correctIndex": 3,
+              "explanation": "For equal roots, discriminant = 0: b^2 - 4ac = (-8)^2 - 4(2)(k) = 64 - 8k = 0, so k = 8.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_2_07",
+              "stem": "The equation 3x^2 + 2x + p = 0 has two distinct real roots. Which condition must p satisfy?",
+              "options": [
+                "p < 1/3",
+                "p = 1/3",
+                "p > 1/3",
+                "p < 3"
+              ],
+              "correctIndex": 0,
+              "explanation": "Two distinct real roots require discriminant > 0: (2)^2 - 4(3)(p) > 0, so 4 - 12p > 0, giving 12p < 4, hence p < 1/3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_2_08",
+              "stem": "For what values of k does the equation x^2 + kx + (k + 3) = 0 have no real roots?",
+              "options": [
+                "k < -2 or k > 6",
+                "k = -2 or k = 6",
+                "0 < k < 6",
+                "-2 < k < 6"
+              ],
+              "correctIndex": 3,
+              "explanation": "No real roots when discriminant < 0: k^2 - 4(1)(k + 3) < 0, so k^2 - 4k - 12 < 0. Factoring: (k - 6)(k + 2) < 0. This quadratic in k is negative between the roots, so -2 < k < 6.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "1.3",
+          "title": "Quadratic Equations & Inequalities",
+          "titleCn": "二次方程与不等式",
+          "image": "1_3_quadratic_equations_inequalities.jpg",
+          "questions": [
+            {
+              "id": "q1_3_01",
+              "stem": "Solve x^2 - 5x + 6 = 0.",
+              "options": [
+                "x = 2 or x = 3",
+                "x = -2 or x = -3",
+                "x = -1 or x = -6",
+                "x = 1 or x = 6"
+              ],
+              "correctIndex": 0,
+              "explanation": "x^2 - 5x + 6 = (x - 2)(x - 3) = 0, so x = 2 or x = 3.",
+              "difficulty": 1
+            },
+            {
+              "id": "q1_3_02",
+              "stem": "Solve the inequality x^2 - 4x - 5 > 0.",
+              "options": [
+                "-1 < x < 5",
+                "x < -1 or x > 5",
+                "-5 < x < 1",
+                "x < -5 or x > 1"
+              ],
+              "correctIndex": 1,
+              "explanation": "x^2 - 4x - 5 = (x - 5)(x + 1) > 0. Critical values are -1 and 5. The parabola opens upward, so the expression is positive when x < -1 or x > 5.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_3_03",
+              "stem": "Find the range of values of x for which 2x^2 + x - 6 <= 0.",
+              "options": [
+                "-2 <= x <= 3/2",
+                "x <= -2 or x >= 3/2",
+                "-3/2 <= x <= 2",
+                "x <= -3/2 or x >= 2"
+              ],
+              "correctIndex": 0,
+              "explanation": "2x^2 + x - 6 = (2x - 3)(x + 2) <= 0. Critical values: x = -2 and x = 3/2. Since parabola opens upward, the inequality holds for -2 <= x <= 3/2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_3_04",
+              "stem": "Solve x^2 + 2x - 8 = 0 using the quadratic formula.",
+              "options": [
+                "x = -8 or x = 1",
+                "x = 2 or x = -4",
+                "x = 8 or x = -1",
+                "x = -2 or x = 4"
+              ],
+              "correctIndex": 1,
+              "explanation": "x = (-2 +/- sqrt(4 + 32))/2 = (-2 +/- 6)/2. So x = 2 or x = -4.",
+              "difficulty": 1
+            },
+            {
+              "id": "q1_3_05",
+              "stem": "For which values of x is 6 + x - x^2 > 0?",
+              "options": [
+                "-2 < x < 3",
+                "-3 < x < 2",
+                "x < -3 or x > 2",
+                "x < -2 or x > 3"
+              ],
+              "correctIndex": 0,
+              "explanation": "6 + x - x^2 = -(x^2 - x - 6) = -(x - 3)(x + 2). This is positive when (x - 3)(x + 2) < 0, i.e. -2 < x < 3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_3_06",
+              "stem": "Solve 3x^2 - 7x + 2 = 0.",
+              "options": [
+                "x = 3 or x = 1/2",
+                "x = 1/3 or x = 2",
+                "x = -1/3 or x = -2",
+                "x = -3 or x = -1/2"
+              ],
+              "correctIndex": 1,
+              "explanation": "3x^2 - 7x + 2 = (3x - 1)(x - 2) = 0. Check: 3x^2 - 6x - x + 2 = 3x^2 - 7x + 2. So x = 1/3 or x = 2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q1_3_07",
+              "stem": "Find the set of values of x satisfying both x^2 - 7x + 10 <= 0 and x > 2.",
+              "options": [
+                "x > 5",
+                "x >= 2",
+                "2 < x <= 5",
+                "2 <= x <= 5"
+              ],
+              "correctIndex": 2,
+              "explanation": "x^2 - 7x + 10 = (x - 2)(x - 5) <= 0 gives 2 <= x <= 5. Intersecting with x > 2 gives 2 < x <= 5.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_3_08",
+              "stem": "Find the range of values of k for which x^2 + 4x + k > 0 for all real x.",
+              "options": [
+                "k > 0",
+                "k < 4",
+                "k > 4",
+                "k >= 4"
+              ],
+              "correctIndex": 2,
+              "explanation": "For x^2 + 4x + k > 0 for all real x, the quadratic must have no real roots (since the coefficient of x^2 is positive). Discriminant < 0: 16 - 4k < 0, so 4k > 16, giving k > 4.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "1.4",
+          "title": "Simultaneous Equations",
+          "titleCn": "联立方程",
+          "image": "1_4_simultaneous_equations.jpg",
+          "questions": [
+            {
+              "id": "q1_4_01",
+              "stem": "Solve the simultaneous equations y = x + 1 and y = x^2 - 1. Which of the following is a solution?",
+              "options": [
+                "x = 2, y = 3",
+                "x = 3, y = 2",
+                "x = 1, y = 0",
+                "x = 0, y = -1"
+              ],
+              "correctIndex": 0,
+              "explanation": "Substituting: x + 1 = x^2 - 1, so x^2 - x - 2 = 0, (x - 2)(x + 1) = 0. x = 2 gives y = 3.",
+              "difficulty": 1
+            },
+            {
+              "id": "q1_4_02",
+              "stem": "The line y = 2x + k is tangent to the curve y = x^2 + 3. Find k.",
+              "options": [
+                "4",
+                "3",
+                "2",
+                "5"
+              ],
+              "correctIndex": 2,
+              "explanation": "Setting equal: x^2 + 3 = 2x + k, so x^2 - 2x + 3 - k = 0. Tangent means discriminant = 0: 4 - 4(3 - k) = 0, so 4 - 12 + 4k = 0, k = 2.",
+              "difficulty": 3
+            },
+            {
+              "id": "q1_4_03",
+              "stem": "Solve x + y = 5 and xy = 6. Find x and y where x > y.",
+              "options": [
+                "x = 4, y = 1",
+                "x = 6, y = 1",
+                "x = 3, y = 2",
+                "x = 5, y = 1"
+              ],
+              "correctIndex": 2,
+              "explanation": "From x + y = 5 and xy = 6, x and y satisfy t^2 - 5t + 6 = 0, so (t - 3)(t - 2) = 0. With x > y: x = 3, y = 2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_4_04",
+              "stem": "The line y = 2x + c is tangent to the curve y = x^2 + 1. Find the value of c.",
+              "options": [
+                "0",
+                "2",
+                "1",
+                "-1"
+              ],
+              "correctIndex": 0,
+              "explanation": "Setting equal: x^2 + 1 = 2x + c, so x^2 - 2x + 1 - c = 0. Tangent means discriminant = 0: 4 - 4(1 - c) = 0, 4c = 0, c = 0.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_4_05",
+              "stem": "How many points of intersection do y = x^2 and y = 2x + 3 have?",
+              "options": [
+                "3",
+                "2",
+                "1",
+                "0"
+              ],
+              "correctIndex": 1,
+              "explanation": "Setting equal: x^2 = 2x + 3, x^2 - 2x - 3 = 0. Discriminant = 4 + 12 = 16 > 0, so there are 2 points of intersection.",
+              "difficulty": 1
+            },
+            {
+              "id": "q1_4_06",
+              "stem": "Solve the simultaneous equations y = 3x - 1 and y = x^2 + x - 5. Find the sum of all x-values.",
+              "options": [
+                "-2",
+                "2",
+                "4",
+                "0"
+              ],
+              "correctIndex": 1,
+              "explanation": "Setting equal: x^2 + x - 5 = 3x - 1, so x^2 - 2x - 4 = 0. By Vieta's formulas, the sum of the roots = -(-2)/1 = 2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_4_07",
+              "stem": "Find the values of x for which 2x + y = 7 and xy = 3.",
+              "options": [
+                "x = 7/2 or x = 1",
+                "x = 1 or x = 3",
+                "x = 3/2 or x = 1",
+                "x = 1/2 or x = 3"
+              ],
+              "correctIndex": 3,
+              "explanation": "From 2x + y = 7: y = 7 - 2x. Substituting into xy = 3: x(7 - 2x) = 3, so 7x - 2x^2 = 3, giving 2x^2 - 7x + 3 = 0. Factoring: (2x - 1)(x - 3) = 0. So x = 1/2 or x = 3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q1_4_08",
+              "stem": "The line y = mx + 1 is tangent to the curve y = 2x^2 + 3. Find the possible values of m.",
+              "options": [
+                "m = 1 or m = -1",
+                "m = 2 or m = -2",
+                "m = 8 or m = -8",
+                "m = 4 or m = -4"
+              ],
+              "correctIndex": 3,
+              "explanation": "Setting equal: 2x^2 + 3 = mx + 1, so 2x^2 - mx + 2 = 0. Tangent means discriminant = 0: m^2 - 4(2)(2) = 0, so m^2 = 16, giving m = 4 or m = -4.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch2",
+      "title": "Functions",
+      "titleCn": "函数",
+      "knowledgePoints": [
+        {
+          "id": "2.1",
+          "title": "Domain and Range",
+          "titleCn": "定义域与值域",
+          "image": "2_1_domain_and_range.jpg",
+          "questions": [
+            {
+              "id": "q2_1_01",
+              "stem": "What is the range of f(x) = x^2 - 4 for x in R?",
+              "options": [
+                "f(x) >= 0",
+                "f(x) >= -4",
+                "f(x) <= -4",
+                "f(x) >= 4"
+              ],
+              "correctIndex": 1,
+              "explanation": "The minimum value of x^2 is 0, so the minimum of x^2 - 4 is -4. Range is f(x) >= -4.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_1_02",
+              "stem": "The function f(x) = 1/(x - 2) is undefined when:",
+              "options": [
+                "x = 1",
+                "x = 2",
+                "x = 0",
+                "x = -2"
+              ],
+              "correctIndex": 1,
+              "explanation": "The function is undefined when the denominator equals zero, i.e. x - 2 = 0, so x = 2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_1_03",
+              "stem": "What is the domain of f(x) = sqrt(3x - 6)?",
+              "options": [
+                "x > 2",
+                "x >= 6",
+                "x >= 3",
+                "x >= 2"
+              ],
+              "correctIndex": 3,
+              "explanation": "For the square root to be defined, 3x - 6 >= 0, so x >= 2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_1_04",
+              "stem": "If f(x) = 2x + 1 for -3 <= x <= 5, what is the range of f?",
+              "options": [
+                "1 <= f(x) <= 11",
+                "-5 <= f(x) <= 11",
+                "-3 <= f(x) <= 5",
+                "-5 <= f(x) <= 9"
+              ],
+              "correctIndex": 1,
+              "explanation": "f(-3) = -6 + 1 = -5 and f(5) = 10 + 1 = 11. Since f is increasing, range is -5 <= f(x) <= 11.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_1_05",
+              "stem": "What is the range of f(x) = 5 - (x - 1)^2?",
+              "options": [
+                "f(x) <= 5",
+                "f(x) >= 1",
+                "f(x) <= 1",
+                "f(x) >= 5"
+              ],
+              "correctIndex": 0,
+              "explanation": "Since (x - 1)^2 >= 0, we have 5 - (x - 1)^2 <= 5. The maximum is 5 when x = 1. Range is f(x) <= 5.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_1_06",
+              "stem": "What is the range of f(x) = 3/(x - 1) for x > 1?",
+              "options": [
+                "f(x) > 0",
+                "f(x) >= 3",
+                "All real numbers",
+                "f(x) < 0"
+              ],
+              "correctIndex": 0,
+              "explanation": "When x > 1, the denominator (x - 1) > 0, so 3/(x - 1) > 0. As x approaches 1 from the right, f(x) tends to +infinity. As x tends to infinity, f(x) tends to 0 from above. So the range is f(x) > 0.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_1_07",
+              "stem": "What is the domain of f(x) = sqrt(9 - x^2)?",
+              "options": [
+                "x >= 3",
+                "x <= -3 or x >= 3",
+                "-3 <= x <= 3",
+                "-9 <= x <= 9"
+              ],
+              "correctIndex": 2,
+              "explanation": "For the square root to be defined, 9 - x^2 >= 0, so x^2 <= 9, giving -3 <= x <= 3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_1_08",
+              "stem": "The function f(x) = (x + 2)^2 - 5 is defined for x >= -2. What is the range of f?",
+              "options": [
+                "f(x) <= -5",
+                "f(x) >= 0",
+                "All real numbers",
+                "f(x) >= -5"
+              ],
+              "correctIndex": 3,
+              "explanation": "When x >= -2, we have (x + 2) >= 0, so (x + 2)^2 >= 0. The minimum of (x + 2)^2 - 5 is 0 - 5 = -5, occurring at x = -2. As x increases, f(x) increases without bound. So the range is f(x) >= -5.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "2.2",
+          "title": "Composite Functions",
+          "titleCn": "复合函数",
+          "image": "2_2_composite_functions.jpg",
+          "questions": [
+            {
+              "id": "q2_2_01",
+              "stem": "If f(x) = 2x + 1 and g(x) = x^2, find fg(3).",
+              "options": [
+                "7",
+                "19",
+                "49",
+                "37"
+              ],
+              "correctIndex": 1,
+              "explanation": "g(3) = 9, then f(9) = 2(9) + 1 = 19.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_2_02",
+              "stem": "If f(x) = x + 3 and g(x) = 2x - 1, find gf(x).",
+              "options": [
+                "2x + 3",
+                "2x + 1",
+                "2x - 1",
+                "2x + 5"
+              ],
+              "correctIndex": 3,
+              "explanation": "gf(x) = g(f(x)) = g(x + 3) = 2(x + 3) - 1 = 2x + 6 - 1 = 2x + 5.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_2_03",
+              "stem": "If f(x) = x^2 and g(x) = x + 1, what is fg(x) simplified?",
+              "options": [
+                "2x^2 + 1",
+                "x^2 + x",
+                "x^2 + 2x + 1",
+                "x^2 + 1"
+              ],
+              "correctIndex": 2,
+              "explanation": "fg(x) = f(g(x)) = f(x + 1) = (x + 1)^2 = x^2 + 2x + 1.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_2_04",
+              "stem": "If f(x) = 3x - 2 and g(x) = (x + 2)/3, what is fg(x)?",
+              "options": [
+                "x",
+                "9x - 8",
+                "3x - 2",
+                "(x + 2)/3"
+              ],
+              "correctIndex": 0,
+              "explanation": "fg(x) = f((x + 2)/3) = 3((x + 2)/3) - 2 = x + 2 - 2 = x. This shows g is the inverse of f.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_2_05",
+              "stem": "Given f(x) = 1/x and g(x) = x + 2, find the domain of fg(x).",
+              "options": [
+                "x != 2",
+                "All real numbers",
+                "x != -2",
+                "x != 0"
+              ],
+              "correctIndex": 2,
+              "explanation": "fg(x) = f(g(x)) = 1/(x + 2). This is undefined when x + 2 = 0, i.e. x = -2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_2_06",
+              "stem": "If f(x) = 2x - 1 and g(x) = x^2 + 3, find gf(2).",
+              "options": [
+                "10",
+                "7",
+                "12",
+                "14"
+              ],
+              "correctIndex": 2,
+              "explanation": "f(2) = 2(2) - 1 = 3. Then g(3) = 3^2 + 3 = 9 + 3 = 12.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_2_07",
+              "stem": "Given f(x) = x^2 + 1, find the expression for ff(x).",
+              "options": [
+                "x^4 + 2x^2 + 2",
+                "4x^2 + 1",
+                "x^4 + 2x^2 + 1",
+                "x^4 + 1"
+              ],
+              "correctIndex": 0,
+              "explanation": "ff(x) = f(f(x)) = f(x^2 + 1) = (x^2 + 1)^2 + 1 = x^4 + 2x^2 + 1 + 1 = x^4 + 2x^2 + 2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_2_08",
+              "stem": "If f(x) = 1/(x + 1) and g(x) = 2x + 3, solve fg(x) = 1/5.",
+              "options": [
+                "x = 1",
+                "x = 3/2",
+                "x = 0",
+                "x = 1/2"
+              ],
+              "correctIndex": 3,
+              "explanation": "fg(x) = f(g(x)) = f(2x + 3) = 1/((2x + 3) + 1) = 1/(2x + 4). Setting 1/(2x + 4) = 1/5: 2x + 4 = 5, so 2x = 1, giving x = 1/2.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "2.3",
+          "title": "Inverse Functions",
+          "titleCn": "反函数",
+          "image": "2_3_inverse_functions.jpg",
+          "questions": [
+            {
+              "id": "q2_3_01",
+              "stem": "If f(x) = 3x - 5, find f^(-1)(x).",
+              "options": [
+                "3/(x - 5)",
+                "3x + 5",
+                "(x - 5)/3",
+                "(x + 5)/3"
+              ],
+              "correctIndex": 3,
+              "explanation": "Let y = 3x - 5, then x = (y + 5)/3. So f^(-1)(x) = (x + 5)/3.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_3_02",
+              "stem": "If f(x) = 2x + 7, what is f^(-1)(11)?",
+              "options": [
+                "3",
+                "4",
+                "2",
+                "9"
+              ],
+              "correctIndex": 2,
+              "explanation": "f^(-1)(x) = (x - 7)/2. f^(-1)(11) = (11 - 7)/2 = 4/2 = 2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_3_03",
+              "stem": "If f(x) = (x - 1)^2 + 3 for x >= 1, find f^(-1)(x).",
+              "options": [
+                "sqrt(x - 3) - 1",
+                "1 + sqrt(x - 3)",
+                "1 - sqrt(x - 3)",
+                "(x - 3)^2 + 1"
+              ],
+              "correctIndex": 1,
+              "explanation": "Let y = (x - 1)^2 + 3, so (x - 1)^2 = y - 3, x - 1 = sqrt(y - 3) (positive root since x >= 1), x = 1 + sqrt(y - 3). So f^(-1)(x) = 1 + sqrt(x - 3).",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_3_04",
+              "stem": "The graph of f^(-1) is the reflection of the graph of f in which line?",
+              "options": [
+                "y = -x",
+                "y = x",
+                "x = 0",
+                "y = 0"
+              ],
+              "correctIndex": 1,
+              "explanation": "The graph of the inverse function is always the reflection of the original function in the line y = x.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_3_05",
+              "stem": "If f(x) = (2x + 1)/(x - 3) for x != 3, find f^(-1)(x).",
+              "options": [
+                "(x + 1)/(2x - 3)",
+                "(3x + 1)/(x - 2)",
+                "(x - 3)/(2x + 1)",
+                "(3x - 1)/(x + 2)"
+              ],
+              "correctIndex": 1,
+              "explanation": "Let y = (2x + 1)/(x - 3). Then y(x - 3) = 2x + 1, xy - 3y = 2x + 1, xy - 2x = 3y + 1, x(y - 2) = 3y + 1, x = (3y + 1)/(y - 2). So f^(-1)(x) = (3x + 1)/(x - 2).",
+              "difficulty": 3
+            },
+            {
+              "id": "q2_3_06",
+              "stem": "If f(x) = 4x - 7, find f^(-1)(5).",
+              "options": [
+                "27",
+                "3",
+                "5/4",
+                "13"
+              ],
+              "correctIndex": 1,
+              "explanation": "f^(-1)(x) = (x + 7)/4. So f^(-1)(5) = (5 + 7)/4 = 12/4 = 3.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_3_07",
+              "stem": "If f(x) = sqrt(2x + 1) for x >= -1/2, find f^(-1)(x).",
+              "options": [
+                "2x^2 - 1",
+                "(x^2 - 1)/2",
+                "sqrt(2x + 1)",
+                "(x^2 + 1)/2"
+              ],
+              "correctIndex": 1,
+              "explanation": "Let y = sqrt(2x + 1). Then y^2 = 2x + 1, so 2x = y^2 - 1, and x = (y^2 - 1)/2. Therefore f^(-1)(x) = (x^2 - 1)/2, defined for x >= 0.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_3_08",
+              "stem": "The function f(x) = (3x - 2)/(x + 1) for x != -1. Find f^(-1)(x) and state the value of x for which f^(-1) is undefined.",
+              "options": [
+                "x = 3",
+                "x = -1",
+                "x = -3",
+                "x = 2/3"
+              ],
+              "correctIndex": 0,
+              "explanation": "Let y = (3x - 2)/(x + 1). Then y(x + 1) = 3x - 2, so yx + y = 3x - 2. Rearranging: yx - 3x = -2 - y, x(y - 3) = -(2 + y), x = (y + 2)/(3 - y). So f^(-1)(x) = (x + 2)/(3 - x), which is undefined when 3 - x = 0, i.e. x = 3.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "2.4",
+          "title": "One-to-One Functions",
+          "titleCn": "一对一函数",
+          "image": "2_4_one_to_one_functions.jpg",
+          "questions": [
+            {
+              "id": "q2_4_01",
+              "stem": "Which of the following functions is one-to-one?",
+              "options": [
+                "f(x) = sin(x)",
+                "f(x) = |x|",
+                "f(x) = 3x + 2",
+                "f(x) = x^2"
+              ],
+              "correctIndex": 2,
+              "explanation": "f(x) = 3x + 2 is a linear function with non-zero gradient, so it is one-to-one. The others fail the horizontal line test.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_4_02",
+              "stem": "The function f(x) = x^2 can be made one-to-one by restricting the domain to:",
+              "options": [
+                "x >= 0",
+                "all real x",
+                "-1 < x < 1",
+                "x != 0"
+              ],
+              "correctIndex": 0,
+              "explanation": "Restricting to x >= 0 means each y-value has only one corresponding x-value, making it one-to-one.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_4_03",
+              "stem": "A function has an inverse if and only if it is:",
+              "options": [
+                "onto",
+                "one-to-one",
+                "differentiable",
+                "continuous"
+              ],
+              "correctIndex": 1,
+              "explanation": "A function has an inverse if and only if it is one-to-one (injective), meaning each output corresponds to exactly one input.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_4_04",
+              "stem": "Which test is used to determine if a function is one-to-one from its graph?",
+              "options": [
+                "Diagonal line test",
+                "Vertical line test",
+                "Horizontal line test",
+                "Symmetry test"
+              ],
+              "correctIndex": 2,
+              "explanation": "The horizontal line test: if every horizontal line intersects the graph at most once, the function is one-to-one.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_4_05",
+              "stem": "f(x) = (x - 2)^2 + 1 is one-to-one for which domain?",
+              "options": [
+                "x >= 2",
+                "x > 0",
+                "x >= 1",
+                "all real x"
+              ],
+              "correctIndex": 0,
+              "explanation": "The vertex is at x = 2. For x >= 2, the function is strictly increasing and therefore one-to-one.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_4_06",
+              "stem": "For which of the following domains is f(x) = (x - 3)^2 a one-to-one function?",
+              "options": [
+                "-3 <= x <= 3",
+                "all real x",
+                "x != 3",
+                "x <= 3"
+              ],
+              "correctIndex": 3,
+              "explanation": "The vertex of (x - 3)^2 is at x = 3. For x <= 3 the function is strictly decreasing, so each y-value corresponds to exactly one x-value, making it one-to-one.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_4_07",
+              "stem": "The function g(x) = x^2 - 6x + 10 is defined for x >= a so that g has an inverse. What is the least value of a?",
+              "options": [
+                "10",
+                "6",
+                "0",
+                "3"
+              ],
+              "correctIndex": 3,
+              "explanation": "g(x) = (x - 3)^2 + 1 by completing the square. The vertex is at x = 3. For g to be one-to-one (and hence have an inverse), we need x >= 3 (the increasing part). The least value of a is 3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_4_08",
+              "stem": "The function f(x) = 2x^2 - 12x + 23 is one-to-one for x >= k. Find the least value of k and the corresponding range of f.",
+              "options": [
+                "k = 0, f(x) >= 23",
+                "k = 3, f(x) >= 23",
+                "k = 3, f(x) >= 5",
+                "k = 6, f(x) >= 5"
+              ],
+              "correctIndex": 2,
+              "explanation": "f(x) = 2(x^2 - 6x) + 23 = 2((x - 3)^2 - 9) + 23 = 2(x - 3)^2 + 5. The vertex is at x = 3 with minimum value 5. For f to be one-to-one, x >= 3 (least k = 3). The range is f(x) >= 5.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "2.5",
+          "title": "Translations & Reflections",
+          "titleCn": "平移与反射",
+          "image": "2_5_translations_reflections.jpg",
+          "questions": [
+            {
+              "id": "q2_5_01",
+              "stem": "The graph of y = f(x - 3) is the graph of y = f(x) translated:",
+              "options": [
+                "3 units to the left",
+                "3 units down",
+                "3 units to the right",
+                "3 units up"
+              ],
+              "correctIndex": 2,
+              "explanation": "Replacing x by (x - 3) translates the graph 3 units to the right.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_5_02",
+              "stem": "The graph of y = f(x) + 5 is the graph of y = f(x) translated:",
+              "options": [
+                "5 units up",
+                "5 units down",
+                "5 units to the right",
+                "5 units to the left"
+              ],
+              "correctIndex": 0,
+              "explanation": "Adding 5 to f(x) translates the graph 5 units upward.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_5_03",
+              "stem": "The graph of y = -f(x) is a reflection of y = f(x) in:",
+              "options": [
+                "the y-axis",
+                "the line y = x",
+                "the origin",
+                "the x-axis"
+              ],
+              "correctIndex": 3,
+              "explanation": "Multiplying f(x) by -1 reflects the graph in the x-axis.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_5_04",
+              "stem": "The graph of y = f(-x) is a reflection of y = f(x) in:",
+              "options": [
+                "the x-axis",
+                "the line y = x",
+                "the line y = -x",
+                "the y-axis"
+              ],
+              "correctIndex": 3,
+              "explanation": "Replacing x by -x reflects the graph in the y-axis.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_5_05",
+              "stem": "If the curve y = x^2 is translated 2 units left and 3 units down, the new equation is:",
+              "options": [
+                "y = (x + 2)^2 + 3",
+                "y = (x + 2)^2 - 3",
+                "y = (x - 2)^2 + 3",
+                "y = (x - 2)^2 - 3"
+              ],
+              "correctIndex": 1,
+              "explanation": "Translating 2 units left replaces x by (x + 2), and 3 units down subtracts 3: y = (x + 2)^2 - 3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_5_06",
+              "stem": "The curve y = x^2 is translated by the vector (3, -2). The equation of the new curve is:",
+              "options": [
+                "y = (x + 3)^2 + 2",
+                "y = (x - 3)^2 - 2",
+                "y = (x - 3)^2 + 2",
+                "y = (x + 3)^2 - 2"
+              ],
+              "correctIndex": 1,
+              "explanation": "A translation by the vector (3, -2) replaces x with (x - 3) and adds -2 to y. So y = (x - 3)^2 - 2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_5_07",
+              "stem": "The point (2, 5) lies on y = f(x). What are the coordinates of the corresponding point on y = f(-x) + 3?",
+              "options": [
+                "(-2, 2)",
+                "(2, 2)",
+                "(-2, 8)",
+                "(2, 8)"
+              ],
+              "correctIndex": 2,
+              "explanation": "y = f(-x) reflects the graph in the y-axis, so (2, 5) maps to (-2, 5). Then adding 3 translates upward: (-2, 5 + 3) = (-2, 8).",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_5_08",
+              "stem": "The curve y = x^2 is first reflected in the x-axis, then translated by (0, 4). What is the equation of the resulting curve?",
+              "options": [
+                "y = -x^2 - 4",
+                "y = (4 - x)^2",
+                "y = -(x - 4)^2",
+                "y = 4 - x^2"
+              ],
+              "correctIndex": 3,
+              "explanation": "Reflecting y = x^2 in the x-axis gives y = -x^2. Translating by (0, 4) adds 4 to all y-values: y = -x^2 + 4 = 4 - x^2.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "2.6",
+          "title": "Stretches",
+          "titleCn": "拉伸变换",
+          "image": "2_6_stretches.jpg",
+          "questions": [
+            {
+              "id": "q2_6_01",
+              "stem": "The graph of y = 2f(x) is a stretch of y = f(x) by factor 2 in which direction?",
+              "options": [
+                "Neither direction",
+                "Both directions",
+                "Horizontal (parallel to x-axis)",
+                "Vertical (parallel to y-axis)"
+              ],
+              "correctIndex": 3,
+              "explanation": "Multiplying f(x) by 2 stretches the graph vertically (parallel to the y-axis) with scale factor 2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_6_02",
+              "stem": "The graph of y = f(2x) is a stretch of y = f(x) by factor:",
+              "options": [
+                "2 in the x-direction",
+                "1/2 in the y-direction",
+                "1/2 in the x-direction",
+                "2 in the y-direction"
+              ],
+              "correctIndex": 2,
+              "explanation": "Replacing x by 2x is a horizontal stretch with scale factor 1/2 (compression by factor 2).",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_6_03",
+              "stem": "If y = f(x) passes through (4, 6), which point must lie on y = f(x/3)?",
+              "options": [
+                "(4/3, 6)",
+                "(4, 18)",
+                "(12, 6)",
+                "(4, 2)"
+              ],
+              "correctIndex": 2,
+              "explanation": "y = f(x/3) is a horizontal stretch by factor 3. The x-coordinate is multiplied by 3: (4*3, 6) = (12, 6).",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_6_04",
+              "stem": "The curve y = x^2 is stretched by factor 4 parallel to the y-axis. The new equation is:",
+              "options": [
+                "y = 4x^2",
+                "y = x^2 + 4",
+                "y = (x/4)^2",
+                "y = (4x)^2"
+              ],
+              "correctIndex": 0,
+              "explanation": "Stretching by factor 4 parallel to the y-axis multiplies y-values by 4: y = 4x^2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_6_05",
+              "stem": "Which transformation maps y = sin(x) to y = sin(3x)?",
+              "options": [
+                "Horizontal stretch, factor 3",
+                "Horizontal stretch, factor 1/3",
+                "Vertical stretch, factor 1/3",
+                "Vertical stretch, factor 3"
+              ],
+              "correctIndex": 1,
+              "explanation": "Replacing x by 3x is a horizontal stretch with scale factor 1/3, compressing the graph horizontally.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_6_06",
+              "stem": "If y = f(x) passes through (6, 4), which point must lie on y = 3f(x)?",
+              "options": [
+                "(2, 4)",
+                "(6, 4/3)",
+                "(18, 4)",
+                "(6, 12)"
+              ],
+              "correctIndex": 3,
+              "explanation": "y = 3f(x) is a vertical stretch by factor 3. The x-coordinate stays the same but the y-coordinate is multiplied by 3: (6, 4) maps to (6, 12).",
+              "difficulty": 1
+            },
+            {
+              "id": "q2_6_07",
+              "stem": "The curve y = x^2 is stretched by factor 1/2 parallel to the x-axis. The equation of the new curve is:",
+              "options": [
+                "y = 4x^2",
+                "y = 2x^2",
+                "y = x^2/2",
+                "y = x^2/4"
+              ],
+              "correctIndex": 0,
+              "explanation": "A stretch by factor 1/2 parallel to the x-axis replaces x by x/(1/2) = 2x. So y = (2x)^2 = 4x^2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q2_6_08",
+              "stem": "The curve y = f(x) is transformed to y = 2f(3x). Describe the two transformations in correct order.",
+              "options": [
+                "Horizontal stretch factor 1/3, vertical stretch factor 2",
+                "Horizontal stretch factor 3, vertical stretch factor 1/2",
+                "Horizontal stretch factor 3, vertical stretch factor 2",
+                "Horizontal stretch factor 1/3, vertical stretch factor 1/2"
+              ],
+              "correctIndex": 0,
+              "explanation": "Replacing x by 3x is a horizontal stretch with scale factor 1/3 (compression). Multiplying f by 2 is a vertical stretch with scale factor 2. The transformations are: horizontal stretch factor 1/3, then vertical stretch factor 2.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch3",
+      "title": "Coordinate Geometry",
+      "titleCn": "坐标几何",
+      "knowledgePoints": [
+        {
+          "id": "3.1",
+          "title": "Equations of Straight Lines",
+          "titleCn": "直线方程",
+          "image": "3_1_equations_straight_lines.jpg",
+          "questions": [
+            {
+              "id": "q3_1_01",
+              "stem": "Find the equation of the line with gradient 3 passing through (1, 5).",
+              "options": [
+                "y = 3x + 8",
+                "y = 3x - 2",
+                "y = 3x + 5",
+                "y = 3x + 2"
+              ],
+              "correctIndex": 3,
+              "explanation": "Using y - y1 = m(x - x1): y - 5 = 3(x - 1), y = 3x - 3 + 5 = 3x + 2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_1_02",
+              "stem": "What is the gradient of the line 2x + 3y = 12?",
+              "options": [
+                "2/3",
+                "-2/3",
+                "3/2",
+                "-3/2"
+              ],
+              "correctIndex": 1,
+              "explanation": "Rearranging: 3y = -2x + 12, y = (-2/3)x + 4. Gradient = -2/3.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_1_03",
+              "stem": "Find the equation of the line passing through (2, 3) and (6, 11).",
+              "options": [
+                "y = 2x - 1",
+                "y = 2x + 1",
+                "y = 2x - 3",
+                "y = 2x + 3"
+              ],
+              "correctIndex": 0,
+              "explanation": "Gradient = (11 - 3)/(6 - 2) = 8/4 = 2. Using point (2, 3): y - 3 = 2(x - 2), y = 2x - 1.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_1_04",
+              "stem": "The line y = mx + c passes through (0, -3) and (2, 1). Find m and c.",
+              "options": [
+                "m = 2, c = 3",
+                "m = -2, c = 3",
+                "m = 2, c = -3",
+                "m = -3, c = 2"
+              ],
+              "correctIndex": 2,
+              "explanation": "c = -3 (y-intercept). Gradient m = (1 - (-3))/(2 - 0) = 4/2 = 2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_1_05",
+              "stem": "At which point does the line 3x - 2y = 6 cross the y-axis?",
+              "options": [
+                "(0, 6)",
+                "(2, 0)",
+                "(0, -3)",
+                "(0, 3)"
+              ],
+              "correctIndex": 2,
+              "explanation": "Setting x = 0: -2y = 6, y = -3. The line crosses the y-axis at (0, -3).",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_1_06",
+              "stem": "Find the equation of the line passing through (-1, 4) with gradient -2.",
+              "options": [
+                "y = -2x + 4",
+                "y = -2x - 2",
+                "y = -2x + 2",
+                "y = 2x + 6"
+              ],
+              "correctIndex": 2,
+              "explanation": "Using y - y1 = m(x - x1): y - 4 = -2(x - (-1)) = -2(x + 1) = -2x - 2. So y = -2x - 2 + 4 = -2x + 2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_1_07",
+              "stem": "The line L passes through (1, 4) and has gradient 2. Find the x-intercept of L.",
+              "options": [
+                "1",
+                "-3",
+                "3",
+                "-1"
+              ],
+              "correctIndex": 3,
+              "explanation": "Equation: y - 4 = 2(x - 1), so y = 2x - 2 + 4 = 2x + 2. At the x-intercept y = 0: 0 = 2x + 2, so x = -1.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_1_08",
+              "stem": "A line passes through (a, 2a) and (3a, 6a) where a > 0. Find the gradient and y-intercept.",
+              "options": [
+                "Gradient 2, y-intercept 0",
+                "Gradient 3, y-intercept 0",
+                "Gradient 1, y-intercept a",
+                "Gradient 2, y-intercept a"
+              ],
+              "correctIndex": 0,
+              "explanation": "Gradient = (6a - 2a)/(3a - a) = 4a/(2a) = 2. Using point (a, 2a): y - 2a = 2(x - a), y = 2x - 2a + 2a = 2x. The y-intercept is 0.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "3.2",
+          "title": "Distance, Midpoint & Gradient",
+          "titleCn": "距离、中点与斜率",
+          "image": "3_2_distance_midpoint_gradient.jpg",
+          "questions": [
+            {
+              "id": "q3_2_01",
+              "stem": "Find the distance between (1, 2) and (4, 6).",
+              "options": [
+                "sqrt(13)",
+                "7",
+                "4",
+                "5"
+              ],
+              "correctIndex": 3,
+              "explanation": "Distance = sqrt((4-1)^2 + (6-2)^2) = sqrt(9 + 16) = sqrt(25) = 5.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_2_02",
+              "stem": "What is the midpoint of (3, 7) and (9, 1)?",
+              "options": [
+                "(12, 8)",
+                "(3, 4)",
+                "(6, 3)",
+                "(6, 4)"
+              ],
+              "correctIndex": 3,
+              "explanation": "Midpoint = ((3+9)/2, (7+1)/2) = (6, 4).",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_2_03",
+              "stem": "Find the gradient of the line joining (-2, 5) and (4, -1).",
+              "options": [
+                "-2",
+                "1",
+                "-1",
+                "2"
+              ],
+              "correctIndex": 2,
+              "explanation": "Gradient = (-1 - 5)/(4 - (-2)) = -6/6 = -1.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_2_04",
+              "stem": "The midpoint of A(a, 3) and B(7, b) is (5, 6). Find a and b.",
+              "options": [
+                "a = 3, b = -9",
+                "a = 3, b = 9",
+                "a = 9, b = 3",
+                "a = -3, b = 9"
+              ],
+              "correctIndex": 1,
+              "explanation": "(a + 7)/2 = 5 gives a = 3. (3 + b)/2 = 6 gives b = 9.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_2_05",
+              "stem": "The distance between (0, 0) and (p, 2p) is 10. Find the positive value of p.",
+              "options": [
+                "2*sqrt(10)",
+                "2*sqrt(5)",
+                "sqrt(20)",
+                "10"
+              ],
+              "correctIndex": 1,
+              "explanation": "Distance = sqrt(p^2 + 4p^2) = sqrt(5p^2) = p*sqrt(5) = 10, so p = 10/sqrt(5) = 2*sqrt(5).",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_2_06",
+              "stem": "Find the distance between (-3, 1) and (5, -5).",
+              "options": [
+                "sqrt(28)",
+                "10",
+                "8",
+                "6"
+              ],
+              "correctIndex": 1,
+              "explanation": "Distance = sqrt((5 - (-3))^2 + (-5 - 1)^2) = sqrt(8^2 + (-6)^2) = sqrt(64 + 36) = sqrt(100) = 10.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_2_07",
+              "stem": "Points A(1, 3) and B(5, 7) are endpoints of a diameter. Find the equation of the circle.",
+              "options": [
+                "(x - 3)^2 + (y - 5)^2 = 8",
+                "(x - 3)^2 + (y - 5)^2 = 32",
+                "(x - 1)^2 + (y - 3)^2 = 8",
+                "(x - 3)^2 + (y - 5)^2 = 16"
+              ],
+              "correctIndex": 0,
+              "explanation": "Center = midpoint = ((1+5)/2, (3+7)/2) = (3, 5). Diameter = sqrt((5-1)^2 + (7-3)^2) = sqrt(16 + 16) = sqrt(32). Radius^2 = (sqrt(32)/2)^2 = 32/4 = 8. Equation: (x - 3)^2 + (y - 5)^2 = 8.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_2_08",
+              "stem": "Point M is the midpoint of A(2, -1) and B(p, q). Given M = (5, 3), find p + q.",
+              "options": [
+                "11",
+                "8",
+                "15",
+                "13"
+              ],
+              "correctIndex": 2,
+              "explanation": "(2 + p)/2 = 5 gives p = 8. (-1 + q)/2 = 3 gives q = 7. So p + q = 8 + 7 = 15.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "3.3",
+          "title": "Parallel & Perpendicular Lines",
+          "titleCn": "平行线与垂线",
+          "image": "3_3_parallel_perpendicular_lines.jpg",
+          "questions": [
+            {
+              "id": "q3_3_01",
+              "stem": "Two lines are perpendicular. One has gradient 3. What is the gradient of the other?",
+              "options": [
+                "-3",
+                "-1/3",
+                "1/3",
+                "3"
+              ],
+              "correctIndex": 1,
+              "explanation": "For perpendicular lines, the product of gradients is -1. So the other gradient = -1/3.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_3_02",
+              "stem": "Which line is parallel to y = 2x + 5?",
+              "options": [
+                "y = 2x - 3",
+                "y = x/2 + 5",
+                "y = -2x + 5",
+                "y = 5x + 2"
+              ],
+              "correctIndex": 0,
+              "explanation": "Parallel lines have the same gradient. The gradient of y = 2x + 5 is 2, so y = 2x - 3 is parallel.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_3_03",
+              "stem": "Find the equation of the line perpendicular to y = 4x + 1 passing through (8, 3).",
+              "options": [
+                "y = -x/4 + 3",
+                "y = -x/4 + 5",
+                "y = x/4 + 1",
+                "y = -4x + 3"
+              ],
+              "correctIndex": 1,
+              "explanation": "Perpendicular gradient = -1/4. y - 3 = -1/4(x - 8), y = -x/4 + 2 + 3 = -x/4 + 5.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_3_04",
+              "stem": "The lines 3x + ky = 7 and 2x - 3y = 1 are parallel. Find k.",
+              "options": [
+                "-9/2",
+                "9/2",
+                "-2",
+                "2"
+              ],
+              "correctIndex": 0,
+              "explanation": "Gradient of 2x - 3y = 1 is 2/3. Gradient of 3x + ky = 7 is -3/k. For parallel: -3/k = 2/3, so k = -9/2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_3_05",
+              "stem": "Line L1 passes through (1, 4) and (3, 10). Find the gradient of a line perpendicular to L1.",
+              "options": [
+                "-1/3",
+                "1/3",
+                "3",
+                "-3"
+              ],
+              "correctIndex": 0,
+              "explanation": "Gradient of L1 = (10 - 4)/(3 - 1) = 3. Perpendicular gradient = -1/3.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_3_06",
+              "stem": "The line L1 has equation 5x + 2y = 10. Find the gradient of any line perpendicular to L1.",
+              "options": [
+                "-2/5",
+                "2/5",
+                "-5/2",
+                "5/2"
+              ],
+              "correctIndex": 1,
+              "explanation": "Rearranging L1: 2y = -5x + 10, y = (-5/2)x + 5. Gradient of L1 = -5/2. Perpendicular gradient = -1/(-5/2) = 2/5.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_3_07",
+              "stem": "Find the equation of the perpendicular bisector of the line segment joining A(1, 3) and B(5, 1).",
+              "options": [
+                "y = 2x - 4",
+                "y = -x/2 + 4",
+                "y = 2x - 2",
+                "y = -2x + 4"
+              ],
+              "correctIndex": 0,
+              "explanation": "Midpoint = ((1+5)/2, (3+1)/2) = (3, 2). Gradient of AB = (1 - 3)/(5 - 1) = -2/4 = -1/2. Perpendicular gradient = 2. Equation: y - 2 = 2(x - 3), y = 2x - 6 + 2 = 2x - 4.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_3_08",
+              "stem": "The points P(-1, 3), Q(3, 5), R(5, 1) form a triangle. Which statement correctly proves that angle PQR is 90 degrees?",
+              "options": [
+                "Gradient PQ = 1/2, gradient QR = 2, product = 1",
+                "Gradient PQ = 1/2, gradient QR = -2, product = -1",
+                "Gradient PQ = 2, gradient QR = -1/2, product = -1",
+                "Gradient PQ = -1/2, gradient QR = 2, product = -1"
+              ],
+              "correctIndex": 1,
+              "explanation": "Gradient PQ = (5 - 3)/(3 - (-1)) = 2/4 = 1/2. Gradient QR = (1 - 5)/(5 - 3) = -4/2 = -2. Product = (1/2)(-2) = -1. Since the product of gradients equals -1, PQ is perpendicular to QR, confirming angle PQR = 90 degrees.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "3.4",
+          "title": "Equation of a Circle",
+          "titleCn": "圆的方程",
+          "image": "3_4_equation_of_circle.jpg",
+          "questions": [
+            {
+              "id": "q3_4_01",
+              "stem": "What is the equation of a circle with center (3, -2) and radius 5?",
+              "options": [
+                "(x + 3)^2 + (y - 2)^2 = 25",
+                "(x - 3)^2 + (y + 2)^2 = 5",
+                "(x - 3)^2 + (y + 2)^2 = 25",
+                "(x - 3)^2 + (y - 2)^2 = 25"
+              ],
+              "correctIndex": 2,
+              "explanation": "The standard form is (x - h)^2 + (y - k)^2 = r^2 with center (h,k) and radius r. So (x - 3)^2 + (y + 2)^2 = 25.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_4_02",
+              "stem": "Find the center and radius of x^2 + y^2 - 6x + 4y - 12 = 0.",
+              "options": [
+                "Center (3, -2), radius 25",
+                "Center (6, -4), radius 12",
+                "Center (3, -2), radius 5",
+                "Center (-3, 2), radius 5"
+              ],
+              "correctIndex": 2,
+              "explanation": "Completing the square: (x - 3)^2 - 9 + (y + 2)^2 - 4 - 12 = 0, (x - 3)^2 + (y + 2)^2 = 25. Center (3, -2), radius 5.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_4_03",
+              "stem": "A circle has diameter endpoints (1, 3) and (7, 11). What is the radius?",
+              "options": [
+                "25",
+                "sqrt(10)",
+                "5",
+                "10"
+              ],
+              "correctIndex": 2,
+              "explanation": "Diameter = sqrt((7-1)^2 + (11-3)^2) = sqrt(36 + 64) = sqrt(100) = 10. Radius = 5.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_4_04",
+              "stem": "Which point lies on the circle (x - 1)^2 + (y - 2)^2 = 9?",
+              "options": [
+                "(1, 6)",
+                "(1, 5)",
+                "(2, 5)",
+                "(3, 3)"
+              ],
+              "correctIndex": 1,
+              "explanation": "Check (1, 5): (1 - 1)^2 + (5 - 2)^2 = 0 + 9 = 9. This satisfies the equation.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_4_05",
+              "stem": "The circle x^2 + y^2 + 2gx + 2fy + c = 0 has center:",
+              "options": [
+                "(c, c)",
+                "(g, f)",
+                "(-2g, -2f)",
+                "(-g, -f)"
+              ],
+              "correctIndex": 3,
+              "explanation": "The general form x^2 + y^2 + 2gx + 2fy + c = 0 has center (-g, -f) and radius sqrt(g^2 + f^2 - c).",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_4_06",
+              "stem": "Find the equation of the circle with center (-2, 3) and radius 4.",
+              "options": [
+                "(x - 2)^2 + (y - 3)^2 = 16",
+                "(x - 2)^2 + (y + 3)^2 = 16",
+                "(x + 2)^2 + (y - 3)^2 = 16",
+                "(x + 2)^2 + (y - 3)^2 = 4"
+              ],
+              "correctIndex": 2,
+              "explanation": "Standard form: (x - h)^2 + (y - k)^2 = r^2. With center (-2, 3) and radius 4: (x + 2)^2 + (y - 3)^2 = 16.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_4_07",
+              "stem": "The point (5, 0) lies on a circle with center (2, -4). Find the radius.",
+              "options": [
+                "25",
+                "5",
+                "3",
+                "7"
+              ],
+              "correctIndex": 1,
+              "explanation": "Radius = distance from center (2, -4) to point (5, 0) = sqrt((5 - 2)^2 + (0 - (-4))^2) = sqrt(9 + 16) = sqrt(25) = 5.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_4_08",
+              "stem": "A circle passes through the origin and has center (3, 4). Find its equation.",
+              "options": [
+                "(x + 3)^2 + (y + 4)^2 = 25",
+                "(x - 3)^2 + (y - 4)^2 = 5",
+                "(x - 3)^2 + (y - 4)^2 = 25",
+                "x^2 + y^2 = 25"
+              ],
+              "correctIndex": 2,
+              "explanation": "Radius = distance from center (3, 4) to origin (0, 0) = sqrt(3^2 + 4^2) = sqrt(9 + 16) = sqrt(25) = 5. Equation: (x - 3)^2 + (y - 4)^2 = 25.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "3.5",
+          "title": "Line-Circle Intersection",
+          "titleCn": "直线与圆的交点",
+          "image": "3_5_line_circle_intersection.jpg",
+          "questions": [
+            {
+              "id": "q3_5_01",
+              "stem": "How many times does the line y = x + 1 intersect the circle x^2 + y^2 = 1?",
+              "options": [
+                "2",
+                "1",
+                "0",
+                "3"
+              ],
+              "correctIndex": 0,
+              "explanation": "Substituting: x^2 + (x+1)^2 = 1, 2x^2 + 2x + 1 = 1, 2x^2 + 2x = 0, 2x(x+1) = 0. Two solutions x = 0 and x = -1, so 2 intersections.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_5_02",
+              "stem": "The line y = 2x + c is tangent to the circle x^2 + y^2 = 5. Find the positive value of c.",
+              "options": [
+                "10",
+                "sqrt(25)",
+                "sqrt(5)",
+                "5"
+              ],
+              "correctIndex": 3,
+              "explanation": "Substituting: x^2 + (2x + c)^2 = 5, 5x^2 + 4cx + c^2 - 5 = 0. Tangent when discriminant = 0: 16c^2 - 20(c^2 - 5) = 0, -4c^2 + 100 = 0, c^2 = 25, c = 5 (positive).",
+              "difficulty": 3
+            },
+            {
+              "id": "q3_5_03",
+              "stem": "Find the length of the perpendicular from (0, 0) to the line 3x + 4y = 10.",
+              "options": [
+                "10",
+                "5/2",
+                "2",
+                "10/7"
+              ],
+              "correctIndex": 2,
+              "explanation": "Perpendicular distance = |3(0) + 4(0) - 10|/sqrt(9 + 16) = 10/5 = 2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_5_04",
+              "stem": "A line is tangent to a circle. The discriminant of the resulting equation equals:",
+              "options": [
+                "A negative number",
+                "A positive number",
+                "1",
+                "0"
+              ],
+              "correctIndex": 3,
+              "explanation": "When a line is tangent to a circle, they meet at exactly one point. Substituting gives a quadratic with discriminant = 0.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_5_05",
+              "stem": "The circle x^2 + y^2 = 25 and the line y = x + k have no common points when:",
+              "options": [
+                "k < -5",
+                "k > 5",
+                "|k| < 5*sqrt(2)",
+                "|k| > 5*sqrt(2)"
+              ],
+              "correctIndex": 3,
+              "explanation": "Substituting: x^2 + (x + k)^2 = 25, 2x^2 + 2kx + k^2 - 25 = 0. No intersection when discriminant < 0: 4k^2 - 8(k^2 - 25) < 0, -4k^2 + 200 < 0, k^2 > 50, |k| > 5*sqrt(2).",
+              "difficulty": 3
+            },
+            {
+              "id": "q3_5_06",
+              "stem": "How many points of intersection do the line y = 3 and the circle (x - 1)^2 + (y - 1)^2 = 9 have?",
+              "options": [
+                "0",
+                "2",
+                "1",
+                "3"
+              ],
+              "correctIndex": 1,
+              "explanation": "Substituting y = 3: (x - 1)^2 + (3 - 1)^2 = 9, so (x - 1)^2 + 4 = 9, (x - 1)^2 = 5. Since 5 > 0, there are two solutions x = 1 + sqrt(5) and x = 1 - sqrt(5). So there are 2 intersection points.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_5_07",
+              "stem": "Find the perpendicular distance from the point (3, 4) to the line 3x - 4y + 5 = 0.",
+              "options": [
+                "2/5",
+                "12/5",
+                "2",
+                "5"
+              ],
+              "correctIndex": 0,
+              "explanation": "Using the formula d = |ax + by + c|/sqrt(a^2 + b^2): d = |3(3) - 4(4) + 5|/sqrt(9 + 16) = |9 - 16 + 5|/sqrt(25) = |-2|/5 = 2/5.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_5_08",
+              "stem": "The line y = x + k is tangent to the circle (x - 2)^2 + (y + 1)^2 = 10. Find the positive value of k.",
+              "options": [
+                "3",
+                "-3 + 2*sqrt(5)",
+                "5",
+                "sqrt(10) - 3"
+              ],
+              "correctIndex": 1,
+              "explanation": "Substituting y = x + k: (x - 2)^2 + (x + k + 1)^2 = 10. Expanding: x^2 - 4x + 4 + x^2 + 2(k+1)x + (k+1)^2 = 10. So 2x^2 + (2k - 2)x + 4 + (k+1)^2 - 10 = 0, i.e. 2x^2 + (2k - 2)x + (k^2 + 2k - 5) = 0. Tangent requires discriminant = 0: (2k-2)^2 - 8(k^2 + 2k - 5) = 0. Expanding: 4k^2 - 8k + 4 - 8k^2 - 16k + 40 = 0, -4k^2 - 24k + 44 = 0, k^2 + 6k - 11 = 0. k = (-6 +/- sqrt(36 + 44))/2 = (-6 +/- sqrt(80))/2 = -3 +/- 2*sqrt(5). The positive value is k = -3 + 2*sqrt(5).",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "3.6",
+          "title": "Intersections of Graphs",
+          "titleCn": "图形交点",
+          "image": "3_6_intersections_of_graphs.jpg",
+          "questions": [
+            {
+              "id": "q3_6_01",
+              "stem": "Find the x-coordinates where y = x^2 and y = 3x - 2 intersect.",
+              "options": [
+                "x = 1 and x = -2",
+                "x = 2 and x = 3",
+                "x = 1 and x = 2",
+                "x = -1 and x = 2"
+              ],
+              "correctIndex": 2,
+              "explanation": "x^2 = 3x - 2, x^2 - 3x + 2 = 0, (x - 1)(x - 2) = 0. So x = 1 or x = 2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_6_02",
+              "stem": "The curves y = x^2 + 1 and y = 2x + k touch at exactly one point. Find k.",
+              "options": [
+                "2",
+                "0",
+                "1",
+                "-1"
+              ],
+              "correctIndex": 1,
+              "explanation": "x^2 + 1 = 2x + k, x^2 - 2x + 1 - k = 0. Discriminant = 4 - 4(1 - k) = 4k = 0, so k = 0.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_6_03",
+              "stem": "Find the points of intersection of y = x + 1 and y = x^2 - x - 2.",
+              "options": [
+                "(1, 2) and (-3, -2)",
+                "(-1, 0) and (3, 4)",
+                "(0, 1) and (2, 3)",
+                "(-1, 0) and (2, 3)"
+              ],
+              "correctIndex": 1,
+              "explanation": "x + 1 = x^2 - x - 2, x^2 - 2x - 3 = 0, (x - 3)(x + 1) = 0. x = 3: y = 4; x = -1: y = 0. Points: (-1, 0) and (3, 4).",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_6_04",
+              "stem": "The number of intersections between y = x^2 - 1 and y = 2x - 3 is:",
+              "options": [
+                "1",
+                "2",
+                "0",
+                "3"
+              ],
+              "correctIndex": 2,
+              "explanation": "x^2 - 1 = 2x - 3, x^2 - 2x + 2 = 0. Discriminant = 4 - 8 = -4 < 0. No real solutions, so 0 intersections.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_6_05",
+              "stem": "How many intersection points do the curves y = x^3 and y = x have for real x?",
+              "options": [
+                "2",
+                "1",
+                "3",
+                "0"
+              ],
+              "correctIndex": 2,
+              "explanation": "x^3 = x gives x^3 - x = 0, x(x^2 - 1) = 0, x(x-1)(x+1) = 0. So x = 0, 1, -1. There are 3 intersection points.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_6_06",
+              "stem": "Find the x-coordinates of the points where y = x^2 - 4x and y = x - 6 intersect.",
+              "options": [
+                "x = -2 and x = 3",
+                "x = 2 and x = 3",
+                "x = -1 and x = 6",
+                "x = 1 and x = 6"
+              ],
+              "correctIndex": 1,
+              "explanation": "Setting equal: x^2 - 4x = x - 6, so x^2 - 5x + 6 = 0, (x - 2)(x - 3) = 0. So x = 2 or x = 3.",
+              "difficulty": 1
+            },
+            {
+              "id": "q3_6_07",
+              "stem": "The curves y = x^2 and y = 8 - x^2 intersect at how many points? Find the x-coordinates.",
+              "options": [
+                "2 points: x = 4 and x = -4",
+                "1 point: x = 2",
+                "0 points",
+                "2 points: x = 2 and x = -2"
+              ],
+              "correctIndex": 3,
+              "explanation": "Setting equal: x^2 = 8 - x^2, so 2x^2 = 8, x^2 = 4, x = 2 or x = -2. There are 2 intersection points.",
+              "difficulty": 2
+            },
+            {
+              "id": "q3_6_08",
+              "stem": "For which value of k does the line y = 3x + k meet the curve y = x^2 + x at exactly one point?",
+              "options": [
+                "-1",
+                "1",
+                "-2",
+                "0"
+              ],
+              "correctIndex": 0,
+              "explanation": "Setting equal: x^2 + x = 3x + k, so x^2 - 2x - k = 0. For exactly one intersection, discriminant = 0: (-2)^2 - 4(1)(-k) = 0, so 4 + 4k = 0, giving k = -1.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch4",
+      "title": "Circular Measure",
+      "titleCn": "弧度与扇形",
+      "knowledgePoints": [
+        {
+          "id": "4.1",
+          "title": "Radians and Degrees",
+          "titleCn": "弧度与角度",
+          "image": "4_1_radians_and_degrees.jpg",
+          "questions": [
+            {
+              "id": "q4_1_01",
+              "stem": "Convert 180 degrees to radians.",
+              "options": [
+                "pi/2",
+                "2*pi",
+                "pi/4",
+                "pi"
+              ],
+              "correctIndex": 3,
+              "explanation": "180 degrees = pi radians.",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_1_02",
+              "stem": "Convert pi/6 radians to degrees.",
+              "options": [
+                "90",
+                "30",
+                "60",
+                "45"
+              ],
+              "correctIndex": 1,
+              "explanation": "pi/6 radians = (180/pi) * (pi/6) = 30 degrees.",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_1_03",
+              "stem": "Convert 2 radians to degrees (to 1 decimal place).",
+              "options": [
+                "57.3",
+                "114.6",
+                "90.0",
+                "120.0"
+              ],
+              "correctIndex": 1,
+              "explanation": "2 radians = 2 * (180/pi) = 360/pi = 114.6 degrees (to 1 d.p.).",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_1_04",
+              "stem": "Which of the following is equal to 3*pi/4 radians?",
+              "options": [
+                "135 degrees",
+                "120 degrees",
+                "150 degrees",
+                "225 degrees"
+              ],
+              "correctIndex": 0,
+              "explanation": "3*pi/4 = 3 * 180/4 = 3 * 45 = 135 degrees.",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_1_05",
+              "stem": "Convert 270 degrees to radians.",
+              "options": [
+                "2*pi/3",
+                "3*pi",
+                "pi/2",
+                "3*pi/2"
+              ],
+              "correctIndex": 3,
+              "explanation": "270 degrees = 270 * pi/180 = 3*pi/2 radians.",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_1_06",
+              "stem": "Convert 5*pi/6 radians to degrees.",
+              "options": [
+                "210",
+                "300",
+                "150",
+                "120"
+              ],
+              "correctIndex": 2,
+              "explanation": "5*pi/6 radians = 5 * 180/6 = 5 * 30 = 150 degrees.",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_1_07",
+              "stem": "Convert 72 degrees to radians. Give your answer in terms of pi.",
+              "options": [
+                "pi/5",
+                "2*pi/5",
+                "3*pi/5",
+                "72*pi"
+              ],
+              "correctIndex": 1,
+              "explanation": "72 degrees = 72 * pi/180 = 72pi/180 = 2pi/5 radians.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_1_08",
+              "stem": "The angle theta satisfies cos(theta) = -1/2 and pi/2 < theta < pi. Find theta in radians.",
+              "options": [
+                "pi/3",
+                "5*pi/3",
+                "4*pi/3",
+                "2*pi/3"
+              ],
+              "correctIndex": 3,
+              "explanation": "cos(theta) = -1/2. The reference angle is pi/3 (since cos(pi/3) = 1/2). In the second quadrant (pi/2 < theta < pi), theta = pi - pi/3 = 2*pi/3.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "4.2",
+          "title": "Arc Length",
+          "titleCn": "弧长",
+          "image": "",
+          "questions": [
+            {
+              "id": "q4_2_01",
+              "stem": "Find the arc length of a sector with radius 6 cm and angle 1.5 radians.",
+              "options": [
+                "12 cm",
+                "4 cm",
+                "6 cm",
+                "9 cm"
+              ],
+              "correctIndex": 3,
+              "explanation": "Arc length = r * theta = 6 * 1.5 = 9 cm.",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_2_02",
+              "stem": "A sector has arc length 10 cm and radius 4 cm. Find the angle in radians.",
+              "options": [
+                "0.4",
+                "2.5",
+                "5",
+                "40"
+              ],
+              "correctIndex": 1,
+              "explanation": "theta = s/r = 10/4 = 2.5 radians.",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_2_03",
+              "stem": "Find the arc length of a sector with radius 8 cm and angle pi/3 radians.",
+              "options": [
+                "3*pi/8 cm",
+                "24 cm",
+                "8*pi cm",
+                "8*pi/3 cm"
+              ],
+              "correctIndex": 3,
+              "explanation": "Arc length = r * theta = 8 * pi/3 = 8*pi/3 cm.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_2_04",
+              "stem": "A sector has perimeter 20 cm and radius 6 cm. Find the angle in radians.",
+              "options": [
+                "2",
+                "4/3",
+                "8/6",
+                "10/3"
+              ],
+              "correctIndex": 1,
+              "explanation": "Perimeter = 2r + arc length = 12 + 6*theta = 20, so 6*theta = 8, theta = 4/3 radians.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_2_05",
+              "stem": "An arc of a circle with radius 10 cm subtends an angle of 2.4 radians at the center. Find the arc length.",
+              "options": [
+                "48 cm",
+                "4.2 cm",
+                "12 cm",
+                "24 cm"
+              ],
+              "correctIndex": 3,
+              "explanation": "Arc length = r * theta = 10 * 2.4 = 24 cm.",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_2_06",
+              "stem": "A sector has radius 12 cm and angle pi/4 radians. Find the arc length.",
+              "options": [
+                "3*pi cm",
+                "12*pi cm",
+                "6*pi cm",
+                "48*pi cm"
+              ],
+              "correctIndex": 0,
+              "explanation": "Arc length = r * theta = 12 * pi/4 = 3*pi cm.",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_2_07",
+              "stem": "The arc length of a sector is 15 cm and the angle is 2.5 radians. Find the radius.",
+              "options": [
+                "7.5 cm",
+                "12.5 cm",
+                "6 cm",
+                "37.5 cm"
+              ],
+              "correctIndex": 2,
+              "explanation": "r = arc length / theta = 15 / 2.5 = 6 cm.",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_2_08",
+              "stem": "A sector has perimeter 30 cm and angle 1.5 radians. Find the radius.",
+              "options": [
+                "10 cm",
+                "15 cm",
+                "60/7 cm",
+                "30/7 cm"
+              ],
+              "correctIndex": 2,
+              "explanation": "Perimeter = 2r + r*theta = r(2 + theta) = r(2 + 1.5) = 3.5r. So 3.5r = 30, giving r = 30/3.5 = 300/35 = 60/7 cm.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "4.3",
+          "title": "Sector Area",
+          "titleCn": "扇形面积",
+          "image": "4_3_sector_area.jpg",
+          "questions": [
+            {
+              "id": "q4_3_01",
+              "stem": "Find the area of a sector with radius 5 cm and angle 2 radians.",
+              "options": [
+                "25 cm^2",
+                "10 cm^2",
+                "5 cm^2",
+                "50 cm^2"
+              ],
+              "correctIndex": 0,
+              "explanation": "Area = (1/2) * r^2 * theta = (1/2)(25)(2) = 25 cm^2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_3_02",
+              "stem": "A sector has area 36 cm^2 and radius 6 cm. Find the angle in radians.",
+              "options": [
+                "6",
+                "2",
+                "3",
+                "12"
+              ],
+              "correctIndex": 1,
+              "explanation": "36 = (1/2)(36)(theta), so theta = 2 radians.",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_3_03",
+              "stem": "Find the area of a sector with radius 10 cm and angle pi/4 radians.",
+              "options": [
+                "100*pi cm^2",
+                "50*pi cm^2",
+                "25*pi/4 cm^2",
+                "25*pi/2 cm^2"
+              ],
+              "correctIndex": 3,
+              "explanation": "Area = (1/2)(100)(pi/4) = 50*pi/4 = 25*pi/2 cm^2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_3_04",
+              "stem": "A sector has arc length 8 cm and radius 4 cm. What is its area?",
+              "options": [
+                "32 cm^2",
+                "64 cm^2",
+                "8 cm^2",
+                "16 cm^2"
+              ],
+              "correctIndex": 3,
+              "explanation": "theta = s/r = 8/4 = 2. Area = (1/2)(16)(2) = 16 cm^2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_3_05",
+              "stem": "The area of a sector is 50 cm^2 and the angle is 1 radian. Find the radius.",
+              "options": [
+                "5 cm",
+                "10 cm",
+                "sqrt(50) cm",
+                "50 cm"
+              ],
+              "correctIndex": 1,
+              "explanation": "50 = (1/2)r^2(1), r^2 = 100, r = 10 cm.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_3_06",
+              "stem": "A sector has radius 8 cm and angle pi/3 radians. Find its area.",
+              "options": [
+                "16*pi/3 cm^2",
+                "64*pi/3 cm^2",
+                "32*pi/3 cm^2",
+                "8*pi/3 cm^2"
+              ],
+              "correctIndex": 2,
+              "explanation": "Area = (1/2) * r^2 * theta = (1/2)(64)(pi/3) = 32*pi/3 cm^2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_3_07",
+              "stem": "A sector has area 24 cm^2 and angle 3/4 radians. Find the radius.",
+              "options": [
+                "32 cm",
+                "6 cm",
+                "8 cm",
+                "4 cm"
+              ],
+              "correctIndex": 2,
+              "explanation": "Area = (1/2)r^2 * theta. So 24 = (1/2)(r^2)(3/4) = 3r^2/8. Therefore r^2 = 24 * 8/3 = 64, giving r = 8 cm.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_3_08",
+              "stem": "A sector has area 75 cm^2 and perimeter 40 cm. Find the possible values of the radius.",
+              "options": [
+                "r = 7.5",
+                "r = 10",
+                "r = 15 or r = 5",
+                "r = 20"
+              ],
+              "correctIndex": 2,
+              "explanation": "Let the radius be r and angle theta. Area: (1/2)r^2*theta = 75 gives theta = 150/r^2. Perimeter: 2r + r*theta = 40 gives theta = (40 - 2r)/r. Setting equal: 150/r^2 = (40 - 2r)/r, so 150/r = 40 - 2r, giving 150 = 40r - 2r^2. Rearranging: 2r^2 - 40r + 150 = 0, r^2 - 20r + 75 = 0, (r - 15)(r - 5) = 0. So r = 15 cm or r = 5 cm.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "4.4",
+          "title": "Segment Area & Combined Shapes",
+          "titleCn": "弓形面积与组合图形",
+          "image": "4_4_segment_area_combined.jpg",
+          "questions": [
+            {
+              "id": "q4_4_01",
+              "stem": "The formula for the area of a segment of a circle is:",
+              "options": [
+                "(1/2)r^2(theta - sin(theta))",
+                "(1/2)r^2*theta",
+                "r*theta",
+                "(1/2)r^2*sin(theta)"
+              ],
+              "correctIndex": 0,
+              "explanation": "Segment area = Sector area - Triangle area = (1/2)r^2*theta - (1/2)r^2*sin(theta) = (1/2)r^2(theta - sin(theta)).",
+              "difficulty": 1
+            },
+            {
+              "id": "q4_4_02",
+              "stem": "Find the area of a segment with radius 8 cm and angle 1 radian.",
+              "options": [
+                "32(1 - sin(1)) cm^2",
+                "32 cm^2",
+                "64(1 - sin(1)) cm^2",
+                "32*sin(1) cm^2"
+              ],
+              "correctIndex": 0,
+              "explanation": "Segment area = (1/2)(64)(1 - sin(1)) = 32(1 - sin(1)) cm^2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_4_03",
+              "stem": "A segment has angle pi/3 and radius 6 cm. Find its area.",
+              "options": [
+                "6*pi cm^2",
+                "3*pi - 9 cm^2",
+                "6*pi - 9*sqrt(3) cm^2",
+                "18*pi - 9*sqrt(3) cm^2"
+              ],
+              "correctIndex": 2,
+              "explanation": "Area = (1/2)(36)(pi/3 - sin(pi/3)) = 18(pi/3 - sqrt(3)/2) = 6*pi - 9*sqrt(3) cm^2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_4_04",
+              "stem": "A sector with radius 10 cm and angle 0.8 radians. Find the area of the triangle formed by the two radii and the chord.",
+              "options": [
+                "80*sin(0.8) cm^2",
+                "50*sin(0.8) cm^2",
+                "40 cm^2",
+                "50*cos(0.8) cm^2"
+              ],
+              "correctIndex": 1,
+              "explanation": "Triangle area = (1/2)r^2*sin(theta) = (1/2)(100)*sin(0.8) = 50*sin(0.8) cm^2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_4_05",
+              "stem": "A circle has radius 5 cm. A chord subtends an angle of 2 radians at the center. Find the segment area.",
+              "options": [
+                "25(2 - sin(2)) cm^2",
+                "25 - (25/2)*sin(2) cm^2",
+                "(25/2)(2 - sin(2)) cm^2",
+                "(25/2)*sin(2) cm^2"
+              ],
+              "correctIndex": 2,
+              "explanation": "Segment area = (1/2)r^2(theta - sin(theta)) = (1/2)(25)(2 - sin(2)) = (25/2)(2 - sin(2)) cm^2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_4_06",
+              "stem": "Find the area of a segment with radius 10 cm and angle pi/2 radians.",
+              "options": [
+                "50(pi/2 - 1) cm^2",
+                "50 cm^2",
+                "25*pi cm^2",
+                "50*pi cm^2"
+              ],
+              "correctIndex": 0,
+              "explanation": "Segment area = (1/2)r^2(theta - sin(theta)) = (1/2)(100)(pi/2 - sin(pi/2)) = 50(pi/2 - 1) cm^2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_4_07",
+              "stem": "A chord of a circle with radius 12 cm subtends an angle of pi/3 radians at the center. Find the area of the minor segment.",
+              "options": [
+                "12*pi - 36*sqrt(3) cm^2",
+                "72*pi - 36*sqrt(3) cm^2",
+                "24*pi - 36*sqrt(3) cm^2",
+                "24*pi - 72*sqrt(3) cm^2"
+              ],
+              "correctIndex": 2,
+              "explanation": "Segment area = (1/2)r^2(theta - sin(theta)) = (1/2)(144)(pi/3 - sin(pi/3)) = 72(pi/3 - sqrt(3)/2) = 24*pi - 36*sqrt(3) cm^2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q4_4_08",
+              "stem": "A sector OAB has radius 6 cm and angle 1.2 radians. Find the area of the segment (the region between the chord AB and the arc AB).",
+              "options": [
+                "36(1.2 - sin(1.2)) cm^2",
+                "18(1.2 - sin(1.2)) cm^2",
+                "18*sin(1.2) cm^2",
+                "3.6 cm^2"
+              ],
+              "correctIndex": 1,
+              "explanation": "Segment area = (1/2)r^2(theta - sin(theta)) = (1/2)(36)(1.2 - sin(1.2)) = 18(1.2 - sin(1.2)) cm^2. Numerically, sin(1.2) = 0.9320..., so area = 18(0.268) = 4.82 cm^2 approximately.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch5",
+      "title": "Trigonometry",
+      "titleCn": "三角函数",
+      "knowledgePoints": [
+        {
+          "id": "5.1",
+          "title": "Graphs of sin, cos, tan",
+          "titleCn": "三角函数图像",
+          "image": "5_1_graphs_sin_cos_tan.jpg",
+          "questions": [
+            {
+              "id": "q5_1_01",
+              "stem": "What is the period of y = sin(x)?",
+              "options": [
+                "2*pi",
+                "pi",
+                "4*pi",
+                "pi/2"
+              ],
+              "correctIndex": 0,
+              "explanation": "The sine function has period 2*pi.",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_1_02",
+              "stem": "What is the amplitude of y = 3*cos(x)?",
+              "options": [
+                "1",
+                "3",
+                "6",
+                "9"
+              ],
+              "correctIndex": 1,
+              "explanation": "The amplitude is the coefficient of cos(x), which is 3.",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_1_03",
+              "stem": "The period of y = tan(2x) is:",
+              "options": [
+                "pi/2",
+                "pi/4",
+                "2*pi",
+                "pi"
+              ],
+              "correctIndex": 0,
+              "explanation": "The period of tan(kx) is pi/k. For k = 2, period = pi/2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_1_04",
+              "stem": "The function y = cos(x) has a maximum value at x =",
+              "options": [
+                "pi",
+                "pi/2",
+                "3*pi/2",
+                "0"
+              ],
+              "correctIndex": 3,
+              "explanation": "cos(0) = 1, which is the maximum value. So maximum occurs at x = 0 (and multiples of 2*pi).",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_1_05",
+              "stem": "What is the range of y = 2*sin(x) + 1?",
+              "options": [
+                "0 <= y <= 2",
+                "-2 <= y <= 2",
+                "-1 <= y <= 1",
+                "-1 <= y <= 3"
+              ],
+              "correctIndex": 3,
+              "explanation": "sin(x) ranges from -1 to 1, so 2*sin(x) ranges from -2 to 2, and 2*sin(x) + 1 ranges from -1 to 3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_1_06",
+              "stem": "The function y = sin(x) + 2 has range:",
+              "options": [
+                "1 <= y <= 3",
+                "2 <= y <= 4",
+                "-1 <= y <= 3",
+                "0 <= y <= 2"
+              ],
+              "correctIndex": 0,
+              "explanation": "sin(x) ranges from -1 to 1. Adding 2 shifts the range to -1 + 2 = 1 and 1 + 2 = 3. So 1 <= y <= 3.",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_1_07",
+              "stem": "What is the period of y = cos(3x)?",
+              "options": [
+                "pi/3",
+                "6*pi",
+                "3*pi",
+                "2*pi/3"
+              ],
+              "correctIndex": 3,
+              "explanation": "The period of cos(kx) is 2*pi/k. For k = 3, period = 2*pi/3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_1_08",
+              "stem": "The graph of y = 4*sin(2x) - 1 has amplitude A and period T. What is A + T?",
+              "options": [
+                "4 + 2*pi",
+                "4 + pi",
+                "5 + pi",
+                "3 + pi"
+              ],
+              "correctIndex": 1,
+              "explanation": "For y = 4*sin(2x) - 1, the amplitude is |4| = 4 and the period is 2*pi/2 = pi. The vertical shift does not affect amplitude or period. So A + T = 4 + pi.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "5.2",
+          "title": "Exact Values of Trig Ratios",
+          "titleCn": "三角比精确值",
+          "image": "5_2_exact_values_trig.jpg",
+          "questions": [
+            {
+              "id": "q5_2_01",
+              "stem": "What is sin(pi/6)?",
+              "options": [
+                "1/sqrt(2)",
+                "1",
+                "sqrt(3)/2",
+                "1/2"
+              ],
+              "correctIndex": 3,
+              "explanation": "sin(30 degrees) = sin(pi/6) = 1/2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_2_02",
+              "stem": "What is cos(pi/3)?",
+              "options": [
+                "sqrt(3)/2",
+                "1",
+                "0",
+                "1/2"
+              ],
+              "correctIndex": 3,
+              "explanation": "cos(60 degrees) = cos(pi/3) = 1/2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_2_03",
+              "stem": "What is tan(pi/4)?",
+              "options": [
+                "1/2",
+                "1",
+                "sqrt(2)",
+                "0"
+              ],
+              "correctIndex": 1,
+              "explanation": "tan(45 degrees) = tan(pi/4) = 1.",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_2_04",
+              "stem": "What is sin(pi/3)?",
+              "options": [
+                "1/2",
+                "sqrt(2)/2",
+                "sqrt(3)/2",
+                "1"
+              ],
+              "correctIndex": 2,
+              "explanation": "sin(60 degrees) = sin(pi/3) = sqrt(3)/2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_2_05",
+              "stem": "What is cos(pi/4)?",
+              "options": [
+                "sqrt(2)/2",
+                "1/2",
+                "sqrt(3)/2",
+                "1"
+              ],
+              "correctIndex": 0,
+              "explanation": "cos(45 degrees) = cos(pi/4) = 1/sqrt(2) = sqrt(2)/2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_2_06",
+              "stem": "What is tan(pi/3)?",
+              "options": [
+                "1",
+                "2",
+                "1/sqrt(3)",
+                "sqrt(3)"
+              ],
+              "correctIndex": 3,
+              "explanation": "tan(60°) = tan(pi/3) = sin(pi/3)/cos(pi/3) = (sqrt(3)/2)/(1/2) = sqrt(3).",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_2_07",
+              "stem": "What is cos(5*pi/6)?",
+              "options": [
+                "sqrt(3)/2",
+                "1/2",
+                "-sqrt(3)/2",
+                "-1/2"
+              ],
+              "correctIndex": 2,
+              "explanation": "5*pi/6 = pi - pi/6, which is in the second quadrant where cosine is negative. cos(5*pi/6) = -cos(pi/6) = -sqrt(3)/2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_2_08",
+              "stem": "Evaluate sin(pi/3)*cos(pi/6) + cos(pi/3)*sin(pi/6).",
+              "options": [
+                "sqrt(3)/2",
+                "1/2",
+                "1",
+                "sqrt(3)"
+              ],
+              "correctIndex": 2,
+              "explanation": "This is sin(A + B) = sin(pi/3 + pi/6) = sin(pi/2) = 1. Alternatively: (sqrt(3)/2)(sqrt(3)/2) + (1/2)(1/2) = 3/4 + 1/4 = 1.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "5.3",
+          "title": "Trigonometric Identities",
+          "titleCn": "三角恒等式",
+          "image": "5_3_trigonometric_identities.jpg",
+          "questions": [
+            {
+              "id": "q5_3_01",
+              "stem": "Simplify sin^2(x) + cos^2(x).",
+              "options": [
+                "2",
+                "sin(2x)",
+                "1",
+                "0"
+              ],
+              "correctIndex": 2,
+              "explanation": "The Pythagorean identity states sin^2(x) + cos^2(x) = 1.",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_3_02",
+              "stem": "Express tan(x) in terms of sin(x) and cos(x).",
+              "options": [
+                "sin(x) + cos(x)",
+                "cos(x)/sin(x)",
+                "sin(x)*cos(x)",
+                "sin(x)/cos(x)"
+              ],
+              "correctIndex": 3,
+              "explanation": "By definition, tan(x) = sin(x)/cos(x).",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_3_03",
+              "stem": "Simplify (1 - cos^2(x))/sin(x).",
+              "options": [
+                "sin(x)",
+                "1",
+                "tan(x)",
+                "cos(x)"
+              ],
+              "correctIndex": 0,
+              "explanation": "1 - cos^2(x) = sin^2(x), so sin^2(x)/sin(x) = sin(x).",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_3_04",
+              "stem": "The identity tan^2(x) + 1 equals:",
+              "options": [
+                "sin^2(x)",
+                "cos^2(x)",
+                "1/cos^2(x)",
+                "1/sin^2(x)"
+              ],
+              "correctIndex": 2,
+              "explanation": "tan^2(x) + 1 = sin^2(x)/cos^2(x) + 1 = (sin^2(x) + cos^2(x))/cos^2(x) = 1/cos^2(x) = sec^2(x).",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_3_05",
+              "stem": "Simplify sin(x)*cos(x)*tan(x).",
+              "options": [
+                "sin(x)",
+                "cos^2(x)",
+                "sin^2(x)",
+                "1"
+              ],
+              "correctIndex": 2,
+              "explanation": "sin(x)*cos(x)*tan(x) = sin(x)*cos(x)*(sin(x)/cos(x)) = sin^2(x).",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_3_06",
+              "stem": "Simplify cos^2(x) - sin^2(x) given that this equals cos(2x).",
+              "options": [
+                "cos(2x)",
+                "2*cos^2(x)",
+                "1",
+                "sin(2x)"
+              ],
+              "correctIndex": 0,
+              "explanation": "cos^2(x) - sin^2(x) = cos(2x) is a standard double angle identity.",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_3_07",
+              "stem": "If sin(x) = 3/5 and x is acute, find cos(x).",
+              "options": [
+                "3/5",
+                "5/3",
+                "2/5",
+                "4/5"
+              ],
+              "correctIndex": 3,
+              "explanation": "Using sin^2(x) + cos^2(x) = 1: cos^2(x) = 1 - 9/25 = 16/25. Since x is acute, cos(x) = 4/5.",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_3_08",
+              "stem": "Show that (sin(x) + cos(x))^2 = 1 + 2*sin(x)*cos(x). What is the maximum value of (sin(x) + cos(x))^2?",
+              "options": [
+                "3",
+                "2",
+                "1",
+                "4"
+              ],
+              "correctIndex": 1,
+              "explanation": "(sin(x) + cos(x))^2 = sin^2(x) + 2*sin(x)*cos(x) + cos^2(x) = 1 + 2*sin(x)*cos(x) = 1 + sin(2x). Maximum of sin(2x) = 1, so maximum = 1 + 1 = 2.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "5.4",
+          "title": "Inverse Trig Functions",
+          "titleCn": "反三角函数",
+          "image": "5_4_inverse_trig_functions.jpg",
+          "questions": [
+            {
+              "id": "q5_4_01",
+              "stem": "What is arcsin(1/2) in radians?",
+              "options": [
+                "pi/4",
+                "pi/6",
+                "pi/2",
+                "pi/3"
+              ],
+              "correctIndex": 1,
+              "explanation": "arcsin(1/2) = pi/6 since sin(pi/6) = 1/2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_4_02",
+              "stem": "What is the range of arctan(x)?",
+              "options": [
+                "(-pi, pi)",
+                "[0, 2*pi]",
+                "(-pi/2, pi/2)",
+                "[0, pi]"
+              ],
+              "correctIndex": 2,
+              "explanation": "The range of arctan is the open interval (-pi/2, pi/2).",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_4_03",
+              "stem": "What is arccos(0)?",
+              "options": [
+                "0",
+                "pi/2",
+                "pi",
+                "2*pi"
+              ],
+              "correctIndex": 1,
+              "explanation": "arccos(0) = pi/2 since cos(pi/2) = 0.",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_4_04",
+              "stem": "What is the domain of arcsin(x)?",
+              "options": [
+                "-1 <= x <= 1",
+                "all real numbers",
+                "x >= 0",
+                "0 <= x <= 1"
+              ],
+              "correctIndex": 0,
+              "explanation": "arcsin(x) is defined only for -1 <= x <= 1 since these are the possible values of sin.",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_4_05",
+              "stem": "Evaluate arctan(1).",
+              "options": [
+                "pi/2",
+                "pi/4",
+                "pi/3",
+                "pi/6"
+              ],
+              "correctIndex": 1,
+              "explanation": "arctan(1) = pi/4 since tan(pi/4) = 1.",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_4_06",
+              "stem": "What is arccos(1/2) in radians?",
+              "options": [
+                "pi/6",
+                "2*pi/3",
+                "pi/3",
+                "pi/4"
+              ],
+              "correctIndex": 2,
+              "explanation": "arccos(1/2) = pi/3 since cos(pi/3) = 1/2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_4_07",
+              "stem": "What is the range of arccos(x)?",
+              "options": [
+                "[0, pi]",
+                "[-pi/2, pi/2]",
+                "(-pi/2, pi/2)",
+                "[0, 2*pi]"
+              ],
+              "correctIndex": 0,
+              "explanation": "The range of arccos is [0, pi], which is the principal value range for the inverse cosine function.",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_4_08",
+              "stem": "Evaluate arcsin(sin(5*pi/6)).",
+              "options": [
+                "-pi/6",
+                "5*pi/6",
+                "7*pi/6",
+                "pi/6"
+              ],
+              "correctIndex": 3,
+              "explanation": "sin(5*pi/6) = sin(pi - pi/6) = sin(pi/6) = 1/2. arcsin(1/2) = pi/6. Note: arcsin returns values in [-pi/2, pi/2], and 5*pi/6 is outside this range, so arcsin(sin(5*pi/6)) = pi/6, not 5*pi/6.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "5.5",
+          "title": "Solving Trig Equations",
+          "titleCn": "解三角方程",
+          "image": "5_5_solving_trig_equations.jpg",
+          "questions": [
+            {
+              "id": "q5_5_01",
+              "stem": "Solve sin(x) = 1/2 for 0 <= x <= 2*pi.",
+              "options": [
+                "x = pi/3 or x = 2*pi/3",
+                "x = pi/6 only",
+                "x = 5*pi/6 only",
+                "x = pi/6 or x = 5*pi/6"
+              ],
+              "correctIndex": 3,
+              "explanation": "sin(x) = 1/2 gives x = pi/6 (first quadrant) and x = pi - pi/6 = 5*pi/6 (second quadrant).",
+              "difficulty": 1
+            },
+            {
+              "id": "q5_5_02",
+              "stem": "Solve cos(x) = -1/2 for 0 <= x <= 2*pi.",
+              "options": [
+                "x = pi/3 or x = 5*pi/3",
+                "x = pi/3 only",
+                "x = 2*pi/3 or x = 4*pi/3",
+                "x = 2*pi/3 only"
+              ],
+              "correctIndex": 2,
+              "explanation": "cos(x) = -1/2 gives x = pi - pi/3 = 2*pi/3 and x = pi + pi/3 = 4*pi/3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_5_03",
+              "stem": "Solve 2*sin^2(x) - 1 = 0 for 0 <= x <= pi.",
+              "options": [
+                "x = pi/4 or x = 3*pi/4",
+                "x = pi/4 only",
+                "x = pi/6 or x = 5*pi/6",
+                "x = pi/3 only"
+              ],
+              "correctIndex": 0,
+              "explanation": "sin^2(x) = 1/2, sin(x) = +/-1/sqrt(2). For 0 <= x <= pi, sin(x) >= 0, so sin(x) = 1/sqrt(2), giving x = pi/4 or x = 3*pi/4.",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_5_04",
+              "stem": "Solve tan(x) = sqrt(3) for 0 <= x <= 2*pi.",
+              "options": [
+                "x = pi/3 only",
+                "x = 2*pi/3 or x = 5*pi/3",
+                "x = pi/3 or x = 4*pi/3",
+                "x = pi/6 or x = 7*pi/6"
+              ],
+              "correctIndex": 2,
+              "explanation": "tan(x) = sqrt(3) gives x = pi/3 (first quadrant) and x = pi + pi/3 = 4*pi/3 (third quadrant).",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_5_05",
+              "stem": "Solve 2*cos(2x) = 1 for 0 <= x <= pi.",
+              "options": [
+                "x = pi/6 only",
+                "x = pi/3 or x = 2*pi/3",
+                "x = pi/6 or x = 5*pi/6",
+                "x = pi/4 or x = 3*pi/4"
+              ],
+              "correctIndex": 2,
+              "explanation": "cos(2x) = 1/2. For 0 <= x <= pi, 0 <= 2x <= 2*pi. cos(2x) = 1/2 gives 2x = pi/3 or 2x = 5*pi/3. So x = pi/6 or x = 5*pi/6.",
+              "difficulty": 3
+            },
+            {
+              "id": "q5_5_06",
+              "stem": "How many solutions does sin(x) = 0.5 have for 0 <= x <= 4*pi?",
+              "options": [
+                "6",
+                "3",
+                "2",
+                "4"
+              ],
+              "correctIndex": 3,
+              "explanation": "In each complete period [0, 2*pi], sin(x) = 0.5 has 2 solutions (pi/6 and 5*pi/6). For 0 <= x <= 4*pi, there are 2 complete periods, giving 2 * 2 = 4 solutions.",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_5_07",
+              "stem": "Solve cos(x) = sqrt(3)/2 for 0 <= x <= 2*pi.",
+              "options": [
+                "x = pi/3 or x = 5*pi/3",
+                "x = pi/6 only",
+                "x = pi/6 or x = 5*pi/6",
+                "x = pi/6 or x = 11*pi/6"
+              ],
+              "correctIndex": 3,
+              "explanation": "cos(x) = sqrt(3)/2 gives the reference angle pi/6. Cosine is positive in Q1 and Q4. So x = pi/6 or x = 2*pi - pi/6 = 11*pi/6.",
+              "difficulty": 2
+            },
+            {
+              "id": "q5_5_08",
+              "stem": "Solve 2*sin^2(x) + sin(x) - 1 = 0 for 0 <= x <= 2*pi.",
+              "options": [
+                "x = pi/6, 5*pi/6, 7*pi/6, or 11*pi/6",
+                "x = pi/6 or 5*pi/6 only",
+                "x = pi/6, 5*pi/6, or 3*pi/2",
+                "x = pi/3 or 2*pi/3"
+              ],
+              "correctIndex": 2,
+              "explanation": "Let u = sin(x). Then 2u^2 + u - 1 = 0, (2u - 1)(u + 1) = 0. So u = 1/2 or u = -1. For sin(x) = 1/2: x = pi/6 or x = 5*pi/6. For sin(x) = -1: x = 3*pi/2. Three solutions total.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch6",
+      "title": "Series",
+      "titleCn": "级数",
+      "knowledgePoints": [
+        {
+          "id": "6.1",
+          "title": "Binomial Expansion",
+          "titleCn": "二项式展开",
+          "image": "6_1_binomial_expansion.jpg",
+          "questions": [
+            {
+              "id": "q6_1_01",
+              "stem": "What is the coefficient of x^2 in the expansion of (1 + x)^5?",
+              "options": [
+                "20",
+                "15",
+                "10",
+                "5"
+              ],
+              "correctIndex": 2,
+              "explanation": "C(5,2) = 5!/(2!3!) = 10.",
+              "difficulty": 1
+            },
+            {
+              "id": "q6_1_02",
+              "stem": "Expand (1 + 2x)^3.",
+              "options": [
+                "1 + 3x + 6x^2 + 8x^3",
+                "1 + 6x + 12x^2 + 8x^3",
+                "1 + 2x + 4x^2 + 8x^3",
+                "1 + 6x + 6x^2 + 8x^3"
+              ],
+              "correctIndex": 1,
+              "explanation": "(1 + 2x)^3 = 1 + 3(2x) + 3(2x)^2 + (2x)^3 = 1 + 6x + 12x^2 + 8x^3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_1_03",
+              "stem": "Find the coefficient of x^3 in the expansion of (2 + x)^6.",
+              "options": [
+                "120",
+                "20",
+                "160",
+                "60"
+              ],
+              "correctIndex": 2,
+              "explanation": "The term is C(6,3) * 2^3 * x^3 = 20 * 8 * x^3 = 160x^3. Coefficient is 160.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_1_04",
+              "stem": "How many terms are in the expansion of (a + b)^n?",
+              "options": [
+                "n",
+                "n^2",
+                "2n",
+                "n + 1"
+              ],
+              "correctIndex": 3,
+              "explanation": "The binomial expansion of (a + b)^n has n + 1 terms.",
+              "difficulty": 1
+            },
+            {
+              "id": "q6_1_05",
+              "stem": "Find the term independent of x in the expansion of (x + 1/x)^4.",
+              "options": [
+                "6",
+                "4",
+                "1",
+                "8"
+              ],
+              "correctIndex": 0,
+              "explanation": "General term: C(4,r) * x^(4-r) * (1/x)^r = C(4,r) * x^(4-2r). Independent of x when 4 - 2r = 0, r = 2. Term = C(4,2) = 6.",
+              "difficulty": 3
+            },
+            {
+              "id": "q6_1_06",
+              "stem": "Find the coefficient of x^3 in the expansion of (1 - 2x)^5.",
+              "options": [
+                "40",
+                "-80",
+                "-40",
+                "80"
+              ],
+              "correctIndex": 1,
+              "explanation": "The x^3 term is C(5,3)*1^2*(-2x)^3 = 10*(-8x^3) = -80x^3. Coefficient is -80.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_1_07",
+              "stem": "In the expansion of (2 + x)^5, what is the coefficient of x^2?",
+              "options": [
+                "160",
+                "80",
+                "40",
+                "20"
+              ],
+              "correctIndex": 1,
+              "explanation": "The x^2 term is C(5,2)*2^3*x^2 = 10*8*x^2 = 80x^2. Coefficient is 80.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_1_08",
+              "stem": "Find the term independent of x in the expansion of (x^2 - 1/x)^6.",
+              "options": [
+                "15",
+                "-20",
+                "20",
+                "-15"
+              ],
+              "correctIndex": 0,
+              "explanation": "General term: C(6,r)*(x^2)^(6-r)*(-1/x)^r = C(6,r)*(-1)^r*x^(12-2r-r) = C(6,r)*(-1)^r*x^(12-3r). Independent of x when 12 - 3r = 0, so r = 4. Term = C(6,4)*(-1)^4 = 15*1 = 15.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "6.2",
+          "title": "Arithmetic Progression",
+          "titleCn": "等差数列",
+          "image": "",
+          "questions": [
+            {
+              "id": "q6_2_01",
+              "stem": "Find the 10th term of the AP: 3, 7, 11, 15, ...",
+              "options": [
+                "39",
+                "41",
+                "35",
+                "43"
+              ],
+              "correctIndex": 0,
+              "explanation": "a = 3, d = 4. T_10 = a + 9d = 3 + 36 = 39.",
+              "difficulty": 1
+            },
+            {
+              "id": "q6_2_02",
+              "stem": "Find the sum of the first 20 terms of the AP: 2, 5, 8, ...",
+              "options": [
+                "590",
+                "610",
+                "600",
+                "570"
+              ],
+              "correctIndex": 1,
+              "explanation": "a = 2, d = 3. S_20 = (20/2)(2*2 + 19*3) = 10(4 + 57) = 10 * 61 = 610.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_2_03",
+              "stem": "The 5th term of an AP is 17 and the 12th term is 45. Find the common difference.",
+              "options": [
+                "4",
+                "3",
+                "5",
+                "7"
+              ],
+              "correctIndex": 0,
+              "explanation": "T_5 = a + 4d = 17 and T_12 = a + 11d = 45. Subtracting: 7d = 28, d = 4.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_2_04",
+              "stem": "How many terms are in the AP: 5, 8, 11, ..., 62?",
+              "options": [
+                "21",
+                "19",
+                "20",
+                "18"
+              ],
+              "correctIndex": 2,
+              "explanation": "T_n = 5 + (n-1)*3 = 62, 3(n-1) = 57, n-1 = 19, n = 20.",
+              "difficulty": 1
+            },
+            {
+              "id": "q6_2_05",
+              "stem": "The sum of an AP is S_n = 3n^2 + 2n. Find the common difference.",
+              "options": [
+                "3",
+                "2",
+                "6",
+                "5"
+              ],
+              "correctIndex": 2,
+              "explanation": "T_1 = S_1 = 5. T_2 = S_2 - S_1 = (12 + 4) - 5 = 11. d = T_2 - T_1 = 11 - 5 = 6.",
+              "difficulty": 3
+            },
+            {
+              "id": "q6_2_06",
+              "stem": "The first term of an AP is 7 and the common difference is -3. Find S_10.",
+              "options": [
+                "-65",
+                "-35",
+                "70",
+                "-70"
+              ],
+              "correctIndex": 0,
+              "explanation": "S_10 = (10/2)(2*7 + 9*(-3)) = 5*(14 - 27) = 5*(-13) = -65.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_2_07",
+              "stem": "An AP has first term a and common difference d. If T_3 = 8 and T_7 = 20, find a.",
+              "options": [
+                "5",
+                "2",
+                "3",
+                "1"
+              ],
+              "correctIndex": 1,
+              "explanation": "T_3 = a + 2d = 8 and T_7 = a + 6d = 20. Subtracting: 4d = 12, d = 3. Then a = 8 - 6 = 2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_2_08",
+              "stem": "The sum of the first n terms of an AP is S_n = n^2 + 4n. Find the 10th term.",
+              "options": [
+                "20",
+                "140",
+                "19",
+                "23"
+              ],
+              "correctIndex": 3,
+              "explanation": "T_n = S_n - S_(n-1) = (n^2 + 4n) - ((n-1)^2 + 4(n-1)) = n^2 + 4n - (n^2 - 2n + 1 + 4n - 4) = n^2 + 4n - n^2 - 2n + 3 = 2n + 3. T_10 = 20 + 3 = 23.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "6.3",
+          "title": "Geometric Progression",
+          "titleCn": "等比数列",
+          "image": "6_3_geometric_progression.jpg",
+          "questions": [
+            {
+              "id": "q6_3_01",
+              "stem": "Find the 6th term of the GP: 2, 6, 18, ...",
+              "options": [
+                "162",
+                "54",
+                "486",
+                "1458"
+              ],
+              "correctIndex": 2,
+              "explanation": "a = 2, r = 3. T_6 = 2 * 3^5 = 2 * 243 = 486.",
+              "difficulty": 1
+            },
+            {
+              "id": "q6_3_02",
+              "stem": "Find the sum of the first 5 terms of the GP: 3, 6, 12, ...",
+              "options": [
+                "93",
+                "90",
+                "96",
+                "48"
+              ],
+              "correctIndex": 0,
+              "explanation": "a = 3, r = 2. S_5 = 3(2^5 - 1)/(2 - 1) = 3 * 31 = 93.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_3_03",
+              "stem": "The 3rd term of a GP is 12 and the 6th term is 96. Find the common ratio.",
+              "options": [
+                "3",
+                "4",
+                "8",
+                "2"
+              ],
+              "correctIndex": 3,
+              "explanation": "T_3 = ar^2 = 12 and T_6 = ar^5 = 96. Dividing: r^3 = 8, r = 2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_3_04",
+              "stem": "In a GP, a = 5 and r = -2. Find T_4.",
+              "options": [
+                "40",
+                "20",
+                "-40",
+                "-20"
+              ],
+              "correctIndex": 2,
+              "explanation": "T_4 = ar^3 = 5 * (-2)^3 = 5 * (-8) = -40.",
+              "difficulty": 1
+            },
+            {
+              "id": "q6_3_05",
+              "stem": "The sum of the first n terms of a GP is S_n = 3^n - 1. Find the common ratio.",
+              "options": [
+                "1/3",
+                "3",
+                "9",
+                "2"
+              ],
+              "correctIndex": 1,
+              "explanation": "T_1 = S_1 = 2. T_2 = S_2 - S_1 = 8 - 2 = 6. r = T_2/T_1 = 6/2 = 3.",
+              "difficulty": 3
+            },
+            {
+              "id": "q6_3_06",
+              "stem": "A GP has first term 4 and common ratio 1/2. Find S_6.",
+              "options": [
+                "63/8",
+                "8",
+                "31/8",
+                "127/16"
+              ],
+              "correctIndex": 0,
+              "explanation": "S_6 = 4*(1 - (1/2)^6)/(1 - 1/2) = 4*(1 - 1/64)/(1/2) = 4*(63/64)/(1/2) = 4*(63/64)*2 = 504/64 = 63/8.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_3_07",
+              "stem": "The 2nd term of a GP is 6 and the 5th term is 162. Find the first term.",
+              "options": [
+                "1",
+                "3",
+                "6",
+                "2"
+              ],
+              "correctIndex": 3,
+              "explanation": "T_2 = ar = 6 and T_5 = ar^4 = 162. Dividing: r^3 = 27, r = 3. Then a = 6/3 = 2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_3_08",
+              "stem": "A GP has a = 1 and r = -2. Find the sum of the first 8 terms.",
+              "options": [
+                "85",
+                "-85",
+                "255",
+                "-255"
+              ],
+              "correctIndex": 1,
+              "explanation": "S_8 = 1*(1 - (-2)^8)/(1 - (-2)) = (1 - 256)/3 = -255/3 = -85.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "6.4",
+          "title": "Sum to Infinity",
+          "titleCn": "无穷等比级数求和",
+          "image": "",
+          "questions": [
+            {
+              "id": "q6_4_01",
+              "stem": "Find the sum to infinity of the GP: 8, 4, 2, 1, ...",
+              "options": [
+                "12",
+                "15",
+                "16",
+                "32"
+              ],
+              "correctIndex": 2,
+              "explanation": "a = 8, r = 1/2. S_inf = a/(1-r) = 8/(1/2) = 16.",
+              "difficulty": 1
+            },
+            {
+              "id": "q6_4_02",
+              "stem": "A GP has a = 10 and r = -1/3. Find the sum to infinity.",
+              "options": [
+                "30",
+                "10/3",
+                "10",
+                "15/2"
+              ],
+              "correctIndex": 3,
+              "explanation": "S_inf = 10/(1-(-1/3)) = 10/(4/3) = 30/4 = 15/2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_4_03",
+              "stem": "For what values of r does a GP have a finite sum to infinity?",
+              "options": [
+                "|r| < 1",
+                "r < 1",
+                "r > -1",
+                "r != 1"
+              ],
+              "correctIndex": 0,
+              "explanation": "A GP converges (has a finite sum to infinity) if and only if |r| < 1.",
+              "difficulty": 1
+            },
+            {
+              "id": "q6_4_04",
+              "stem": "The sum to infinity of a GP is 12 and the first term is 8. Find the common ratio.",
+              "options": [
+                "1/3",
+                "1/2",
+                "1/4",
+                "2/3"
+              ],
+              "correctIndex": 0,
+              "explanation": "S_inf = a/(1-r): 12 = 8/(1-r), 1-r = 2/3, r = 1/3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_4_05",
+              "stem": "Express 0.272727... as a fraction using sum to infinity.",
+              "options": [
+                "27/110",
+                "3/11",
+                "9/33",
+                "27/100"
+              ],
+              "correctIndex": 1,
+              "explanation": "0.272727... = 27/100 + 27/10000 + ... = (27/100)/(1 - 1/100) = (27/100)/(99/100) = 27/99 = 3/11.",
+              "difficulty": 3
+            },
+            {
+              "id": "q6_4_06",
+              "stem": "Find the sum to infinity of the GP: 12, -6, 3, -3/2, ...",
+              "options": [
+                "24",
+                "4",
+                "8",
+                "6"
+              ],
+              "correctIndex": 2,
+              "explanation": "a = 12, r = -6/12 = -1/2. |r| < 1 so the sum converges. S_inf = 12/(1 - (-1/2)) = 12/(3/2) = 8.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_4_07",
+              "stem": "A GP has sum to infinity 20. If the common ratio is 3/5, find the first term.",
+              "options": [
+                "8",
+                "4",
+                "10",
+                "12"
+              ],
+              "correctIndex": 0,
+              "explanation": "S_inf = a/(1 - r): 20 = a/(1 - 3/5) = a/(2/5). So a = 20 * 2/5 = 8.",
+              "difficulty": 2
+            },
+            {
+              "id": "q6_4_08",
+              "stem": "The sum to infinity of a GP is 4 times its first term. Find the common ratio.",
+              "options": [
+                "1/2",
+                "3/4",
+                "1/4",
+                "2/3"
+              ],
+              "correctIndex": 1,
+              "explanation": "S_inf = a/(1 - r) = 4a. So 1/(1 - r) = 4, hence 1 - r = 1/4, and r = 3/4. Check: |3/4| < 1, so the GP converges.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch7",
+      "title": "Differentiation",
+      "titleCn": "微分",
+      "knowledgePoints": [
+        {
+          "id": "7.1",
+          "title": "The Derivative",
+          "titleCn": "导数",
+          "image": "7_1_the_derivative.jpg",
+          "questions": [
+            {
+              "id": "q7_1_01",
+              "stem": "Differentiate y = x^5 with respect to x.",
+              "options": [
+                "5x^5",
+                "4x^5",
+                "5x^4",
+                "x^4"
+              ],
+              "correctIndex": 2,
+              "explanation": "Using the power rule: dy/dx = 5x^4.",
+              "difficulty": 1
+            },
+            {
+              "id": "q7_1_02",
+              "stem": "Find dy/dx if y = 3x^2 + 2x - 7.",
+              "options": [
+                "3x + 2",
+                "6x + 2",
+                "6x^2 + 2",
+                "6x - 7"
+              ],
+              "correctIndex": 1,
+              "explanation": "dy/dx = 6x + 2. The derivative of the constant -7 is 0.",
+              "difficulty": 1
+            },
+            {
+              "id": "q7_1_03",
+              "stem": "Differentiate y = 4/x^2 with respect to x.",
+              "options": [
+                "8/x^3",
+                "-4/x^3",
+                "-8/x^3",
+                "-8/x"
+              ],
+              "correctIndex": 2,
+              "explanation": "y = 4x^(-2), dy/dx = 4*(-2)*x^(-3) = -8x^(-3) = -8/x^3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_1_04",
+              "stem": "Find f'(x) if f(x) = sqrt(x).",
+              "options": [
+                "1/sqrt(x)",
+                "1/(2*sqrt(x))",
+                "sqrt(x)/2",
+                "2*sqrt(x)"
+              ],
+              "correctIndex": 1,
+              "explanation": "f(x) = x^(1/2), f'(x) = (1/2)x^(-1/2) = 1/(2*sqrt(x)).",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_1_05",
+              "stem": "Differentiate y = 2x^3 - x^(-1) with respect to x.",
+              "options": [
+                "6x^2 - x^(-2)",
+                "6x^2 + x^(-2)",
+                "6x^2 + 1",
+                "2x^2 - 1"
+              ],
+              "correctIndex": 1,
+              "explanation": "dy/dx = 6x^2 - (-1)x^(-2) = 6x^2 + x^(-2).",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_1_06",
+              "stem": "Differentiate y = 5x^4 - 2x^3 + x with respect to x.",
+              "options": [
+                "20x^3 - 6x^2 + 1",
+                "5x^3 - 2x^2 + 1",
+                "20x^3 - 6x^2",
+                "20x^4 - 6x^3 + x"
+              ],
+              "correctIndex": 0,
+              "explanation": "dy/dx = 5*4x^3 - 2*3x^2 + 1 = 20x^3 - 6x^2 + 1.",
+              "difficulty": 1
+            },
+            {
+              "id": "q7_1_07",
+              "stem": "Find f'(x) if f(x) = 3/sqrt(x).",
+              "options": [
+                "3/(2*sqrt(x))",
+                "-3/sqrt(x)",
+                "3/(2*x^(3/2))",
+                "-3/(2*x^(3/2))"
+              ],
+              "correctIndex": 3,
+              "explanation": "f(x) = 3x^(-1/2). f'(x) = 3*(-1/2)*x^(-3/2) = -3/(2*x^(3/2)).",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_1_08",
+              "stem": "Given y = 2x^3 - 9x^2 + 12x - 4, find the value of dy/dx when x = 2.",
+              "options": [
+                "4",
+                "12",
+                "-4",
+                "0"
+              ],
+              "correctIndex": 3,
+              "explanation": "dy/dx = 6x^2 - 18x + 12. At x = 2: dy/dx = 6(4) - 18(2) + 12 = 24 - 36 + 12 = 0.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "7.2",
+          "title": "Differentiation Rules & Chain Rule",
+          "titleCn": "微分法则与链式法则",
+          "image": "7_2_differentiation_rules.jpg",
+          "questions": [
+            {
+              "id": "q7_2_01",
+              "stem": "Differentiate y = (3x + 1)^4 using the chain rule.",
+              "options": [
+                "4(3x + 1)^3",
+                "(3x + 1)^3",
+                "3(3x + 1)^4",
+                "12(3x + 1)^3"
+              ],
+              "correctIndex": 3,
+              "explanation": "dy/dx = 4(3x + 1)^3 * 3 = 12(3x + 1)^3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_2_02",
+              "stem": "Find dy/dx if y = (2x^2 - 1)^3.",
+              "options": [
+                "6x(2x^2 - 1)^2",
+                "12x(2x^2 - 1)^2",
+                "3(2x^2 - 1)^2",
+                "6(2x^2 - 1)^2"
+              ],
+              "correctIndex": 1,
+              "explanation": "dy/dx = 3(2x^2 - 1)^2 * 4x = 12x(2x^2 - 1)^2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_2_03",
+              "stem": "Differentiate y = 1/(2x + 3)^2 with respect to x.",
+              "options": [
+                "2/(2x + 3)^3",
+                "-2/(2x + 3)^3",
+                "-4/(2x + 3)^2",
+                "-4/(2x + 3)^3"
+              ],
+              "correctIndex": 3,
+              "explanation": "y = (2x + 3)^(-2). dy/dx = -2(2x + 3)^(-3) * 2 = -4(2x + 3)^(-3) = -4/(2x + 3)^3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_2_04",
+              "stem": "Find dy/dx if y = sqrt(5x - 2).",
+              "options": [
+                "10/sqrt(5x - 2)",
+                "1/(2*sqrt(5x - 2))",
+                "5*sqrt(5x - 2)",
+                "5/(2*sqrt(5x - 2))"
+              ],
+              "correctIndex": 3,
+              "explanation": "y = (5x - 2)^(1/2). dy/dx = (1/2)(5x - 2)^(-1/2) * 5 = 5/(2*sqrt(5x - 2)).",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_2_05",
+              "stem": "Differentiate y = (x^3 + 2)^5.",
+              "options": [
+                "5x^3(x^3 + 2)^4",
+                "15x^2(x^3 + 2)^4",
+                "5(x^3 + 2)^4",
+                "3x^2(x^3 + 2)^4"
+              ],
+              "correctIndex": 1,
+              "explanation": "dy/dx = 5(x^3 + 2)^4 * 3x^2 = 15x^2(x^3 + 2)^4.",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_2_06",
+              "stem": "Differentiate y = (4x - 5)^3 using the chain rule.",
+              "options": [
+                "12(4x - 5)^2",
+                "4(4x - 5)^2",
+                "12(4x - 5)^3",
+                "3(4x - 5)^2"
+              ],
+              "correctIndex": 0,
+              "explanation": "dy/dx = 3(4x - 5)^2 * 4 = 12(4x - 5)^2.",
+              "difficulty": 1
+            },
+            {
+              "id": "q7_2_07",
+              "stem": "Find dy/dx if y = 1/sqrt(3x + 1).",
+              "options": [
+                "-1/(2*(3x + 1)^(3/2))",
+                "-3/(2*(3x + 1)^(3/2))",
+                "3/(2*sqrt(3x + 1))",
+                "3/sqrt(3x + 1)"
+              ],
+              "correctIndex": 1,
+              "explanation": "y = (3x + 1)^(-1/2). dy/dx = (-1/2)(3x + 1)^(-3/2) * 3 = -3/(2*(3x + 1)^(3/2)).",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_2_08",
+              "stem": "Given y = (x^2 + 1)^4, find the value of dy/dx when x = 1.",
+              "options": [
+                "32",
+                "128",
+                "16",
+                "64"
+              ],
+              "correctIndex": 3,
+              "explanation": "dy/dx = 4(x^2 + 1)^3 * 2x = 8x(x^2 + 1)^3. At x = 1: dy/dx = 8(1)(1 + 1)^3 = 8 * 8 = 64.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "7.3",
+          "title": "Tangents, Normals & Increasing/Decreasing",
+          "titleCn": "切线、法线与增减性",
+          "image": "",
+          "questions": [
+            {
+              "id": "q7_3_01",
+              "stem": "Find the gradient of the tangent to y = x^2 - 3x at x = 2.",
+              "options": [
+                "4",
+                "2",
+                "-1",
+                "1"
+              ],
+              "correctIndex": 3,
+              "explanation": "dy/dx = 2x - 3. At x = 2: gradient = 4 - 3 = 1.",
+              "difficulty": 1
+            },
+            {
+              "id": "q7_3_02",
+              "stem": "Find the equation of the tangent to y = x^3 at the point (1, 1).",
+              "options": [
+                "y = 3x + 1",
+                "y = 3x - 2",
+                "y = 3x - 1",
+                "y = x + 1"
+              ],
+              "correctIndex": 1,
+              "explanation": "dy/dx = 3x^2. At x = 1: gradient = 3. Tangent: y - 1 = 3(x - 1), y = 3x - 2.",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_3_03",
+              "stem": "The gradient of the normal to y = x^2 at x = 3 is:",
+              "options": [
+                "-1/6",
+                "6",
+                "1/6",
+                "-6"
+              ],
+              "correctIndex": 0,
+              "explanation": "dy/dx = 2x. At x = 3, tangent gradient = 6. Normal gradient = -1/6.",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_3_04",
+              "stem": "For which values of x is f(x) = x^3 - 3x increasing?",
+              "options": [
+                "-1 < x < 1",
+                "x > 0",
+                "x > 1 only",
+                "x < -1 or x > 1"
+              ],
+              "correctIndex": 3,
+              "explanation": "f'(x) = 3x^2 - 3 = 3(x^2 - 1) = 3(x-1)(x+1). f'(x) > 0 when x < -1 or x > 1.",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_3_05",
+              "stem": "Find the equation of the normal to y = 4x - x^2 at x = 1.",
+              "options": [
+                "y = 2x - 1",
+                "y = 2x + 1",
+                "y = -x/2 + 7/2",
+                "y = -x/2 + 1"
+              ],
+              "correctIndex": 2,
+              "explanation": "dy/dx = 4 - 2x. At x = 1: tangent gradient = 2, normal gradient = -1/2. y-value = 4 - 1 = 3. Normal: y - 3 = -1/2(x - 1), y = -x/2 + 1/2 + 3 = -x/2 + 7/2.",
+              "difficulty": 3
+            },
+            {
+              "id": "q7_3_06",
+              "stem": "Find the equation of the tangent to y = x^2 + 1 at x = 2.",
+              "options": [
+                "y = 4x - 3",
+                "y = 4x - 5",
+                "y = 4x + 1",
+                "y = 2x + 1"
+              ],
+              "correctIndex": 0,
+              "explanation": "dy/dx = 2x. At x = 2: gradient = 4, y = 4 + 1 = 5. Tangent: y - 5 = 4(x - 2), y = 4x - 3.",
+              "difficulty": 1
+            },
+            {
+              "id": "q7_3_07",
+              "stem": "Find the equation of the normal to y = x^3 at the point (2, 8).",
+              "options": [
+                "y = -x/12 + 8",
+                "y = -x/12 + 97/12",
+                "y = 12x - 16",
+                "y = -x/12 + 49/6"
+              ],
+              "correctIndex": 3,
+              "explanation": "dy/dx = 3x^2. At x = 2: tangent gradient = 12. Normal gradient = -1/12. Normal: y - 8 = (-1/12)(x - 2), y = -x/12 + 2/12 + 8 = -x/12 + 1/6 + 48/6 = -x/12 + 49/6.",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_3_08",
+              "stem": "The curve y = x^3 - 6x^2 + 9x + 1 is decreasing for:",
+              "options": [
+                "1 < x < 3",
+                "x > 3 only",
+                "x < 1 or x > 3",
+                "x < 1 only"
+              ],
+              "correctIndex": 0,
+              "explanation": "dy/dx = 3x^2 - 12x + 9 = 3(x^2 - 4x + 3) = 3(x - 1)(x - 3). dy/dx < 0 when 1 < x < 3, so the curve is decreasing for 1 < x < 3.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "7.4",
+          "title": "Stationary Points & Second Derivative",
+          "titleCn": "驻点与二阶导数",
+          "image": "7_4_stationary_points.jpg",
+          "questions": [
+            {
+              "id": "q7_4_01",
+              "stem": "Find the x-coordinates of the stationary points of y = x^3 - 3x.",
+              "options": [
+                "x = 0 only",
+                "x = 1 and x = -1",
+                "x = 3 only",
+                "x = 0 and x = 3"
+              ],
+              "correctIndex": 1,
+              "explanation": "dy/dx = 3x^2 - 3 = 0, x^2 = 1, x = 1 or x = -1.",
+              "difficulty": 1
+            },
+            {
+              "id": "q7_4_02",
+              "stem": "Determine the nature of the stationary point at x = 1 for y = x^3 - 3x.",
+              "options": [
+                "Minimum",
+                "Point of inflection",
+                "Maximum",
+                "Cannot determine"
+              ],
+              "correctIndex": 0,
+              "explanation": "d^2y/dx^2 = 6x. At x = 1: d^2y/dx^2 = 6 > 0, so it is a minimum.",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_4_03",
+              "stem": "Find the stationary point of y = (x - 2)^2 + 5 and state its nature.",
+              "options": [
+                "(2, -5), maximum",
+                "(2, 5), maximum",
+                "(-2, 5), minimum",
+                "(2, 5), minimum"
+              ],
+              "correctIndex": 3,
+              "explanation": "dy/dx = 2(x - 2) = 0 gives x = 2, y = 5. d^2y/dx^2 = 2 > 0, so minimum at (2, 5).",
+              "difficulty": 1
+            },
+            {
+              "id": "q7_4_04",
+              "stem": "Find the maximum value of y = 6x - x^2.",
+              "options": [
+                "9",
+                "3",
+                "6",
+                "12"
+              ],
+              "correctIndex": 0,
+              "explanation": "dy/dx = 6 - 2x = 0, x = 3. d^2y/dx^2 = -2 < 0, so maximum. y(3) = 18 - 9 = 9.",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_4_05",
+              "stem": "The curve y = 2x^3 - 9x^2 + 12x has stationary points at x = 1 and x = 2. Which is the maximum?",
+              "options": [
+                "Neither is a maximum",
+                "x = 2",
+                "x = 1",
+                "Both are maxima"
+              ],
+              "correctIndex": 2,
+              "explanation": "d^2y/dx^2 = 12x - 18. At x = 1: 12 - 18 = -6 < 0 (maximum). At x = 2: 24 - 18 = 6 > 0 (minimum).",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_4_06",
+              "stem": "Find the y-coordinate of the stationary point of y = x^2 - 6x + 10.",
+              "options": [
+                "1",
+                "10",
+                "3",
+                "-1"
+              ],
+              "correctIndex": 0,
+              "explanation": "dy/dx = 2x - 6 = 0 gives x = 3. y = 9 - 18 + 10 = 1.",
+              "difficulty": 1
+            },
+            {
+              "id": "q7_4_07",
+              "stem": "The curve y = x^3 - 12x has a minimum point. Find its coordinates.",
+              "options": [
+                "(-2, 16)",
+                "(2, 16)",
+                "(-2, -16)",
+                "(2, -16)"
+              ],
+              "correctIndex": 3,
+              "explanation": "dy/dx = 3x^2 - 12 = 0 gives x^2 = 4, x = 2 or x = -2. d^2y/dx^2 = 6x. At x = 2: 12 > 0 (minimum). y(2) = 8 - 24 = -16. Minimum at (2, -16).",
+              "difficulty": 2
+            },
+            {
+              "id": "q7_4_08",
+              "stem": "A rectangular box with no lid has a square base of side x cm and height h cm. The total surface area is 48 cm^2. Find the value of x that gives the maximum volume.",
+              "options": [
+                "3",
+                "6",
+                "2",
+                "4"
+              ],
+              "correctIndex": 3,
+              "explanation": "Surface area: x^2 + 4xh = 48, so h = (48 - x^2)/(4x). Volume V = x^2*h = x^2*(48 - x^2)/(4x) = x(48 - x^2)/4 = 12x - x^3/4. dV/dx = 12 - 3x^2/4 = 0, 3x^2/4 = 12, x^2 = 16, x = 4 (positive). d^2V/dx^2 = -3x/2. At x = 4: -6 < 0, confirming maximum.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch8",
+      "title": "Integration",
+      "titleCn": "积分",
+      "knowledgePoints": [
+        {
+          "id": "8.1",
+          "title": "Indefinite Integration",
+          "titleCn": "不定积分",
+          "image": "8_1_indefinite_integration.jpg",
+          "questions": [
+            {
+              "id": "q8_1_01",
+              "stem": "Find the integral of 3x^2 with respect to x.",
+              "options": [
+                "3x^3 + C",
+                "x^3/3 + C",
+                "6x + C",
+                "x^3 + C"
+              ],
+              "correctIndex": 3,
+              "explanation": "Integral of 3x^2 = 3 * x^3/3 + C = x^3 + C.",
+              "difficulty": 1
+            },
+            {
+              "id": "q8_1_02",
+              "stem": "Integrate 4x^3 - 2x + 5 with respect to x.",
+              "options": [
+                "x^4 - x^2 + 5x + C",
+                "4x^4/3 - x^2 + 5x + C",
+                "4x^4 - x^2 + 5x + C",
+                "x^4 - 2x^2 + 5x + C"
+              ],
+              "correctIndex": 0,
+              "explanation": "Integral = 4*x^4/4 - 2*x^2/2 + 5x + C = x^4 - x^2 + 5x + C.",
+              "difficulty": 1
+            },
+            {
+              "id": "q8_1_03",
+              "stem": "Find the integral of 1/x^2 with respect to x.",
+              "options": [
+                "-1/x + C",
+                "ln(x^2) + C",
+                "1/x + C",
+                "-2/x^3 + C"
+              ],
+              "correctIndex": 0,
+              "explanation": "1/x^2 = x^(-2). Integral = x^(-1)/(-1) + C = -1/x + C.",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_1_04",
+              "stem": "Integrate (2x + 3)^4 with respect to x.",
+              "options": [
+                "2(2x + 3)^5 + C",
+                "(2x + 3)^5/8 + C",
+                "(2x + 3)^5/10 + C",
+                "(2x + 3)^5/5 + C"
+              ],
+              "correctIndex": 2,
+              "explanation": "Integral of (2x + 3)^4 = (2x + 3)^5 / (5 * 2) + C = (2x + 3)^5/10 + C.",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_1_05",
+              "stem": "Find the integral of 6*sqrt(x) with respect to x.",
+              "options": [
+                "4x^(3/2) + C",
+                "3x^(3/2) + C",
+                "6x^(3/2) + C",
+                "9x^(3/2) + C"
+              ],
+              "correctIndex": 0,
+              "explanation": "6*sqrt(x) = 6x^(1/2). Integral = 6 * x^(3/2)/(3/2) + C = 6 * (2/3) * x^(3/2) + C = 4x^(3/2) + C.",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_1_06",
+              "stem": "Find the integral of (3x + 1)^5 with respect to x.",
+              "options": [
+                "(3x + 1)^6/18 + C",
+                "3(3x + 1)^6/6 + C",
+                "(3x + 1)^6/6 + C",
+                "(3x + 1)^6/3 + C"
+              ],
+              "correctIndex": 0,
+              "explanation": "Integral of (3x + 1)^5 = (3x + 1)^6 / (6 * 3) + C = (3x + 1)^6/18 + C.",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_1_07",
+              "stem": "Integrate 2/sqrt(x) with respect to x.",
+              "options": [
+                "2*sqrt(x) + C",
+                "sqrt(x) + C",
+                "-2/sqrt(x) + C",
+                "4*sqrt(x) + C"
+              ],
+              "correctIndex": 3,
+              "explanation": "2/sqrt(x) = 2x^(-1/2). Integral = 2 * x^(1/2)/(1/2) + C = 4x^(1/2) + C = 4*sqrt(x) + C.",
+              "difficulty": 1
+            },
+            {
+              "id": "q8_1_08",
+              "stem": "Given that dy/dx = 6x^2 - 4x + 1 and y = 3 when x = 1, find y in terms of x.",
+              "options": [
+                "2x^3 - 2x^2 + x - 2",
+                "2x^3 - 2x^2 + x + 2",
+                "2x^3 - 2x^2 + x + 3",
+                "6x^3 - 4x^2 + x + 2"
+              ],
+              "correctIndex": 1,
+              "explanation": "y = integral of (6x^2 - 4x + 1) dx = 2x^3 - 2x^2 + x + C. When x = 1: 3 = 2 - 2 + 1 + C, so C = 2. Therefore y = 2x^3 - 2x^2 + x + 2.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "8.2",
+          "title": "Evaluating Definite Integrals",
+          "titleCn": "计算定积分",
+          "image": "8_2_definite_integrals.jpg",
+          "questions": [
+            {
+              "id": "q8_2_01",
+              "stem": "Evaluate the integral of 2x dx from 1 to 3.",
+              "options": [
+                "10",
+                "8",
+                "6",
+                "4"
+              ],
+              "correctIndex": 1,
+              "explanation": "Integral of 2x = x^2. [x^2] from 1 to 3 = 9 - 1 = 8.",
+              "difficulty": 1
+            },
+            {
+              "id": "q8_2_02",
+              "stem": "Evaluate the integral of x^2 dx from 0 to 2.",
+              "options": [
+                "4",
+                "2",
+                "4/3",
+                "8/3"
+              ],
+              "correctIndex": 3,
+              "explanation": "Integral of x^2 = x^3/3. [x^3/3] from 0 to 2 = 8/3 - 0 = 8/3.",
+              "difficulty": 1
+            },
+            {
+              "id": "q8_2_03",
+              "stem": "Evaluate the integral of (3x^2 + 1) dx from -1 to 2.",
+              "options": [
+                "6",
+                "9",
+                "15",
+                "12"
+              ],
+              "correctIndex": 3,
+              "explanation": "Integral = x^3 + x. [x^3 + x] from -1 to 2 = (8 + 2) - (-1 - 1) = 10 - (-2) = 12.",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_2_04",
+              "stem": "Evaluate the integral of 1/x^2 dx from 1 to 4.",
+              "options": [
+                "4/3",
+                "1",
+                "1/4",
+                "3/4"
+              ],
+              "correctIndex": 3,
+              "explanation": "Integral of x^(-2) = -x^(-1) = -1/x. [-1/x] from 1 to 4 = -1/4 - (-1) = -1/4 + 1 = 3/4.",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_2_05",
+              "stem": "Evaluate the integral of (x + 1)^2 dx from 0 to 2.",
+              "options": [
+                "10",
+                "8",
+                "26/3",
+                "6"
+              ],
+              "correctIndex": 2,
+              "explanation": "(x+1)^2 = x^2 + 2x + 1. Integral = x^3/3 + x^2 + x. From 0 to 2: (8/3 + 4 + 2) - 0 = 8/3 + 6 = 26/3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_2_06",
+              "stem": "Evaluate the integral of 3x^2 dx from 1 to 2.",
+              "options": [
+                "8",
+                "9",
+                "7",
+                "3"
+              ],
+              "correctIndex": 2,
+              "explanation": "Integral of 3x^2 = x^3. [x^3] from 1 to 2 = 8 - 1 = 7.",
+              "difficulty": 1
+            },
+            {
+              "id": "q8_2_07",
+              "stem": "Evaluate the integral of (4x - 1) dx from 0 to 3.",
+              "options": [
+                "15",
+                "9",
+                "12",
+                "18"
+              ],
+              "correctIndex": 0,
+              "explanation": "Integral of (4x - 1) = 2x^2 - x. [2x^2 - x] from 0 to 3 = (18 - 3) - 0 = 15.",
+              "difficulty": 1
+            },
+            {
+              "id": "q8_2_08",
+              "stem": "Evaluate the integral of (x + 2)^3 dx from -1 to 0.",
+              "options": [
+                "4",
+                "15/4",
+                "16/4",
+                "1/4"
+              ],
+              "correctIndex": 1,
+              "explanation": "Integral of (x + 2)^3 = (x + 2)^4/4. From -1 to 0: [(0 + 2)^4/4] - [(-1 + 2)^4/4] = 16/4 - 1/4 = 15/4.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "8.3",
+          "title": "Area Under a Curve",
+          "titleCn": "曲线下面积",
+          "image": "8_3_area_under_curve.jpg",
+          "questions": [
+            {
+              "id": "q8_3_01",
+              "stem": "Find the area between y = x^2, the x-axis, x = 0 and x = 3.",
+              "options": [
+                "9",
+                "27",
+                "6",
+                "3"
+              ],
+              "correctIndex": 0,
+              "explanation": "Area = integral of x^2 dx from 0 to 3 = [x^3/3] from 0 to 3 = 27/3 = 9.",
+              "difficulty": 1
+            },
+            {
+              "id": "q8_3_02",
+              "stem": "Find the area enclosed between y = x^2 and y = x.",
+              "options": [
+                "1",
+                "1/2",
+                "1/6",
+                "1/3"
+              ],
+              "correctIndex": 2,
+              "explanation": "Intersection: x^2 = x, x(x-1) = 0, x = 0 or x = 1. Area = integral from 0 to 1 of (x - x^2) dx = [x^2/2 - x^3/3] from 0 to 1 = 1/2 - 1/3 = 1/6.",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_3_03",
+              "stem": "The area between y = 4 - x^2 and the x-axis (where y >= 0) is:",
+              "options": [
+                "8",
+                "16",
+                "32/3",
+                "16/3"
+              ],
+              "correctIndex": 2,
+              "explanation": "y = 0 when x = +/-2. Area = integral from -2 to 2 of (4 - x^2) dx = [4x - x^3/3] from -2 to 2 = (8 - 8/3) - (-8 + 8/3) = 16 - 16/3 = 32/3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_3_04",
+              "stem": "Find the area between y = x^2 and the x-axis from x = -1 to x = 2.",
+              "options": [
+                "9/3",
+                "7/3",
+                "3",
+                "8/3"
+              ],
+              "correctIndex": 2,
+              "explanation": "Since y = x^2 >= 0 for all x, area = integral from -1 to 2 of x^2 dx = [x^3/3] from -1 to 2 = 8/3 - (-1/3) = 9/3 = 3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_3_05",
+              "stem": "Find the area enclosed by y = 6x - x^2 and the x-axis.",
+              "options": [
+                "18",
+                "72",
+                "9",
+                "36"
+              ],
+              "correctIndex": 3,
+              "explanation": "y = 0 when x(6-x) = 0, so x = 0 or x = 6. Area = integral from 0 to 6 of (6x - x^2) dx = [3x^2 - x^3/3] from 0 to 6 = 108 - 72 = 36.",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_3_06",
+              "stem": "Find the area between y = x^3, the x-axis, x = 0 and x = 2.",
+              "options": [
+                "8",
+                "16",
+                "2",
+                "4"
+              ],
+              "correctIndex": 3,
+              "explanation": "Area = integral from 0 to 2 of x^3 dx = [x^4/4] from 0 to 2 = 16/4 = 4.",
+              "difficulty": 1
+            },
+            {
+              "id": "q8_3_07",
+              "stem": "Find the area enclosed between y = x^2 and y = 2x.",
+              "options": [
+                "4/3",
+                "1/3",
+                "2/3",
+                "8/3"
+              ],
+              "correctIndex": 0,
+              "explanation": "Intersection: x^2 = 2x, x^2 - 2x = 0, x(x - 2) = 0, so x = 0 or x = 2. Area = integral from 0 to 2 of (2x - x^2) dx = [x^2 - x^3/3] from 0 to 2 = (4 - 8/3) - 0 = 4/3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_3_08",
+              "stem": "The area enclosed by y = x^2 - 4x + 3 and the x-axis (where the curve is below the x-axis) is:",
+              "options": [
+                "-4/3",
+                "2/3",
+                "4/3",
+                "8/3"
+              ],
+              "correctIndex": 2,
+              "explanation": "y = 0 when x^2 - 4x + 3 = 0, (x - 1)(x - 3) = 0, x = 1 or x = 3. The parabola opens upward, so y < 0 between x = 1 and x = 3. Area = |integral from 1 to 3 of (x^2 - 4x + 3) dx| = |[x^3/3 - 2x^2 + 3x] from 1 to 3| = |(9 - 18 + 9) - (1/3 - 2 + 3)| = |0 - 4/3| = 4/3.",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "8.4",
+          "title": "Volume of Revolution",
+          "titleCn": "旋转体体积",
+          "image": "8_4_volume_of_revolution.jpg",
+          "questions": [
+            {
+              "id": "q8_4_01",
+              "stem": "Find the volume when y = x^2 is rotated about the x-axis from x = 0 to x = 2.",
+              "options": [
+                "32*pi",
+                "32*pi/5",
+                "4*pi",
+                "16*pi/5"
+              ],
+              "correctIndex": 1,
+              "explanation": "V = pi * integral of y^2 dx from 0 to 2 = pi * integral of x^4 dx = pi * [x^5/5] from 0 to 2 = 32*pi/5.",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_4_02",
+              "stem": "The volume of revolution formula about the x-axis is:",
+              "options": [
+                "V = integral of y^2 dx",
+                "V = 2*pi * integral of y dx",
+                "V = pi * integral of y dx",
+                "V = pi * integral of y^2 dx"
+              ],
+              "correctIndex": 3,
+              "explanation": "The volume of revolution about the x-axis is V = pi * integral of y^2 dx.",
+              "difficulty": 1
+            },
+            {
+              "id": "q8_4_03",
+              "stem": "Find the volume when y = 3 is rotated about the x-axis from x = 0 to x = 4.",
+              "options": [
+                "9*pi",
+                "36*pi",
+                "12*pi",
+                "144*pi"
+              ],
+              "correctIndex": 1,
+              "explanation": "V = pi * integral from 0 to 4 of 9 dx = pi * 36 = 36*pi. This is a cylinder of radius 3 and height 4.",
+              "difficulty": 1
+            },
+            {
+              "id": "q8_4_04",
+              "stem": "Find the volume when y = sqrt(x) is rotated about the x-axis from x = 0 to x = 4.",
+              "options": [
+                "16*pi",
+                "2*pi",
+                "4*pi",
+                "8*pi"
+              ],
+              "correctIndex": 3,
+              "explanation": "V = pi * integral from 0 to 4 of x dx = pi * [x^2/2] from 0 to 4 = pi * 8 = 8*pi.",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_4_05",
+              "stem": "Find the volume when y = 1/x is rotated about the x-axis from x = 1 to x = 3.",
+              "options": [
+                "pi",
+                "2*pi/3",
+                "3*pi",
+                "pi/3"
+              ],
+              "correctIndex": 1,
+              "explanation": "V = pi * integral from 1 to 3 of 1/x^2 dx = pi * [-1/x] from 1 to 3 = pi * (-1/3 + 1) = 2*pi/3.",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_4_06",
+              "stem": "Find the volume when y = 2x is rotated about the x-axis from x = 0 to x = 3.",
+              "options": [
+                "9*pi",
+                "18*pi",
+                "36*pi",
+                "12*pi"
+              ],
+              "correctIndex": 2,
+              "explanation": "V = pi * integral from 0 to 3 of (2x)^2 dx = pi * integral from 0 to 3 of 4x^2 dx = pi * [4x^3/3] from 0 to 3 = pi * 36 = 36*pi.",
+              "difficulty": 1
+            },
+            {
+              "id": "q8_4_07",
+              "stem": "Find the volume when y = x^2 + 1 is rotated about the x-axis from x = 0 to x = 1.",
+              "options": [
+                "28*pi/15",
+                "8*pi/15",
+                "pi",
+                "2*pi"
+              ],
+              "correctIndex": 0,
+              "explanation": "V = pi * integral from 0 to 1 of (x^2 + 1)^2 dx = pi * integral of (x^4 + 2x^2 + 1) dx = pi * [x^5/5 + 2x^3/3 + x] from 0 to 1 = pi * (1/5 + 2/3 + 1) = pi * (3/15 + 10/15 + 15/15) = 28*pi/15.",
+              "difficulty": 2
+            },
+            {
+              "id": "q8_4_08",
+              "stem": "The region between y = x, the x-axis, x = 0 and x = 2 is rotated 360 degrees about the x-axis. Find the volume.",
+              "options": [
+                "2*pi",
+                "4*pi/3",
+                "8*pi/3",
+                "4*pi"
+              ],
+              "correctIndex": 2,
+              "explanation": "V = pi * integral from 0 to 2 of x^2 dx = pi * [x^3/3] from 0 to 2 = pi * 8/3 = 8*pi/3. This is the volume of a cone with radius 2 and height 2: V = (1/3)*pi*r^2*h = (1/3)*pi*4*2 = 8*pi/3.",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
