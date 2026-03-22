@@ -10,7 +10,7 @@ struct SeedMomentView: View {
     @State private var inputText = ""
     @State private var showSeedAnimation = false
     @State private var showSubjectSheet = false
-    @FocusState private var inputFocused: Bool
+    // @FocusState removed — using AutoFocusTextField with UIKit becomeFirstResponder instead
 
     struct OnboardingMessage: Identifiable {
         let id = UUID()
@@ -98,19 +98,16 @@ struct SeedMomentView: View {
                         } else {
                             // Text input for name & goals
                             HStack(spacing: 10) {
-                                TextField(inputPlaceholder, text: $inputText)
-                                    .font(ZhiyaTheme.body(15))
-                                    .padding(12)
-                                    .background(Color.white)
-                                    .cornerRadius(20)
-                                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(hex: "D4A574").opacity(0.4), lineWidth: 1))
-                                    .focused($inputFocused)
-                                    .onAppear {
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                            inputFocused = true
-                                        }
-                                    }
-                                    .onSubmit { submitInput() }
+                                AutoFocusTextField(
+                                    text: $inputText,
+                                    placeholder: inputPlaceholder,
+                                    onSubmit: { submitInput() }
+                                )
+                                .frame(height: 44)
+                                .padding(.horizontal, 12)
+                                .background(Color.white)
+                                .cornerRadius(20)
+                                .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(hex: "D4A574").opacity(0.4), lineWidth: 1))
 
                                 Button { submitInput() } label: {
                                     Image(systemName: "arrow.up.circle.fill")
@@ -131,6 +128,7 @@ struct SeedMomentView: View {
             }
         }
         .onAppear { startConversation() }
+        // keyboard focus handled by AutoFocusTextField
         .sheet(isPresented: $showSubjectSheet) {
             SubjectPickerSheet(selectedSubjects: $vm.selectedSubjects) {
                 showSubjectSheet = false
@@ -326,5 +324,56 @@ private struct SubjectPickerSheet: View {
         .background(Color(hex: "FFF8F0"))
         .presentationDetents([.medium])
         .presentationCornerRadius(28)
+    }
+}
+
+// MARK: - Auto-focus TextField using UIKit (SwiftUI @FocusState is unreliable)
+
+private struct AutoFocusTextField: UIViewRepresentable {
+    @Binding var text: String
+    let placeholder: String
+    let onSubmit: () -> Void
+
+    func makeUIView(context: Context) -> UITextField {
+        let tf = UITextField()
+        tf.placeholder = placeholder
+        tf.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        tf.textColor = UIColor(Color(hex: "4A3728"))
+        tf.returnKeyType = .done
+        tf.delegate = context.coordinator
+        tf.addTarget(context.coordinator, action: #selector(Coordinator.textChanged(_:)), for: .editingChanged)
+        // Auto-focus after a short delay
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            tf.becomeFirstResponder()
+        }
+        return tf
+    }
+
+    func updateUIView(_ uiView: UITextField, context: Context) {
+        if uiView.text != text {
+            uiView.text = text
+        }
+        uiView.placeholder = placeholder
+    }
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+
+    class Coordinator: NSObject, UITextFieldDelegate {
+        var parent: AutoFocusTextField
+
+        init(_ parent: AutoFocusTextField) {
+            self.parent = parent
+        }
+
+        @objc func textChanged(_ textField: UITextField) {
+            parent.text = textField.text ?? ""
+        }
+
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            parent.onSubmit()
+            return true
+        }
     }
 }
