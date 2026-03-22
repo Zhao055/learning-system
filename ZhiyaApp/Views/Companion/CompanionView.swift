@@ -174,7 +174,7 @@ struct CompanionView: View {
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 10)
-        .background(ZhiyaTheme.ivory.opacity(0.8))
+        .background(Color(hex: "D4A574").opacity(0.7))
     }
 
     // MARK: - Mascot Area

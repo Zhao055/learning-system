@@ -27,8 +27,18 @@ struct SeedMomentView: View {
                 VStack(spacing: 8) {
                     if showSeedAnimation {
                         seedMomentImage
-                            .transition(.scale.combined(with: .opacity))
-                            .animation(.spring(duration: 0.6), value: showSeedAnimation)
+                            .scaleEffect(showSeedAnimation ? 1.0 : 0.3)
+                            .opacity(showSeedAnimation ? 1.0 : 0.0)
+                            .shadow(color: Color(hex: "A8D5BA").opacity(0.6), radius: 20, x: 0, y: 0)
+                            .overlay(
+                                Circle()
+                                    .fill(Color(hex: "A8D5BA").opacity(0.2))
+                                    .scaleEffect(showSeedAnimation ? 2.0 : 0.5)
+                                    .opacity(showSeedAnimation ? 0.0 : 0.8)
+                                    .animation(.easeOut(duration: 1.2), value: showSeedAnimation)
+                            )
+                            .transition(.scale(scale: 0.3).combined(with: .opacity))
+                            .animation(.spring(response: 0.6, dampingFraction: 0.6, blendDuration: 0), value: showSeedAnimation)
                     } else {
                         ZhiyaMascotView(emotion: .gazing, size: 70)
                     }
@@ -84,19 +94,18 @@ struct SeedMomentView: View {
                                 Spacer()
                             }
                             .padding(.vertical, 12)
-                            .background(Color(hex: "A8D5BA").opacity(0.3))
+                            .background(Color(hex: "D4A574").opacity(0.85))
                         } else {
                             // Text input for name & goals
                             HStack(spacing: 10) {
                                 TextField(inputPlaceholder, text: $inputText)
                                     .font(ZhiyaTheme.body(15))
-                                    .padding(10)
-                                    .background(Color.white)
+                                    .padding(12)
+                                    .background(Color(hex: "A8D5BA").opacity(0.25))
                                     .cornerRadius(20)
-                                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(ZhiyaTheme.warmGold.opacity(0.5), lineWidth: 1))
+                                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(hex: "A8D5BA"), lineWidth: 2))
                                     .focused($inputFocused)
                                     .onAppear {
-                                        // Focus when TextField appears in view hierarchy
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                             inputFocused = true
                                         }
@@ -114,7 +123,7 @@ struct SeedMomentView: View {
                             }
                             .padding(.horizontal)
                             .padding(.vertical, 10)
-                            .background(Color(hex: "A8D5BA").opacity(0.3))
+                            .background(Color(hex: "D4A574").opacity(0.85))
                         }
                     }
                     .transition(.move(edge: .bottom).combined(with: .opacity))
@@ -239,7 +248,30 @@ private struct SubjectPickerSheet: View {
     let onConfirm: () -> Void
 
     var body: some View {
-        NavigationView {
+        VStack(spacing: 0) {
+            // Custom title bar
+            HStack {
+                Text("选择科目")
+                    .font(.system(size: 22, weight: .bold, design: .rounded))
+                    .foregroundColor(Color(hex: "4A3728"))
+                Spacer()
+                Button {
+                    onConfirm()
+                } label: {
+                    Text("确定")
+                        .font(.system(size: 16, weight: .semibold, design: .rounded))
+                        .foregroundColor(selectedSubjects.isEmpty ? .gray : .white)
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 8)
+                        .background(selectedSubjects.isEmpty ? Color.gray.opacity(0.3) : Color(hex: "D4A574"))
+                        .cornerRadius(16)
+                }
+                .disabled(selectedSubjects.isEmpty)
+            }
+            .padding(.horizontal, 24)
+            .padding(.top, 24)
+            .padding(.bottom, 16)
+
             ScrollView {
                 VStack(spacing: 10) {
                     ForEach(SubjectData.subjects) { subject in
@@ -287,20 +319,12 @@ private struct SubjectPickerSheet: View {
                         .buttonStyle(.plain)
                     }
                 }
-                .padding(20)
-            }
-            .background(Color(hex: "FFF8F0"))
-            .navigationTitle("选择科目")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("确定") { onConfirm() }
-                        .font(.system(size: 16, weight: .semibold, design: .rounded))
-                        .foregroundColor(selectedSubjects.isEmpty ? .gray : Color(hex: "D4A574"))
-                        .disabled(selectedSubjects.isEmpty)
-                }
+                .padding(.horizontal, 20)
+                .padding(.bottom, 20)
             }
         }
+        .background(Color(hex: "FFF8F0"))
         .presentationDetents([.medium])
+        .presentationCornerRadius(28)
     }
 }
