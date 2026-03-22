@@ -147,7 +147,7 @@ struct CompanionView: View {
             } label: {
                 Image(systemName: "leaf.fill")
                     .font(.system(size: 18))
-                    .foregroundColor(Color(hex: "7BC88F"))
+                    .foregroundColor(Color(hex: "4A9E5C"))
             }
 
             Spacer()
@@ -155,10 +155,10 @@ struct CompanionView: View {
             // Stage badge
             Text(companionEngine.profile.stage.label)
                 .font(ZhiyaTheme.caption(12))
-                .foregroundColor(ZhiyaTheme.lightBrown)
+                .foregroundColor(ZhiyaTheme.darkBrown)
                 .padding(.horizontal, 10)
                 .padding(.vertical, 4)
-                .background(ZhiyaTheme.warmGold.opacity(0.15))
+                .background(ZhiyaTheme.warmGold.opacity(0.25))
                 .cornerRadius(12)
 
             Spacer()
@@ -169,11 +169,12 @@ struct CompanionView: View {
             } label: {
                 Image(systemName: "gearshape.fill")
                     .font(.system(size: 18))
-                    .foregroundColor(ZhiyaTheme.lightBrown)
+                    .foregroundColor(ZhiyaTheme.darkBrown.opacity(0.7))
             }
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 10)
+        .background(ZhiyaTheme.ivory.opacity(0.8))
     }
 
     // MARK: - Mascot Area
@@ -212,6 +213,11 @@ struct CompanionView: View {
         ScrollViewReader { proxy in
             ScrollView {
                 LazyVStack(spacing: 12) {
+                    // Layout anchor — forces re-render when messages change
+                    Text("m\(vm.messages.count)")
+                        .font(.system(size: 1))
+                        .opacity(0.01)
+                        .frame(height: 1)
                     ForEach(vm.messages.filter { $0.role != .system }) { message in
                         RichMessageView(
                             message: message,

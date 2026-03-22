@@ -17,14 +17,19 @@ struct RichMessageView: View {
                     // Zhiya intro text
                     if !message.content.isEmpty {
                         HStack(alignment: .top, spacing: 8) {
-                            ZhiyaMascotView(emotion: .thinking, size: 20)
+                            Circle()
+                    .fill(Color(hex: "8FD4A4"))
+                    .frame(width: 24, height: 24)
+                    .overlay(Image(systemName: "leaf.fill").font(.system(size: 10)).foregroundColor(.white))
                                 .offset(y: 4)
                             Text(message.content)
                                 .font(ZhiyaTheme.body(15))
                                 .foregroundColor(ZhiyaTheme.darkBrown)
                                 .padding(.horizontal, 14)
                                 .padding(.vertical, 10)
-                                .background(ZhiyaTheme.ivory)
+                                .background(Color(hex: "A8D5BA"))
+                .cornerRadius(16)
+                .shadow(color: ZhiyaTheme.softShadowColor, radius: 3, y: 2)
                                 .cornerRadius(16)
                                 .cornerRadius(4, corners: [.bottomLeft])
                             Spacer(minLength: 40)
@@ -87,14 +92,19 @@ private struct SuggestionBubble: View {
             // Text content
             if !message.content.isEmpty {
                 HStack(alignment: .top, spacing: 8) {
-                    ZhiyaMascotView(emotion: .gazing, size: 20)
+                    Circle()
+                    .fill(Color(hex: "8FD4A4"))
+                    .frame(width: 24, height: 24)
+                    .overlay(Image(systemName: "leaf.fill").font(.system(size: 10)).foregroundColor(.white))
                         .offset(y: 4)
                     Text(message.content)
                         .font(ZhiyaTheme.body(15))
                         .foregroundColor(ZhiyaTheme.darkBrown)
                         .padding(.horizontal, 14)
                         .padding(.vertical, 10)
-                        .background(ZhiyaTheme.ivory)
+                        .background(Color(hex: "A8D5BA"))
+                .cornerRadius(16)
+                .shadow(color: ZhiyaTheme.softShadowColor, radius: 3, y: 2)
                         .cornerRadius(16)
                         .cornerRadius(4, corners: [.bottomLeft])
                     Spacer(minLength: 40)
@@ -143,7 +153,10 @@ private struct GrowthSnapshotBubble: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 8) {
-            ZhiyaMascotView(emotion: .happy, size: 20)
+            Circle()
+                    .fill(Color(hex: "8FD4A4"))
+                    .frame(width: 24, height: 24)
+                    .overlay(Image(systemName: "leaf.fill").font(.system(size: 10)).foregroundColor(.white))
                 .offset(y: 4)
 
             VStack(alignment: .leading, spacing: 8) {
@@ -166,7 +179,9 @@ private struct GrowthSnapshotBubble: View {
             }
             .padding(.horizontal, 14)
             .padding(.vertical, 10)
-            .background(ZhiyaTheme.ivory)
+            .background(Color(hex: "A8D5BA"))
+                .cornerRadius(16)
+                .shadow(color: ZhiyaTheme.softShadowColor, radius: 3, y: 2)
             .cornerRadius(16)
             .cornerRadius(4, corners: [.bottomLeft])
 
@@ -182,7 +197,10 @@ private struct WeeklyLetterBubble: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 8) {
-            ZhiyaMascotView(emotion: .happy, size: 20)
+            Circle()
+                    .fill(Color(hex: "8FD4A4"))
+                    .frame(width: 24, height: 24)
+                    .overlay(Image(systemName: "leaf.fill").font(.system(size: 10)).foregroundColor(.white))
                 .offset(y: 4)
 
             VStack(alignment: .leading, spacing: 12) {
@@ -195,14 +213,14 @@ private struct WeeklyLetterBubble: View {
                 }
 
                 Divider()
-                    .background(ZhiyaTheme.warmGold)
+                    .background(Color(hex: "A8D5BA"))
 
                 Text(message.content)
                     .font(ZhiyaTheme.body(14))
                     .foregroundColor(ZhiyaTheme.darkBrown)
 
                 Divider()
-                    .background(ZhiyaTheme.warmGold)
+                    .background(Color(hex: "A8D5BA"))
 
                 HStack {
                     Spacer()
@@ -214,7 +232,10 @@ private struct WeeklyLetterBubble: View {
                             .frame(width: 40, height: 40)
                     } else {
                         VStack(spacing: 2) {
-                            ZhiyaMascotView(emotion: .happy, size: 20)
+                            Circle()
+                    .fill(Color(hex: "8FD4A4"))
+                    .frame(width: 24, height: 24)
+                    .overlay(Image(systemName: "leaf.fill").font(.system(size: 10)).foregroundColor(.white))
                             Text("知芽")
                                 .font(ZhiyaTheme.caption(11))
                                 .foregroundColor(ZhiyaTheme.goldenAmber)
@@ -231,7 +252,7 @@ private struct WeeklyLetterBubble: View {
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                     } else {
-                        ZhiyaTheme.ivory
+                        Color.white
                     }
                 }
             )
@@ -255,7 +276,10 @@ private struct StudyPlanBubble: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 8) {
-            ZhiyaMascotView(emotion: .thinking, size: 20)
+            Circle()
+                    .fill(Color(hex: "8FD4A4"))
+                    .frame(width: 24, height: 24)
+                    .overlay(Image(systemName: "leaf.fill").font(.system(size: 10)).foregroundColor(.white))
                 .offset(y: 4)
 
             VStack(alignment: .leading, spacing: 10) {
@@ -310,7 +334,9 @@ private struct StudyPlanBubble: View {
             }
             .padding(.horizontal, 14)
             .padding(.vertical, 10)
-            .background(ZhiyaTheme.ivory)
+            .background(Color(hex: "A8D5BA"))
+                .cornerRadius(16)
+                .shadow(color: ZhiyaTheme.softShadowColor, radius: 3, y: 2)
             .cornerRadius(16)
             .cornerRadius(4, corners: [.bottomLeft])
 

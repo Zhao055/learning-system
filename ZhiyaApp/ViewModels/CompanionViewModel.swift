@@ -558,7 +558,7 @@ final class CompanionViewModel: ObservableObject {
         // Don't send if already sent this week
         if let lastLetter = MemoryService.shared.latestLetter() {
             let daysSinceLastLetter = calendar.dateComponents([.day], from: lastLetter.generatedDate, to: Date()).day ?? 0
-            if daysSinceLastLetter < 5 { return }
+            if daysSinceLastLetter < 7 { return }
         }
 
         // Generate simple weekly letter content
@@ -641,10 +641,17 @@ final class CompanionViewModel: ObservableObject {
         for record in records {
             if let existing = kpLastPracticed[record.kpId] {
                 if record.timestamp > existing.0 {
-                    kpLastPracticed[record.kpId] = (record.timestamp, record.kpId)
+                    kpLastPracticed[record.kpId] = (record.timestamp, existing.1)
                 }
             } else {
-                kpLastPracticed[record.kpId] = (record.timestamp, record.kpId)
+                // Look up the actual KP title
+                let title: String = {
+                    if let found = QuestionRepository.shared.findQuestion(questionId: record.questionId, paperId: record.paperId) {
+                        return found.kp.titleCn
+                    }
+                    return record.kpId
+                }()
+                kpLastPracticed[record.kpId] = (record.timestamp, title)
             }
         }
 

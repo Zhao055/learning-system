@@ -59,7 +59,8 @@ struct CompanionInputBar: View {
             }
             .padding(.horizontal, 12)
             .padding(.vertical, 8)
-            .background(ZhiyaTheme.ivory.opacity(0.95))
+            .background(ZhiyaTheme.cream.opacity(0.95))
+            .shadow(color: ZhiyaTheme.warmGold.opacity(0.1), radius: 4, y: -2)
         }
     }
 }

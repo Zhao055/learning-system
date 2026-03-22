@@ -43,7 +43,8 @@ final class ProgressService: ObservableObject {
 
         for kp in kps {
             let progress = getKpProgress(paperId: paperId, chapterId: chapterId, kpId: kp.id)
-            if progress.attempted >= progress.total && progress.total > 0 { completedKps += 1 }
+            let mastery = progress.attempted > 0 ? Double(progress.correct) / Double(progress.attempted) : 0
+            if progress.attempted >= 3 && mastery >= 0.7 { completedKps += 1 }
             totalCorrect += progress.correct
             totalAttempted += progress.attempted
         }
@@ -55,35 +56,52 @@ final class ProgressService: ObservableObject {
     func getTotalStats() -> TotalStats {
         let total = records.count
         let correct = records.filter(\.correct).count
-        let wrongIds = Set(records.filter { !$0.correct }.map(\.questionId))
-            .subtracting(Set(records.filter(\.correct).map(\.questionId)))
+        // Count wrong based on most recent attempt per question
+        var latestAttempt: [String: ProgressRecord] = [:]
+        for record in records {
+            if let existing = latestAttempt[record.questionId] {
+                if record.timestamp > existing.timestamp {
+                    latestAttempt[record.questionId] = record
+                }
+            } else {
+                latestAttempt[record.questionId] = record
+            }
+        }
+        let wrongCount = latestAttempt.values.filter { !$0.correct }.count
         return TotalStats(
             totalAnswered: total,
             totalCorrect: correct,
             accuracy: total > 0 ? Double(correct) / Double(total) : 0,
-            wrongCount: wrongIds.count
+            wrongCount: wrongCount
         )
     }
 
     func getWrongAnswers(paperId: String? = nil) -> [WrongAnswerItem] {
-        let wrongRecords = records.filter { !$0.correct }
-        let correctIds = Set(records.filter(\.correct).map(\.questionId))
+        // Use most recent attempt per question to determine if it's still wrong
+        var latestAttempt: [String: ProgressRecord] = [:]
+        for record in records {
+            if let existing = latestAttempt[record.questionId] {
+                if record.timestamp > existing.timestamp {
+                    latestAttempt[record.questionId] = record
+                }
+            } else {
+                latestAttempt[record.questionId] = record
+            }
+        }
 
         var items: [WrongAnswerItem] = []
-        var seen = Set<String>()
-
-        for record in wrongRecords.reversed() {
-            if correctIds.contains(record.questionId) { continue }
-            if seen.contains(record.questionId) { continue }
+        for (_, record) in latestAttempt {
+            // Only include if the most recent attempt was wrong
+            guard !record.correct else { continue }
             if let filter = paperId, record.paperId != filter { continue }
 
-            seen.insert(record.questionId)
             if let found = QuestionRepository.shared.findQuestion(questionId: record.questionId, paperId: record.paperId) {
                 let paperName = SubjectData.getPaper(record.paperId)?.name ?? record.paperId
                 items.append(WrongAnswerItem(record: record, question: found.question, chapterTitle: found.chapter.titleCn, kpTitle: found.kp.titleCn, paperName: paperName))
             }
         }
-        return items
+        // Sort by most recent wrong first
+        return items.sorted { $0.record.timestamp > $1.record.timestamp }
     }
 
     func deleteWrongAnswer(questionId: String) {

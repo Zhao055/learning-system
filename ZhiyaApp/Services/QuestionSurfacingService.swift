@@ -52,7 +52,8 @@ final class QuestionSurfacingService {
             let questions = QuestionRepository.shared.getQuestions(paperId, chapterId: chapterId, kpId: kpId)
             // Pick a question not recently answered
             let recentIds = Set(records.filter { $0.kpId == kpId }.suffix(5).map(\.questionId))
-            if let q = questions.first(where: { !recentIds.contains($0.id) }) ?? questions.randomElement() {
+            let unrecentQuestions = questions.filter { !recentIds.contains($0.id) }
+            if let q = unrecentQuestions.randomElement() ?? questions.randomElement() {
                 let kpTitle = QuestionRepository.shared.getKnowledgePoint(paperId, chapterId: chapterId, kpId: kpId)?.titleCn ?? ""
                 return (q, paperId, chapterId, kpId, kpTitle)
             }
@@ -92,8 +93,9 @@ final class QuestionSurfacingService {
             }
         }
 
-        // Fallback: any random question from any subject
-        for subject in SubjectData.subjects {
+        // Fallback: random question from enrolled subjects only
+        for subjectId in subjects {
+            guard let subject = SubjectData.getSubject(subjectId) else { continue }
             for paper in subject.papers where paper.available {
                 for chapter in QuestionRepository.shared.getChapters(paper.id) {
                     for kp in chapter.knowledgePoints {

@@ -10,7 +10,14 @@ struct ChatBubbleView: View {
             if isUser { Spacer(minLength: 40) }
 
             if !isUser {
-                ZhiyaMascotView(emotion: EmotionEngine.shared.zhiyaEmotion, size: 20)
+                Circle()
+                    .fill(Color(hex: "8FD4A4"))
+                    .frame(width: 24, height: 24)
+                    .overlay(
+                        Image(systemName: "leaf.fill")
+                            .font(.system(size: 10))
+                            .foregroundColor(.white)
+                    )
                     .offset(y: 4)
             }
 
@@ -20,7 +27,8 @@ struct ChatBubbleView: View {
                     .foregroundColor(isUser ? .white : ZhiyaTheme.darkBrown)
                     .padding(.horizontal, 14)
                     .padding(.vertical, 10)
-                    .background(isUser ? ZhiyaTheme.goldenAmber : ZhiyaTheme.ivory)
+                    .background(isUser ? ZhiyaTheme.goldenAmber : Color(hex: "A8D5BA"))
+                    .cornerRadius(16)
                     .cornerRadius(16)
                     .cornerRadius(isUser ? 16 : 4, corners: isUser ? [.bottomRight] : [.bottomLeft])
             }

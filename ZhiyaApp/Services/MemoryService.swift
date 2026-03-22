@@ -83,12 +83,14 @@ final class MemoryService: ObservableObject {
             growthTree.branches[idx].length = min(1.0, growthTree.branches[idx].length + 0.02)
         }
 
-        // Update or add leaf
+        // Update or add leaf — growth can go up or down based on current mastery
         if let leafIdx = growthTree.leaves.firstIndex(where: { $0.knowledgePointId == kpId }) {
             if masteryRate >= 0.9 {
                 growthTree.leaves[leafIdx].growth = .full
             } else if masteryRate >= 0.5 {
                 growthTree.leaves[leafIdx].growth = .half
+            } else {
+                growthTree.leaves[leafIdx].growth = .sprout
             }
         } else {
             let growth: LeafGrowth = masteryRate >= 0.9 ? .full : masteryRate >= 0.5 ? .half : .sprout
