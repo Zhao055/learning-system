@@ -9,43 +9,38 @@ struct SeedMomentView: View {
     @State private var showInput = false
     @State private var inputText = ""
     @State private var showSeedAnimation = false
+    @State private var showSubjectSheet = false
     @FocusState private var inputFocused: Bool
 
     struct OnboardingMessage: Identifiable {
         let id = UUID()
         let isZhiya: Bool
         let content: String
-        var isSubjectPicker: Bool = false
     }
 
     var body: some View {
         ZStack {
-            // Background
             AmbientBackgroundView()
 
             VStack(spacing: 0) {
-                // Mascot + Seed moment images
+                // Mascot
                 VStack(spacing: 8) {
                     if showSeedAnimation {
-                        // Show seed moment images based on step
                         seedMomentImage
                             .transition(.scale.combined(with: .opacity))
                             .animation(.spring(duration: 0.6), value: showSeedAnimation)
                     } else {
-                        ZhiyaMascotView(
-                            emotion: .gazing,
-                            size: 70
-                        )
+                        ZhiyaMascotView(emotion: .gazing, size: 70)
                     }
                 }
                 .padding(.top, 60)
                 .padding(.bottom, 20)
 
-                // Chat-style messages
+                // Chat messages
                 ScrollViewReader { proxy in
                     ScrollView {
                         LazyVStack(spacing: 12) {
-                            // Layout anchor — required for LazyVStack to re-render on state changes
+                            // Layout anchor — forces re-render when messages change
                             Text("\(chatMessages.count)")
                                 .font(.system(size: 1)).opacity(0.001).frame(height: 0.1)
                             ForEach(chatMessages) { msg in
@@ -58,13 +53,6 @@ struct SeedMomentView: View {
                                     .padding(.horizontal, 16)
                                     .id(msg.id)
                             }
-
-                            // Subject picker — uses opacity instead of if/else to avoid LazyVStack rendering bug
-                            subjectPicker
-                                .padding(.horizontal, 16)
-                                .opacity(vm.currentStep == .subjects ? 1 : 0)
-                                .frame(height: vm.currentStep == .subjects ? nil : 0)
-                                .clipped()
                         }
                         .padding(.vertical, 8)
                     }
@@ -80,33 +68,11 @@ struct SeedMomentView: View {
                     VStack(spacing: 0) {
                         Divider()
 
-                        if vm.currentStep == .subjects {
-                            // Subject selection has its own confirm button
-                            if !vm.selectedSubjects.isEmpty {
-                                HStack {
-                                    Spacer()
-                                    Button {
-                                        confirmSubjects()
-                                    } label: {
-                                        Text("确定")
-                                            .font(ZhiyaTheme.label())
-                                            .foregroundColor(.white)
-                                            .padding(.horizontal, 24)
-                                            .padding(.vertical, 10)
-                                            .background(ZhiyaTheme.goldenAmber)
-                                            .cornerRadius(20)
-                                    }
-                                    Spacer()
-                                }
-                                .padding(.vertical, 12)
-                                .background(Color(hex: "A8D5BA").opacity(0.3))
-                            }
-                        } else if vm.currentStep == .planting {
+                        if vm.currentStep == .planting {
+                            // "开始旅程" button
                             HStack {
                                 Spacer()
-                                Button {
-                                    completePlanting()
-                                } label: {
+                                Button { completePlanting() } label: {
                                     Text("开始旅程")
                                         .font(ZhiyaTheme.label())
                                         .foregroundColor(.white)
@@ -120,7 +86,7 @@ struct SeedMomentView: View {
                             .padding(.vertical, 12)
                             .background(Color(hex: "A8D5BA").opacity(0.3))
                         } else {
-                            // Text input
+                            // Text input for name & goals
                             HStack(spacing: 10) {
                                 TextField(inputPlaceholder, text: $inputText)
                                     .font(ZhiyaTheme.body(15))
@@ -129,11 +95,15 @@ struct SeedMomentView: View {
                                     .cornerRadius(20)
                                     .overlay(RoundedRectangle(cornerRadius: 20).stroke(ZhiyaTheme.warmGold.opacity(0.5), lineWidth: 1))
                                     .focused($inputFocused)
+                                    .onAppear {
+                                        // Focus when TextField appears in view hierarchy
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                            inputFocused = true
+                                        }
+                                    }
                                     .onSubmit { submitInput() }
 
-                                Button {
-                                    submitInput()
-                                } label: {
+                                Button { submitInput() } label: {
                                     Image(systemName: "arrow.up.circle.fill")
                                         .font(.system(size: 32))
                                         .foregroundColor(inputText.trimmingCharacters(in: .whitespaces).isEmpty
@@ -151,62 +121,11 @@ struct SeedMomentView: View {
                 }
             }
         }
-        .onAppear {
-            startConversation()
-        }
-    }
-
-    // MARK: - Bubble
-
-    @ViewBuilder
-    private func onboardingBubble(_ msg: OnboardingMessage) -> some View {
-        HStack {
-            if !msg.isZhiya { Spacer() }
-            Text(msg.content)
-                .font(ZhiyaTheme.body(16))
-                .foregroundColor(msg.isZhiya ? ZhiyaTheme.darkBrown : .white)
-                .padding(.horizontal, 14)
-                .padding(.vertical, 10)
-                .background(msg.isZhiya ? Color.white : ZhiyaTheme.goldenAmber)
-                .cornerRadius(16)
-                .shadow(color: Color.black.opacity(0.08), radius: 4, y: 2)
-            if msg.isZhiya { Spacer() }
-        }
-    }
-
-    // MARK: - Subject Picker
-
-    private var subjectPicker: some View {
-        VStack(spacing: 8) {
-            ForEach(SubjectData.subjects) { subject in
-                Button {
-                    if vm.selectedSubjects.contains(subject.id) {
-                        vm.selectedSubjects.remove(subject.id)
-                    } else {
-                        vm.selectedSubjects.insert(subject.id)
-                    }
-                } label: {
-                    HStack {
-                        Text(subject.icon)
-                        Text(subject.nameCn)
-                            .font(ZhiyaTheme.body())
-                            .foregroundColor(ZhiyaTheme.darkBrown)
-                        Spacer()
-                        if vm.selectedSubjects.contains(subject.id) {
-                            Image(systemName: "checkmark.circle.fill")
-                                .foregroundColor(ZhiyaTheme.goldenAmber)
-                        }
-                    }
-                    .padding(14)
-                    .background(vm.selectedSubjects.contains(subject.id)
-                        ? ZhiyaTheme.goldenAmber.opacity(0.3) : Color(hex: "A8D5BA").opacity(0.3))
-                    .cornerRadius(ZhiyaTheme.cornerRadiusSM)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: ZhiyaTheme.cornerRadiusSM)
-                            .stroke(vm.selectedSubjects.contains(subject.id) ? ZhiyaTheme.goldenAmber : Color(hex: "A8D5BA").opacity(0.5), lineWidth: 1)
-                    )
-                }
-                .buttonStyle(.plain)
+        .onAppear { startConversation() }
+        .sheet(isPresented: $showSubjectSheet) {
+            SubjectPickerSheet(selectedSubjects: $vm.selectedSubjects) {
+                showSubjectSheet = false
+                confirmSubjects()
             }
         }
     }
@@ -214,12 +133,10 @@ struct SeedMomentView: View {
     // MARK: - Conversation Flow
 
     private func startConversation() {
-        // Step: greeting
         addZhiyaMessage("嗨，我是知芽。", delay: 0.5) {
             self.addZhiyaMessage("你叫什么名字？", delay: 0.8) {
                 self.vm.currentStep = .name
                 withAnimation { self.showInput = true }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { self.inputFocused = true }
             }
         }
     }
@@ -228,7 +145,6 @@ struct SeedMomentView: View {
         let text = inputText.trimmingCharacters(in: .whitespaces)
         guard !text.isEmpty else { return }
 
-        // Add user bubble
         chatMessages.append(OnboardingMessage(isZhiya: false, content: text))
         inputText = ""
 
@@ -239,8 +155,7 @@ struct SeedMomentView: View {
             addZhiyaMessage("\(text)，认识你很高兴。我会一直在。", delay: 0.6) {
                 self.addZhiyaMessage("你在学什么？", delay: 0.8) {
                     self.vm.currentStep = .subjects
-                    // Subject picker is shown via vm.currentStep == .subjects
-                    withAnimation { self.showInput = true }
+                    self.showSubjectSheet = true
                 }
             }
 
@@ -264,12 +179,9 @@ struct SeedMomentView: View {
         let subjectNames = vm.selectedSubjects.compactMap { SubjectData.getSubject($0)?.nameCn }
         chatMessages.append(OnboardingMessage(isZhiya: false, content: subjectNames.joined(separator: "、")))
 
-        withAnimation { showInput = false }
-
         addZhiyaMessage("好的。有没有什么考试快到了，或者有什么目标？", delay: 0.6) {
             self.vm.currentStep = .goals
             withAnimation { self.showInput = true }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { self.inputFocused = true }
         }
     }
 
@@ -296,14 +208,12 @@ struct SeedMomentView: View {
     @ViewBuilder
     private var seedMomentImage: some View {
         if ZhiyaImages.uiImage(.seedMoment3) != nil {
-            // Use the seedling in pot image for the planting animation
             ZhiyaImages.seedMoment3
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 150)
                 .cornerRadius(16)
         } else {
-            // Fallback: code-drawn animation
             VStack(spacing: 8) {
                 ZhiyaMascotView(emotion: .excited, size: 100)
                 Image(systemName: "leaf.fill")
@@ -322,56 +232,75 @@ struct SeedMomentView: View {
     }
 }
 
-// MARK: - Onboarding Row (extracted to avoid if/else inside ForEach+LazyVStack)
+// MARK: - Subject Picker Sheet (renders outside LazyVStack to avoid rendering bugs)
 
-private struct OnboardingRow: View {
-    let msg: SeedMomentView.OnboardingMessage
+private struct SubjectPickerSheet: View {
     @Binding var selectedSubjects: Set<String>
+    let onConfirm: () -> Void
 
     var body: some View {
-        if msg.isSubjectPicker {
-            VStack(spacing: 8) {
-                ForEach(SubjectData.subjects) { subject in
-                    Button {
-                        if selectedSubjects.contains(subject.id) {
-                            selectedSubjects.remove(subject.id)
-                        } else {
-                            selectedSubjects.insert(subject.id)
-                        }
-                    } label: {
-                        HStack {
-                            Text(subject.icon)
-                            Text(subject.nameCn)
-                                .font(ZhiyaTheme.body())
-                                .foregroundColor(ZhiyaTheme.darkBrown)
-                            Spacer()
+        NavigationView {
+            ScrollView {
+                VStack(spacing: 10) {
+                    ForEach(SubjectData.subjects) { subject in
+                        Button {
                             if selectedSubjects.contains(subject.id) {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .foregroundColor(ZhiyaTheme.goldenAmber)
+                                selectedSubjects.remove(subject.id)
+                            } else {
+                                selectedSubjects.insert(subject.id)
                             }
+                        } label: {
+                            HStack(spacing: 12) {
+                                Text(subject.icon)
+                                    .font(.system(size: 28))
+                                Text(subject.nameCn)
+                                    .font(.system(size: 18, weight: .medium, design: .rounded))
+                                    .foregroundColor(Color(hex: "4A3728"))
+                                Spacer()
+                                if selectedSubjects.contains(subject.id) {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .font(.system(size: 22))
+                                        .foregroundColor(Color(hex: "D4A574"))
+                                } else {
+                                    Image(systemName: "circle")
+                                        .font(.system(size: 22))
+                                        .foregroundColor(Color(hex: "A8D5BA"))
+                                }
+                            }
+                            .padding(16)
+                            .background(
+                                selectedSubjects.contains(subject.id)
+                                    ? Color(hex: "D4A574").opacity(0.15)
+                                    : Color(hex: "A8D5BA").opacity(0.15)
+                            )
+                            .cornerRadius(14)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 14)
+                                    .stroke(
+                                        selectedSubjects.contains(subject.id)
+                                            ? Color(hex: "D4A574").opacity(0.5)
+                                            : Color(hex: "A8D5BA").opacity(0.3),
+                                        lineWidth: 1.5
+                                    )
+                            )
                         }
-                        .padding(14)
-                        .background(selectedSubjects.contains(subject.id)
-                            ? ZhiyaTheme.goldenAmber.opacity(0.1) : Color(hex: "F5F0EA"))
-                        .cornerRadius(ZhiyaTheme.cornerRadiusSM)
-                        .shadow(color: Color.black.opacity(0.08), radius: 4, y: 2)
+                        .buttonStyle(.plain)
                     }
-                    .buttonStyle(.plain)
+                }
+                .padding(20)
+            }
+            .background(Color(hex: "FFF8F0"))
+            .navigationTitle("选择科目")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("确定") { onConfirm() }
+                        .font(.system(size: 16, weight: .semibold, design: .rounded))
+                        .foregroundColor(selectedSubjects.isEmpty ? .gray : Color(hex: "D4A574"))
+                        .disabled(selectedSubjects.isEmpty)
                 }
             }
-        } else {
-            HStack {
-                if !msg.isZhiya { Spacer() }
-                Text(msg.content)
-                    .font(ZhiyaTheme.body(16))
-                    .foregroundColor(msg.isZhiya ? ZhiyaTheme.darkBrown : .white)
-                    .padding(.horizontal, 14)
-                    .padding(.vertical, 10)
-                    .background(msg.isZhiya ? Color(hex: "F5F0EA") : ZhiyaTheme.goldenAmber)
-                    .cornerRadius(16)
-                    .shadow(color: Color.black.opacity(0.12), radius: 6, y: 3)
-                if msg.isZhiya { Spacer() }
-            }
         }
+        .presentationDetents([.medium])
     }
 }
