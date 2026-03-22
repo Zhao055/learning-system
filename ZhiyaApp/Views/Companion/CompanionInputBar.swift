@@ -19,7 +19,7 @@ struct CompanionInputBar: View {
                 Button(action: onCamera) {
                     Image(systemName: "camera.fill")
                         .font(.system(size: 20))
-                        .foregroundColor(Color(hex: "4A3728"))
+                        .foregroundColor(Color(hex: "E8C9A0"))
                         .frame(width: 36, height: 36)
                 }
 
@@ -37,16 +37,16 @@ struct CompanionInputBar: View {
                 }
                 .padding(.horizontal, 14)
                 .padding(.vertical, 8)
-                .background(Color(hex: "A8D5BA").opacity(0.15))
+                .background(Color.white)
                 .cornerRadius(20)
-                .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(hex: "A8D5BA"), lineWidth: 2))
+                .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(hex: "D4A574").opacity(0.4), lineWidth: 1))
 
                 // Voice / Send toggle
                 if inputText.trimmingCharacters(in: .whitespaces).isEmpty {
                     Button(action: onVoice) {
                         Image(systemName: "mic.fill")
                             .font(.system(size: 20))
-                            .foregroundColor(Color(hex: "4A3728"))
+                            .foregroundColor(Color(hex: "E8C9A0"))
                             .frame(width: 36, height: 36)
                     }
                 } else {
@@ -60,7 +60,7 @@ struct CompanionInputBar: View {
             }
             .padding(.horizontal, 12)
             .padding(.vertical, 8)
-            .background(Color(hex: "D4A574").opacity(0.85))
+            .background(Color(hex: "4A3728"))
             .shadow(color: ZhiyaTheme.warmGold.opacity(0.15), radius: 6, y: -2)
         }
     }

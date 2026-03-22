@@ -94,16 +94,16 @@ struct SeedMomentView: View {
                                 Spacer()
                             }
                             .padding(.vertical, 12)
-                            .background(Color(hex: "D4A574").opacity(0.85))
+                            .background(Color(hex: "4A3728"))
                         } else {
                             // Text input for name & goals
                             HStack(spacing: 10) {
                                 TextField(inputPlaceholder, text: $inputText)
                                     .font(ZhiyaTheme.body(15))
                                     .padding(12)
-                                    .background(Color(hex: "A8D5BA").opacity(0.25))
+                                    .background(Color.white)
                                     .cornerRadius(20)
-                                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(hex: "A8D5BA"), lineWidth: 2))
+                                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(hex: "D4A574").opacity(0.4), lineWidth: 1))
                                     .focused($inputFocused)
                                     .onAppear {
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -123,7 +123,7 @@ struct SeedMomentView: View {
                             }
                             .padding(.horizontal)
                             .padding(.vertical, 10)
-                            .background(Color(hex: "D4A574").opacity(0.85))
+                            .background(Color(hex: "4A3728"))
                         }
                     }
                     .transition(.move(edge: .bottom).combined(with: .opacity))
