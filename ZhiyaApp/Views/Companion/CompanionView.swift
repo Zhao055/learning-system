@@ -147,7 +147,7 @@ struct CompanionView: View {
             } label: {
                 Image(systemName: "leaf.fill")
                     .font(.system(size: 18))
-                    .foregroundColor(Color(hex: "A8D5BA"))
+                    .foregroundColor(Color(hex: "4A9E5C"))
             }
 
             Spacer()
@@ -155,10 +155,10 @@ struct CompanionView: View {
             // Stage badge
             Text(companionEngine.profile.stage.label)
                 .font(ZhiyaTheme.caption(12))
-                .foregroundColor(Color(hex: "E8C9A0"))
+                .foregroundColor(ZhiyaTheme.darkBrown)
                 .padding(.horizontal, 10)
                 .padding(.vertical, 4)
-                .background(Color(hex: "E8C9A0").opacity(0.2))
+                .background(ZhiyaTheme.warmGold.opacity(0.25))
                 .cornerRadius(12)
 
             Spacer()
@@ -169,12 +169,12 @@ struct CompanionView: View {
             } label: {
                 Image(systemName: "gearshape.fill")
                     .font(.system(size: 18))
-                    .foregroundColor(Color(hex: "E8C9A0"))
+                    .foregroundColor(ZhiyaTheme.darkBrown.opacity(0.7))
             }
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 10)
-        .background(Color(hex: "4A3728"))
+        .background(.thinMaterial)
     }
 
     // MARK: - Mascot Area

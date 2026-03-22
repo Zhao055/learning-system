@@ -19,7 +19,7 @@ struct CompanionInputBar: View {
                 Button(action: onCamera) {
                     Image(systemName: "camera.fill")
                         .font(.system(size: 20))
-                        .foregroundColor(Color(hex: "E8C9A0"))
+                        .foregroundColor(ZhiyaTheme.darkBrown)
                         .frame(width: 36, height: 36)
                 }
 
@@ -46,7 +46,7 @@ struct CompanionInputBar: View {
                     Button(action: onVoice) {
                         Image(systemName: "mic.fill")
                             .font(.system(size: 20))
-                            .foregroundColor(Color(hex: "E8C9A0"))
+                            .foregroundColor(ZhiyaTheme.darkBrown)
                             .frame(width: 36, height: 36)
                     }
                 } else {
@@ -60,7 +60,7 @@ struct CompanionInputBar: View {
             }
             .padding(.horizontal, 12)
             .padding(.vertical, 8)
-            .background(Color(hex: "4A3728"))
+            .background(.regularMaterial)
             .shadow(color: ZhiyaTheme.warmGold.opacity(0.15), radius: 6, y: -2)
         }
     }

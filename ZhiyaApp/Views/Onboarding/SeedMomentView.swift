@@ -94,7 +94,7 @@ struct SeedMomentView: View {
                                 Spacer()
                             }
                             .padding(.vertical, 12)
-                            .background(Color(hex: "4A3728"))
+                            .background(.regularMaterial)
                         } else {
                             // Text input for name & goals
                             HStack(spacing: 10) {
@@ -120,7 +120,7 @@ struct SeedMomentView: View {
                             }
                             .padding(.horizontal)
                             .padding(.vertical, 10)
-                            .background(Color(hex: "4A3728"))
+                            .background(.regularMaterial)
                         }
                     }
                     .transition(.move(edge: .bottom).combined(with: .opacity))
