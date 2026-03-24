@@ -163,7 +163,7 @@ Animations:
 
 | Screen | Type | Key Visual Elements |
 |--------|------|-------------------|
-| **SeedMomentView** | Full-screen onboarding | Animated message reveal, growing mascot, subject picker |
+| **SeedMomentView** | Full-screen onboarding | Animated message reveal, growing mascot, subject picker. Layout: VStack + `.background(AmbientBackgroundView)` (not ZStack) to ensure keyboard avoidance works correctly |
 | **HomeView** | ScrollView, cards | Greeting card + mascot, stat row (3 cards), suggestion card, action rows, tree preview |
 | **SubjectSelectionView** | Gradient cards | 3 subject cards with gradient backgrounds, emoji icons |
 | **PaperSelectionView** | Card list | Paper stats (chapters/KPs/questions), availability badge |

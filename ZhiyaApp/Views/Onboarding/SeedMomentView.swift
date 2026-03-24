@@ -10,7 +10,7 @@ struct SeedMomentView: View {
     @State private var inputText = ""
     @State private var showSeedAnimation = false
     @State private var showSubjectSheet = false
-    // @FocusState removed — using AutoFocusTextField with UIKit becomeFirstResponder instead
+    @FocusState private var inputFocused: Bool
 
     struct OnboardingMessage: Identifiable {
         let id = UUID()
@@ -19,61 +19,59 @@ struct SeedMomentView: View {
     }
 
     var body: some View {
-        ZStack {
-            AmbientBackgroundView()
-
-            VStack(spacing: 0) {
-                // Mascot
-                VStack(spacing: 8) {
-                    if showSeedAnimation {
-                        seedMomentImage
-                            .scaleEffect(showSeedAnimation ? 1.0 : 0.3)
-                            .opacity(showSeedAnimation ? 1.0 : 0.0)
-                            .shadow(color: Color(hex: "A8D5BA").opacity(0.6), radius: 20, x: 0, y: 0)
-                            .overlay(
-                                Circle()
-                                    .fill(Color(hex: "A8D5BA").opacity(0.2))
-                                    .scaleEffect(showSeedAnimation ? 2.0 : 0.5)
-                                    .opacity(showSeedAnimation ? 0.0 : 0.8)
-                                    .animation(.easeOut(duration: 1.2), value: showSeedAnimation)
-                            )
-                            .transition(.scale(scale: 0.3).combined(with: .opacity))
-                            .animation(.spring(response: 0.6, dampingFraction: 0.6, blendDuration: 0), value: showSeedAnimation)
-                    } else {
-                        ZhiyaMascotView(emotion: .gazing, size: 70)
-                    }
+        VStack(spacing: 0) {
+            // Mascot
+            VStack(spacing: 8) {
+                if showSeedAnimation {
+                    seedMomentImage
+                        .scaleEffect(showSeedAnimation ? 1.0 : 0.3)
+                        .opacity(showSeedAnimation ? 1.0 : 0.0)
+                        .shadow(color: ZhiyaTheme.bubbleGreen.opacity(0.6), radius: 20, x: 0, y: 0)
+                        .overlay(
+                            Circle()
+                                .fill(ZhiyaTheme.bubbleGreen.opacity(0.2))
+                                .scaleEffect(showSeedAnimation ? 2.0 : 0.5)
+                                .opacity(showSeedAnimation ? 0.0 : 0.8)
+                                .animation(.easeOut(duration: 1.2), value: showSeedAnimation)
+                        )
+                        .transition(.scale(scale: 0.3).combined(with: .opacity))
+                        .animation(.spring(response: 0.6, dampingFraction: 0.6, blendDuration: 0), value: showSeedAnimation)
+                } else {
+                    ZhiyaMascotView(emotion: .gazing, size: 70)
                 }
-                .padding(.top, 60)
-                .padding(.bottom, 20)
+            }
+            .padding(.top, 60)
+            .padding(.bottom, 20)
 
-                // Chat messages
-                ScrollViewReader { proxy in
-                    ScrollView {
-                        LazyVStack(spacing: 12) {
-                            // Layout anchor — forces re-render when messages change
-                            Text("\(chatMessages.count)")
-                                .font(.system(size: 1)).opacity(0.001).frame(height: 0.1)
-                            ForEach(chatMessages) { msg in
-                                Text(msg.content)
-                                    .font(.system(size: 16, design: .rounded))
-                                    .foregroundColor(Color(hex: "4A3728"))
-                                    .padding(12)
-                                    .background(msg.isZhiya ? Color(hex: "A8D5BA") : Color(hex: "D4A574"))
-                                    .cornerRadius(16)
-                                    .padding(.horizontal, 16)
-                                    .id(msg.id)
-                            }
-                        }
-                        .padding(.vertical, 8)
-                    }
-                    .onChange(of: chatMessages.count) {
-                        if let last = chatMessages.last {
-                            withAnimation { proxy.scrollTo(last.id, anchor: .bottom) }
+            // Chat messages
+            ScrollViewReader { proxy in
+                ScrollView {
+                    LazyVStack(spacing: 12) {
+                        // Layout anchor — forces re-render when messages change
+                        Text("\(chatMessages.count)")
+                            .font(.system(size: 1)).opacity(0.001).frame(height: 0.1)
+                        ForEach(chatMessages) { msg in
+                            Text(msg.content)
+                                .font(.system(size: 16, design: .rounded))
+                                .foregroundColor(ZhiyaTheme.darkBrown)
+                                .padding(12)
+                                .background(msg.isZhiya ? ZhiyaTheme.bubbleGreen : ZhiyaTheme.goldenAmber)
+                                .cornerRadius(16)
+                                .padding(.horizontal, 16)
+                                .id(msg.id)
                         }
                     }
+                    .padding(.vertical, 8)
                 }
+                .onChange(of: chatMessages.count) {
+                    if let last = chatMessages.last {
+                        withAnimation { proxy.scrollTo(last.id, anchor: .bottom) }
+                    }
+                }
+            }
 
-                // Input area
+        }
+        .safeAreaInset(edge: .bottom) {
                 if showInput {
                     VStack(spacing: 0) {
                         Divider()
@@ -98,16 +96,16 @@ struct SeedMomentView: View {
                         } else {
                             // Text input for name & goals
                             HStack(spacing: 10) {
-                                AutoFocusTextField(
-                                    text: $inputText,
-                                    placeholder: inputPlaceholder,
-                                    onSubmit: { submitInput() }
-                                )
-                                .frame(height: 44)
-                                .padding(.horizontal, 12)
-                                .background(Color.white)
-                                .cornerRadius(20)
-                                .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(hex: "D4A574").opacity(0.4), lineWidth: 1))
+                                TextField(inputPlaceholder, text: $inputText)
+                                    .font(ZhiyaTheme.body(16))
+                                    .foregroundColor(ZhiyaTheme.darkBrown)
+                                    .focused($inputFocused)
+                                    .onSubmit { submitInput() }
+                                    .padding(.horizontal, 14)
+                                    .padding(.vertical, 12)
+                                    .background(Color.white)
+                                    .cornerRadius(20)
+                                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(ZhiyaTheme.goldenAmber.opacity(0.4), lineWidth: 1))
 
                                 Button { submitInput() } label: {
                                     Image(systemName: "arrow.up.circle.fill")
@@ -121,12 +119,13 @@ struct SeedMomentView: View {
                             .padding(.horizontal)
                             .padding(.vertical, 10)
                             .background(.regularMaterial)
+                            .onAppear { inputFocused = true }
                         }
                     }
                     .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
             }
-        }
+        .background(AmbientBackgroundView().ignoresSafeArea())
         .onAppear { startConversation() }
         // keyboard focus handled by AutoFocusTextField
         .sheet(isPresented: $showSubjectSheet) {
@@ -225,7 +224,7 @@ struct SeedMomentView: View {
                 ZhiyaMascotView(emotion: .excited, size: 100)
                 Image(systemName: "leaf.fill")
                     .font(.system(size: 24))
-                    .foregroundColor(Color(hex: "7BC88F"))
+                    .foregroundColor(ZhiyaTheme.leafGreen)
             }
         }
     }
@@ -251,7 +250,7 @@ private struct SubjectPickerSheet: View {
             HStack {
                 Text("选择科目")
                     .font(.system(size: 22, weight: .bold, design: .rounded))
-                    .foregroundColor(Color(hex: "4A3728"))
+                    .foregroundColor(ZhiyaTheme.darkBrown)
                 Spacer()
                 Button {
                     onConfirm()
@@ -261,7 +260,7 @@ private struct SubjectPickerSheet: View {
                         .foregroundColor(selectedSubjects.isEmpty ? .gray : .white)
                         .padding(.horizontal, 20)
                         .padding(.vertical, 8)
-                        .background(selectedSubjects.isEmpty ? Color.gray.opacity(0.3) : Color(hex: "D4A574"))
+                        .background(selectedSubjects.isEmpty ? Color.gray.opacity(0.3) : ZhiyaTheme.goldenAmber)
                         .cornerRadius(16)
                 }
                 .disabled(selectedSubjects.isEmpty)
@@ -285,31 +284,31 @@ private struct SubjectPickerSheet: View {
                                     .font(.system(size: 28))
                                 Text(subject.nameCn)
                                     .font(.system(size: 18, weight: .medium, design: .rounded))
-                                    .foregroundColor(Color(hex: "4A3728"))
+                                    .foregroundColor(ZhiyaTheme.darkBrown)
                                 Spacer()
                                 if selectedSubjects.contains(subject.id) {
                                     Image(systemName: "checkmark.circle.fill")
                                         .font(.system(size: 22))
-                                        .foregroundColor(Color(hex: "D4A574"))
+                                        .foregroundColor(ZhiyaTheme.goldenAmber)
                                 } else {
                                     Image(systemName: "circle")
                                         .font(.system(size: 22))
-                                        .foregroundColor(Color(hex: "A8D5BA"))
+                                        .foregroundColor(ZhiyaTheme.bubbleGreen)
                                 }
                             }
                             .padding(16)
                             .background(
                                 selectedSubjects.contains(subject.id)
-                                    ? Color(hex: "D4A574").opacity(0.15)
-                                    : Color(hex: "A8D5BA").opacity(0.15)
+                                    ? ZhiyaTheme.goldenAmber.opacity(0.15)
+                                    : ZhiyaTheme.bubbleGreen.opacity(0.15)
                             )
                             .cornerRadius(14)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 14)
                                     .stroke(
                                         selectedSubjects.contains(subject.id)
-                                            ? Color(hex: "D4A574").opacity(0.5)
-                                            : Color(hex: "A8D5BA").opacity(0.3),
+                                            ? ZhiyaTheme.goldenAmber.opacity(0.5)
+                                            : ZhiyaTheme.bubbleGreen.opacity(0.3),
                                         lineWidth: 1.5
                                     )
                             )
@@ -321,59 +320,9 @@ private struct SubjectPickerSheet: View {
                 .padding(.bottom, 20)
             }
         }
-        .background(Color(hex: "FFF8F0"))
+        .background(ZhiyaTheme.cream)
         .presentationDetents([.medium])
         .presentationCornerRadius(28)
     }
 }
 
-// MARK: - Auto-focus TextField using UIKit (SwiftUI @FocusState is unreliable)
-
-private struct AutoFocusTextField: UIViewRepresentable {
-    @Binding var text: String
-    let placeholder: String
-    let onSubmit: () -> Void
-
-    func makeUIView(context: Context) -> UITextField {
-        let tf = UITextField()
-        tf.placeholder = placeholder
-        tf.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        tf.textColor = UIColor(Color(hex: "4A3728"))
-        tf.returnKeyType = .done
-        tf.delegate = context.coordinator
-        tf.addTarget(context.coordinator, action: #selector(Coordinator.textChanged(_:)), for: .editingChanged)
-        // Auto-focus after a short delay
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            tf.becomeFirstResponder()
-        }
-        return tf
-    }
-
-    func updateUIView(_ uiView: UITextField, context: Context) {
-        if uiView.text != text {
-            uiView.text = text
-        }
-        uiView.placeholder = placeholder
-    }
-
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
-
-    class Coordinator: NSObject, UITextFieldDelegate {
-        var parent: AutoFocusTextField
-
-        init(_ parent: AutoFocusTextField) {
-            self.parent = parent
-        }
-
-        @objc func textChanged(_ textField: UITextField) {
-            parent.text = textField.text ?? ""
-        }
-
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            parent.onSubmit()
-            return true
-        }
-    }
-}

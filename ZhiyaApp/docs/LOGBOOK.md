@@ -264,6 +264,32 @@ Design tokens established:
 
 ---
 
+## Session 2 — 2026-03-25: Onboarding 键盘遮挡修复
+
+### Problem
+
+Onboarding 输入框（名字、目标）在真机上被键盘完全遮挡，用户无法看到自己输入的内容。
+
+### Root Cause
+
+`SeedMomentView` 使用 `ZStack { AmbientBackgroundView() ... }` 包裹布局。`AmbientBackgroundView` 内部每层都加了 `.ignoresSafeArea()`，导致整个 ZStack 布局忽略安全区域（包括键盘），即使 VStack 加了 `.safeAreaInset(edge: .bottom)` 也无法正常避让键盘。
+
+### Fix
+
+移除 ZStack 包裹，改用 `.background(AmbientBackgroundView().ignoresSafeArea())` 修饰符，使 VStack 成为布局主体，与 CompanionView 的模式一致。
+
+| File | Change |
+|------|--------|
+| `Views/Onboarding/SeedMomentView.swift` | ZStack → VStack + `.background()` modifier |
+
+### Verification
+
+- [x] 编译成功，部署到真机
+- [x] 卸载重装 → onboarding → 键盘弹起时输入框在键盘上方可见
+- [x] 输入名字 → 选科目 → 输入目标 → 点"开始旅程" → 正常进入聊天
+
+---
+
 ## Pending / Future Work
 
 - [ ] Connect iOS app to Synapse Server (currently using local-only mode)
