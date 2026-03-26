@@ -73,8 +73,11 @@ final class ProactiveEngine {
             return messages
         }
 
-        // Priority 5: Streak celebration
-        // (Simplified - would need proper streak tracking)
+        // Priority 5: Weak area insight
+        if let insight = generateLearningInsight(profile: profile) {
+            messages.append(insight)
+            return messages
+        }
 
         // Priority 6: Morning/evening rhythm
         if hour >= 6 && hour < 10 {
@@ -108,6 +111,12 @@ final class ProactiveEngine {
         let hour = Calendar.current.component(.hour, from: Date())
         let timeGreeting = hour < 12 ? "上午好" : hour < 18 ? "下午好" : "晚上好"
 
+        // Try to reference a memory for personalization
+        let recentMoments = ConversationMemoryService.shared.getRecentMoments(limit: 3)
+        if let lastBreakthrough = recentMoments.first(where: { $0.category == .breakthrough }) {
+            return "\(profile.childName)，上次你在学习中有个突破时刻，今天继续挑战？"
+        }
+
         switch profile.stage {
         case .seed:
             return "\(timeGreeting)，\(profile.childName)！"
@@ -117,6 +126,10 @@ final class ProactiveEngine {
             }
             return "又见面了，\(profile.childName)！"
         case .understanding, .companion:
+            // Reference weak areas if available
+            if let weakArea = analyzeWeakAreas().first {
+                return "\(profile.childName)，上次\(weakArea.kpTitle)有点卡住了。今天要不从这里开始？"
+            }
             return "\(profile.childName)，今天想做什么？"
         }
     }
@@ -138,5 +151,66 @@ final class ProactiveEngine {
         }
 
         return kpLastTime.filter { now - $0.value > threeDays }.count
+    }
+
+    // MARK: - Pattern Analysis (Local Decision Engine)
+
+    struct WeakArea {
+        let kpId: String
+        let kpTitle: String
+        let accuracy: Double
+        let attempts: Int
+    }
+
+    /// Analyze wrong answer patterns to find weak knowledge areas
+    func analyzeWeakAreas() -> [WeakArea] {
+        let records = ProgressService.shared.records
+
+        // Group by KP
+        var kpStats: [String: (correct: Int, total: Int, paperId: String, chapterId: String)] = [:]
+        for record in records {
+            var stat = kpStats[record.kpId] ?? (correct: 0, total: 0, paperId: record.paperId, chapterId: record.chapterId)
+            stat.total += 1
+            if record.correct { stat.correct += 1 }
+            kpStats[record.kpId] = stat
+        }
+
+        // Find KPs with accuracy < 60% and at least 2 attempts
+        var weakAreas: [WeakArea] = []
+        for (kpId, stat) in kpStats where stat.total >= 2 {
+            let accuracy = Double(stat.correct) / Double(stat.total)
+            if accuracy < 0.6 {
+                let title = QuestionRepository.shared.getKnowledgePoint(
+                    stat.paperId, chapterId: stat.chapterId, kpId: kpId
+                )?.titleCn ?? kpId
+                weakAreas.append(WeakArea(kpId: kpId, kpTitle: title, accuracy: accuracy, attempts: stat.total))
+            }
+        }
+
+        // Sort by worst accuracy first
+        return weakAreas.sorted { $0.accuracy < $1.accuracy }
+    }
+
+    /// Generate a personalized learning suggestion based on pattern analysis
+    func generateLearningInsight(profile: CompanionProfile) -> ProactiveMessage? {
+        let weakAreas = analyzeWeakAreas()
+
+        guard !weakAreas.isEmpty else { return nil }
+
+        if weakAreas.count == 1 {
+            let area = weakAreas[0]
+            return ProactiveMessage(
+                content: "我注意到\(area.kpTitle)的正确率是\(Int(area.accuracy * 100))%。要不我们重点练一下？",
+                messageType: .suggestion,
+                suggestionData: SuggestionData(text: "练习\(area.kpTitle)", action: .startChallenge)
+            )
+        } else {
+            let topTwo = weakAreas.prefix(2).map(\.kpTitle).joined(separator: "和")
+            return ProactiveMessage(
+                content: "你在\(topTwo)这两个知识点上还可以加强。要不从薄弱点开始？",
+                messageType: .suggestion,
+                suggestionData: SuggestionData(text: "开始练习", action: .startChallenge)
+            )
+        }
     }
 }

@@ -1,44 +1,28 @@
 import SwiftUI
 
-/// Dispatches rendering based on message type
+/// Dispatches rendering based on message type.
+/// All sub-bubbles receive `availableWidth` for explicit width constraints.
 struct RichMessageView: View {
     let message: ChatMessage
+    let availableWidth: CGFloat
     let onChallengeAnswer: (String, Int) -> Void
     let onSuggestionTap: (String) -> Void
 
     var body: some View {
         switch message.messageType {
         case .text:
-            ChatBubbleView(message: message)
+            ChatBubbleView(message: message, availableWidth: availableWidth)
 
         case .challengeCard:
             if let challenge = message.challengeData {
                 VStack(alignment: .leading, spacing: 8) {
-                    // Zhiya intro text
                     if !message.content.isEmpty {
-                        HStack(alignment: .top, spacing: 8) {
-                            Circle()
-                    .fill(Color(hex: "8FD4A4"))
-                    .frame(width: 24, height: 24)
-                    .overlay(Image(systemName: "leaf.fill").font(.system(size: 10)).foregroundColor(.white))
-                                .offset(y: 4)
-                            Text(message.content)
-                                .font(ZhiyaTheme.body(15))
-                                .foregroundColor(ZhiyaTheme.darkBrown)
-                                .padding(.horizontal, 14)
-                                .padding(.vertical, 10)
-                                .background(Color(hex: "A8D5BA"))
-                .cornerRadius(16)
-                .shadow(color: ZhiyaTheme.softShadowColor, radius: 3, y: 2)
-                                .cornerRadius(16)
-                                .cornerRadius(4, corners: [.bottomLeft])
-                            Spacer(minLength: 40)
-                        }
+                        AssistantBubble(text: message.content, availableWidth: availableWidth)
                     }
-                    // Challenge card
                     ChallengeCardView(
                         messageId: message.id,
                         challenge: challenge,
+                        availableWidth: availableWidth,
                         onAnswer: onChallengeAnswer
                     )
                     .padding(.leading, 28)
@@ -48,73 +32,79 @@ struct RichMessageView: View {
         case .imageAnalysis:
             VStack(alignment: message.role == .user ? .trailing : .leading, spacing: 8) {
                 if let imageData = message.imageData, let uiImage = UIImage(data: imageData) {
-                    HStack {
-                        if message.role == .user { Spacer(minLength: 40) }
-                        Image(uiImage: uiImage)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: 200, maxHeight: 200)
-                            .cornerRadius(ZhiyaTheme.cornerRadius)
-                        if message.role != .user { Spacer(minLength: 40) }
-                    }
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: 200, maxHeight: 200)
+                        .cornerRadius(ZhiyaTheme.cornerRadius)
+                        .frame(maxWidth: availableWidth * 0.75,
+                               alignment: message.role == .user ? .trailing : .leading)
+                        .padding(.horizontal, 12)
                 }
                 if !message.content.isEmpty {
-                    ChatBubbleView(message: message)
+                    ChatBubbleView(message: message, availableWidth: availableWidth)
                 }
             }
 
         case .growthSnapshot:
-            GrowthSnapshotBubble(message: message)
+            GrowthSnapshotBubble(message: message, availableWidth: availableWidth)
 
         case .weeklyLetter:
-            WeeklyLetterBubble(message: message)
+            WeeklyLetterBubble(message: message, availableWidth: availableWidth)
 
         case .celebration:
-            ChatBubbleView(message: message)
+            ChatBubbleView(message: message, availableWidth: availableWidth)
 
         case .suggestion:
-            SuggestionBubble(message: message, onTap: onSuggestionTap)
+            SuggestionBubble(message: message, availableWidth: availableWidth, onTap: onSuggestionTap)
 
         case .studyPlan:
-            StudyPlanBubble(message: message)
+            StudyPlanBubble(message: message, availableWidth: availableWidth)
         }
+    }
+}
+
+// MARK: - Assistant Bubble (reusable)
+
+struct AssistantBubble: View {
+    let text: String
+    let availableWidth: CGFloat
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 8) {
+            ZhiyaAvatarSmall()
+                .offset(y: 4)
+            Text(text)
+                .font(ZhiyaTheme.body(15))
+                .foregroundColor(ZhiyaTheme.darkBrown)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 10)
+                .frame(maxWidth: availableWidth * 0.75, alignment: .leading)
+                .background(ZhiyaTheme.bubbleGreen)
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .shadow(color: ZhiyaTheme.softShadowColor, radius: 3, y: 2)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 12)
     }
 }
 
 // MARK: - Suggestion Bubble
 
-private struct SuggestionBubble: View {
+struct SuggestionBubble: View {
     let message: ChatMessage
+    let availableWidth: CGFloat
     let onTap: (String) -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            // Text content
             if !message.content.isEmpty {
-                HStack(alignment: .top, spacing: 8) {
-                    Circle()
-                    .fill(Color(hex: "8FD4A4"))
-                    .frame(width: 24, height: 24)
-                    .overlay(Image(systemName: "leaf.fill").font(.system(size: 10)).foregroundColor(.white))
-                        .offset(y: 4)
-                    Text(message.content)
-                        .font(ZhiyaTheme.body(15))
-                        .foregroundColor(ZhiyaTheme.darkBrown)
-                        .padding(.horizontal, 14)
-                        .padding(.vertical, 10)
-                        .background(Color(hex: "A8D5BA"))
-                .cornerRadius(16)
-                .shadow(color: ZhiyaTheme.softShadowColor, radius: 3, y: 2)
-                        .cornerRadius(16)
-                        .cornerRadius(4, corners: [.bottomLeft])
-                    Spacer(minLength: 40)
-                }
+                AssistantBubble(text: message.content, availableWidth: availableWidth)
             }
 
-            // Suggestion button
             if let suggestion = message.suggestionData {
                 HStack {
-                    Spacer().frame(width: 28)
+                    Spacer().frame(width: 40)
                     Button {
                         onTap(message.id)
                     } label: {
@@ -127,11 +117,7 @@ private struct SuggestionBubble: View {
                         .foregroundColor(suggestion.tapped ? ZhiyaTheme.lightBrown : ZhiyaTheme.goldenAmber)
                         .padding(.horizontal, 16)
                         .padding(.vertical, 10)
-                        .background(
-                            suggestion.tapped
-                                ? ZhiyaTheme.warmGold.opacity(0.1)
-                                : ZhiyaTheme.goldenAmber.opacity(0.12)
-                        )
+                        .background(suggestion.tapped ? ZhiyaTheme.warmGold.opacity(0.1) : ZhiyaTheme.goldenAmber.opacity(0.12))
                         .cornerRadius(20)
                         .overlay(
                             RoundedRectangle(cornerRadius: 20)
@@ -148,15 +134,13 @@ private struct SuggestionBubble: View {
 
 // MARK: - Growth Snapshot Bubble
 
-private struct GrowthSnapshotBubble: View {
+struct GrowthSnapshotBubble: View {
     let message: ChatMessage
+    let availableWidth: CGFloat
 
     var body: some View {
         HStack(alignment: .top, spacing: 8) {
-            Circle()
-                    .fill(Color(hex: "8FD4A4"))
-                    .frame(width: 24, height: 24)
-                    .overlay(Image(systemName: "leaf.fill").font(.system(size: 10)).foregroundColor(.white))
+            ZhiyaAvatarSmall()
                 .offset(y: 4)
 
             VStack(alignment: .leading, spacing: 8) {
@@ -164,43 +148,39 @@ private struct GrowthSnapshotBubble: View {
                     .font(ZhiyaTheme.body(15))
                     .foregroundColor(ZhiyaTheme.darkBrown)
 
-                // Mini tree animation
                 HStack(spacing: 4) {
                     Image(systemName: "leaf.fill")
-                        .foregroundColor(Color(hex: "7BC88F"))
+                        .foregroundColor(ZhiyaTheme.leafGreen)
                         .font(.system(size: 16))
                     Text("新叶子长出来了！")
                         .font(ZhiyaTheme.caption(13))
                         .foregroundColor(ZhiyaTheme.softTeal)
                 }
                 .padding(10)
-                .background(Color(hex: "E8F5E9").opacity(0.5))
+                .background(ZhiyaTheme.lightGreenBg.opacity(0.5))
                 .cornerRadius(12)
             }
             .padding(.horizontal, 14)
             .padding(.vertical, 10)
-            .background(Color(hex: "A8D5BA"))
-                .cornerRadius(16)
-                .shadow(color: ZhiyaTheme.softShadowColor, radius: 3, y: 2)
-            .cornerRadius(16)
-            .cornerRadius(4, corners: [.bottomLeft])
-
-            Spacer(minLength: 40)
+            .frame(maxWidth: availableWidth * 0.75, alignment: .leading)
+            .background(ZhiyaTheme.bubbleGreen)
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+            .shadow(color: ZhiyaTheme.softShadowColor, radius: 3, y: 2)
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 12)
     }
 }
 
 // MARK: - Weekly Letter Bubble
 
-private struct WeeklyLetterBubble: View {
+struct WeeklyLetterBubble: View {
     let message: ChatMessage
+    let availableWidth: CGFloat
 
     var body: some View {
         HStack(alignment: .top, spacing: 8) {
-            Circle()
-                    .fill(Color(hex: "8FD4A4"))
-                    .frame(width: 24, height: 24)
-                    .overlay(Image(systemName: "leaf.fill").font(.system(size: 10)).foregroundColor(.white))
+            ZhiyaAvatarSmall()
                 .offset(y: 4)
 
             VStack(alignment: .leading, spacing: 12) {
@@ -212,74 +192,49 @@ private struct WeeklyLetterBubble: View {
                         .foregroundColor(ZhiyaTheme.darkBrown)
                 }
 
-                Divider()
-                    .background(Color(hex: "A8D5BA"))
+                Divider().background(ZhiyaTheme.bubbleGreen)
 
                 Text(message.content)
                     .font(ZhiyaTheme.body(14))
                     .foregroundColor(ZhiyaTheme.darkBrown)
 
-                Divider()
-                    .background(Color(hex: "A8D5BA"))
+                Divider().background(ZhiyaTheme.bubbleGreen)
 
                 HStack {
                     Spacer()
-                    // Use signature image if available, otherwise fallback
-                    if ZhiyaImages.uiImage(.signature) != nil {
-                        ZhiyaImages.signature
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 40, height: 40)
-                    } else {
-                        VStack(spacing: 2) {
-                            Circle()
-                    .fill(Color(hex: "8FD4A4"))
-                    .frame(width: 24, height: 24)
-                    .overlay(Image(systemName: "leaf.fill").font(.system(size: 10)).foregroundColor(.white))
-                            Text("知芽")
-                                .font(ZhiyaTheme.caption(11))
-                                .foregroundColor(ZhiyaTheme.goldenAmber)
-                        }
+                    VStack(spacing: 2) {
+                        ZhiyaAvatarSmall()
+                        Text("知芽")
+                            .font(ZhiyaTheme.caption(11))
+                            .foregroundColor(ZhiyaTheme.goldenAmber)
                     }
                 }
             }
             .padding(16)
-            .background(
-                // Use letter paper background if available
-                Group {
-                    if ZhiyaImages.uiImage(.letterPaperBg) != nil {
-                        ZhiyaImages.letterPaperBg
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                    } else {
-                        Color.white
-                    }
-                }
-            )
-            .cornerRadius(ZhiyaTheme.cornerRadius)
+            .frame(maxWidth: availableWidth - 44, alignment: .leading)
+            .background(Color.white)
+            .clipShape(RoundedRectangle(cornerRadius: ZhiyaTheme.cornerRadius))
             .overlay(
                 RoundedRectangle(cornerRadius: ZhiyaTheme.cornerRadius)
                     .stroke(ZhiyaTheme.warmGold.opacity(0.5), lineWidth: 1.5)
             )
             .shadow(color: ZhiyaTheme.softShadowColor, radius: 8, y: 4)
-
-            Spacer(minLength: 20)
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 12)
     }
 }
 
 // MARK: - Study Plan Bubble
 
-private struct StudyPlanBubble: View {
+struct StudyPlanBubble: View {
     let message: ChatMessage
+    let availableWidth: CGFloat
     @State private var expanded = false
 
     var body: some View {
         HStack(alignment: .top, spacing: 8) {
-            Circle()
-                    .fill(Color(hex: "8FD4A4"))
-                    .frame(width: 24, height: 24)
-                    .overlay(Image(systemName: "leaf.fill").font(.system(size: 10)).foregroundColor(.white))
+            ZhiyaAvatarSmall()
                 .offset(y: 4)
 
             VStack(alignment: .leading, spacing: 10) {
@@ -334,13 +289,12 @@ private struct StudyPlanBubble: View {
             }
             .padding(.horizontal, 14)
             .padding(.vertical, 10)
-            .background(Color(hex: "A8D5BA"))
-                .cornerRadius(16)
-                .shadow(color: ZhiyaTheme.softShadowColor, radius: 3, y: 2)
-            .cornerRadius(16)
-            .cornerRadius(4, corners: [.bottomLeft])
-
-            Spacer(minLength: 40)
+            .frame(maxWidth: availableWidth - 44, alignment: .leading)
+            .background(ZhiyaTheme.bubbleGreen)
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+            .shadow(color: ZhiyaTheme.softShadowColor, radius: 3, y: 2)
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 12)
     }
 }

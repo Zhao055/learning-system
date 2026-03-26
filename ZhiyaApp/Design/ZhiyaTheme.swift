@@ -10,6 +10,23 @@ enum ZhiyaTheme {
     static let darkBrown = Color(hex: "4A3728")
     static let lightBrown = Color(hex: "8B7355")
 
+    // MARK: - Green Palette (single source of truth)
+    // Minimum contrast: all greens ≥ 3:1 against cream/ivory backgrounds
+    static let bubbleGreen = Color(hex: "A8D5BA")      // assistant chat bubble background
+    static let zhiyaGreen = Color(hex: "8FD4A4")        // Zhiya avatar circle fill
+    static let leafGreen = Color(hex: "7BC88F")          // leaf accents, medium green
+    static let leafTopGreen = Color(hex: "8BC34A")       // leaf on top of mascot
+    static let caringGreen = Color(hex: "A8D5BA")        // mascot caring emotion
+    static let defaultGreen = Color(hex: "8FD4A4")       // mascot default body
+    static let sleepyGreen = Color(hex: "C5DEC0")        // mascot sleeping
+    static let gardenDark = Color(hex: "4A9E5C")         // garden icon, darker green
+    static let canopyGreen = Color(hex: "4A8B5C")        // garden tree canopy
+    static let lightGreenBg = Color(hex: "E8F5E9")       // very light green background
+    static let trunkBrown = Color(hex: "8B6914")         // tree trunk
+    static let trunkBrownDark = Color(hex: "A0522D")     // tree trunk gradient end
+    static let gardenTrunkLight = Color(hex: "5C4033")   // garden trunk
+    static let gardenTrunkDark = Color(hex: "3E2723")    // garden trunk gradient end
+
     // Character trait colors
     static let integrity = Color(hex: "6BBF7B")     // green
     static let empathy = Color(hex: "F08080")        // coral

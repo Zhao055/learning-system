@@ -65,9 +65,50 @@ struct SettingsView: View {
                     Text("服务器地址")
                         .font(ZhiyaTheme.caption())
                         .foregroundColor(ZhiyaTheme.lightBrown)
-                    TextField("http://localhost:3000", text: $vm.serverURL)
+                    TextField("http://192.168.x.x:3000", text: $vm.serverURL)
                         .font(ZhiyaTheme.body(14))
                         .onSubmit { vm.saveServerURL() }
+
+                    HStack {
+                        Button("保存") { vm.saveServerURL() }
+                            .font(ZhiyaTheme.label())
+                            .foregroundColor(ZhiyaTheme.goldenAmber)
+
+                        Spacer()
+
+                        Button("测试连接") { vm.saveServerURL(); vm.testServerConnection() }
+                            .font(ZhiyaTheme.label())
+                            .foregroundColor(ZhiyaTheme.softTeal)
+                            .disabled(vm.isTestingServer)
+
+                        switch vm.serverConnectionStatus {
+                        case .success:
+                            Image(systemName: "checkmark.circle.fill")
+                                .foregroundColor(ZhiyaTheme.integrity)
+                        case .failed:
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundColor(ZhiyaTheme.empathy)
+                        case .testing:
+                            ProgressView()
+                        case .unknown:
+                            EmptyView()
+                        }
+                    }
+                }
+            }
+
+            Section("AI 模式") {
+                VStack(alignment: .leading, spacing: 8) {
+                    Picker("模式", selection: $vm.aiMode) {
+                        ForEach(AIMode.allCases, id: \.self) { mode in
+                            Text(mode.label).tag(mode)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+
+                    Text(vm.aiMode.description)
+                        .font(ZhiyaTheme.caption())
+                        .foregroundColor(ZhiyaTheme.lightBrown)
                 }
             }
 

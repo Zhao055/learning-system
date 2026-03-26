@@ -11,7 +11,7 @@ struct AnnualReviewView: View {
                     RoundedRectangle(cornerRadius: ZhiyaTheme.cornerRadiusLG)
                         .fill(
                             LinearGradient(
-                                colors: [Color(hex: "E8F5E9"), ZhiyaTheme.cream],
+                                colors: [ZhiyaTheme.lightGreenBg, ZhiyaTheme.cream],
                                 startPoint: .top,
                                 endPoint: .bottom
                             )

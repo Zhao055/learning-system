@@ -150,7 +150,7 @@ Animations:
 ### Navigation Structure
 
 ```
-[Onboarding] → hasCompletedOnboarding? → [MainTabView]
+[WelcomeSetupView] → hasCompletedSetup? → [SeedMomentView (Onboarding)] → hasCompletedOnboarding? → [MainTabView]
                                               ├── Tab 1: HomeView (NavigationStack)
                                               ├── Tab 2: SubjectSelectionView (NavigationStack)
                                               │           → PaperSelection → ChapterList → KnowledgeCard → Quiz → Result
@@ -163,7 +163,8 @@ Animations:
 
 | Screen | Type | Key Visual Elements |
 |--------|------|-------------------|
-| **SeedMomentView** | Full-screen onboarding | Animated message reveal, growing mascot, subject picker. Layout: VStack + `.background(AmbientBackgroundView)` (not ZStack) to ensure keyboard avoidance works correctly |
+| **WelcomeSetupView** | Full-screen setup | Server URL, API Key, AI Mode configuration. First screen after fresh install |
+| **SeedMomentView** | Full-screen onboarding | LLM-driven chat (8-step state machine), subject picker sheet, seed animation. Layout: VStack + `.background(AmbientBackgroundView)` (not ZStack) to ensure keyboard avoidance works correctly |
 | **HomeView** | ScrollView, cards | Greeting card + mascot, stat row (3 cards), suggestion card, action rows, tree preview |
 | **SubjectSelectionView** | Gradient cards | 3 subject cards with gradient backgrounds, emoji icons |
 | **PaperSelectionView** | Card list | Paper stats (chapters/KPs/questions), availability badge |
@@ -214,14 +215,34 @@ The app background color shifts based on detected mood:
     └── "问知芽" → ChatPanelView sheet
 ```
 
-### Onboarding (Seed Moment)
+### Onboarding (Two-Phase)
 
-5-step conversational flow, not a form:
-1. **Greeting** — "你好，我是知芽" (3 messages, animated reveal)
-2. **Name** — Text field
-3. **Subjects** — Tappable subject list with checkmarks
-4. **Goals** — Optional text field
-5. **Planting** — "以后每一天，我都在" + mascot grows to excited
+**Phase 1: WelcomeSetupView** — Server/API configuration (can skip)
+- Server URL + test connection
+- MiniMax API Key + test connection
+- AI Mode selector (Synapse/Direct/Auto)
+
+**Phase 2: SeedMomentView** — LLM-driven conversational onboarding (8-step state machine):
+1. **Greeting** — "嗨，我是知芽 🌱" (instant) + LLM 流式后续 (or hardcoded fallback)
+2. **Name** — Text input field
+3. **Subjects** — Picker Sheet (multi-select)
+4. **Goals** — Text input field
+5. **Planting** — Seed animation + "开始旅程" button
+
+LLM 优先级：Synapse server → MiniMax direct → hardcoded fallback。每步 15s 超时。
+
+### ObservableObject 嵌套模式
+
+SwiftUI 只观察一层 `ObservableObject`。当 ViewModel 持有子 coordinator（如 `ChatCoordinator`）时，必须用 Combine 转发子对象的 `objectWillChange`：
+
+```swift
+chatCoordinator.objectWillChange
+    .receive(on: DispatchQueue.main)
+    .sink { [weak self] _ in self?.objectWillChange.send() }
+    .store(in: &cancellables)
+```
+
+此模式应用于 `CompanionViewModel` → `ChatCoordinator`。
 
 ---
 

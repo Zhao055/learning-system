@@ -74,7 +74,7 @@ Design tokens established:
 
 | File | Purpose |
 |------|---------|
-| `OnboardingViewModel.swift` | Seed Moment 5-step flow (greeting→name→subjects→goals→planting) |
+| `OnboardingChatCoordinator.swift` | LLM-driven onboarding: 8-step state machine, streaming, fallbacks, Day 0 memory |
 | `HomeViewModel.swift` | Greeting, suggestion, stats aggregation |
 | `QuizViewModel.swift` | Full quiz lifecycle: load→select→confirm→record→milestone check→tree update→next/complete |
 | `ChatViewModel.swift` | Stream AI messages, update assistant bubble in real-time |
@@ -290,13 +290,130 @@ Onboarding 输入框（名字、目标）在真机上被键盘完全遮挡，用
 
 ---
 
+## Session 3 — 2026-03-25: LLM 驱动的 Onboarding 对话
+
+### Objective
+
+将硬编码的 5 句话 onboarding 替换为 LLM 驱动的自由对话，让知芽从第一次见面就开始"认识"孩子，同时在 Day 0 沉淀 PersonalMemory 数据。
+
+### Design Decision: 混合方案
+
+LLM 驱动对话的温度和个性化，但结构化数据（名字、科目、目标）仍通过明确的 UI 动作采集：
+- 名字：文本输入框直接捕获
+- 科目：Picker Sheet 映射精确 ID
+- 目标：文本输入框直接捕获
+- LLM 的价值：让每个过渡有温度，而非替代表单
+
+### Changes
+
+| File | Action | Detail |
+|------|--------|--------|
+| `ViewModels/OnboardingChatCoordinator.swift` | **New** (~270 lines) | 状态机 (8 步)、LLM 流式接入 (Synapse→MiniMax→fallback)、15s 超时、hardcoded fallback、Day 0 记忆提取、阶段感知 system prompt |
+| `Views/Onboarding/SeedMomentView.swift` | **Modified** | 替换 `OnboardingViewModel` → `OnboardingChatCoordinator`，移除所有本地 `@State`，读取 coordinator 的 `@Published` 属性 |
+| `Services/ConversationMemoryService.swift` | **Modified** (1 line) | `private func storeMoment` → `func storeMoment` (internal access for coordinator) |
+| `ViewModels/OnboardingViewModel.swift` | **Deleted** | 所有职责被 OnboardingChatCoordinator 吸收 |
+| `ZhiyaApp.xcodeproj/project.pbxproj` | **Modified** | 新增 OnboardingChatCoordinator，移除 OnboardingViewModel |
+
+### State Machine
+
+```
+.greeting → .awaitingName → .respondToName → .awaitingSubjects
+    → .respondToSubjects → .awaitingGoals → .respondToGoals → .planting
+```
+
+每个 `respondTo*` 步骤：调用 LLM 流式输出，失败则用 hardcoded fallback。
+
+### Day 0 Memory Extraction
+
+Onboarding 完成后自动提取：
+- 目标 → `dream` (SignificantMoment) + `dream` (GrowthMemory, lifeExploration)
+- 科目 → `lifeDiscovery` (GrowthMemory, academic)
+- 完整对话 → `connection` (SignificantMoment)
+
+### Build Result
+
+| Target | Result |
+|--------|--------|
+| iPhone 17 Simulator | **BUILD SUCCEEDED** (0 errors) |
+
+### Verification Checklist
+
+- [x] 编译 0 error
+- [ ] 卸载重装 → onboarding 流式对话正常
+- [ ] 飞行模式 → onboarding fallback 正常
+- [ ] 输入名字 → 选科目 → 输入目标 → 种子动画 → "开始旅程" → 进入主界面
+- [ ] 主界面 CompanionView 能显示正确的 name/subjects/goals
+- [ ] MemoryService 有 Day 0 记忆（dream + lifeDiscovery + connection）
+
+---
+
+## Session 4 — 2026-03-27: 聊天流式输出 UI 不刷新 + Onboarding LLM 启用 + 闪退修复
+
+### Problem 1: 聊天流式输出 UI 不刷新（主要修复）
+
+真机测试发现：服务器已正确返回 200 + SSE 内容，但聊天气泡只显示光标 "▍"，必须用户点击屏幕才显示完整回复。
+
+### Root Cause
+
+两个独立 bug 叠加：
+
+**Bug 1 (主因): ObservableObject 嵌套不传播**
+
+`CompanionView` 观察 `CompanionViewModel`（`@StateObject`），但消息数据在 `ChatCoordinator` 里。`chatCoordinator` 是普通 `let` 属性而非 `@Published`，所以 `chatCoordinator.messages` 变化时，`CompanionViewModel.objectWillChange` 不触发，SwiftUI 不知道需要重绘。用户点击屏幕 → `resignFirstResponder` → 布局重算 → 内容才出现。
+
+**Bug 2 (次因): ForEach content-based id 导致重建**
+
+`.id("\(message.id)-\(message.content.count)-\(message.isStreaming)")` 导致 SwiftUI 把同一条消息的每次内容更新当作不同的 view，触发 destroy + recreate 而非 in-place 更新。
+
+### Fix
+
+| File | Change |
+|------|--------|
+| `ViewModels/CompanionViewModel.swift` | 加 `Set<AnyCancellable>`，在 init 中订阅 `chatCoordinator.objectWillChange` 转发到 `self.objectWillChange.send()` |
+| `Views/Companion/CompanionView.swift` | `.id()` 从 content-based 改回 `message.id` |
+| `Views/Chat/ChatPanelView.swift` | `.id()` 从 content-based 改回 `message.id` |
+
+### Problem 2: Onboarding 始终使用非 LLM 版本
+
+`OnboardingChatCoordinator.startConversation()` 中 LLM 被硬编码禁用：
+```swift
+// aiAvailable = await checkAIAvailability()
+aiAvailable = false
+```
+
+### Fix
+
+| File | Change |
+|------|--------|
+| `ViewModels/OnboardingChatCoordinator.swift` | 取消注释 `aiAvailable = await checkAIAvailability()`，删除 `aiAvailable = false` |
+
+### Problem 3: 卸载重装后闪退
+
+卸载重装清除 UserDefaults 后，`SynapseAPI.swift` 中多处 `URL(string:)!` force unwrap 在 URL 无效时崩溃。
+
+### Fix
+
+| File | Change |
+|------|--------|
+| `Services/SynapseAPI.swift` | 所有 `URL(string:)!` 改为 `guard let url = URL(string:)` 安全解包；`UIDevice.current.identifierForVendor` 用 `MainActor.run` 确保主线程访问 |
+
+### Verification
+
+- [x] 编译 0 error
+- [x] 卸载重装 → WelcomeSetupView → 配置服务器 → 不闪退
+- [x] 测试连接通过
+- [x] Onboarding 进入 LLM 版本
+- [x] 发送消息 → 不点击屏幕 → 回复内容自动出现在气泡中
+- [x] 流式内容逐步显示，无闪烁
+- [x] 多轮对话正常
+
+---
+
 ## Pending / Future Work
 
-- [ ] Connect iOS app to Synapse Server (currently using local-only mode)
 - [ ] Integrate Gemini-generated images into Views (replace programmatic mascot with image assets)
 - [ ] Implement push notifications (APNs integration)
 - [ ] Add progress data sync (iOS ↔ Server)
 - [ ] Weekly letter generation with AI (server-side scheduled task)
 - [ ] Growth tree interaction animations (tap branch → drill into dimension)
-- [ ] Real device end-to-end testing with MiniMax API
 - [ ] TestFlight distribution

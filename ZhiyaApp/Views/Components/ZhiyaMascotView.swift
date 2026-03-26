@@ -97,7 +97,7 @@ struct ZhiyaMascotView: View {
             // Leaf on top
             Image(systemName: "leaf.fill")
                 .font(.system(size: size * 0.3))
-                .foregroundColor(Color(hex: "8BC34A"))
+                .foregroundColor(ZhiyaTheme.leafTopGreen)
                 .offset(x: size * 0.15, y: -size * 0.55)
                 .rotationEffect(.degrees(swaying ? 10 : -5))
         }
@@ -107,10 +107,10 @@ struct ZhiyaMascotView: View {
     private var leafGradient: LinearGradient {
         let baseColor: Color = {
             switch emotion {
-            case .caring: return Color(hex: "A8D5BA")
-            case .happy, .excited: return Color(hex: "7BC88F")
-            case .sleeping: return Color(hex: "C5DEC0")
-            default: return Color(hex: "8FD4A4")
+            case .caring: return ZhiyaTheme.caringGreen
+            case .happy, .excited: return ZhiyaTheme.leafGreen
+            case .sleeping: return ZhiyaTheme.sleepyGreen
+            default: return ZhiyaTheme.defaultGreen
             }
         }()
 
@@ -126,19 +126,19 @@ struct ZhiyaMascotView: View {
         switch emotion {
         case .happy, .excited:
             HalfCircle()
-                .stroke(Color(hex: "4A3728"), lineWidth: size * 0.02)
+                .stroke(ZhiyaTheme.darkBrown, lineWidth: size * 0.02)
                 .frame(width: size * 0.2, height: size * 0.08)
         case .caring:
             Ellipse()
-                .fill(Color(hex: "4A3728").opacity(0.3))
+                .fill(ZhiyaTheme.darkBrown.opacity(0.3))
                 .frame(width: size * 0.1, height: size * 0.06)
         case .sleeping:
             Text("z")
                 .font(.system(size: size * 0.12, weight: .light))
-                .foregroundColor(Color(hex: "4A3728").opacity(0.4))
+                .foregroundColor(ZhiyaTheme.darkBrown.opacity(0.4))
         default:
             RoundedRectangle(cornerRadius: 1)
-                .fill(Color(hex: "4A3728").opacity(0.3))
+                .fill(ZhiyaTheme.darkBrown.opacity(0.3))
                 .frame(width: size * 0.12, height: size * 0.015)
         }
     }
@@ -162,17 +162,17 @@ private struct Eye: View {
         Group {
             if blinking || emotion == .sleeping {
                 RoundedRectangle(cornerRadius: 1)
-                    .fill(Color(hex: "4A3728"))
+                    .fill(ZhiyaTheme.darkBrown)
                     .frame(width: size, height: 2)
             } else {
                 switch emotion {
                 case .happy, .excited:
                     HalfCircle()
-                        .fill(Color(hex: "4A3728"))
+                        .fill(ZhiyaTheme.darkBrown)
                         .frame(width: size, height: size * 0.5)
                 case .caring:
                     Circle()
-                        .fill(Color(hex: "4A3728"))
+                        .fill(ZhiyaTheme.darkBrown)
                         .frame(width: size * 0.85, height: size * 0.85)
                         .overlay(
                             Circle()
@@ -182,7 +182,7 @@ private struct Eye: View {
                         )
                 default:
                     Circle()
-                        .fill(Color(hex: "4A3728"))
+                        .fill(ZhiyaTheme.darkBrown)
                         .frame(width: size, height: size)
                         .overlay(
                             Circle()

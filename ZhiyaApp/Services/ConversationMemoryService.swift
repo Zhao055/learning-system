@@ -95,7 +95,7 @@ final class ConversationMemoryService {
 
     // MARK: - Persistence
 
-    private func storeMoment(_ moment: SignificantMoment) {
+    func storeMoment(_ moment: SignificantMoment) {
         var moments = loadMoments()
         moments.append(moment)
         // Keep last 500 moments

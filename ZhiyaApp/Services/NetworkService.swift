@@ -20,9 +20,17 @@ final class NetworkService {
         return try JSONDecoder().decode(T.self, from: data)
     }
 
+    /// Timeout-aware URLSession for streaming (30s connect, 60s resource)
+    private lazy var streamSession: URLSession = {
+        let config = URLSessionConfiguration.default
+        config.timeoutIntervalForRequest = 30
+        config.timeoutIntervalForResource = 300
+        return URLSession(configuration: config)
+    }()
+
     func streamSSE(_ url: URL, body: Encodable, headers: [String: String] = [:]) -> AsyncThrowingStream<String, Error> {
         AsyncThrowingStream { continuation in
-            Task {
+            let task = Task {
                 do {
                     var request = URLRequest(url: url)
                     request.httpMethod = "POST"
@@ -31,14 +39,16 @@ final class NetworkService {
                         request.setValue(value, forHTTPHeaderField: key)
                     }
                     request.httpBody = try JSONEncoder().encode(body)
+                    request.timeoutInterval = 30
 
-                    let (bytes, response) = try await URLSession.shared.bytes(for: request)
+                    let (bytes, response) = try await streamSession.bytes(for: request)
                     guard let http = response as? HTTPURLResponse, 200..<300 ~= http.statusCode else {
                         continuation.finish(throwing: NetworkError.badStatus((response as? HTTPURLResponse)?.statusCode ?? 0))
                         return
                     }
 
                     for try await line in bytes.lines {
+                        if Task.isCancelled { break }
                         if line.hasPrefix("data: ") {
                             let data = String(line.dropFirst(6))
                             if data == "[DONE]" { break }
@@ -56,6 +66,7 @@ final class NetworkService {
                     continuation.finish(throwing: error)
                 }
             }
+            continuation.onTermination = { _ in task.cancel() }
         }
     }
 

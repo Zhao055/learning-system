@@ -39,7 +39,7 @@ struct CompanionInputBar: View {
                 .padding(.vertical, 8)
                 .background(Color.white)
                 .cornerRadius(20)
-                .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(hex: "D4A574").opacity(0.4), lineWidth: 1))
+                .overlay(RoundedRectangle(cornerRadius: 20).stroke(ZhiyaTheme.goldenAmber.opacity(0.4), lineWidth: 1))
 
                 // Voice / Send toggle
                 if inputText.trimmingCharacters(in: .whitespaces).isEmpty {

@@ -12,7 +12,7 @@ struct GrowthTreeView: View {
                     RoundedRectangle(cornerRadius: ZhiyaTheme.cornerRadiusLG)
                         .fill(
                             LinearGradient(
-                                colors: [Color(hex: "E8F5E9"), Color(hex: "FFF8F0")],
+                                colors: [ZhiyaTheme.lightGreenBg, ZhiyaTheme.cream],
                                 startPoint: .top,
                                 endPoint: .bottom
                             )
@@ -27,7 +27,7 @@ struct GrowthTreeView: View {
                         RoundedRectangle(cornerRadius: 4)
                             .fill(
                                 LinearGradient(
-                                    colors: [Color(hex: "8B6914"), Color(hex: "A0522D")],
+                                    colors: [ZhiyaTheme.trunkBrown, ZhiyaTheme.trunkBrownDark],
                                     startPoint: .leading,
                                     endPoint: .trailing
                                 )
@@ -37,7 +37,7 @@ struct GrowthTreeView: View {
                         // Roots
                         Image(systemName: "arrow.down.forward.and.arrow.up.backward")
                             .font(.system(size: 20))
-                            .foregroundColor(Color(hex: "8B6914").opacity(0.5))
+                            .foregroundColor(ZhiyaTheme.trunkBrown.opacity(0.5))
                     }
                 }
                 .padding(.horizontal)
@@ -88,6 +88,36 @@ struct GrowthTreeView: View {
                     }
                 }
 
+                // Growth Stories
+                if !vm.growthStories.isEmpty {
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("成长故事")
+                            .font(ZhiyaTheme.heading(18))
+                            .foregroundColor(ZhiyaTheme.darkBrown)
+                            .padding(.horizontal)
+
+                        ForEach(vm.growthStories) { story in
+                            ZhiyaCard {
+                                HStack(alignment: .top, spacing: 12) {
+                                    Image(systemName: story.icon)
+                                        .font(.system(size: 20))
+                                        .foregroundColor(ZhiyaTheme.leafGreen)
+                                        .frame(width: 32)
+                                    VStack(alignment: .leading, spacing: 4) {
+                                        Text(story.title)
+                                            .font(ZhiyaTheme.label())
+                                            .foregroundColor(ZhiyaTheme.darkBrown)
+                                        Text(story.content)
+                                            .font(ZhiyaTheme.body(14))
+                                            .foregroundColor(ZhiyaTheme.lightBrown)
+                                    }
+                                }
+                            }
+                            .padding(.horizontal)
+                        }
+                    }
+                }
+
                 // Milestones (flowers)
                 if !vm.tree.flowers.isEmpty {
                     VStack(alignment: .leading, spacing: 12) {
@@ -130,7 +160,7 @@ struct GrowthTreeView: View {
             // Base canopy
             ForEach(0..<3, id: \.self) { i in
                 Ellipse()
-                    .fill(Color(hex: "7BC88F").opacity(0.6 + Double(i) * 0.15))
+                    .fill(ZhiyaTheme.leafGreen.opacity(0.6 + Double(i) * 0.15))
                     .frame(width: size - CGFloat(i) * 20, height: size * 0.7 - CGFloat(i) * 15)
                     .offset(x: CGFloat(i - 1) * 15, y: CGFloat(i) * -10)
             }
@@ -143,3 +173,4 @@ struct GrowthTreeView: View {
         .frame(height: size * 0.7)
     }
 }
+

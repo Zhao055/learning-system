@@ -21,12 +21,23 @@ final class EmotionEngine: ObservableObject {
 
     func updateFromQuizResult(correct: Bool, consecutiveWrong: Int) {
         if correct {
-            currentMood = .smooth
-            zhiyaEmotion = .happy
+            if consecutiveWrong == 0 {
+                // First-try correct
+                currentMood = .smooth
+                zhiyaEmotion = .happy
+            } else {
+                // Correct after some wrong answers — celebrate recovery
+                currentMood = .smooth
+                zhiyaEmotion = .excited
+                recordMood(.smooth, score: 0.8, context: "经历挫折后答对了")
+            }
         } else if consecutiveWrong >= 3 {
             currentMood = .frustrated
             zhiyaEmotion = .caring
             recordMood(.frustrated, score: 0.2, context: "连续\(consecutiveWrong)题答错")
+        } else if consecutiveWrong >= 2 {
+            currentMood = .lowEnergy
+            zhiyaEmotion = .caring
         } else {
             currentMood = .neutral
             zhiyaEmotion = .thinking

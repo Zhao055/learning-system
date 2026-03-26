@@ -11,6 +11,7 @@
 		A2000002 /* ZhiyaComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002 /* ZhiyaComponents.swift */; };
 		A2000003 /* ZhiyaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000003 /* ZhiyaTheme.swift */; };
 		A2000004 /* Color+Zhiya.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000004 /* Color+Zhiya.swift */; };
+		A2000072 /* ZhiyaImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000072 /* ZhiyaImages.swift */; };
 		A2000005 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000005 /* ChatMessage.swift */; };
 		A2000006 /* CompanionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000006 /* CompanionState.swift */; };
 		A2000007 /* EmotionalProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000007 /* EmotionalProfile.swift */; };
@@ -28,36 +29,43 @@
 		A2000019 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000019 /* NetworkService.swift */; };
 		A2000020 /* ProgressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000020 /* ProgressService.swift */; };
 		A2000021 /* QuestionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000021 /* QuestionRepository.swift */; };
-		A2000022 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000022 /* ChatViewModel.swift */; };
-		A2000023 /* GrowthTreeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000023 /* GrowthTreeViewModel.swift */; };
-		A2000025 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000025 /* OnboardingViewModel.swift */; };
-		A2000026 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000026 /* QuizViewModel.swift */; };
-		A2000027 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000027 /* SettingsViewModel.swift */; };
-		A2000031 /* ChatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000031 /* ChatBubbleView.swift */; };
-		A2000032 /* ChatPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000032 /* ChatPanelView.swift */; };
-		A2000033 /* GradientCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000033 /* GradientCard.swift */; };
-		A2000034 /* ZhiyaMascotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000034 /* ZhiyaMascotView.swift */; };
-		A2000035 /* AnnualReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000035 /* AnnualReviewView.swift */; };
-		A2000036 /* CelebrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000036 /* CelebrationView.swift */; };
-		A2000038 /* GrowthTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000038 /* GrowthTreeView.swift */; };
-		A2000039 /* MemoryWallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000039 /* MemoryWallView.swift */; };
-		A2000040 /* WeeklyLetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000040 /* WeeklyLetterView.swift */; };
-		A2000047 /* SeedMomentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000047 /* SeedMomentView.swift */; };
-		A2000051 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000051 /* SettingsView.swift */; };
-		A2000060 /* CompanionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000060 /* CompanionView.swift */; };
-		A2000061 /* CompanionInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000061 /* CompanionInputBar.swift */; };
-		A2000062 /* AmbientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000062 /* AmbientBackgroundView.swift */; };
-		A2000063 /* RichMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000063 /* RichMessageView.swift */; };
-		A2000064 /* ChallengeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000064 /* ChallengeCardView.swift */; };
-		A2000065 /* VoiceInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000065 /* VoiceInputView.swift */; };
-		A2000066 /* CameraInputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000066 /* CameraInputSheet.swift */; };
-		A2000067 /* GardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000067 /* GardenView.swift */; };
-		A2000068 /* CompanionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000068 /* CompanionViewModel.swift */; };
 		A2000069 /* ProactiveEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000069 /* ProactiveEngine.swift */; };
 		A2000070 /* QuestionSurfacingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000070 /* QuestionSurfacingService.swift */; };
 		A2000071 /* ConversationMemoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000071 /* ConversationMemoryService.swift */; };
-		A2000072 /* ZhiyaImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000072 /* ZhiyaImages.swift */; };
 		A2000073 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000073 /* NotificationService.swift */; };
+		A2000080 /* SynapseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000080 /* SynapseAPI.swift */; };
+		A2000081 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000081 /* NetworkMonitor.swift */; };
+		A2000031 /* ChatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000031 /* ChatBubbleView.swift */; };
+		A2000060 /* CompanionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000060 /* CompanionView.swift */; };
+		A2000061 /* CompanionInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000061 /* CompanionInputBar.swift */; };
+		A2000063 /* RichMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000063 /* RichMessageView.swift */; };
+		A2000064 /* ChallengeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000064 /* ChallengeCardView.swift */; };
+		A2000068 /* CompanionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000068 /* CompanionViewModel.swift */; };
+		A2000082 /* ChatCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000082 /* ChatCoordinator.swift */; };
+		A2000083 /* ChallengeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000083 /* ChallengeCoordinator.swift */; };
+		A2000084 /* WeeklyLetterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000084 /* WeeklyLetterService.swift */; };
+		A2000085 /* StudyPlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000085 /* StudyPlanService.swift */; };
+		A2000047 /* SeedMomentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000047 /* SeedMomentView.swift */; };
+		A2000090 /* OnboardingChatCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000090 /* OnboardingChatCoordinator.swift */; };
+		A2000091 /* AIMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000091 /* AIMode.swift */; };
+		A2000092 /* WelcomeSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000092 /* WelcomeSetupView.swift */; };
+		A2000051 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000051 /* SettingsView.swift */; };
+		A2000027 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000027 /* SettingsViewModel.swift */; };
+		A2000034 /* ZhiyaMascotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000034 /* ZhiyaMascotView.swift */; };
+		A2000062 /* AmbientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000062 /* AmbientBackgroundView.swift */; };
+		A2000067 /* GardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000067 /* GardenView.swift */; };
+		A2000038 /* GrowthTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000038 /* GrowthTreeView.swift */; };
+		A2000036 /* CelebrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000036 /* CelebrationView.swift */; };
+		A2000023 /* GrowthTreeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000023 /* GrowthTreeViewModel.swift */; };
+		A2000066 /* CameraInputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000066 /* CameraInputSheet.swift */; };
+		A2000065 /* VoiceInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000065 /* VoiceInputView.swift */; };
+		A2000039 /* MemoryWallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000039 /* MemoryWallView.swift */; };
+		A2000040 /* WeeklyLetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000040 /* WeeklyLetterView.swift */; };
+		A2000035 /* AnnualReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000035 /* AnnualReviewView.swift */; };
+		A2000033 /* GradientCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000033 /* GradientCard.swift */; };
+		A2000032 /* ChatPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000032 /* ChatPanelView.swift */; };
+		A2000022 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000022 /* ChatViewModel.swift */; };
+		A2000026 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000026 /* QuizViewModel.swift */; };
 		A4000040 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3000040 /* Assets.xcassets */; };
 		A4000001 /* annual_review.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000001 /* annual_review.jpeg */; };
 		A4000002 /* bg_autumn.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3000002 /* bg_autumn.jpeg */; };
@@ -101,6 +109,7 @@
 		A1000002 /* ZhiyaComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhiyaComponents.swift; sourceTree = "<group>"; };
 		A1000003 /* ZhiyaTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhiyaTheme.swift; sourceTree = "<group>"; };
 		A1000004 /* Color+Zhiya.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Zhiya.swift"; sourceTree = "<group>"; };
+		A1000072 /* ZhiyaImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhiyaImages.swift; sourceTree = "<group>"; };
 		A1000005 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		A1000006 /* CompanionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionState.swift; sourceTree = "<group>"; };
 		A1000007 /* EmotionalProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionalProfile.swift; sourceTree = "<group>"; };
@@ -118,36 +127,43 @@
 		A1000019 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A1000020 /* ProgressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressService.swift; sourceTree = "<group>"; };
 		A1000021 /* QuestionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRepository.swift; sourceTree = "<group>"; };
-		A1000022 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
-		A1000023 /* GrowthTreeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthTreeViewModel.swift; sourceTree = "<group>"; };
-		A1000025 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
-		A1000026 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
-		A1000027 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		A1000031 /* ChatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleView.swift; sourceTree = "<group>"; };
-		A1000032 /* ChatPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPanelView.swift; sourceTree = "<group>"; };
-		A1000033 /* GradientCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientCard.swift; sourceTree = "<group>"; };
-		A1000034 /* ZhiyaMascotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhiyaMascotView.swift; sourceTree = "<group>"; };
-		A1000035 /* AnnualReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualReviewView.swift; sourceTree = "<group>"; };
-		A1000036 /* CelebrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationView.swift; sourceTree = "<group>"; };
-		A1000038 /* GrowthTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthTreeView.swift; sourceTree = "<group>"; };
-		A1000039 /* MemoryWallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryWallView.swift; sourceTree = "<group>"; };
-		A1000040 /* WeeklyLetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyLetterView.swift; sourceTree = "<group>"; };
-		A1000047 /* SeedMomentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedMomentView.swift; sourceTree = "<group>"; };
-		A1000051 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		A1000060 /* CompanionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionView.swift; sourceTree = "<group>"; };
-		A1000061 /* CompanionInputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionInputBar.swift; sourceTree = "<group>"; };
-		A1000062 /* AmbientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbientBackgroundView.swift; sourceTree = "<group>"; };
-		A1000063 /* RichMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichMessageView.swift; sourceTree = "<group>"; };
-		A1000064 /* ChallengeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCardView.swift; sourceTree = "<group>"; };
-		A1000065 /* VoiceInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceInputView.swift; sourceTree = "<group>"; };
-		A1000066 /* CameraInputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraInputSheet.swift; sourceTree = "<group>"; };
-		A1000067 /* GardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenView.swift; sourceTree = "<group>"; };
-		A1000068 /* CompanionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionViewModel.swift; sourceTree = "<group>"; };
 		A1000069 /* ProactiveEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProactiveEngine.swift; sourceTree = "<group>"; };
 		A1000070 /* QuestionSurfacingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSurfacingService.swift; sourceTree = "<group>"; };
 		A1000071 /* ConversationMemoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationMemoryService.swift; sourceTree = "<group>"; };
-		A1000072 /* ZhiyaImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhiyaImages.swift; sourceTree = "<group>"; };
 		A1000073 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		A1000080 /* SynapseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynapseAPI.swift; sourceTree = "<group>"; };
+		A1000081 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		A1000031 /* ChatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleView.swift; sourceTree = "<group>"; };
+		A1000060 /* CompanionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionView.swift; sourceTree = "<group>"; };
+		A1000061 /* CompanionInputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionInputBar.swift; sourceTree = "<group>"; };
+		A1000063 /* RichMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichMessageView.swift; sourceTree = "<group>"; };
+		A1000064 /* ChallengeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCardView.swift; sourceTree = "<group>"; };
+		A1000068 /* CompanionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionViewModel.swift; sourceTree = "<group>"; };
+		A1000082 /* ChatCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCoordinator.swift; sourceTree = "<group>"; };
+		A1000083 /* ChallengeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCoordinator.swift; sourceTree = "<group>"; };
+		A1000084 /* WeeklyLetterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyLetterService.swift; sourceTree = "<group>"; };
+		A1000085 /* StudyPlanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPlanService.swift; sourceTree = "<group>"; };
+		A1000047 /* SeedMomentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedMomentView.swift; sourceTree = "<group>"; };
+		A1000090 /* OnboardingChatCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingChatCoordinator.swift; sourceTree = "<group>"; };
+		A1000091 /* AIMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIMode.swift; sourceTree = "<group>"; };
+		A1000092 /* WelcomeSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSetupView.swift; sourceTree = "<group>"; };
+		A1000051 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A1000027 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		A1000034 /* ZhiyaMascotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhiyaMascotView.swift; sourceTree = "<group>"; };
+		A1000062 /* AmbientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbientBackgroundView.swift; sourceTree = "<group>"; };
+		A1000067 /* GardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenView.swift; sourceTree = "<group>"; };
+		A1000038 /* GrowthTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthTreeView.swift; sourceTree = "<group>"; };
+		A1000036 /* CelebrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationView.swift; sourceTree = "<group>"; };
+		A1000023 /* GrowthTreeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthTreeViewModel.swift; sourceTree = "<group>"; };
+		A1000066 /* CameraInputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraInputSheet.swift; sourceTree = "<group>"; };
+		A1000065 /* VoiceInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceInputView.swift; sourceTree = "<group>"; };
+		A1000039 /* MemoryWallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryWallView.swift; sourceTree = "<group>"; };
+		A1000040 /* WeeklyLetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyLetterView.swift; sourceTree = "<group>"; };
+		A1000035 /* AnnualReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualReviewView.swift; sourceTree = "<group>"; };
+		A1000033 /* GradientCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientCard.swift; sourceTree = "<group>"; };
+		A1000032 /* ChatPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPanelView.swift; sourceTree = "<group>"; };
+		A1000022 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		A1000026 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		A3000040 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3000001 /* annual_review.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = annual_review.jpeg; sourceTree = "<group>"; };
 		A3000002 /* bg_autumn.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_autumn.jpeg; sourceTree = "<group>"; };
@@ -262,6 +278,7 @@
 				A1000011 /* QuestionBank.swift */,
 				A1000012 /* QuizState.swift */,
 				A1000013 /* Subject.swift */,
+				A1000091 /* AIMode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,12 +292,14 @@
 				A1000016 /* EmotionEngine.swift */,
 				A1000017 /* KeychainService.swift */,
 				A1000018 /* MemoryService.swift */,
+				A1000081 /* NetworkMonitor.swift */,
 				A1000019 /* NetworkService.swift */,
+				A1000073 /* NotificationService.swift */,
 				A1000069 /* ProactiveEngine.swift */,
 				A1000020 /* ProgressService.swift */,
 				A1000021 /* QuestionRepository.swift */,
 				A1000070 /* QuestionSurfacingService.swift */,
-				A1000073 /* NotificationService.swift */,
+				A1000080 /* SynapseAPI.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -288,12 +307,16 @@
 		A5000006 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				A1000022 /* ChatViewModel.swift */,
+				A1000082 /* ChatCoordinator.swift */,
+				A1000083 /* ChallengeCoordinator.swift */,
 				A1000068 /* CompanionViewModel.swift */,
-				A1000023 /* GrowthTreeViewModel.swift */,
-				A1000025 /* OnboardingViewModel.swift */,
-				A1000026 /* QuizViewModel.swift */,
+				A1000085 /* StudyPlanService.swift */,
+				A1000084 /* WeeklyLetterService.swift */,
+				A1000090 /* OnboardingChatCoordinator.swift */,
 				A1000027 /* SettingsViewModel.swift */,
+				A1000023 /* GrowthTreeViewModel.swift */,
+				A1000022 /* ChatViewModel.swift */,
+				A1000026 /* QuizViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -324,11 +347,11 @@
 		A5000021 /* Companion */ = {
 			isa = PBXGroup;
 			children = (
-				A1000062 /* AmbientBackgroundView.swift */,
-				A1000066 /* CameraInputSheet.swift */,
 				A1000064 /* ChallengeCardView.swift */,
 				A1000061 /* CompanionInputBar.swift */,
 				A1000060 /* CompanionView.swift */,
+				A1000062 /* AmbientBackgroundView.swift */,
+				A1000066 /* CameraInputSheet.swift */,
 				A1000063 /* RichMessageView.swift */,
 				A1000065 /* VoiceInputView.swift */,
 			);
@@ -368,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				A1000047 /* SeedMomentView.swift */,
+				A1000092 /* WelcomeSetupView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -546,6 +570,7 @@
 				A2000002 /* ZhiyaComponents.swift in Sources */,
 				A2000003 /* ZhiyaTheme.swift in Sources */,
 				A2000004 /* Color+Zhiya.swift in Sources */,
+				A2000072 /* ZhiyaImages.swift in Sources */,
 				A2000005 /* ChatMessage.swift in Sources */,
 				A2000006 /* CompanionState.swift in Sources */,
 				A2000007 /* EmotionalProfile.swift in Sources */,
@@ -566,33 +591,40 @@
 				A2000069 /* ProactiveEngine.swift in Sources */,
 				A2000070 /* QuestionSurfacingService.swift in Sources */,
 				A2000071 /* ConversationMemoryService.swift in Sources */,
-				A2000022 /* ChatViewModel.swift in Sources */,
-				A2000068 /* CompanionViewModel.swift in Sources */,
-				A2000023 /* GrowthTreeViewModel.swift in Sources */,
-				A2000025 /* OnboardingViewModel.swift in Sources */,
-				A2000026 /* QuizViewModel.swift in Sources */,
-				A2000027 /* SettingsViewModel.swift in Sources */,
+				A2000073 /* NotificationService.swift in Sources */,
+				A2000080 /* SynapseAPI.swift in Sources */,
+				A2000081 /* NetworkMonitor.swift in Sources */,
 				A2000031 /* ChatBubbleView.swift in Sources */,
-				A2000032 /* ChatPanelView.swift in Sources */,
-				A2000033 /* GradientCard.swift in Sources */,
-				A2000034 /* ZhiyaMascotView.swift in Sources */,
 				A2000060 /* CompanionView.swift in Sources */,
 				A2000061 /* CompanionInputBar.swift in Sources */,
-				A2000062 /* AmbientBackgroundView.swift in Sources */,
 				A2000063 /* RichMessageView.swift in Sources */,
 				A2000064 /* ChallengeCardView.swift in Sources */,
-				A2000065 /* VoiceInputView.swift in Sources */,
-				A2000066 /* CameraInputSheet.swift in Sources */,
+				A2000068 /* CompanionViewModel.swift in Sources */,
+				A2000082 /* ChatCoordinator.swift in Sources */,
+				A2000083 /* ChallengeCoordinator.swift in Sources */,
+				A2000084 /* WeeklyLetterService.swift in Sources */,
+				A2000085 /* StudyPlanService.swift in Sources */,
+				A2000047 /* SeedMomentView.swift in Sources */,
+				A2000090 /* OnboardingChatCoordinator.swift in Sources */,
+				A2000091 /* AIMode.swift in Sources */,
+				A2000092 /* WelcomeSetupView.swift in Sources */,
+				A2000051 /* SettingsView.swift in Sources */,
+				A2000027 /* SettingsViewModel.swift in Sources */,
+				A2000034 /* ZhiyaMascotView.swift in Sources */,
+				A2000062 /* AmbientBackgroundView.swift in Sources */,
 				A2000067 /* GardenView.swift in Sources */,
-				A2000035 /* AnnualReviewView.swift in Sources */,
-				A2000036 /* CelebrationView.swift in Sources */,
 				A2000038 /* GrowthTreeView.swift in Sources */,
+				A2000036 /* CelebrationView.swift in Sources */,
+				A2000023 /* GrowthTreeViewModel.swift in Sources */,
+				A2000066 /* CameraInputSheet.swift in Sources */,
+				A2000065 /* VoiceInputView.swift in Sources */,
 				A2000039 /* MemoryWallView.swift in Sources */,
 				A2000040 /* WeeklyLetterView.swift in Sources */,
-				A2000047 /* SeedMomentView.swift in Sources */,
-				A2000051 /* SettingsView.swift in Sources */,
-				A2000072 /* ZhiyaImages.swift in Sources */,
-				A2000073 /* NotificationService.swift in Sources */,
+				A2000035 /* AnnualReviewView.swift in Sources */,
+				A2000033 /* GradientCard.swift in Sources */,
+				A2000032 /* ChatPanelView.swift in Sources */,
+				A2000022 /* ChatViewModel.swift in Sources */,
+				A2000026 /* QuizViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,16 +2,19 @@ import SwiftUI
 
 @main
 struct ZhiyaApp: App {
+    @AppStorage("hasCompletedSetup") private var hasCompletedSetup = false
     @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
     @StateObject private var companionEngine = CompanionEngine()
 
     var body: some Scene {
         WindowGroup {
-            if hasCompletedOnboarding {
-                CompanionView(companionEngine: companionEngine)
+            if !hasCompletedSetup {
+                WelcomeSetupView()
+            } else if !hasCompletedOnboarding {
+                SeedMomentView()
                     .environmentObject(companionEngine)
             } else {
-                SeedMomentView()
+                CompanionView(companionEngine: companionEngine)
                     .environmentObject(companionEngine)
             }
         }

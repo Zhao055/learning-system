@@ -28,20 +28,24 @@ struct ChatPanelView: View {
             Divider()
 
             // Messages
-            ScrollViewReader { proxy in
+            GeometryReader { geo in
+                let availableWidth = geo.size.width
+                ScrollViewReader { proxy in
                 ScrollView {
                     LazyVStack(spacing: 12) {
                         ForEach(vm.messages) { message in
-                            ChatBubbleView(message: message)
+                            ChatBubbleView(message: message, availableWidth: availableWidth)
                                 .id(message.id)
                         }
                     }
+                    .frame(maxWidth: .infinity)
                     .padding()
                 }
                 .onChange(of: vm.messages.count) {
                     if let last = vm.messages.last {
                         withAnimation { proxy.scrollTo(last.id, anchor: .bottom) }
                     }
+                }
                 }
             }
 

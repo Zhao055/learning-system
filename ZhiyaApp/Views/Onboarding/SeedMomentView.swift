@@ -2,40 +2,30 @@ import SwiftUI
 
 struct SeedMomentView: View {
     @EnvironmentObject var companion: CompanionEngine
-    @StateObject private var vm = OnboardingViewModel()
+    @StateObject private var coordinator = OnboardingChatCoordinator()
     @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
 
-    @State private var chatMessages: [OnboardingMessage] = []
-    @State private var showInput = false
     @State private var inputText = ""
-    @State private var showSeedAnimation = false
-    @State private var showSubjectSheet = false
     @FocusState private var inputFocused: Bool
-
-    struct OnboardingMessage: Identifiable {
-        let id = UUID()
-        let isZhiya: Bool
-        let content: String
-    }
 
     var body: some View {
         VStack(spacing: 0) {
             // Mascot
             VStack(spacing: 8) {
-                if showSeedAnimation {
+                if coordinator.showSeedAnimation {
                     seedMomentImage
-                        .scaleEffect(showSeedAnimation ? 1.0 : 0.3)
-                        .opacity(showSeedAnimation ? 1.0 : 0.0)
+                        .scaleEffect(coordinator.showSeedAnimation ? 1.0 : 0.3)
+                        .opacity(coordinator.showSeedAnimation ? 1.0 : 0.0)
                         .shadow(color: ZhiyaTheme.bubbleGreen.opacity(0.6), radius: 20, x: 0, y: 0)
                         .overlay(
                             Circle()
                                 .fill(ZhiyaTheme.bubbleGreen.opacity(0.2))
-                                .scaleEffect(showSeedAnimation ? 2.0 : 0.5)
-                                .opacity(showSeedAnimation ? 0.0 : 0.8)
-                                .animation(.easeOut(duration: 1.2), value: showSeedAnimation)
+                                .scaleEffect(coordinator.showSeedAnimation ? 2.0 : 0.5)
+                                .opacity(coordinator.showSeedAnimation ? 0.0 : 0.8)
+                                .animation(.easeOut(duration: 1.2), value: coordinator.showSeedAnimation)
                         )
                         .transition(.scale(scale: 0.3).combined(with: .opacity))
-                        .animation(.spring(response: 0.6, dampingFraction: 0.6, blendDuration: 0), value: showSeedAnimation)
+                        .animation(.spring(response: 0.6, dampingFraction: 0.6, blendDuration: 0), value: coordinator.showSeedAnimation)
                 } else {
                     ZhiyaMascotView(emotion: .gazing, size: 70)
                 }
@@ -48,9 +38,9 @@ struct SeedMomentView: View {
                 ScrollView {
                     LazyVStack(spacing: 12) {
                         // Layout anchor — forces re-render when messages change
-                        Text("\(chatMessages.count)")
+                        Text("\(coordinator.messages.count)")
                             .font(.system(size: 1)).opacity(0.001).frame(height: 0.1)
-                        ForEach(chatMessages) { msg in
+                        ForEach(coordinator.messages) { msg in
                             Text(msg.content)
                                 .font(.system(size: 16, design: .rounded))
                                 .foregroundColor(ZhiyaTheme.darkBrown)
@@ -63,8 +53,8 @@ struct SeedMomentView: View {
                     }
                     .padding(.vertical, 8)
                 }
-                .onChange(of: chatMessages.count) {
-                    if let last = chatMessages.last {
+                .onChange(of: coordinator.messages.count) {
+                    if let last = coordinator.messages.last {
                         withAnimation { proxy.scrollTo(last.id, anchor: .bottom) }
                     }
                 }
@@ -72,11 +62,11 @@ struct SeedMomentView: View {
 
         }
         .safeAreaInset(edge: .bottom) {
-                if showInput {
+                if coordinator.showInput {
                     VStack(spacing: 0) {
                         Divider()
 
-                        if vm.currentStep == .planting {
+                        if coordinator.currentStep == .planting {
                             // "开始旅程" button
                             HStack {
                                 Spacer()
@@ -96,7 +86,7 @@ struct SeedMomentView: View {
                         } else {
                             // Text input for name & goals
                             HStack(spacing: 10) {
-                                TextField(inputPlaceholder, text: $inputText)
+                                TextField(coordinator.inputPlaceholder, text: $inputText)
                                     .font(ZhiyaTheme.body(16))
                                     .foregroundColor(ZhiyaTheme.darkBrown)
                                     .focused($inputFocused)
@@ -114,7 +104,7 @@ struct SeedMomentView: View {
                                             ? ZhiyaTheme.warmGold.opacity(0.4)
                                             : ZhiyaTheme.goldenAmber)
                                 }
-                                .disabled(inputText.trimmingCharacters(in: .whitespaces).isEmpty)
+                                .disabled(inputText.trimmingCharacters(in: .whitespaces).isEmpty || coordinator.isStreaming)
                             }
                             .padding(.horizontal)
                             .padding(.vertical, 10)
@@ -126,88 +116,36 @@ struct SeedMomentView: View {
                 }
             }
         .background(AmbientBackgroundView().ignoresSafeArea())
-        .onAppear { startConversation() }
-        // keyboard focus handled by AutoFocusTextField
-        .sheet(isPresented: $showSubjectSheet) {
-            SubjectPickerSheet(selectedSubjects: $vm.selectedSubjects) {
-                showSubjectSheet = false
-                confirmSubjects()
+        .onAppear { coordinator.startConversation() }
+        .sheet(isPresented: $coordinator.showSubjectSheet) {
+            SubjectPickerSheet(selectedSubjects: $coordinator.selectedSubjects) {
+                coordinator.showSubjectSheet = false
+                coordinator.confirmSubjects(coordinator.selectedSubjects)
             }
         }
     }
 
-    // MARK: - Conversation Flow
-
-    private func startConversation() {
-        addZhiyaMessage("嗨，我是知芽。", delay: 0.5) {
-            self.addZhiyaMessage("你叫什么名字？", delay: 0.8) {
-                self.vm.currentStep = .name
-                withAnimation { self.showInput = true }
-            }
-        }
-    }
+    // MARK: - Actions
 
     private func submitInput() {
         let text = inputText.trimmingCharacters(in: .whitespaces)
         guard !text.isEmpty else { return }
-
-        chatMessages.append(OnboardingMessage(isZhiya: false, content: text))
         inputText = ""
 
-        switch vm.currentStep {
-        case .name:
-            vm.childName = text
-            withAnimation { showInput = false }
-            addZhiyaMessage("\(text)，认识你很高兴。我会一直在。", delay: 0.6) {
-                self.addZhiyaMessage("你在学什么？", delay: 0.8) {
-                    self.vm.currentStep = .subjects
-                    self.showSubjectSheet = true
-                }
-            }
-
-        case .goals:
-            vm.goals = text
-            withAnimation { showInput = false }
-            addZhiyaMessage("了解了。我帮你种了一颗种子 🌱", delay: 0.6) {
-                withAnimation(.spring(duration: 0.8)) { self.showSeedAnimation = true }
-                self.addZhiyaMessage("以后每一天，我都在。想聊什么都可以。", delay: 1.2) {
-                    self.vm.currentStep = .planting
-                    withAnimation { self.showInput = true }
-                }
-            }
-
+        switch coordinator.currentStep {
+        case .awaitingName:
+            coordinator.submitName(text)
+        case .awaitingGoals:
+            coordinator.submitGoals(text)
         default:
             break
         }
     }
 
-    private func confirmSubjects() {
-        let subjectNames = vm.selectedSubjects.compactMap { SubjectData.getSubject($0)?.nameCn }
-        chatMessages.append(OnboardingMessage(isZhiya: false, content: subjectNames.joined(separator: "、")))
-
-        addZhiyaMessage("好的。有没有什么考试快到了，或者有什么目标？", delay: 0.6) {
-            self.vm.currentStep = .goals
-            withAnimation { self.showInput = true }
-        }
-    }
-
     private func completePlanting() {
-        vm.completeOnboarding(companionEngine: companion)
+        coordinator.completeOnboarding(companionEngine: companion)
         withAnimation(.easeInOut(duration: 0.5)) {
             hasCompletedOnboarding = true
-        }
-    }
-
-    private func addZhiyaMessage(_ text: String, delay: Double, completion: (() -> Void)? = nil) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-            withAnimation(.easeOut(duration: 0.3)) {
-                self.chatMessages.append(OnboardingMessage(isZhiya: true, content: text))
-            }
-            if let completion = completion {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    completion()
-                }
-            }
         }
     }
 
@@ -226,14 +164,6 @@ struct SeedMomentView: View {
                     .font(.system(size: 24))
                     .foregroundColor(ZhiyaTheme.leafGreen)
             }
-        }
-    }
-
-    private var inputPlaceholder: String {
-        switch vm.currentStep {
-        case .name: return "你的名字"
-        case .goals: return "比如：A-Level拿A*"
-        default: return "输入..."
         }
     }
 }
@@ -325,4 +255,3 @@ private struct SubjectPickerSheet: View {
         .presentationCornerRadius(28)
     }
 }
-
