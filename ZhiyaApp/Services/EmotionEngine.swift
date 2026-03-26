@@ -17,6 +17,46 @@ final class EmotionEngine: ObservableObject {
         }
     }
 
+    // MARK: - Mood Detection (from text)
+
+    /// Detect mood from user's text input — 体贴品格的落地
+    func detectMoodFromText(_ text: String) {
+        let lower = text.lowercased()
+
+        // 情绪关键词检测
+        let frustrationWords = ["不会", "太难", "不行", "做不出", "放弃", "搞不懂", "不想学", "学不会", "不理解", "算了"]
+        let anxietyWords = ["压力", "焦虑", "紧张", "害怕", "考试", "来不及", "怎么办"]
+        let lowEnergyWords = ["累", "困", "烦", "无聊", "没意思", "不想", "懒"]
+        let positiveWords = ["懂了", "明白了", "原来如此", "会了", "做对了", "开心", "有趣"]
+
+        let frustrationCount = frustrationWords.filter { lower.contains($0) }.count
+        let anxietyCount = anxietyWords.filter { lower.contains($0) }.count
+        let lowEnergyCount = lowEnergyWords.filter { lower.contains($0) }.count
+        let positiveCount = positiveWords.filter { lower.contains($0) }.count
+
+        // 取最强信号
+        let maxNegative = max(frustrationCount, anxietyCount, lowEnergyCount)
+
+        if positiveCount > 0 && maxNegative == 0 {
+            currentMood = .smooth
+            zhiyaEmotion = .happy
+            recordMood(.smooth, score: 0.8, context: text)
+        } else if frustrationCount >= maxNegative && frustrationCount > 0 {
+            currentMood = .frustrated
+            zhiyaEmotion = .caring
+            recordMood(.frustrated, score: 0.2, context: text)
+        } else if anxietyCount >= maxNegative && anxietyCount > 0 {
+            currentMood = .anxious
+            zhiyaEmotion = .caring
+            recordMood(.anxious, score: 0.3, context: text)
+        } else if lowEnergyCount >= maxNegative && lowEnergyCount > 0 {
+            currentMood = .lowEnergy
+            zhiyaEmotion = .calm
+            recordMood(.lowEnergy, score: 0.4, context: text)
+        }
+        // 如果没有匹配，保持当前 mood 不变
+    }
+
     // MARK: - Mood Detection (from quiz behavior)
 
     func updateFromQuizResult(correct: Bool, consecutiveWrong: Int) {

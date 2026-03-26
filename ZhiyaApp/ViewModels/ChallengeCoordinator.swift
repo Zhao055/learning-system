@@ -21,14 +21,36 @@ final class ChallengeCoordinator: ObservableObject {
             from: question, paperId: paperId, chapterId: chapterId, kpId: kpId, kpTitle: kpTitle
         )
 
+        // 智慧品格：给出上下文，不是冷冰冰地出题
+        let intro = contextualChallengeIntro(kpTitle: kpTitle, paperId: paperId, chapterId: chapterId, kpId: kpId)
+
         let message = ChatMessage(
             role: .assistant,
-            content: "来试试这道题：",
+            content: intro,
             messageType: .challengeCard,
             challengeData: challengeData
         )
         chatCoordinator.messages.append(message)
         chatCoordinator.saveMessages()
+    }
+
+    /// 根据学生在该知识点的历史给出个性化的出题引导语
+    private func contextualChallengeIntro(kpTitle: String, paperId: String, chapterId: String, kpId: String) -> String {
+        let kpProgress = ProgressService.shared.getKpProgress(paperId: paperId, chapterId: chapterId, kpId: kpId)
+
+        if kpProgress.attempted == 0 {
+            return "来试试\(kpTitle)的第一道题，看看你的感觉："
+        }
+
+        let mastery = kpProgress.attempted > 0 ? Double(kpProgress.correct) / Double(kpProgress.attempted) : 0
+
+        if mastery >= 0.8 {
+            return "\(kpTitle)你之前做得不错，来道稍有挑战的："
+        } else if mastery >= 0.5 {
+            return "\(kpTitle)上次有些地方还不太确定，再来一道巩固一下？"
+        } else {
+            return "我们换个角度看看\(kpTitle)，试试这道："
+        }
     }
 
     // MARK: - Handle Answer
@@ -97,26 +119,41 @@ final class ChallengeCoordinator: ObservableObject {
             }
         }
 
-        // Follow-up response
+        // Follow-up response — 品格驱动反馈
         if challenge.isCorrect == true {
-            chatCoordinator.appendAssistantMessage("答对了！\(challenge.kpTitle) 掌握得不错。", type: .text)
+            // 正直品格：表扬要具体，不空洞
+            let kpProgress = ProgressService.shared.getKpProgress(
+                paperId: challenge.paperId, chapterId: challenge.chapterId, kpId: challenge.kpId
+            )
+            if kpProgress.attempted <= 1 {
+                chatCoordinator.appendAssistantMessage("对了！你对\(challenge.kpTitle)的理解很准确。", type: .text)
+            } else if consecutiveWrongCount == 0 {
+                // 包容品格：记录相对于自己的进步
+                chatCoordinator.appendAssistantMessage("又对了！上次这类题你还有点犹豫，现在很果断了。", type: .text)
+            } else {
+                // 热爱品格：庆祝真实的进步
+                chatCoordinator.appendAssistantMessage("经过几次尝试后做对了，这才是真正的掌握。你在\(challenge.kpTitle)上有了真实的进步。", type: .text)
+            }
         } else if consecutiveWrongCount >= 3 {
-            chatCoordinator.appendAssistantMessage("连着几道都有点难，没关系。我们不着急。", type: .text)
+            // 体贴品格：先关心人再谈题
+            chatCoordinator.appendAssistantMessage("连着几道都不太顺，我看到你一直在坚持。要不我们换个方式？", type: .text)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 chatCoordinator.appendAssistantMessage("想怎么继续？", type: .suggestion,
-                    suggestionData: SuggestionData(text: "降低难度，来道简单的", action: .startChallenge))
+                    suggestionData: SuggestionData(text: "换个角度，聊聊这个知识点", action: .startChallenge))
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                 chatCoordinator.appendAssistantMessage("", type: .suggestion,
-                    suggestionData: SuggestionData(text: "换个知识点", action: .startChallenge))
+                    suggestionData: SuggestionData(text: "先做别的，晚点再回来", action: .startChallenge))
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
-                chatCoordinator.appendAssistantMessage("或者不做题了，聊聊天也行", type: .suggestion,
+                chatCoordinator.appendAssistantMessage("不做题了也完全可以", type: .suggestion,
                     suggestionData: SuggestionData(text: "聊聊天", action: .dismiss))
             }
         } else {
+            // 智慧品格：苏格拉底引导，不直接讲答案
             let selectedLetter = ["A", "B", "C", "D"][selectedIndex]
-            chatCoordinator.appendAssistantMessage("你选了\(selectedLetter)，你是怎么想的？来聊聊你的思路。", type: .text)
+            let correctLetter = ["A", "B", "C", "D"][challenge.correctIndex]
+            chatCoordinator.appendAssistantMessage("你选了\(selectedLetter)，正确答案是\(correctLetter)。你是怎么想的？我们一起看看你的思路哪里可以调整。", type: .text)
         }
 
         chatCoordinator.saveMessages()

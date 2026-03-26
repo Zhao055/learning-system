@@ -96,6 +96,29 @@ final class CompanionEngine: ObservableObject {
         }
     }
 
+    // MARK: - 热爱品格：偶尔关心生活
+
+    /// 生成一个非学习的关心语句（热爱品格：不只是分数）
+    func lifeCareMessage() -> String? {
+        let hour = Calendar.current.component(.hour, from: Date())
+
+        // 21:00+ 关心作息
+        if hour >= 21 {
+            return "最近睡得好不好？学习很重要，但休息也是成长的一部分。"
+        }
+
+        // 引用记忆中的生活事件
+        let moments = ConversationMemoryService.shared.getMoments(category: .lifeEvent)
+        if let recent = moments.last {
+            let daysAgo = Calendar.current.dateComponents([.day], from: recent.timestamp, to: Date()).day ?? 0
+            if daysAgo <= 3 && daysAgo >= 1 {
+                return "之前提到的事情怎么样了？"
+            }
+        }
+
+        return nil
+    }
+
     // MARK: - Last Active Tracking
 
     func recordActivity() {

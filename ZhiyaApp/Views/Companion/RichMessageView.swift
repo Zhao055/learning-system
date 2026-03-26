@@ -7,11 +7,15 @@ struct RichMessageView: View {
     let availableWidth: CGFloat
     let onChallengeAnswer: (String, Int) -> Void
     let onSuggestionTap: (String) -> Void
+    var onSpeak: ((String) -> Void)? = nil
+    var speakingMessageId: String? = nil
+
+    private var isSpeaking: Bool { speakingMessageId == message.id }
 
     var body: some View {
         switch message.messageType {
         case .text:
-            ChatBubbleView(message: message, availableWidth: availableWidth)
+            ChatBubbleView(message: message, availableWidth: availableWidth, onSpeak: onSpeak, isSpeaking: isSpeaking)
 
         case .challengeCard:
             if let challenge = message.challengeData {
@@ -42,7 +46,7 @@ struct RichMessageView: View {
                         .padding(.horizontal, 12)
                 }
                 if !message.content.isEmpty {
-                    ChatBubbleView(message: message, availableWidth: availableWidth)
+                    ChatBubbleView(message: message, availableWidth: availableWidth, onSpeak: onSpeak, isSpeaking: isSpeaking)
                 }
             }
 
@@ -53,7 +57,7 @@ struct RichMessageView: View {
             WeeklyLetterBubble(message: message, availableWidth: availableWidth)
 
         case .celebration:
-            ChatBubbleView(message: message, availableWidth: availableWidth)
+            ChatBubbleView(message: message, availableWidth: availableWidth, onSpeak: onSpeak, isSpeaking: isSpeaking)
 
         case .suggestion:
             SuggestionBubble(message: message, availableWidth: availableWidth, onTap: onSuggestionTap)

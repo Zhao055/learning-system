@@ -29,6 +29,8 @@ final class ConversationMemoryService {
         case dream          // "我想上剑桥"
         case joy            // "我考了A*!"
         case connection     // Deep conversation with Zhiya
+        case preference     // "我喜欢..." / "我不喜欢..."
+        case lifeEvent      // "今天考试" / "生日" / 生活事件
     }
 
     // MARK: - Extract & Store
@@ -63,7 +65,7 @@ final class ConversationMemoryService {
             ))
         }
 
-        if text.contains("想上") || text.contains("梦想") || text.contains("将来") || text.contains("以后想") {
+        if text.contains("想上") || text.contains("梦想") || text.contains("将来") || text.contains("以后想") || text.contains("想当") || text.contains("想成为") {
             storeMoment(SignificantMoment(
                 content: message.content,
                 category: .dream,
@@ -75,6 +77,33 @@ final class ConversationMemoryService {
                 content: message.content,
                 dimension: .lifeExploration,
                 emotionalWeight: 0.9
+            ))
+        }
+
+        // 生活事件
+        if text.contains("考试") || text.contains("生日") || text.contains("比赛") || text.contains("生病") {
+            storeMoment(SignificantMoment(
+                content: message.content,
+                category: .lifeEvent,
+                emotionalWeight: 0.6
+            ))
+        }
+
+        // 喜好记忆 — 热爱品格：记得孩子的喜好
+        if text.contains("喜欢") || text.contains("最爱") || text.contains("讨厌") || text.contains("不喜欢") {
+            storeMoment(SignificantMoment(
+                content: message.content,
+                category: .preference,
+                emotionalWeight: 0.5
+            ))
+        }
+
+        // 开心时刻
+        if text.contains("开心") || text.contains("高兴") || text.contains("太好了") || text.contains("考了") {
+            storeMoment(SignificantMoment(
+                content: message.content,
+                category: .joy,
+                emotionalWeight: 0.7
             ))
         }
     }

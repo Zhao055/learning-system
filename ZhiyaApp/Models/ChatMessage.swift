@@ -11,8 +11,9 @@ struct ChatMessage: Identifiable, Codable {
     var suggestionData: SuggestionData?
     var studyPlanData: StudyPlanData?
     var imageData: Data?
+    var audioData: Data? // Reserved for future TTS audio caching (e.g. MiniMax speech-02-hd)
 
-    init(id: String = UUID().uuidString, role: MessageRole, content: String, timestamp: TimeInterval = Date().timeIntervalSince1970, isStreaming: Bool = false, messageType: MessageType = .text, challengeData: ChallengeData? = nil, suggestionData: SuggestionData? = nil, studyPlanData: StudyPlanData? = nil, imageData: Data? = nil) {
+    init(id: String = UUID().uuidString, role: MessageRole, content: String, timestamp: TimeInterval = Date().timeIntervalSince1970, isStreaming: Bool = false, messageType: MessageType = .text, challengeData: ChallengeData? = nil, suggestionData: SuggestionData? = nil, studyPlanData: StudyPlanData? = nil, imageData: Data? = nil, audioData: Data? = nil) {
         self.id = id
         self.role = role
         self.content = content
@@ -23,6 +24,7 @@ struct ChatMessage: Identifiable, Codable {
         self.suggestionData = suggestionData
         self.studyPlanData = studyPlanData
         self.imageData = imageData
+        self.audioData = audioData
     }
 }
 

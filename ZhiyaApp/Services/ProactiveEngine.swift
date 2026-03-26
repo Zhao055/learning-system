@@ -41,10 +41,19 @@ final class ProactiveEngine {
             return messages
         }
 
-        // Priority 2: Late night
+        // Priority 2: Late night — 体贴：关心作息
         if hour >= 22 {
             messages.append(ProactiveMessage(
                 content: "很晚了，\(profile.childName)。今天学够多了，早点休息吧。"
+            ))
+            return messages
+        }
+
+        // Priority 2.5: Emotion check — 体贴：近期情绪下降时主动关心
+        let emotionProfile = EmotionEngine.shared.profile
+        if emotionProfile.currentMoodTrend == .declining {
+            messages.append(ProactiveMessage(
+                content: "最近学习时间少了些，没事，发生什么了吗？不想聊学习也可以随便聊聊。"
             ))
             return messages
         }
@@ -73,8 +82,18 @@ final class ProactiveEngine {
             return messages
         }
 
-        // Priority 5: Weak area insight
-        if let insight = generateLearningInsight(profile: profile) {
+        // Priority 5: Weak area insight — 智能主动出现
+        // 设计图 14:00 场景："积分换元连续错了3次，我准备了5道专项"
+        let weakAreas = analyzeWeakAreas()
+        if let topWeak = weakAreas.first, topWeak.attempts >= 3 {
+            let wrongCount = topWeak.attempts - Int(Double(topWeak.attempts) * topWeak.accuracy)
+            messages.append(ProactiveMessage(
+                content: "\(topWeak.kpTitle)你已经练了\(topWeak.attempts)次，有\(wrongCount)次不太顺。我帮你准备了专项练习，换个角度突破它？",
+                messageType: .suggestion,
+                suggestionData: SuggestionData(text: "开始\(topWeak.kpTitle)专项", action: .startChallenge)
+            ))
+            return messages
+        } else if let insight = generateLearningInsight(profile: profile) {
             messages.append(insight)
             return messages
         }
@@ -110,13 +129,31 @@ final class ProactiveEngine {
     private func generateContextualGreeting(profile: CompanionProfile, stats: TotalStats) -> String {
         let hour = Calendar.current.component(.hour, from: Date())
         let timeGreeting = hour < 12 ? "上午好" : hour < 18 ? "下午好" : "晚上好"
+        let recentMoments = ConversationMemoryService.shared.getRecentMoments(limit: 10)
 
-        // Try to reference a memory for personalization
-        let recentMoments = ConversationMemoryService.shared.getRecentMoments(limit: 3)
-        if let lastBreakthrough = recentMoments.first(where: { $0.category == .breakthrough }) {
-            return "\(profile.childName)，上次你在学习中有个突破时刻，今天继续挑战？"
+        // 热爱品格：记得孩子的梦想，在合适时候引用
+        if let dream = recentMoments.first(where: { $0.category == .dream }) {
+            let daysAgo = Calendar.current.dateComponents([.day], from: dream.timestamp, to: Date()).day ?? 0
+            if daysAgo >= 3 && daysAgo <= 14 {
+                return "\(profile.childName)，你上次提到的梦想，我一直记得。今天我们朝那个方向再进一步？"
+            }
         }
 
+        // 体贴品格：如果昨天有挫折，今天主动关心
+        if let lastFrustration = recentMoments.first(where: { $0.category == .frustration }) {
+            let daysAgo = Calendar.current.dateComponents([.day], from: lastFrustration.timestamp, to: Date()).day ?? 0
+            if daysAgo <= 1 {
+                return "\(profile.childName)，昨天那道题确实不简单。今天换个角度试试？还是想先聊聊别的？"
+            }
+        }
+
+        // 数据驱动：基于薄弱点给出具体建议（设计图 07:30 场景）
+        let weakAreas = analyzeWeakAreas()
+        if let weak = weakAreas.first, profile.stage != .seed {
+            return "\(timeGreeting)，\(profile.childName)！\(weak.kpTitle)上次有点卡，今天我们把它搞定？你已经很接近了。"
+        }
+
+        // 基于关系阶段
         switch profile.stage {
         case .seed:
             return "\(timeGreeting)，\(profile.childName)！"
@@ -126,10 +163,6 @@ final class ProactiveEngine {
             }
             return "又见面了，\(profile.childName)！"
         case .understanding, .companion:
-            // Reference weak areas if available
-            if let weakArea = analyzeWeakAreas().first {
-                return "\(profile.childName)，上次\(weakArea.kpTitle)有点卡住了。今天要不从这里开始？"
-            }
             return "\(profile.childName)，今天想做什么？"
         }
     }

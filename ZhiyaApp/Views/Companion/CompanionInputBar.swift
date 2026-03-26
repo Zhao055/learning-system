@@ -3,6 +3,7 @@ import SwiftUI
 struct CompanionInputBar: View {
     @Binding var inputText: String
     let isLoading: Bool
+    var isRecording: Bool = false
     let onSend: () -> Void
     let onCamera: () -> Void
     let onVoice: () -> Void
@@ -44,10 +45,12 @@ struct CompanionInputBar: View {
                 // Voice / Send toggle
                 if inputText.trimmingCharacters(in: .whitespaces).isEmpty {
                     Button(action: onVoice) {
-                        Image(systemName: "mic.fill")
+                        Image(systemName: isRecording ? "mic.fill" : "mic.fill")
                             .font(.system(size: 20))
-                            .foregroundColor(ZhiyaTheme.darkBrown)
+                            .foregroundColor(isRecording ? .red : ZhiyaTheme.darkBrown)
                             .frame(width: 36, height: 36)
+                            .scaleEffect(isRecording ? 1.15 : 1.0)
+                            .animation(.easeInOut(duration: 0.6).repeatForever(autoreverses: true), value: isRecording)
                     }
                 } else {
                     Button(action: onSend) {

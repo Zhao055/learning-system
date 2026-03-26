@@ -14,6 +14,8 @@ final class CompanionViewModel: ObservableObject {
     let chatCoordinator: ChatCoordinator
     let challengeCoordinator: ChallengeCoordinator
     let companionEngine: CompanionEngine
+    let speechService = SpeechService()
+    let ttsService = TTSService()
     private var cancellables = Set<AnyCancellable>()
 
     init(companionEngine: CompanionEngine) {
@@ -25,6 +27,18 @@ final class CompanionViewModel: ObservableObject {
         chatCoordinator.objectWillChange
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in self?.objectWillChange.send() }
+            .store(in: &cancellables)
+
+        // Forward speechService changes
+        speechService.objectWillChange
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] (_: Void) in self?.objectWillChange.send() }
+            .store(in: &cancellables)
+
+        // Forward ttsService changes
+        ttsService.objectWillChange
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] (_: Void) in self?.objectWillChange.send() }
             .store(in: &cancellables)
     }
 
@@ -78,6 +92,37 @@ final class CompanionViewModel: ObservableObject {
             withAnimation(.easeOut(duration: 0.3)) { mascotCollapsed = true }
         }
         chatCoordinator.sendImage(imageData)
+    }
+
+    // MARK: - Voice Input
+
+    func startVoiceInput() {
+        // Stop TTS if playing (mutual exclusion)
+        ttsService.stop()
+        isRecording = true
+    }
+
+    func handleTranscription(_ text: String) {
+        inputText = text
+        sendMessage()
+    }
+
+    func stopVoiceInput() {
+        isRecording = false
+    }
+
+    // MARK: - TTS
+
+    func speakMessage(_ messageId: String) {
+        // Stop recording if active (mutual exclusion)
+        if speechService.isRecording {
+            _ = speechService.stopRecording()
+            isRecording = false
+        }
+
+        guard let message = chatCoordinator.messages.first(where: { $0.id == messageId }),
+              !message.content.isEmpty else { return }
+        ttsService.speak(message.content, messageId: messageId)
     }
 
     // MARK: - Challenge Answer

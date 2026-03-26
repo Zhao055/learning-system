@@ -6,6 +6,8 @@ import SwiftUI
 struct ChatBubbleView: View {
     let message: ChatMessage
     let availableWidth: CGFloat
+    var onSpeak: ((String) -> Void)? = nil
+    var isSpeaking: Bool = false
 
     private var isUser: Bool { message.role == .user }
     private var maxBubbleWidth: CGFloat { availableWidth * 0.75 }
@@ -17,14 +19,27 @@ struct ChatBubbleView: View {
                     .offset(y: 4)
             }
 
-            Text(message.content + (message.isStreaming ? "▍" : ""))
-                .font(ZhiyaTheme.body(15))
-                .foregroundColor(isUser ? .white : ZhiyaTheme.darkBrown)
-                .padding(.horizontal, 14)
-                .padding(.vertical, 10)
-                .frame(maxWidth: maxBubbleWidth, alignment: .leading)
-                .background(isUser ? ZhiyaTheme.goldenAmber : ZhiyaTheme.bubbleGreen)
-                .clipShape(RoundedRectangle(cornerRadius: 16))
+            VStack(alignment: .leading, spacing: 4) {
+                Text(message.content + (message.isStreaming ? "▍" : ""))
+                    .font(ZhiyaTheme.body(15))
+                    .foregroundColor(isUser ? .white : ZhiyaTheme.darkBrown)
+
+                // TTS button for assistant messages (not streaming)
+                if !isUser && !message.isStreaming && !message.content.isEmpty {
+                    Button {
+                        onSpeak?(message.id)
+                    } label: {
+                        Image(systemName: isSpeaking ? "speaker.wave.3.fill" : "speaker.wave.2")
+                            .font(.system(size: 13))
+                            .foregroundColor(isSpeaking ? ZhiyaTheme.goldenAmber : ZhiyaTheme.lightBrown)
+                    }
+                }
+            }
+            .padding(.horizontal, 14)
+            .padding(.vertical, 10)
+            .frame(maxWidth: maxBubbleWidth, alignment: .leading)
+            .background(isUser ? ZhiyaTheme.goldenAmber : ZhiyaTheme.bubbleGreen)
+            .clipShape(RoundedRectangle(cornerRadius: 16))
         }
         .frame(maxWidth: .infinity, alignment: isUser ? .trailing : .leading)
         .padding(.horizontal, 12)

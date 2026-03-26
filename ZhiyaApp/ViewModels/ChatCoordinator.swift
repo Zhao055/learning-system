@@ -24,6 +24,7 @@ final class ChatCoordinator: ObservableObject {
         isLoading = true
 
         ConversationMemoryService.shared.analyzeAndStore(message: userMessage)
+        EmotionEngine.shared.detectMoodFromText(text)
         EmotionEngine.shared.updateForChatState(.thinking)
 
         let assistantId = UUID().uuidString
@@ -250,6 +251,15 @@ final class ChatCoordinator: ObservableObject {
     private func buildDirectSystemPrompt(companionEngine: CompanionEngine) -> String {
         let profile = companionEngine.profile
         let stats = ProgressService.shared.getTotalStats()
+
+        // Gather emotion context
+        let mood = EmotionEngine.shared.currentMood
+        let moodTrend = EmotionEngine.shared.profile.currentMoodTrend
+
+        // Gather memory context
+        let memories = ConversationMemoryService.shared.getRecentMoments(limit: 10)
+        let weakAreas = ProactiveEngine.shared.analyzeWeakAreas()
+
         return AIService.shared.companionSystemPrompt(
             childName: profile.childName,
             subjects: profile.subjects,
@@ -259,7 +269,11 @@ final class ChatCoordinator: ObservableObject {
             stats: stats,
             examDaysLeft: profile.examDate.flatMap {
                 Calendar.current.dateComponents([.day], from: Date(), to: $0).day
-            }
+            },
+            mood: mood,
+            moodTrend: moodTrend,
+            memories: memories,
+            weakAreas: weakAreas
         )
     }
 }

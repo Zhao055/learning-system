@@ -6,6 +6,7 @@ struct CameraInputSheet: View {
 
     @State private var showImagePicker = false
     @State private var selectedImage: UIImage?
+    @State private var cameraSourceType: UIImagePickerController.SourceType = .photoLibrary
 
     var body: some View {
         NavigationView {
@@ -49,11 +50,15 @@ struct CameraInputSheet: View {
                     Spacer()
 
                     VStack(spacing: 12) {
-                        ZhiyaPrimaryButton(title: "拍照") {
-                            showImagePicker = true
+                        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                            ZhiyaPrimaryButton(title: "拍照") {
+                                cameraSourceType = .camera
+                                showImagePicker = true
+                            }
                         }
 
                         ZhiyaSecondaryButton(title: "从相册选择") {
+                            cameraSourceType = .photoLibrary
                             showImagePicker = true
                         }
                     }
@@ -71,7 +76,7 @@ struct CameraInputSheet: View {
                 }
             }
             .sheet(isPresented: $showImagePicker) {
-                ImagePicker(image: $selectedImage)
+                ImagePicker(image: $selectedImage, sourceType: cameraSourceType)
             }
         }
     }
@@ -80,13 +85,13 @@ struct CameraInputSheet: View {
 // Simple image picker wrapper
 struct ImagePicker: UIViewControllerRepresentable {
     @Binding var image: UIImage?
+    var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @Environment(\.dismiss) var dismiss
 
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
-        // Use photo library as default; camera can be added with device check
-        picker.sourceType = .photoLibrary
+        picker.sourceType = sourceType
         return picker
     }
 

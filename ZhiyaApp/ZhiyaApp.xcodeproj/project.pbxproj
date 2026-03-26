@@ -35,6 +35,9 @@
 		A2000073 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000073 /* NotificationService.swift */; };
 		A2000080 /* SynapseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000080 /* SynapseAPI.swift */; };
 		A2000081 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000081 /* NetworkMonitor.swift */; };
+		A2000095 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000095 /* SpeechService.swift */; };
+		A2000096 /* TTSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000096 /* TTSService.swift */; };
+		A2000097 /* CharacterGuard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000097 /* CharacterGuard.swift */; };
 		A2000031 /* ChatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000031 /* ChatBubbleView.swift */; };
 		A2000060 /* CompanionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000060 /* CompanionView.swift */; };
 		A2000061 /* CompanionInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000061 /* CompanionInputBar.swift */; };
@@ -133,6 +136,9 @@
 		A1000073 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		A1000080 /* SynapseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynapseAPI.swift; sourceTree = "<group>"; };
 		A1000081 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		A1000095 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
+		A1000096 /* TTSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSService.swift; sourceTree = "<group>"; };
+		A1000097 /* CharacterGuard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterGuard.swift; sourceTree = "<group>"; };
 		A1000031 /* ChatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleView.swift; sourceTree = "<group>"; };
 		A1000060 /* CompanionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionView.swift; sourceTree = "<group>"; };
 		A1000061 /* CompanionInputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionInputBar.swift; sourceTree = "<group>"; };
@@ -293,6 +299,9 @@
 				A1000017 /* KeychainService.swift */,
 				A1000018 /* MemoryService.swift */,
 				A1000081 /* NetworkMonitor.swift */,
+				A1000095 /* SpeechService.swift */,
+				A1000096 /* TTSService.swift */,
+				A1000097 /* CharacterGuard.swift */,
 				A1000019 /* NetworkService.swift */,
 				A1000073 /* NotificationService.swift */,
 				A1000069 /* ProactiveEngine.swift */,
@@ -594,6 +603,9 @@
 				A2000073 /* NotificationService.swift in Sources */,
 				A2000080 /* SynapseAPI.swift in Sources */,
 				A2000081 /* NetworkMonitor.swift in Sources */,
+				A2000095 /* SpeechService.swift in Sources */,
+				A2000096 /* TTSService.swift in Sources */,
+				A2000097 /* CharacterGuard.swift in Sources */,
 				A2000031 /* ChatBubbleView.swift in Sources */,
 				A2000060 /* CompanionView.swift in Sources */,
 				A2000061 /* CompanionInputBar.swift in Sources */,
