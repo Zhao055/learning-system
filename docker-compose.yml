@@ -6,11 +6,19 @@ services:
     container_name: zhiya-server
     restart: unless-stopped
     ports:
-      - "${PORT:-3000}:3000"
+      - "5820:3000"
     volumes:
       - ./zhiya-server/data:/app/data
     env_file:
       - .env.production
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.5"
+        reservations:
+          memory: 128M
+          cpus: "0.25"
     healthcheck:
       test: ["CMD", "curl", "-sf", "http://localhost:3000/health"]
       interval: 30s
